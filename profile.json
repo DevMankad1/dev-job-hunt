@@ -77,10 +77,13 @@
   },
 
   "compensation": {
-    "currentCtcLPA": null,
-    "expectedCtcLPA": null,
-    "_note": "TODO(Dev): fill these two in. They are needed for application forms and for the digest's 'is this worth your time' filter. Nothing outside this repo knows them.",
-    "targetBandLPA": { "min": 14, "aim": 22, "stretch": 30 },
+    "currentCtcLPA": 8.94,
+    "currentCtcExact": 894000,
+    "expectedCtcLPA": 12,
+    "expectedCtcRangeLPA": { "min": 11, "max": 12, "statedAs": "11-12+ LPA" },
+    "_note": "Confirmed by Dev 2026-09-08. Current 8,94,000 (8.94 LPA). Expected 11-12+ LPA.",
+    "_marketNote": "Dev's stated expectation is a 1.23-1.34x jump. That is modest for this move: Ahmedabad-to-Bengaluru product-company transitions commonly run 1.6-2.2x, and the AI/agentic lane pays materially above the generalist band (see data/comp-bands.json). Quote 12 as the FLOOR, not the ask, and never volunteer 8.94 before the role's band is on the table.",
+    "targetBandLPA": { "min": 11, "aim": 14, "stretch": 20 },
     "salaryIsHardFilter": false,
     "salaryRule": "Salary in a digest is ALWAYS marked (estimated) unless the JD states a number. Never used as a hard reject — Indian JDs usually omit comp and the band is only established at the recruiter call."
   },

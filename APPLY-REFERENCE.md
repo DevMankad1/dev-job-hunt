@@ -38,8 +38,8 @@ form. Anything marked **TODO(Dev)** is not known to this repo — Claude must
 
 | Field | Value |
 |---|---|
-| Current CTC | **TODO(Dev)** — fill `profile.json` → `compensation.currentCtcLPA` |
-| Expected CTC | **TODO(Dev)** — fill `profile.json` → `compensation.expectedCtcLPA`. See `data/comp-bands.json` for the bands first. |
+| Current CTC | **₹8,94,000 (8.94 LPA)** |
+| Expected CTC | **₹11–12+ LPA** — quote 12 as the floor, not the ask |
 | Notice period | **TODO(Dev)** — fill `profile.json` → `availability.noticePeriodDays` |
 | Willing to relocate | Yes — Bengaluru, Pune, Hyderabad, Mumbai, NCR, Chennai |
 | Open to remote | Yes |
@@ -48,6 +48,14 @@ form. Anything marked **TODO(Dev)** is not known to this repo — Claude must
 > Where a form lets you give a **range** rather than a number, give the range.
 > Where it demands "current CTC" as a hard field, that is a capping tactic —
 > answer it, but lead the conversation with your expected band.
+>
+> **On the 11–12 number.** That is a 1.23–1.34x jump on 8.94. It is a reasonable
+> floor, but it is on the low side for this move — Ahmedabad-to-Bengaluru
+> product-company transitions commonly run 1.6–2.2x, and the AI/agentic lane pays
+> above the generalist band. Say "I'm looking at 12+" and let them counter;
+> never open with 8.94, and never give current CTC before the role's band is on
+> the table. If a recruiter opens with a number at or above 12, that is a signal
+> the band is higher than you assumed, not a reason to accept immediately.
 
 ## Education
 
