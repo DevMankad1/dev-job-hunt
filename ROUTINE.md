@@ -6,6 +6,9 @@ push, and the next run picks it up — no `/schedule` prompt edit needed.
 
 ---
 
+> **`OPERATING-LOG.md` overrides this file on any conflict.** Read it first. It
+> records what running the system actually taught us, and reality wins over spec.
+
 ## Guardrails — never violate
 
 - **Never apply to a job.** Never register, never create an account anywhere.
@@ -35,12 +38,16 @@ Ahmedabad) or Remote.
 ## Step 1 — scan
 
 ```bash
-npm run scan
+node scripts/ledger.mjs urls > /tmp/sent.txt   # read the ledger IN FULL first
+npm run scan -- --exclude-urls /tmp/sent.txt
 ```
 
-Runs `scripts/scan.mjs`: sweeps every verified Tier-A ATS board, filters by role
-/ seniority / stack / location, dedupes against `state/seen-urls.json`, writes
-`data/jobs.raw.json`, and records what it reported back into the state file.
+Runs `scripts/scan.mjs`: sweeps every verified Tier-A ATS board, filters by role,
+seniority, stack and the three eligibility shapes, applies the 21-day freshness
+cutoff, ranks newest-first, dedupes, and writes `data/jobs.raw.json`.
+
+Results carry a `channel` of `india` or `remote-global`. Both go in the digest,
+remote-global first — it is the higher-ceiling channel.
 
 If it reports 0 boards or throws, run `node scripts/verify_ats.mjs` to see which
 endpoints broke, email Dev a short plain-text note naming them, and stop.
@@ -84,13 +91,19 @@ registry.
 
 ## Step 5 — persist state
 
+**Only after the email has actually gone out** — never before:
+
 ```bash
+node scripts/ledger.mjs commit
+python scripts/tracker.py --append
 git add state/ reports/ data/jobs.raw.json
 git commit -m "scan: <N> new matches <YYYY-MM-DD HH:MM> IST"
 git push
 ```
 
-This is what stops the same role being emailed twice.
+The ordering is the point. `state/sent-log.md` must record what was *delivered*,
+not what was *considered* — a run that dies before the email would otherwise
+bury those roles forever.
 
 **If the push fails** (no write credentials), say so explicitly in your final
 message. The run is still useful — Dev will just see some repeats until it is

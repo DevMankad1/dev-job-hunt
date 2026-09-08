@@ -18,6 +18,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { fetchBoard } from '../adapters/ats.mjs';
 import { analyseJd } from './lib/jd.mjs';
+import { classifyLocation, freshness, seniorityFit } from './lib/eligibility.mjs';
 import { norm } from './lib/text.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -58,6 +59,10 @@ const companies = registry.companies || registry;
 const maxAgeHours = parseInt((args.maxAgeHours && args.maxAgeHours !== true) ? args.maxAgeHours : String(profile.scanning?.maxAgeHours ?? 24), 10);
 const cutoff = Date.now() - maxAgeHours * 3600 * 1000;
 const locFilter = (args.loc && args.loc !== true) ? norm(args.loc) : null;
+// --channel india|remote-global restricts the run to one lane of the hunt.
+const channelFilter = (args.channel && args.channel !== true) ? String(args.channel) : null;
+// Hard freshness cutoff in DAYS (Ankur's runbook uses 21).
+const maxAgeDays = parseInt((args.maxAgeDays && args.maxAgeDays !== true) ? args.maxAgeDays : String(profile.scanning?.maxAgeDays ?? 21), 10);
 
 const sc = profile.scanning || {};
 const roleRe = new RegExp(sc.roleRegex, 'i');
@@ -72,7 +77,7 @@ say(`Scanning ${tierA.length} verified Tier-A boards · postings newer than ${ma
 
 const boards = await pool(tierA, 8, async (c) => ({ company: c, jobs: await fetchBoard(c.atsProvider, c.atsSlug) }));
 
-const stats = { boards: 0, boardErrors: 0, rawJobs: 0, afterAge: 0, afterRole: 0, afterSeniority: 0, afterStack: 0, afterLocation: 0, reported: 0 };
+const stats = { boards: 0, boardErrors: 0, rawJobs: 0, afterAge: 0, afterRole: 0, afterSeniority: 0, afterStack: 0, afterLocation: 0, afterFreshness: 0, staleDropped: 0, reported: 0 };
 const errors = [];
 const matches = [];
 
@@ -94,7 +99,11 @@ for (const b of boards) {
     if (!roleRe.test(titleN)) continue;
     stats.afterRole++;
 
-    if (senRe.test(titleN)) continue;
+    // Seniority is a decaying score, not a binary cut (Ankur's model): full
+    // marks at 1-4 years asked, zero by 6. A 5-year ask is a stretch, not a
+    // wall. Director/Head-of/VP/Staff/Principal titles still hard-reject.
+    const sen = seniorityFit(j.title + '\n' + (j.description || '').slice(0, 3000), profile.experience?.totalYears ?? 2.7);
+    if (sen.verdict === 'reject') continue;
     stats.afterSeniority++;
 
     if (stackRe.test(titleN)) continue;
@@ -103,17 +112,21 @@ for (const b of boards) {
     // Location is judged on the LOCATION FIELD only. Testing the JD body lets
     // London and San Francisco roles through, because India-founded companies
     // mention India all over their postings.
-    const locSource = locN || norm(`${j.title}`);
-    const isIndia = indiaRe.test(locSource);
-    const isForeign = foreignRe.test(locSource);
-    const isRemote = remoteRe.test(locSource) || remoteRe.test(titleN);
+    const elig = classifyLocation(j.location, j.title, { companyHqCountry: b.company.hqCountry || '' });
+    if (elig.verdict === 'drops') continue;
+    if (elig.verdict === 'unconfirmed' && !args['keep-unconfirmed']) continue;
 
-    // In scope: an India location, or remote with no foreign market named.
-    // "Remote - India" and "Bangalore, India - Remote" both pass; "Remote, Denmark" does not.
-    if (!(isIndia || (isRemote && !isForeign))) continue;
-    if (isForeign && !isIndia) continue;
+    const locSource = locN || titleN;
+    const isIndia = elig.channel === 'india';
+    const isRemote = remoteRe.test(locSource) || remoteRe.test(titleN);
     if (locFilter && !locSource.includes(locFilter) && !(locFilter === 'remote' && isRemote)) continue;
+    if (channelFilter && elig.channel !== channelFilter) continue;
     stats.afterLocation++;
+
+    // Hard freshness cutoff, default 21 days (Ankur's runbook).
+    const fr = freshness(j.postedAt, maxAgeDays);
+    if (!fr.fresh) { stats.staleDropped++; continue; }
+    stats.afterFreshness++;
 
     // Full analysis only for survivors — this is the expensive-ish part.
     const analysis = analyseJd({
@@ -139,7 +152,15 @@ for (const b of boards) {
       archetypeScore: analysis.bestArchetype?.score ?? 0,
       recommendation: analysis.recommendation,
       blockers: analysis.blockers,
-      seniorityNote: analysis.seniority?.reason || '',
+      seniorityNote: sen.reason || analysis.seniority?.reason || '',
+      seniorityScore: sen.score,
+      seniorityAsked: sen.asked,
+      channel: elig.channel,
+      eligibility: elig.verdict,
+      eligibilityShape: elig.shape,
+      eligibilityReason: elig.reason,
+      ageDays: fr.ageDays,
+      freshnessLabel: fr.label,
       isIndia,
       isRemote,
       descriptionExcerpt: (j.description || '').slice(0, 600),
@@ -171,13 +192,21 @@ if (args['exclude-urls'] && args['exclude-urls'] !== true) {
 
 const fresh = matches.filter((m) => !excluded.has(m.url) && (args.all || !seen.urls[m.url]));
 
-// Rank: recommendation, then company priority, then archetype confidence.
+// Rank. Default is FRESHNESS FIRST, quality second — Ankur's observation that a
+// 70% fit posted three hours ago beats a 90% fit posted six days ago, because on
+// competitive remote roles the queue ahead of you matters more than the margin
+// of fit. Pass --rank quality to invert it.
 const recRank = { apply: 3, review: 2, skip: 1 };
 const priRank = { high: 3, medium: 2, low: 1 };
-fresh.sort((a, b) =>
+const ageOf = (m) => (m.ageDays === null || m.ageDays === undefined ? 999 : m.ageDays);
+const byQuality = (a, b) =>
   (recRank[b.recommendation] - recRank[a.recommendation]) ||
   (priRank[b.companyPriority] - priRank[a.companyPriority]) ||
-  (b.archetypeScore - a.archetypeScore));
+  (b.archetypeScore - a.archetypeScore);
+const rankMode = (args.rank && args.rank !== true) ? String(args.rank) : 'freshness';
+fresh.sort(rankMode === 'quality'
+  ? byQuality
+  : (a, b) => (recRank[b.recommendation] - recRank[a.recommendation]) || (ageOf(a) - ageOf(b)) || byQuality(a, b));
 
 stats.reported = fresh.length;
 
@@ -207,12 +236,17 @@ if (args.json) {
   process.stdout.write(JSON.stringify(out, null, 2));
 } else {
   say(`  boards ok ${stats.boards}  ·  errors ${stats.boardErrors}  ·  raw postings ${stats.rawJobs}`);
-  say(`  funnel: age ${stats.afterAge} → role ${stats.afterRole} → seniority ${stats.afterSeniority} → stack ${stats.afterStack} → location ${stats.afterLocation}`);
+  say(`  funnel: age ${stats.afterAge} → role ${stats.afterRole} → seniority ${stats.afterSeniority} → stack ${stats.afterStack} → eligible ${stats.afterLocation} → fresh(${maxAgeDays}d) ${stats.afterFreshness}`);
+  const byChan = out.matches.reduce((m, x) => ((m[x.channel || 'unknown'] = (m[x.channel || 'unknown'] || 0) + 1), m), {});
+  say(`  channels: ${Object.entries(byChan).map(([k, v]) => k + ' ' + v).join(' · ') || 'none'}`);
   say(`  new since last run: ${stats.reported}${args.all ? ' (--all: state ignored)' : ''}\n`);
   for (const m of out.matches.slice(0, 40)) {
     const flag = m.recommendation === 'apply' ? '✔' : m.recommendation === 'review' ? '~' : '·';
     say(`  ${flag} ${m.company} — ${m.title}`);
-    say(`     ${m.location || 'location?'} · ${m.archetype} (${m.archetypeScore}) · ${m.url}`);
+    const chan = m.channel === 'remote-global' ? 'GLOBAL' : m.channel === 'india' ? 'INDIA ' : '  ?   ';
+    say(`     [${chan}] ${m.location || 'location?'} · ${m.freshnessLabel} · ${m.archetype} (${m.archetypeScore})`);
+    say(`     ${m.url}`);
+    if (m.eligibility === 'unconfirmed') say(`     ~ ${m.eligibilityReason}`);
     if (m.blockers.length) say(`     ! ${m.blockers.join(' | ')}`);
   }
   if (out.matches.length > 40) say(`\n  ... and ${out.matches.length - 40} more in data/jobs.raw.json`);

@@ -1,0 +1,128 @@
+{
+  "_meta": {
+    "purpose": "Sourcing channels for the founder-outreach track — going around job boards entirely to reach very small, recently funded companies.",
+    "lastUpdated": "2026-09-08",
+    "cadence": "3-5 genuinely new companies per run. NEVER padded to hit the number.",
+    "hardRules": {
+      "linkedin": "Never fabricated. A founder with no verifiable profile gets the row flagged and left blank.",
+      "email": "A clearly-labelled GUESSED first@domain pattern only, never treated as verified. Dev verifies it himself before sending.",
+      "sending": "NEVER automated. The system finds and drafts; Dev reviews and sends everything himself.",
+      "dedupe": "Founder companies dedupe on COMPANY NAME ALONE — a second role at a company already approached is the same relationship."
+    }
+  },
+  "channels": [
+    {
+      "priority": 1,
+      "name": "YC OSS public API (yc-oss.github.io)",
+      "url": "https://github.com/yc-oss/api",
+      "apiEndpoint": "https://yc-oss.github.io/api/companies/hiring.json",
+      "howToUse": "1) Pull https://yc-oss.github.io/api/meta.json to get the current batch slugs (verified present: fall-2025, winter-2026, spring-2026, summer-2026, fall-2026, winter-2027). As of 2026-09-08 the freshly-funded cohort is summer-2026 (Demo Day just passed); fall-2026 starts in October with Demo Day announced for Dec 2, so fall-2026.json is the one to poll weekly from October. 2) Filter locally: team_size <= 25 AND isHiring == true AND (one_liner or long_description matches /mobile|iOS|Android|Flutter|React Native|consumer app|agent|healthcare|clinic/i). 3) Keep website + slug. 4) For each hit open https://www.ycombinator.com/companies/<slug> to read the founder names. 5) Do NOT set any eligibility field from this API — it has no remote/eligibility data at all; every row starts as Unconfirmed.",
+      "observedHealth": "VERIFIED THIS SESSION. meta.json fetched OK, last-updated stamp 2026-09-08T02:10:18Z, and summer-2026.json returned real records. This is the single best free recency+headcount filter that exists: every record carries team_size, batch, isHiring, all_locations, website, one_liner. Yield of *usable* rows is the problem, not data quality — YC S26/F26 companies are overwhelmingly in-person San Francisco, so expect most rows to be eligibility-DROP or UNCONFIRMED for an India-based candidate. Treat it as a lead-generation machine, not a remote-jobs board."
+    },
+    {
+      "priority": 2,
+      "name": "YC Startup Directory + YC Jobs",
+      "url": "https://www.ycombinator.com/companies",
+      "apiEndpoint": "",
+      "howToUse": "Use the company page https://www.ycombinator.com/companies/{slug} as the founder-identification step, not the discovery step — YC company pages carry founder names with their own links, which is the cleanest non-fabricated path to a real human. Cross-check the batch and team size against the API record. On the jobs side, /jobs/role/software-engineer and /jobs/location/india are path-based, not query-based. IMPORTANT for the eligibility field: read the country string on the ACTUAL job page, never the directory card.",
+      "observedHealth": "PARTIALLY VERIFIED. https://www.ycombinator.com/jobs fetched OK and I confirmed the remote labels are country-scoped in the actual listing text — I saw literal strings 'Remote (US)' and 'Remote (GB; IE; DE)'. That makes YC Jobs unusually honest about eligibility: an explicit allowlist that excludes India is a clean DROP, and an unqualified 'Remote' is a genuine keep-as-Unconfirmed. The directory page itself (ycombinator.com/companies) returned only its title to my fetcher (JS-rendered), so the query parameters batch=/status=/industry=/region=/team_size/isHiring are REPORTED BY A SECONDARY SOURCE, not verified by me — check them in a browser before wiring them into a script. Use the yc-oss API instead for anything automated."
+    },
+    {
+      "priority": 3,
+      "name": "Hacker News \"Ask HN: Who is hiring?\" (monthly, posted by whoishiring)",
+      "url": "https://news.ycombinator.com/submitted?id=whoishiring",
+      "apiEndpoint": "",
+      "howToUse": "On the 1st of each month, open the newest thread and Ctrl-F for: 'Worldwide', 'Anywhere', 'India', 'Flutter', 'React Native', 'Kotlin Multiplatform', 'mobile', 'agent', 'Claude', 'MCP'. Apply the eligibility model literally: 'REMOTE (US only)' = DROP; bare 'REMOTE' = KEEP as Unconfirmed; 'REMOTE (Worldwide)' = QUALIFIES. Where the poster gives an email, that email is VERIFIED-BY-SOURCE — record the thread item URL as the provenance and skip the guessing step entirely. This is the only channel on this list that regularly hands you a real address you did not have to guess.",
+      "observedHealth": "NOT VERIFIED THIS SESSION — my fetch returned HTTP 429 (rate limited), not a 404. The URL is long-standing and real; open it in a browser. Honest yield: this is the highest-signal founder channel on the list, because the person who wrote the post is usually the founder or first engineer and many posts include a direct email. The posting convention is 'Company | Location | REMOTE | Role', and scope is often stated inline as 'REMOTE (US only)' or 'REMOTE (Worldwide)'. Expect roughly 300-600 posts per thread, of which maybe 20-40 are genuinely worldwide and 5-15 want mobile or agent work. Reply rate on a good note here is materially better than a cold email because the person asked to be contacted."
+    },
+    {
+      "priority": 4,
+      "name": "Seedcamp talent network (Getro)",
+      "url": "https://talent.seedcamp.com/jobs",
+      "apiEndpoint": "",
+      "howToUse": "Filter posted-date to 'past week' or 'past month' to approximate recent funding, then search 'Flutter', 'React Native', 'mobile', 'founding engineer', 'agent'. Click through to the company profile to get the website, then judge headcount from the company's own /team or /about page — not from this board. Before recording an eligibility verdict you MUST open the underlying job posting on the company's own ATS; the Getro card's location string is not sufficient evidence either way.",
+      "observedHealth": "VERIFIED THIS SESSION. Fetched OK; footer reads 'Powered by Getro'; showed ~2,204 open jobs; filters are keyword, location, seniority, salary, 'On-site & Remote', and a posted-date facet. It shows NO employee headcount, so you cannot size-filter here — you must open the company and check. Country tagging is the weak point: I saw entries like 'Taipei City, Taiwan; Remote' and 'United States; Remote', i.e. the location string is a concatenation and the board's 'Remote' facet does not mean worldwide. Treat the facet as a hint only. Yield for founder outreach: good, because Seedcamp is pre-seed/seed European and European seed founders are far more willing to hire an Indian contractor via an EOR than a YC SF team is."
+    },
+    {
+      "priority": 5,
+      "name": "Antler job board (Getro)",
+      "url": "https://careers.antler.co/jobs",
+      "apiEndpoint": "",
+      "howToUse": "Filter by funding stage = pre-seed/seed and sort by newest. Exclude companies whose HQ is an Indian city (that is the domestic channel, not this one). For the survivors, get the real domain by searching the company name plus 'site:' rather than trusting the Antler profile, then go to their own careers page. Because these teams are tiny, a job post often does not exist at all — that is the signal to write to the founder rather than apply.",
+      "observedHealth": "VERIFIED THIS SESSION. Fetched OK, 'Powered by Getro', ~1,412 jobs, filters for location, keyword, seniority, salary, company and On-site/Remote, and — usefully — the cards display funding stage. No employee counts and no direct links to company websites (company names link to Antler-hosted profiles). Antler is day-zero/pre-seed across 27 cities, so the average portfolio company is genuinely under 10 people, which is exactly the founder-outreach target. Caveat for this brief: Antler has a large India presence, so you must exclude India-headquartered portfolio companies to stay in the remote-global channel."
+    },
+    {
+      "priority": 6,
+      "name": "EU-Startups — funding category",
+      "url": "https://www.eu-startups.com/category/funding/",
+      "apiEndpoint": "",
+      "howToUse": "Read the last 8 weeks of posts. Keep any company where (a) the round is seed or pre-seed, (b) the product is consumer-facing or app-based, or the product is AI-agent infrastructure, and (c) it is not headquartered in India. Copy the founder name and role straight out of the article and store the article URL as the provenance for that name — that is a verified attribution, not a guess. Then find their own site and careers page. Expect most of these companies to have no posted job at all: that is the point of this channel.",
+      "observedHealth": "URL REAL BUT BLOCKED TO ME — my fetch returned HTTP 403 Forbidden (bot block), not 404, so the path exists but I could not read the current articles and cannot name a single verified example from it. Open it in a normal browser. Why it still ranks high: EU-Startups covers exactly the band you want (EUR 0.5M-5M seed rounds, teams of 3-15, European), and its articles almost always name the founder AND their role in the body text, which solves problem #3 without any guessing. It has no job or eligibility data whatsoever."
+    },
+    {
+      "priority": 7,
+      "name": "TechCrunch — Venture / Fundraising",
+      "url": "https://techcrunch.com/category/venture/",
+      "apiEndpoint": "",
+      "howToUse": "Scan two months of headlines and keep only rounds under about $8M, or any round explicitly described as pre-seed/seed with a named two-to-five-person founding team. TechCrunch names founders and quotes them with their title, so lift the name+role from the article text and store the article URL as provenance. Ignore the mega-rounds entirely — a company that just raised $50M is a job-board target, not a founder-outreach target.",
+      "observedHealth": "VERIFIED THIS SESSION. Fetched OK with live articles dated Sep 8, Sep 4, Sep 3 and Sep 1 2026 — the page is current. A sibling path /category/fundraising/ was reported in the page body but I did NOT independently fetch it; confirm before scripting. Honest yield for THIS brief is mediocre: TechCrunch skews to large rounds at companies already past 50 people (the Sep 8 lead was a $50M seed; Sep 3 was a $3B round). Roughly 1 in 8 stories is a small enough team to be worth a founder note. Use it for signal, not volume."
+    },
+    {
+      "priority": 8,
+      "name": "Tech.eu — European funding coverage",
+      "url": "https://tech.eu/",
+      "apiEndpoint": "",
+      "howToUse": "Read the weekly recap posts rather than hunting the site structure — each recap lists 30+ rounds with company, amount, country and stage in one page, which is the fastest way to harvest a two-month backlog. Pull out every seed/pre-seed round, then look each company up on its own site for the founder and team size. Do not rely on the category path; navigate from the homepage or from a dated article URL.",
+      "observedHealth": "MIXED. The category path https://tech.eu/category/funding/ returned HTTP 404 — do not use it. Real article URLs of the form tech.eu/2026/09/07/... were confirmed via search, including 'European tech weekly recap' pieces dated 2026-09-07 and 2026-08-31 and a monthly deals roundup. Context from those: European tech funding fell about 63% month-on-month in August 2026 (EUR 3.2B across 165 rounds vs EUR 8.6B across 267 in July), with AI the top sector at ~21% of volume and the UK the top market. So the pool of fresh European rounds in your window is thinner than usual — set expectations accordingly. Some Tech.eu content is metered."
+    },
+    {
+      "priority": 9,
+      "name": "Product Hunt leaderboards",
+      "url": "https://www.producthunt.com/leaderboard/monthly/2026/8",
+      "apiEndpoint": "",
+      "howToUse": "Walk back the daily leaderboards over the last 60 days. Keep launches that are (a) mobile apps needing an Android or iOS counterpart, or (b) MCP/agent tooling. Then check whether the same company shows up in a funding source above — a Product Hunt launch PLUS a seed round in the same 8 weeks is the strongest possible founder-outreach trigger, because they have money and a public deadline. Best move here is not an email at all: reply substantively in the launch comment thread first, then follow up by email referencing it. A maker who has already seen your name replies at a far higher rate.",
+      "observedHealth": "VERIFIED THIS SESSION. The monthly URL resolved and the daily/weekly/monthly/yearly path structure is confirmed. August 2026's top three were Clipto MCP (local video/audio/file memory search, MCP-native), Hey Noah (proactive AI executive assistant across email/text/WhatsApp for founders) and AdAnt AI (AI-agent social ad generation). That top-three tells you the current PH surface is dominated by exactly Dev's two lanes — MCP tooling and agent products — and these are typically 1-5 person teams where the maker IS the founder and is publicly answering comments the day they launch. Weakness: no funding data, no headcount, no hiring signal, and many makers are solo and cannot hire. Product Hunt has an official GraphQL API but I did NOT verify its endpoint or terms this session — do not script against it on my word."
+    },
+    {
+      "priority": 10,
+      "name": "Crunchbase News — Venture section",
+      "url": "https://news.crunchbase.com/sections/venture/",
+      "apiEndpoint": "",
+      "howToUse": "Skim the weekly roundup for sector direction only. The genuinely useful part is the free Crunchbase organization profile: once you have a company name from another channel, its Crunchbase page usually lists the founders, which is a citable source for the founder-name field. Do not try to run recency+size filtering here — Crunchbase's own advanced search is behind a paid plan.",
+      "observedHealth": "VERIFIED THIS SESSION. Live, current articles (Sep 4, Sep 3, Sep 2, Sep 1 2026) and a confirmed recurring column, 'The Week's 10 Biggest Funding Rounds'. Honest yield for founder outreach: LOW. By construction, the recurring column covers the ten BIGGEST rounds of the week, which is the opposite of a sub-50-person target. There is no free daily small-round list on this page. Use it for market context, and use the underlying Crunchbase company profile pages (free tier) as a founder-name lookup, not as the discovery channel."
+    },
+    {
+      "priority": 11,
+      "name": "a16z portfolio jobs (Consider-powered)",
+      "url": "https://jobs.a16z.com/jobs",
+      "apiEndpoint": "",
+      "howToUse": "Set Company Stage to the earliest option and Posted to the last 30 days, then read the employee-count band on each card and discard anything over ~50. Use it as a cheap way to find a16z's small and recently-funded portfolio companies, then leave the board and go to the founder. Every eligibility verdict must come from the company's own posting, not from this card — treat the 'Remote options' checkbox as a search convenience with zero evidentiary weight.",
+      "observedHealth": "VERIFIED THIS SESSION. Fetched OK. Filters: Roles, Location, Company Stage, Industry, Internships-only, Remote-options, Salary, Posted-date. Crucially it DOES display employee-count bands on the cards — I saw '5,000-10,000 employees' and '1,000-5,000 employees', which lets you size-filter, and I saw location values 'India - Remote' and 'Australia - Remote' on Revolut listings, so India-remote roles do surface. But the same evidence shows the board is dominated by large portfolio companies, which is the wrong end for founder outreach. And an aggregator that ingests ATS location strings is exactly where 'Remote' silently means US-remote. I could not read the URL query-parameter names."
+    },
+    {
+      "priority": 12,
+      "name": "Sequoia portfolio jobs (Consider-powered)",
+      "url": "https://jobs.sequoiacap.com/jobs",
+      "apiEndpoint": "",
+      "howToUse": "Use the Skills filter for 'Flutter', 'Kotlin', 'React Native', 'TypeScript' and set Company stage to seed/early. Open each surviving company's own site to establish team size. As with all Consider/Getro boards, re-verify eligibility on the real posting before recording anything.",
+      "observedHealth": "VERIFIED THIS SESSION. Fetched OK; footer confirms 'Powered by Consider'. Filters: Roles, Skills, Location, Company stage, Industry, plus Internships-only / Remote-options / All-jobs / Posted checkboxes. Unlike the a16z board I could NOT confirm any headcount display, which makes size-filtering manual. Same structural weakness as a16z: heavy on large portfolio companies, and aggregated location strings. Modest yield for this channel; keep it because the 'Company stage' + 'Skills' combination occasionally surfaces a seed-stage mobile role you will not see elsewhere."
+    },
+    {
+      "priority": 13,
+      "name": "Index Ventures startup jobs / Accel jobs",
+      "url": "https://www.indexventures.com/startup-jobs",
+      "apiEndpoint": "",
+      "howToUse": "Open once and evaluate before investing in it. If the board shows funding stage or headcount and lets you sort by posted date, keep it in the weekly rotation at the same priority as the Sequoia board; if it does not, drop it. Do not add either URL to an automated scraper until a human has confirmed the page loads and the filter parameters are what they appear to be.",
+      "observedHealth": "NOT VERIFIED — this URL and https://jobs.accel.com/jobs both came from search-result text only; I did not fetch either within budget, so treat both as unconfirmed until Dev opens them. If they behave like the other VC boards, expect the same profile: broad portfolio coverage, aggregated ATS location strings, weak country tagging, and a skew toward larger companies. Listed for completeness at the bottom of the tier, not as a recommendation."
+    },
+    {
+      "priority": 14,
+      "name": "Hunter.io — email pattern discovery and verification (utility, not a source of companies)",
+      "url": "https://hunter.io/email-verifier",
+      "apiEndpoint": "",
+      "howToUse": "Two-step, always in this order. (1) Domain Search on the company's own domain to learn the company's ACTUAL pattern (first@, first.last@, f.last@) before guessing anything. (2) Email Verifier on the one candidate address, and only send if it returns deliverable/valid. If the result is 'accept-all'/catch-all, the verifier has told you nothing — do NOT send; use the site contact form, the founder's public X/GitHub, or a LinkedIn message instead. Record verifiedOn (date) and verifiedResult against the row. The free tier is per-month, so spend it on companies you have already decided to write to.",
+      "observedHealth": "VERIFIED THIS SESSION. The Email Verifier page confirms it checks whether an address exists and can receive mail (syntax, domain, server response, disposable/spam-trap flags), and states a free plan of 100 verifications per month with no card required. Companion tools confirmed on-page: Domain Search (https://hunter.io/domain-search), Email Finder (https://hunter.io/email-finder), Bulk verifier and a Google Sheets add-on. 100/month is enough for this channel if Dev is sending 10-15 notes a week. This finds nobody for you — it only turns a guess into a fact or kills it."
+    }
+  ],
+  "playbook": "See the structured notes field above."
+}

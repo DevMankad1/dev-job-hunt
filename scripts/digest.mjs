@@ -27,6 +27,12 @@ const jobs = rd('data/jobs.raw.json');
 const profile = rd('profile.json');
 const matches = jobs.matches || [];
 
+const CHANNELS = [
+  { id: 'remote-global', label: 'Remote — global', blurb: 'Non-Indian companies that will hire you where you live. Highest ceiling: USD 30k ≈ 25 LPA, ~2.8x your current. Verify India eligibility on the posting itself — a board\'s country tag is not evidence.' },
+  { id: 'india',         label: 'India', blurb: 'Indian employers and India-located roles.' },
+  { id: null,            label: 'Unconfirmed location', blurb: 'Kept rather than assumed. Check the posting before spending time.' },
+];
+
 const LANES = [
   { id: 'ai', label: 'AI / Agentic + Forward Deployed', color: '#6d28d9', bg: '#f5f3ff',
     test: (m) => ['ai-agent-engineer', 'llm-app-engineer', 'forward-deployed-engineer', 'fullstack-ai'].includes(m.archetype) },
@@ -48,6 +54,13 @@ function bucket(list) {
     lane.rows.push(m);
   }
   return out.filter((l) => l.rows.length);
+}
+
+/** Split a list by channel, in channel priority order, dropping empties. */
+function byChannel(list) {
+  return CHANNELS
+    .map((c) => ({ ...c, rows: list.filter((m) => (m.channel ?? null) === c.id) }))
+    .filter((c) => c.rows.length);
 }
 
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
@@ -88,8 +101,10 @@ function rowHtml(m, color) {
       ${esc(m.title)}
     </div>
     <div style="font:13px/1.5 -apple-system,Segoe UI,Roboto,sans-serif;color:#374151;margin-top:2px;">
-      <strong>${esc(m.company)}</strong> · ${esc(m.location || 'location not stated')} · ${esc(freshness(m.postedAt))}
+      <strong>${esc(m.company)}</strong> · ${esc(m.location || 'location not stated')} · ${esc(m.freshnessLabel || freshness(m.postedAt))}
     </div>
+    ${m.eligibility === 'unconfirmed' ? `<div style="font:12px/1.5 -apple-system,Segoe UI,Roboto,sans-serif;color:#b45309;margin-top:3px;">Unconfirmed location — ${esc(m.eligibilityReason || '')}</div>` : ''}
+    ${m.seniorityAsked && m.seniorityScore < 1 ? `<div style="font:12px/1.5 -apple-system,Segoe UI,Roboto,sans-serif;color:#b45309;margin-top:3px;">Stretch — asks ${esc(String(m.seniorityAsked))}+ years</div>` : ''}
     <div style="font:12px/1.5 -apple-system,Segoe UI,Roboto,sans-serif;color:#6b7280;margin-top:3px;">
       ${esc(why)}
     </div>
@@ -118,8 +133,9 @@ function sectionHtml(lane, flaggedSection = false) {
   </div>`;
 }
 
+const globalCount = clean.filter((m) => m.channel === 'remote-global').length;
 const subject = clean.length
-  ? `${clean.length} new match${clean.length === 1 ? '' : 'es'}${flagged.length ? ` (+${flagged.length} to review)` : ''} — ${clean.slice(0, 2).map((m) => m.company).join(', ')}${clean.length > 2 ? '…' : ''}`
+  ? `${clean.length} new match${clean.length === 1 ? '' : 'es'}${globalCount ? ` · ${globalCount} remote-global` : ''}${flagged.length ? ` (+${flagged.length} to review)` : ''} — ${clean.slice(0, 2).map((m) => m.company).join(', ')}${clean.length > 2 ? '…' : ''}`
   : `${flagged.length} posting${flagged.length === 1 ? '' : 's'} to review`;
 
 const html = `
@@ -132,13 +148,27 @@ const html = `
     </div>
   </div>
 
-  ${bucket(clean).map((l) => sectionHtml(l)).join('')}
-  ${flagged.length ? bucket(flagged).map((l) => sectionHtml(l, true)).join('') : ''}
+  ${byChannel(clean).map((ch) => `
+    <div style="margin:0 0 8px;padding:10px 0 0;border-top:2px solid #111827;">
+      <div style="font:700 15px/1.3 -apple-system,Segoe UI,Roboto,sans-serif;color:#111827;">${esc(ch.label)}
+        <span style="font-weight:400;color:#6b7280;font-size:13px;">· ${ch.rows.length}</span></div>
+      <div style="font:12.5px/1.55 -apple-system,Segoe UI,Roboto,sans-serif;color:#6b7280;margin:3px 0 12px;max-width:62ch;">${esc(ch.blurb)}</div>
+      ${bucket(ch.rows).map((l) => sectionHtml(l)).join('')}
+    </div>`).join('')}
+  ${flagged.length ? `
+    <div style="margin:18px 0 8px;padding:10px 0 0;border-top:2px solid #111827;">
+      <div style="font:700 15px/1.3 -apple-system,Segoe UI,Roboto,sans-serif;color:#111827;">Needs your judgement
+        <span style="font-weight:400;color:#6b7280;font-size:13px;">· ${flagged.length}</span></div>
+      ${bucket(flagged).map((l) => sectionHtml(l, true)).join('')}
+    </div>` : ''}
 
   <div style="margin-top:26px;padding-top:14px;border-top:1px solid #e5e7eb;font:12px/1.6 -apple-system,Segoe UI,Roboto,sans-serif;color:#6b7280;">
     <strong style="color:#374151;">To tailor your resume for any of these:</strong><br>
     <code style="background:#f3f4f6;padding:2px 5px;border-radius:3px;">node scripts/tailor.mjs --url &lt;JD link&gt; --company "X" --title "Y"</code><br><br>
-    Salary bands are always estimates unless the JD states a number — never treat one as a reason to skip.
+    Ranked newest-first: a 70% fit posted three hours ago beats a 90% fit posted six days ago.
+    Salary is always an estimate unless the JD states a number — never a reason to skip.<br><br>
+    Full tracker: <code style="background:#f3f4f6;padding:2px 5px;border-radius:3px;">reports/tracker.xlsx</code> ·
+    already-sent ledger: <code style="background:#f3f4f6;padding:2px 5px;border-radius:3px;">state/sent-log.md</code><br>
     Nothing here was applied to automatically; every application is your own deliberate action.
   </div>
 </div>`.trim();
@@ -152,14 +182,17 @@ fs.writeFileSync(path.join(ROOT, 'reports/latest.html'), html);
 
 const mdLines = [`# Job matches — ${new Date().toISOString().slice(0, 10)}`, '',
   `${jobs.stats.boards} boards · ${jobs.stats.rawJobs} postings scanned · ${matches.length} matched`, ''];
-for (const lane of bucket(clean)) {
+for (const ch of byChannel(clean)) {
+ mdLines.push(`# ${ch.label} — ${ch.rows.length}`, '', ch.blurb, '');
+ for (const lane of bucket(ch.rows)) {
   mdLines.push(`## ${lane.label}`, '');
   for (const m of lane.rows) {
-    mdLines.push(`- **${m.company} — ${m.title}** · ${m.location || '?'} · ${freshness(m.postedAt)}`);
+    mdLines.push(`- **${m.company} — ${m.title}** · ${m.location || '?'} · ${m.freshnessLabel || freshness(m.postedAt)}`);
     mdLines.push(`  - ${m.url}`);
     mdLines.push(`  - tailor: \`node scripts/tailor.mjs --url "${m.url}" --company "${m.company}" --title "${m.title}"\``);
   }
   mdLines.push('');
+ }
 }
 if (flagged.length) {
   mdLines.push('## Needs your judgement', '');

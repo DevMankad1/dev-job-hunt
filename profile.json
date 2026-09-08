@@ -4,7 +4,6 @@
     "purpose": "Targeting source of truth. scan.mjs, match.mjs, tailor.mjs and both cloud routines read this. Change targeting HERE, then push.",
     "lastUpdated": "2026-09-08"
   },
-
   "identity": {
     "name": "Dev Mankad",
     "email": "devmankad12@gmail.com",
@@ -17,30 +16,57 @@
     "portfolio": "",
     "_linksNote": "TODO(Dev): fill linkedin + github. Both are missing from the resume and both materially matter for AI/agentic roles, where a public repo is often the strongest signal you can send."
   },
-
   "experience": {
     "totalYears": 2.7,
     "fullTimeSince": "2024-01",
     "currentEmployer": "Gateway Group of Companies",
     "currentTitle": "Software Engineer",
-    "levelLabels": ["SDE-2", "Software Engineer II", "Software Engineer", "Engineer II", "Mid-level", "SDE 2"],
+    "levelLabels": [
+      "SDE-2",
+      "Software Engineer II",
+      "Software Engineer",
+      "Engineer II",
+      "Mid-level",
+      "SDE 2"
+    ],
     "seniorityNote": "2.7 years as of Sep 2026. APPLY to: 1-4 yr, 2-5 yr, 2-4 yr, SDE-2, Software Engineer II, mid-level. STRETCH (apply anyway if the JD is otherwise a strong match — Indian JDs routinely over-state the number): 3-6 yr. SKIP: 5+, 6+, 8+ minimum, Senior/Staff/Principal/Lead/Architect in the title, or any role requiring people management. For AI/agent roles specifically the field is young enough that '3-5 years' often means 'has actually shipped agents' — Dev qualifies on substance, so apply."
   },
-
   "targetLanes": [
     {
       "id": "ai-agentic",
       "label": "AI / Agentic Engineer",
       "priority": 1,
       "rationale": "Dev's scarcest, highest-leverage asset. He has genuinely operated multi-agent systems (Claude Code skills, MCP servers, BMad, agent loops) in a production delivery pipeline — that is rare at any level and very rare at 2.7 years. Highest comp ceiling of the three lanes.",
-      "titles": ["AI Engineer", "AI Agent Engineer", "Agent Engineer", "Applied AI Engineer", "LLM Engineer", "GenAI Engineer", "AI Software Engineer", "AI Platform Engineer", "AI Automation Engineer", "Member of Technical Staff"]
+      "titles": [
+        "AI Engineer",
+        "AI Agent Engineer",
+        "Agent Engineer",
+        "Applied AI Engineer",
+        "LLM Engineer",
+        "GenAI Engineer",
+        "AI Software Engineer",
+        "AI Platform Engineer",
+        "AI Automation Engineer",
+        "Member of Technical Staff"
+      ]
     },
     {
       "id": "fde",
       "label": "Forward Deployed Engineer",
       "priority": 1,
       "rationale": "Direct hit: client-facing delivery with Norway/Germany/France teams, full-stack breadth, regulated-domain discipline, and agent tooling. FDE explicitly rewards the generalist-who-ships-with-the-customer profile.",
-      "titles": ["Forward Deployed Engineer", "Forward Deployed Software Engineer", "FDE", "Solutions Engineer", "Solutions Architect", "Deployment Engineer", "Implementation Engineer", "Customer Engineer", "Delivery Engineer", "Field Engineer"],
+      "titles": [
+        "Forward Deployed Engineer",
+        "Forward Deployed Software Engineer",
+        "FDE",
+        "Solutions Engineer",
+        "Solutions Architect",
+        "Deployment Engineer",
+        "Implementation Engineer",
+        "Customer Engineer",
+        "Delivery Engineer",
+        "Field Engineer"
+      ],
       "judgeFromJdBody": "Read the JD body before trusting the title. GOOD: builds software with/for customers, writes production code, integrations, deploys, technical depth expected. SKIP: pure pre-sales, quota-carrying, demo-only, account management, or a support/L2 role wearing an engineering title."
     },
     {
@@ -48,51 +74,108 @@
       "label": "Mobile — Flutter / KMP / cross-platform",
       "priority": 2,
       "rationale": "Deepest hands-on track record: 2.7 yrs shipping production Flutter and KMP/SwiftUI to the App Store and Play Store, including BLE/IoT and a DiGA/PECAN-certified app. Most reliable volume of interviews.",
-      "titles": ["Flutter Developer", "Flutter Engineer", "Mobile Engineer", "Mobile Application Developer", "Android Engineer", "Android Developer", "Kotlin Developer", "KMP Engineer", "Kotlin Multiplatform Engineer", "Cross-Platform Engineer", "React Native Developer", "iOS Engineer", "Software Engineer - Mobile"]
+      "titles": [
+        "Flutter Developer",
+        "Flutter Engineer",
+        "Mobile Engineer",
+        "Mobile Application Developer",
+        "Android Engineer",
+        "Android Developer",
+        "Kotlin Developer",
+        "KMP Engineer",
+        "Kotlin Multiplatform Engineer",
+        "Cross-Platform Engineer",
+        "React Native Developer",
+        "iOS Engineer",
+        "Software Engineer - Mobile"
+      ]
     },
     {
       "id": "mern",
       "label": "Full-stack — MERN only",
       "priority": 3,
       "rationale": "React + Node + TypeScript are real and on the resume. Treated as the third lane: broadest volume, lowest differentiation, and one honest gap (MongoDB) — see resume-content.json doNotClaim.",
-      "titles": ["Full Stack Developer", "Full Stack Engineer", "MERN Stack Developer", "MERN Developer", "Software Engineer - Full Stack", "Node.js Developer", "React Developer", "Frontend Engineer", "Backend Engineer - Node", "Javascript Engineer", "Typescript Engineer"],
+      "titles": [
+        "Full Stack Developer",
+        "Full Stack Engineer",
+        "MERN Stack Developer",
+        "MERN Developer",
+        "Software Engineer - Full Stack",
+        "Node.js Developer",
+        "React Developer",
+        "Frontend Engineer",
+        "Backend Engineer - Node",
+        "Javascript Engineer",
+        "Typescript Engineer"
+      ],
       "constraint": "MERN ONLY. Do NOT surface Java, .NET, PHP, Golang, Django-first, or Rails-first full-stack roles. Django and Rails stay on the resume as delivered facts, but they are not targets."
     }
   ],
-
   "excludedLanes": [
-    { "id": "devops-sre", "reason": "Dev explicitly de-scoped this on 2026-09-08. AWS CCP + Azure Fundamentals + Fastlane/GitHub Actions and two cloud internships stay on the resume as supporting facts, but no DevOps/SRE/Platform/Cloud-Engineer roles are targeted." },
-    { "id": "data-ml",    "reason": "No ML/data-science background. Applied-AI product engineering only — not model training, MLOps, or data engineering." },
-    { "id": "qa-support", "reason": "Not a target: QA/automation-testing-only, L1/L2 support, or manual-testing roles." }
+    {
+      "id": "devops-sre",
+      "reason": "Dev explicitly de-scoped this on 2026-09-08. AWS CCP + Azure Fundamentals + Fastlane/GitHub Actions and two cloud internships stay on the resume as supporting facts, but no DevOps/SRE/Platform/Cloud-Engineer roles are targeted."
+    },
+    {
+      "id": "data-ml",
+      "reason": "No ML/data-science background. Applied-AI product engineering only — not model training, MLOps, or data engineering."
+    },
+    {
+      "id": "qa-support",
+      "reason": "Not a target: QA/automation-testing-only, L1/L2 support, or manual-testing roles."
+    }
   ],
-
   "locations": {
-    "preferred": ["Ahmedabad", "Gandhinagar", "GIFT City", "Remote"],
-    "willingToRelocate": ["Bengaluru", "Bangalore", "Pune", "Hyderabad", "Mumbai", "Gurugram", "Gurgaon", "Noida", "Delhi", "NCR", "Chennai"],
+    "preferred": [
+      "Ahmedabad",
+      "Gandhinagar",
+      "GIFT City",
+      "Remote"
+    ],
+    "willingToRelocate": [
+      "Bengaluru",
+      "Bangalore",
+      "Pune",
+      "Hyderabad",
+      "Mumbai",
+      "Gurugram",
+      "Gurgaon",
+      "Noida",
+      "Delhi",
+      "NCR",
+      "Chennai"
+    ],
     "remoteOk": true,
     "remoteGlobalOk": true,
     "remoteGlobalNote": "Remote roles for non-India companies are in scope where the company hires from India (direct or via EOR such as Deel / Remote.com / Oyster). Confirm India eligibility on the JD before applying.",
-    "excluded": ["on-site outside India requiring relocation abroad"],
+    "excluded": [
+      "on-site outside India requiring relocation abroad"
+    ],
     "_note": "Overseas / visa-sponsorship is NOT an active channel (Dev chose India metros + Remote on 2026-09-08). The relocation channel is scaffolded but disabled — see data/relocation.json and HANDOFF.md §10 to switch it on."
   },
-
   "compensation": {
     "currentCtcLPA": 8.94,
     "currentCtcExact": 894000,
     "expectedCtcLPA": 12,
-    "expectedCtcRangeLPA": { "min": 11, "max": 12, "statedAs": "11-12+ LPA" },
+    "expectedCtcRangeLPA": {
+      "min": 11,
+      "max": 12,
+      "statedAs": "11-12+ LPA"
+    },
     "_note": "Confirmed by Dev 2026-09-08. Current 8,94,000 (8.94 LPA). Expected 11-12+ LPA.",
     "_marketNote": "Dev's stated expectation is a 1.23-1.34x jump. That is modest for this move: Ahmedabad-to-Bengaluru product-company transitions commonly run 1.6-2.2x, and the AI/agentic lane pays materially above the generalist band (see data/comp-bands.json). Quote 12 as the FLOOR, not the ask, and never volunteer 8.94 before the role's band is on the table.",
-    "targetBandLPA": { "min": 11, "aim": 14, "stretch": 20 },
+    "targetBandLPA": {
+      "min": 11,
+      "aim": 14,
+      "stretch": 20
+    },
     "salaryIsHardFilter": false,
     "salaryRule": "Salary in a digest is ALWAYS marked (estimated) unless the JD states a number. Never used as a hard reject — Indian JDs usually omit comp and the band is only established at the recruiter call."
   },
-
   "availability": {
     "noticePeriodDays": null,
     "_note": "TODO(Dev): fill in your actual notice period. Application forms ask for it constantly and Claude must never guess it."
   },
-
   "scanning": {
     "maxAgeHours": 24,
     "roleRegex": "(flutter|dart|kotlin|kmp|multiplatform|android|swiftui|jetpack compose|react native|mobile (engineer|developer)|cross.?platform|forward.?deployed|solutions engineer|ai engineer|agent(ic)? engineer|applied ai|llm engineer|genai|generative ai|ml engineer.*(product|application)|member of technical staff|full.?stack|mern|react (developer|engineer)|node(\\.?js)? (developer|engineer)|typescript|javascript engineer|software engineer)",
@@ -101,21 +184,91 @@
     "indiaRegex": "(india|bengaluru|bangalore|hyderabad|pune|mumbai|gurugram|gurgaon|noida|delhi|ncr|chennai|ahmedabad|gandhinagar|gift city|kolkata|jaipur|indore|kochi|coimbatore|trivandrum|thiruvananthapuram)",
     "remoteRegex": "(remote|work from home|wfh|distributed|anywhere|home.?based)",
     "foreignRejectRegex": "(united states|usa|u\\.s\\.|united kingdom|\\buk\\b|england|london|manchester|ireland|dublin|canada|toronto|vancouver|san francisco|new york|\\bnyc\\b|california|texas|austin|seattle|washington|boston|chicago|denver|atlanta|cupertino|palo alto|mountain view|sunnyvale|germany|berlin|munich|netherlands|amsterdam|france|paris|spain|madrid|barcelona|portugal|lisbon|poland|warsaw|krakow|czech|prague|sweden|stockholm|denmark|copenhagen|norway|oslo|finland|helsinki|estonia|israel|tel aviv|singapore|japan|tokyo|australia|sydney|melbourne|new zealand|dubai|\\buae\\b|abu dhabi|saudi|qatar|brazil|mexico|argentina|colombia|chile|philippines|manila|vietnam|indonesia|jakarta|malaysia|kuala lumpur|thailand|bangkok|china|shanghai|beijing|hong kong|korea|seoul|taiwan|egypt|nigeria|kenya|south africa|\\bemea\\b|\\bapac\\b|\\blatam\\b|italy|rome|milan|switzerland|zurich|geneva|austria|vienna|belgium|brussels|greece|athens|turkey|istanbul|romania|bucharest|hungary|budapest|bulgaria|sofia|ukraine|russia|moscow|serbia|croatia|slovakia|slovenia|lithuania|latvia|iceland|luxembourg|malta|cyprus|morocco|ghana|tanzania|uganda|peru|uruguay|ecuador|costa rica|panama|bangladesh|pakistan|sri lanka|nepal|cambodia|myanmar|scotland|wales|belfast|birmingham|leeds|glasgow|edinburgh|bristol|oxford|zagreb|tallinn|riga|vilnius)",
-    "_locationRule": "A posting is in scope when its LOCATION FIELD names an India city/country, or it is remote and its location names no foreign market. The JD body is deliberately NOT used for the India test: India-founded companies mention 'India' throughout their JDs, which let San Francisco and London roles through."
+    "_locationRule": "A posting is in scope when its LOCATION FIELD names an India city/country, or it is remote and its location names no foreign market. The JD body is deliberately NOT used for the India test: India-founded companies mention 'India' throughout their JDs, which let San Francisco and London roles through.",
+    "maxAgeDays": 21,
+    "_freshnessNote": "Hard 21-day cutoff, from Ankur Kapuriya's runbook. Ranking is newest-first, match quality second: a 70% fit posted three hours ago beats a 90% fit posted six days ago, because on competitive roles the queue ahead of you matters more than the margin of fit. Override with --maxAgeDays / --rank quality.",
+    "marketplaceRejectRegex": "(micro1|andela|toptal|crossover|turing\\.com|deel talent|gun\\.io|arc\\.dev|lemon\\.io|proxify|revelo|braintrust|upwork|fiverr|freelancer\\.com)",
+    "_marketplaceNote": "Training/gig marketplaces that list their own sourcing roles rather than a real employer's. Ankur flags micro1 specifically as always out of scope regardless of how a listing is titled. Turing is kept as a Tier-A board for visibility, but a listing whose employer IS the marketplace is out of scope — only pursue ones naming a real end client."
   },
-
   "delivery": {
     "digestEmail": "devmankad12@gmail.com",
     "digestOnlyIfMatches": true,
     "digestNote": "No heartbeat email. Silence means zero new matches — that is normal and expected.",
     "timezone": "Asia/Kolkata"
   },
-
   "guardrails": {
     "autoApply": false,
     "autoRegister": false,
     "coldMail": false,
     "autoSubmitForms": false,
     "note": "Discovery, matching, tailoring and reporting only. Every outward-facing action — application submit, profile signup, any email to a third party — is Dev's deliberate manual action, or is drafted, shown to him, and sent only on his explicit in-session go-ahead."
+  },
+  "channels": {
+    "_note": "Two channels run off the same scan. `india` is lane 1 (Dev's primary hunt). `remote-global` is the additive channel merged in from Ankur Kapuriya's runbook — non-Indian companies that will hire someone living in India.",
+    "india": {
+      "enabled": true,
+      "priority": 1,
+      "description": "Indian employers and India-located roles, on-site, hybrid or remote-within-India.",
+      "compBandLPA": {
+        "floor": 11,
+        "aim": 14,
+        "stretch": 20
+      }
+    },
+    "remote-global": {
+      "enabled": true,
+      "priority": 2,
+      "description": "Non-Indian companies hiring someone based in India — direct, contractor, or via an EOR (Deel, Remote.com, Oyster, Velocity Global).",
+      "engagementTypes": [
+        "full-time",
+        "contractor",
+        "EOR"
+      ],
+      "engagementNote": "Contract and EOR work is NOT down-ranked. Ankur treats all three as equal and that is right — a USD contract role can pay multiples of an Indian full-time salary.",
+      "compTargetUSD": {
+        "floor": 20000,
+        "aim": 30000,
+        "stretch": 45000
+      },
+      "compNote": "USD 30k is roughly 25 LPA — about 2.8x Dev's current 8.94 and well above his stated 11-12 expectation. This channel is where the ceiling actually is. Verify India eligibility on the posting itself before investing time.",
+      "eligibilityShapes": {
+        "qualifies": [
+          "Worldwide / anywhere / 'work from anywhere' with no country named",
+          "'Remote, India' or a named Indian city, or 'Remote, APAC' that includes India",
+          "Plain unqualified 'Remote' with no country lock stated"
+        ],
+        "drops": [
+          "'Remote, US/USA/Canada/UK/EU/EMEA' or any single-country or bloc lock",
+          "US-state-scoped remote",
+          "LATAM-only, or any allowlist that excludes India",
+          "A named foreign city (on-site or hybrid)"
+        ],
+        "unconfirmed": "When it cannot be confirmed either way, KEEP it and label it Unconfirmed. Never assume open, never assume closed."
+      },
+      "_tagWarning": "A board's own country tag is not evidence. Himalayas has repeatedly mistagged on-site EU/US roles as 'Worldwide'. Always verify against the actual posting."
+    }
+  },
+  "founderOutreach": {
+    "enabled": true,
+    "_note": "Secondary track from Ankur's runbook: a small, deliberately slow channel that goes around job boards entirely. Research and drafts ONLY — nothing is ever sent by the system.",
+    "targetsPerRun": 4,
+    "targetsPerRunRange": [
+      3,
+      5
+    ],
+    "neverPadToHitTarget": true,
+    "companyFilter": {
+      "fundedWithinMonths": 2,
+      "maxHeadcount": 50,
+      "excludeIndianHQ": false,
+      "_excludeNote": "Ankur excludes Indian-HQ startups because he wants non-Indian remote work. Dev does NOT exclude them — a funded Indian startup is a perfectly good target for his lane 1."
+    },
+    "rules": {
+      "linkedin": "Never fabricated. A founder with no verifiable profile gets the row flagged and left blank.",
+      "email": "A clearly-labelled GUESSED first@domain pattern only. It is never treated as verified. Dev verifies it himself (e.g. Hunter.io) before sending.",
+      "drafts": "One email and one LinkedIn message per company, each carrying a visible note to add one genuine personal observation before sending.",
+      "sending": "NEVER. The system finds and drafts; Dev reviews and sends everything himself."
+    },
+    "dedupeRule": "Founder companies are deduped on COMPANY NAME ALONE — a second role at a company already approached is still the same relationship."
   }
 }

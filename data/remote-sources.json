@@ -1,0 +1,256 @@
+{
+  "_meta": {
+    "purpose": "Source rotation for the REMOTE-GLOBAL channel — checked in priority order every run. Structure and the honesty discipline are from Ankur Kapuriya's runbook; the entries were verified live on 2026-09-08.",
+    "lastUpdated": "2026-09-08",
+    "hardRule": "countryTagQuality is the field that matters most. Where it says 'mistags', the board's own eligibility label is NOT evidence — open the actual posting before treating a role as India-eligible. This was verified, not assumed: Himalayas tagged a Sri Lanka role as US-only, and We Work Remotely marked 23 of 25 sampled jobs 'Anywhere in the World'.",
+    "observedHealthRule": "observedHealth records what runs actually found, not the ideal case. Keep it blunt and keep it current — a source that has gone dry should say so."
+  },
+  "sources": [
+    {
+      "priority": 1,
+      "name": "Y Combinator Jobs (Work at a Startup)",
+      "url": "https://www.ycombinator.com/jobs",
+      "apiEndpoint": "",
+      "searchUrlTemplate": "https://www.ycombinator.com/jobs/role/software-engineer/remote — also /jobs/role/software-engineer with the India location facet; company-level list at https://www.ycombinator.com/companies",
+      "loginRequired": false,
+      "countryTagQuality": "reliable",
+      "lanes": [
+        "AI/Agentic + FDE",
+        "MERN/full-stack TS",
+        "Mobile"
+      ],
+      "observedHealth": "Live and the single best source in this channel. Verified 2026-09-08: listings render publicly without login and carry explicit, machine-readable eligibility strings. Real on-lane hit sitting on the page during the check: Plexe (P25), Forward Deployed Engineer, location string 'IN / Remote (IN)', comp quoted in INR (Rs 1.5M-3M). Other rows on the same page showed honest locks — 'Remote (US)', 'New York, NY, US / Remote (US)', and a LATAM-only allowlist spelled out country-by-country — which is exactly the behaviour you want: YC states the lock instead of laundering it as Worldwide. Downside is volume: YC is a few hundred companies, not a firehose, and the same roles recur week to week.",
+      "howToUse": "Check the /jobs/role/software-engineer/remote page first, then re-run with the India location facet — the two sets do not fully overlap. Read the raw location string on each card, never the 'Remote' badge: 'Remote (IN)' and bare 'Remote' qualify, 'Remote (US)' drops. YC is where 'Forward Deployed Engineer' is a real, common job title rather than a buzzword, so search that exact phrase plus 'Founding Engineer', 'AI Engineer', 'Agent'. Applying goes through workatastartup.com, which needs an account — workatastartup.com/companies returned HTTP 406 to an unauthenticated request, so budget one manual login. Dev should create that account once and keep the profile current, because YC surfaces roles to companies via profile as well as via application."
+    },
+    {
+      "priority": 2,
+      "name": "Hacker News 'Ask HN: Who is hiring?' monthly thread",
+      "url": "https://news.ycombinator.com/item?id=49522897",
+      "apiEndpoint": "https://hn.algolia.com/api/v1/items/<thread_id> (full comment tree) — find the current thread with https://hn.algolia.com/api/v1/search_by_date?query=%22Ask+HN%3A+Who+is+hiring%22&tags=story&hitsPerPage=4",
+      "searchUrlTemplate": "https://hn.algolia.com/api/v1/items/49522897",
+      "loginRequired": false,
+      "countryTagQuality": "reliable",
+      "lanes": [
+        "AI/Agentic + FDE",
+        "MERN/full-stack TS",
+        "Mobile"
+      ],
+      "observedHealth": "Alive and the highest signal-to-noise per post in the whole channel, but small. I pulled the September 2026 thread (id 49522897, posted 2026-09-01) and counted it exactly: 244 top-level posts, 137 mention 'remote', only 17 mention worldwide/anywhere, 5 mention India. Prior months are the same size (Aug 2026: 381 comments, Jul 2026: 425), so this is stable, not decaying. Format is a self-declared one-line header — 'Company | Role | REMOTE (worldwide) | Full-time' — which posters fill in honestly because they are talking to peers, not gaming SEO. Real worldwide posts visible in the Sept thread: We The Flywheel (AI-Native Engineers, REMOTE worldwide, contract 10-40 hrs/wk), CyberAtlas (Software Engineer, REMOTE Worldwide, full-time), Renaissance Philanthropy (Research Engineer, Remote worldwide), ODK (Remote Worldwide, $90-110/hr USD contract). Honest caveats: several 'worldwide' posts are contract/part-time not FTE, EMEA and US locks are common and clearly stated, and roughly 15-20 worldwide posts a month across ALL functions means maybe 3-6 land in Dev's lanes.",
+      "howToUse": "Once a month, on the 1st or 2nd. Pull the thread JSON from the Algolia items endpoint, strip HTML from each top-level child's 'text', then filter case-insensitively for 'worldwide' OR 'anywhere' OR 'india' OR 'any timezone', and separately reject any post whose header contains 'ONSITE', 'US only', 'EMEA', 'EU only', 'NO VISA'. Then hand-read the survivors — there will only be ~15-20, which is a five-minute job. These posts almost always carry a direct founder or hiring-lead email, so they route straight into the recruiter-outreach flow with no ATS in between; that makes them the best conversion-per-application in the rotation even at low volume. Apply within 48 hours of the thread going up."
+    },
+    {
+      "priority": 3,
+      "name": "Himalayas",
+      "url": "https://himalayas.app",
+      "apiEndpoint": "https://himalayas.app/jobs/api?limit=100 (free, no key, no login; returns totalCount, nextCursor and a jobs[] array). Cursor paging is the supported method: pass the returned nextCursor back as ?cursor=. The offset param still works but the API's own 'comments' field says it is deprecated and will be removed.",
+      "searchUrlTemplate": "https://himalayas.app/jobs/countries/india  |  https://himalayas.app/jobs/countries/india/mid-level  |  skill pages such as https://himalayas.app/jobs/flutter",
+      "loginRequired": false,
+      "countryTagQuality": "mistags",
+      "lanes": [
+        "AI/Agentic + FDE",
+        "MERN/full-stack TS",
+        "Mobile"
+      ],
+      "observedHealth": "Biggest usable index in this channel by a wide margin and the only free API that ships structured eligibility data — every job carries locationRestrictions[] and timezoneRestrictions[]. Verified 2026-09-08: totalCount 105,346; the India country page claims 6,682 remote jobs. But the tag is NOT trustworthy and I caught it lying in the first record I sampled: 'SharePoint / Microsoft 365 Consultant - Full Remote' at goPro Consultancy Group, excerpt text reading 'Location: Fort Western Province Sri Lanka', tagged locationRestrictions: ['United States'] with US-only timezone offsets. So the tag is scraped and inferred, not verified. Second problem is composition: in a raw 100-job sample only ONE India-open engineering role appeared (Information Security Engineer - India, Q4 Inc.), the rest were country-locked, mostly ['United States']. Third problem is that the India page is heavily diluted with Indian-domestic and AI-gig-work noise — micro1, mercor 'Music Producer', uvation 'Juniper Network Administrator', BPO-shaped analyst roles — none of which are Dev's lanes and none of which pay in USD.",
+      "howToUse": "Two passes, both needed. Pass A (broad, API): page the firehose with limit=100 + cursor and keep any job where locationRestrictions is EMPTY (treat as Unconfirmed, not as Worldwide) or contains 'India'; drop anything whose array is a single foreign country or a bloc that excludes India. Pass B (targeted, HTML): hit /jobs/countries/india plus the skill pages /jobs/flutter, /jobs/kotlin, /jobs/react-native, /jobs/typescript, /jobs/ai-ml-engineer. Then — and this is non-negotiable given the Sri Lanka case above — open the actual posting on the employer's own site before it counts as India-eligible. The board label alone is not evidence. Filter out micro1, mercor and similar AI-data-labelling marketplaces on sight; they are piecework, not employment, and they pay INR-equivalent rates that would be a step down for Dev."
+    },
+    {
+      "priority": 4,
+      "name": "We Work Remotely",
+      "url": "https://weworkremotely.com",
+      "apiEndpoint": "https://weworkremotely.com/categories/remote-programming-jobs.rss (free RSS, no key; a User-Agent header is required or you may be blocked). Sibling feeds exist per category, e.g. /categories/remote-full-stack-programming-jobs.rss and /categories/remote-front-end-programming-jobs.rss",
+      "searchUrlTemplate": "https://weworkremotely.com/remote-jobs/search?term=flutter&region=Anywhere+in+the+World",
+      "loginRequired": false,
+      "countryTagQuality": "mistags",
+      "lanes": [
+        "MERN/full-stack TS",
+        "AI/Agentic + FDE",
+        "Mobile"
+      ],
+      "observedHealth": "Alive, well-known, decent brand-name employers, but the region tag is poster-selected and I watched it fail immediately. Verified 2026-09-08: the programming RSS returned 25 items of which 23 were tagged <region>Anywhere in the World</region>, 1 North America Only, 1 Asia Only. A 23-of-25 'anywhere' rate is not credible on its face, and the very first item proved it — Zeta Global 'Senior Product Designer, AI', region 'Anywhere in the World', description body opening with 'Headquarters: Remote - United States'. Posters pick the widest region so more people see the ad; the actual restriction lives in the body text. Volume is also modest — a single category feed is 25 items deep, so this is a scan-often, low-yield source, not a bulk one. Separate annoyance: WWR is a paid board for employers, which keeps out spam but also keeps out most seed-stage startups.",
+      "howToUse": "Poll the programming and full-stack RSS feeds daily (cheap — 25 items each) and diff against yesterday. Treat <region>Anywhere in the World</region> as Unconfirmed, never as qualified. For every candidate, regex the <description> body for 'United States', 'US-based', 'must reside', 'work authorization', 'EU', 'timezone' before scoring it — the truth is always in the body, never in the region tag. Mobile yield here is genuinely poor (WWR skews web/backend/design), so run this one primarily for the MERN and AI lanes."
+    },
+    {
+      "priority": 5,
+      "name": "RemoteOK",
+      "url": "https://remoteok.com",
+      "apiEndpoint": "https://remoteok.com/api (free JSON, no key, no login — but WebFetch gets HTTP 403; you MUST send a normal browser User-Agent header, which returns 200). Element [0] of the array is a legal notice, not a job — skip it. Their ToS requires a do-follow backlink if you republish.",
+      "searchUrlTemplate": "https://remoteok.com/remote-flutter-jobs  |  https://remoteok.com/remote-react-native-jobs  |  https://remoteok.com/remote-typescript-jobs",
+      "loginRequired": false,
+      "countryTagQuality": "none",
+      "lanes": [
+        "MERN/full-stack TS",
+        "AI/Agentic + FDE"
+      ],
+      "observedHealth": "The API works and is generous — full description, tags, salary_min/max, apply_url — but the country field is effectively useless. Verified 2026-09-08: of the first five job records, four had location as an empty string and the fifth was 'Ipojuca, ' (a truncated Brazilian city with a trailing comma). You cannot filter eligibility on this field at all; it is absent, not merely wrong, which is why I graded it 'none' rather than 'mistags'. Content mix is also degraded for Dev's purposes — the top of the feed on the day I checked was 'AI Response Analyst' (iMerit, AI-output rating piecework), 'Junior Crypto Analyst & Trader', 'Customer Support & Success Specialist'. RemoteOK has drifted a long way toward crypto, growth-marketing and AI-labelling gig posts. Real senior engineering roles are still in there, but you are panning.",
+      "howToUse": "Pull the API with a browser UA, drop element [0], then filter on the tags[] array rather than location — tags like 'flutter', 'react native', 'typescript', 'node', 'ai' are populated and reliable. Because there is no usable country field, eligibility has to come from a regex over the description HTML: search for 'worldwide', 'anywhere', 'any timezone', 'India' as positives and 'US only', 'must be located', 'EU', 'EMEA', 'authorized to work in the United States' as kills; anything matching neither is Unconfirmed and stays in the pile. Hard-exclude crypto/trading and AI-labelling posts up front or they will dominate every run. Also worth noting the salary_min/salary_max fields are frequently auto-inflated marketing numbers — do not treat them as an offer signal."
+    },
+    {
+      "priority": 6,
+      "name": "NoDesk",
+      "url": "https://nodesk.co/remote-jobs/",
+      "apiEndpoint": "https://nodesk.co/remote-jobs/index.xml (free RSS, no key, no login, 200 OK with a browser UA)",
+      "searchUrlTemplate": "https://nodesk.co/remote-jobs/ (browse; category and tag sub-paths exist off this root)",
+      "loginRequired": false,
+      "countryTagQuality": "none",
+      "lanes": [
+        "MERN/full-stack TS",
+        "AI/Agentic + FDE"
+      ],
+      "observedHealth": "Genuinely alive and freshly curated — verified 2026-09-08, the feed's newest items were dated 07 Sep 2026 with a steady drip back through 04-05 Sep. Employer quality is a notch above the aggregators: GitLab, Hipcamp, Hyperscience, Gruntwork, Graphy, Hubstaff. That curation is the whole value proposition here. Two real limits though. First, the RSS carries no country or region element at all — titles are bare 'Role at Company' strings, so eligibility has to be resolved by opening each posting. Second, volume is small and function-mixed; in the newest ten items only about three were engineering (Staff DevOps Engineer, Golang Contractor, Senior Backend Engineer TS/Node), the rest were product, security, CS and sales. Zero mobile roles appeared in the sample.",
+      "howToUse": "Poll the RSS every 2-3 days and diff on <title>. It is small enough that you can eyeball the whole delta. Because there is no country field, everything starts as Unconfirmed — click through to the employer posting to resolve. The Graphy 'Senior Backend Engineer (TS/Node)' shape is the archetype of what to look for here. Do not run this one hoping for Flutter/KMP; treat it as a MERN and AI-lane source only."
+    },
+    {
+      "priority": 7,
+      "name": "Wellfound (formerly AngelList Talent)",
+      "url": "https://wellfound.com/jobs",
+      "apiEndpoint": "",
+      "searchUrlTemplate": "https://wellfound.com/role/r/software-engineer  |  https://wellfound.com/role/l/software-engineer/<city>  |  https://wellfound.com/location/india  |  paginate with ?page=N",
+      "loginRequired": true,
+      "countryTagQuality": "mistags",
+      "lanes": [
+        "AI/Agentic + FDE",
+        "MERN/full-stack TS"
+      ],
+      "observedHealth": "Browsable but half-crippled for this channel. Verified 2026-09-08: /role/r/software-engineer returns 200 and renders real listings with company, title, salary and location to a logged-out visitor, so reading is free — but applying, messaging founders and saving searches all require an account, and the useful filters live behind it. Listings do carry a 'Remote only' flag plus a location phrase ('Remote only - Everywhere', 'Remote only - Costa Rica+2'), and the '+2' style truncation means the real allowlist is hidden until you open the card, which is exactly how a US-locked role reads as open at list level. The deeper problem is composition: Wellfound is overwhelmingly US startups, most 'remote' there means remote-within-the-US, and the platform has spent years pushing employers toward US-timezone hiring. There is an India section, but it is mostly onsite Bangalore/Gurgaon roles at Indian startups — the domestic channel, not this one.",
+      "howToUse": "Worth one account and a saved search, not a daily scan. Read logged-out first to triage; only log in to apply. Treat 'Remote only - Everywhere' as Unconfirmed until you open the card and read the full location list — the '+N' truncation is where the US lock hides. Best use is not the board at all but the company graph: find seed/Series-A startups already hiring remote engineers, then go apply on their own Greenhouse/Lever/Ashby board directly, which converts far better than a Wellfound quick-apply."
+    },
+    {
+      "priority": 8,
+      "name": "RemoteRocketship",
+      "url": "https://www.remoterocketship.com/",
+      "apiEndpoint": "",
+      "searchUrlTemplate": "https://www.remoterocketship.com/?page=1&sort=DateAdded&locations=India&jobTitle=Software+Engineer",
+      "loginRequired": true,
+      "countryTagQuality": "mistags",
+      "lanes": [
+        "AI/Agentic + FDE",
+        "MERN/full-stack TS",
+        "Mobile"
+      ],
+      "observedHealth": "Actively hostile to automation and paywalled — plan around it rather than through it. Verified 2026-09-08: both a plain curl and a WebFetch of the site root returned HTTP 403, so there is no scriptable path and no public API; anything scanned here has to be done by hand in a real browser. On pricing I could only find third-party review sites (all affiliate-shaped, low trust) and they contradict each other badly — quoted figures ranged across $10, $14.95, $21/mo, $42/quarter, $84/yr and $49.95, so treat the exact number as unverified; what they agree on is that job titles are visible free while full descriptions, apply links and the good filters are behind the wall. The catalogue is AI-scraped from company career pages at scale (roughly 5-15k live listings by those same reviews), which means broad coverage but inferred, unvalidated country tags — same failure mode as Himalayas, without the free API to check it against.",
+      "howToUse": "Manual browser only. The locations=India + sort=DateAdded URL pattern above is the right entry point and the filters do work. Use it as a discovery layer, not an application layer: read the free title list, identify which COMPANIES are hiring India-eligible remote engineers, then go find that same posting on the employer's own ATS and apply there for free. Do not pay for this before the free rotation (YC, HN, Himalayas) has been run for a month — its aggregated inventory overlaps them heavily."
+    },
+    {
+      "priority": 9,
+      "name": "Working Nomads",
+      "url": "https://www.workingnomads.com/jobs",
+      "apiEndpoint": "https://www.workingnomads.com/api/exposed_jobs/ (free, no key, no login, 200 OK)",
+      "searchUrlTemplate": "https://www.workingnomads.com/remote-development-jobs",
+      "loginRequired": false,
+      "countryTagQuality": "reliable",
+      "lanes": [
+        "MERN/full-stack TS"
+      ],
+      "observedHealth": "Small and Europe-locked, but honest about it. Verified 2026-09-08: the exposed_jobs endpoint returned exactly 49 records — that is a recent-slice teaser, not the full board, so the API alone will never give you coverage. The location field is a free-text string but it is genuinely informative and unusually candid: 'USA, Canada or UK only', 'Europe, LATAM, APAC, the U.S., Canada', 'Time zone: CET (+/- 3 hours)'. I am grading the tag reliable because it states real constraints instead of defaulting to Worldwide. Problem is what those constraints say — six of the first eight development roles were CET +/- 3 hours, i.e. structurally closed to IST, and the single newest item was 'Video Creator (100% remote)' brand-content gig spam. Net: a thin, CET-centric feed with some influencer-marketing noise mixed in.",
+      "howToUse": "Cheap enough to keep in the rotation as a 30-second API poll, filtered to category_name == 'Development'. Auto-kill anything whose location contains 'CET', 'only', 'USA', 'Canada' or 'UK'; what survives is a handful per week. Note the one nuance worth knowing: 'Europe, LATAM, APAC, the U.S., Canada' DOES include India via APAC, so 'APAC' is a positive keyword, not a neutral one. Do not expect mobile or agentic roles here."
+    },
+    {
+      "priority": 10,
+      "name": "Jobspresso",
+      "url": "https://jobspresso.co/remote-work/",
+      "apiEndpoint": "https://jobspresso.co/?feed=job_feed (WP Job Manager RSS, free, no login, 200 OK)",
+      "searchUrlTemplate": "https://jobspresso.co/?s=flutter&post_type=job_listing",
+      "loginRequired": false,
+      "countryTagQuality": "",
+      "lanes": [
+        "MERN/full-stack TS"
+      ],
+      "observedHealth": "Reachable but I only confirmed the plumbing, not the goods — the feed returned 200 with a valid WP Job Manager RSS envelope, and I did not spend budget parsing its items, so treat volume, freshness and tag quality as UNVERIFIED this run rather than as vouched-for. Prior shape of this board is hand-curated, low volume, North-America-leaning, and it does not publish a structured country field (WP Job Manager exposes a free-text job_listing location). Include it, but at the bottom, and confirm it earns its slot on the first real run.",
+      "howToUse": "Poll the job_feed RSS once a week and diff titles. Because there is no reliable location element, every hit is Unconfirmed until the posting itself is read. Verify on first use: if a week's delta yields zero India-or-worldwide engineering roles twice in a row, drop it from the rotation entirely."
+    },
+    {
+      "priority": 11,
+      "name": "javascript.jobs (formerly JSRemotely)",
+      "url": "https://javascript.jobs/remote",
+      "apiEndpoint": "",
+      "searchUrlTemplate": "https://javascript.jobs/jobs?is_remote=1  |  https://javascript.jobs/remote",
+      "loginRequired": false,
+      "countryTagQuality": "",
+      "lanes": [
+        "MERN/full-stack TS"
+      ],
+      "observedHealth": "Rebranded and still standing, but I could not confirm it is actually fresh. Verified 2026-09-08: jsremotely.com redirects to javascript.jobs, which returns 200 and serves a working Laravel/Tailwind board with a real 'Remote Job' filter checkbox and 'Remote' badges on cards. What I could NOT confirm within budget is posting dates or listing count — nothing in the served HTML exposed a date, so freshness is UNVERIFIED. Marketing copy name-drops OpenAI/Google/DeepMind, which on a niche board of this size is usually aggregated scrape rather than direct relationships. Single-language niche boards like this have a long history of quietly going stale while the site keeps rendering, so verify before trusting.",
+      "howToUse": "On the first run, open https://javascript.jobs/remote and check the posted dates on the top ten cards. If the newest is more than ~3 weeks old, delete this entry from the rotation — a stale JS board is worse than no board because it wastes a slot every day. If it is fresh, it only ever serves the MERN lane; it has no mobile or agentic inventory by definition."
+    },
+    {
+      "priority": 12,
+      "name": "Welcome to the Jungle (absorbed Otta)",
+      "url": "https://www.welcometothejungle.com/en/jobs",
+      "apiEndpoint": "",
+      "searchUrlTemplate": "https://www.welcometothejungle.com/en/jobs?query=software+engineer&refinementList%5Bremote%5D%5B%5D=fulltime",
+      "loginRequired": true,
+      "countryTagQuality": "",
+      "lanes": [
+        "MERN/full-stack TS"
+      ],
+      "observedHealth": "Wrong geography and gated. Verified 2026-09-08: the jobs URL returns HTTP 202 and what renders to an anonymous visitor is a marketing page pushing 'Create your account in under 2 minutes via LinkedIn or Google' — no actual listings surfaced without signing in, and the site's own copy scopes it to France, the UK and the US. It is a France-first employer-branding platform that bought Otta's matching product; the inventory follows the sales team, and that team does not sell in India. I saw no worldwide or India filter. Note also that Otta's distinctive strength was personalised matching for UK/EU startup roles — that is precisely the inventory Dev cannot take from India.",
+      "howToUse": "Low priority, monthly at most, and only if Dev is willing to make an account. If used, filter to fully-remote and then immediately test whether the employer is EU-entity-only — most French postings here require an existing right to work in the EU and will not engage an EOR for a first hire. Realistically this is a candidate for deletion after one run."
+    },
+    {
+      "priority": 13,
+      "name": "Remotive",
+      "url": "https://remotive.com/remote-jobs/software-dev",
+      "apiEndpoint": "https://remotive.com/api/remote-jobs?category=software-dev (still returns 200 and valid JSON with candidate_required_location, but see health note — it is now a teaser)",
+      "searchUrlTemplate": "https://remotive.com/remote-jobs/software-dev",
+      "loginRequired": false,
+      "countryTagQuality": "reliable",
+      "lanes": [
+        "MERN/full-stack TS"
+      ],
+      "observedHealth": "The API is effectively dead as a source and I want to be blunt about it, because it still LOOKS healthy. Verified 2026-09-08: the software-dev endpoint reports job-count 18 and returns exactly 18 records — and the ?search= parameter is silently ignored, since ?search=flutter returned the identical 18 rows including 'Sales Jedi', 'Freelance Copywriter' and 'Tier III Service Desk Engineer'. So you cannot query it, and the whole category is smaller than a single page of any real board. Of those 18, six were tagged Worldwide and exactly ONE was arguably on-lane (A.Team, 'Senior Independent AI Engineer / Architect', restricted to 'Americas, Europe, Israel' — so not even India-eligible). The candidate_required_location strings themselves are good quality and specific ('Europe, EMEA, UK, Germany, France, European timezones'), which is why I still grade the tag reliable — the tag is fine, there is just almost nothing left to tag. The public HTML board is JS-rendered so it did not yield counts to a plain fetch; it may hold more than 18, but the free API no longer exposes it.",
+      "howToUse": "Keep the API call because it costs one HTTP request and the location strings are trustworthy when they appear — but expect roughly zero on-lane hits and do not build any part of the routine around it. If a run needs to be trimmed for time, cut this one first. Do not pay Remotive for anything on the strength of the free tier."
+    },
+    {
+      "priority": 14,
+      "name": "RemoteWoman",
+      "url": "https://remotewoman.com/",
+      "apiEndpoint": "",
+      "searchUrlTemplate": "https://remotewoman.com/?s=<keyword>",
+      "loginRequired": false,
+      "countryTagQuality": "",
+      "lanes": [],
+      "observedHealth": "Looks abandoned and is also a poor fit. Verified 2026-09-08: the site returns 200, but /feed/ contains only two posts, both from 2019 ('3 Best Ways to Travel the World + Work Remotely', Feb 2019; 'Why did we start RemoteWoman?', Jan 2019), and the homepage's own schema markup gives dateModified 2025-12-04 — nine months stale at time of check. The stack underneath is WordPress plus WooCommerce plus a WPMerchant paywall plugin, i.e. built to sell employer post packages, which is exactly the shape of a board that stopped being maintained. I did not find a live job index within budget, so listing volume is UNVERIFIED. Separately, the board is explicitly framed around placing women in remote roles — it is not a fit for Dev regardless of freshness.",
+      "howToUse": "Do not include in the rotation. It is listed here only so it does not get re-researched next time: dead blog feed since 2019, stale homepage, and an audience focus that does not apply. If it is ever revisited, the only thing worth checking is whether a live /remote-jobs index exists with 2026 dates."
+    },
+    {
+      "priority": 15,
+      "name": "Dice",
+      "url": "https://www.dice.com/jobs",
+      "apiEndpoint": "",
+      "searchUrlTemplate": "https://www.dice.com/jobs?q=software+engineer&location=Remote&filters.isRemote=true",
+      "loginRequired": false,
+      "countryTagQuality": "none",
+      "lanes": [],
+      "observedHealth": "US-domestic staffing noise — exclude. Verified 2026-09-08: the remote software-engineer search returned ~40 listings, essentially all US metros (Maynard MA, Columbia MD, Chicago, St. Louis, Austin), and the employer list was dominated by staffing intermediaries — Randstad Digital, BCforward, Dexian DISYS, TekLeaders, Ledgent Technology, HonorVet — rather than direct employers. One role required active US Secret clearance and US citizenship outright. Postings marked bare 'Remote' were still US-shaped (USD hourly, W2/C2C framing). Dice's business is US contract staffing; roles are almost always W2 or corp-to-corp through a US entity, which structurally cannot employ someone living in India. Country tagging is absent because Dice does not conceive of non-US candidates.",
+      "howToUse": "Do not include. The only theoretical use is intelligence — spotting which US firms are hiring Flutter/KMP contractors — and even that routes better through the staffing-firm outreach channel than through the board. If it is ever opened, an instant kill list is: W2, C2C, clearance, 'must be authorized to work in the US without sponsorship'."
+    },
+    {
+      "priority": 16,
+      "name": "Indeed",
+      "url": "https://www.indeed.com/",
+      "apiEndpoint": "",
+      "searchUrlTemplate": "https://in.indeed.com/jobs?q=flutter&l=Remote&sc=0kf%3Aattr(DSQF7)%3B",
+      "loginRequired": false,
+      "countryTagQuality": "mistags",
+      "lanes": [
+        "MERN/full-stack TS",
+        "Mobile"
+      ],
+      "observedHealth": "Not scanned this run — budget went to boards with better odds — so treat everything here as UNVERIFIED except the structural point, which is decisive on its own. Indeed is country-siloed by design: in.indeed.com serves Indian-domestic postings (that is Dev's other channel, not this one) while indeed.com serves US postings where 'Remote' means remote-within-the-US. There is no cross-border worldwide view, the aggregator ingests the same ATS feeds twice, and the remote attribute is notoriously applied to hybrid and onsite roles. Its public API was retired years ago; the only sanctioned programmatic access is the paid publisher/partner programme.",
+      "howToUse": "Skip for the remote-global channel. If it is ever run, it must be run on in.indeed.com with the remote attribute AND a manual read of each posting's employer entity — and even then it belongs in the India-domestic rotation, not this one. Do not build scraping against it; it is aggressively bot-protected and the terms forbid it."
+    },
+    {
+      "priority": 17,
+      "name": "Daijob",
+      "url": "https://www.daijob.com/en/jobs",
+      "apiEndpoint": "",
+      "searchUrlTemplate": "https://www.daijob.com/en/jobs/search?job_type=remote",
+      "loginRequired": false,
+      "countryTagQuality": "reliable",
+      "lanes": [],
+      "observedHealth": "Exclude — verified wrong-fit, not merely weak. Verified 2026-09-08: Daijob bills itself as Japan's job site for multilinguals and every listing I saw was a Japan-based role. Language requirement on the sampled roles was 'Fluent (JLPT Level 1 or N1)' or 'Native Level' — that is near-native Japanese, which Dev does not have. Even the fully-remote posting was residence-gated: one listing read '100% remote position based in Japan' and then required the candidate to be based in Tokyo to be eligible. Sample employers were Adecco Japan, Crocs Japan G.K, Toon Boom Animation KK. The country tagging is accurate; the answer it accurately gives is 'no'.",
+      "howToUse": "Do not include in the rotation. Japan-resident, Japan-visa and JLPT N1 gates make it structurally inaccessible from India. Listed here purely so it is not re-researched."
+    }
+  ]
+}

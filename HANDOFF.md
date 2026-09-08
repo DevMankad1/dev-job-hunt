@@ -13,6 +13,21 @@ scores them against Dev's real experience, and **automatically rewrites his
 resume for each one**. It never auto-applies, never auto-registers, and never
 emails anyone but Dev.
 
+Built by merging two donated systems, neither of which was written for Dev:
+
+| | Kelvi Manavadaria's handoff | Ankur Kapuriya's runbook |
+|---|---|---|
+| Its target | BFSI DevOps/SRE, India, 25 LPA | Remote AI Engineer, outside India, USD 30k |
+| What was taken | architecture, registries, tiered channels, resume-variant system, apply flow | eligibility shapes, freshness-first ranking, sent-log discipline, source-health honesty, founder track, operating log |
+| What was inverted | targeting rebuilt for Dev's stack (BFSI DevOps → AI/mobile/MERN) | **Indian employers are NOT dropped** — they are Dev's lane 1 |
+
+**Two channels now run off one scan:**
+
+- **`india`** — Indian employers and India-located roles. Lane 1. Band 11–20 LPA.
+- **`remote-global`** — non-Indian companies that will hire someone living in
+  India, direct or via an EOR. USD 30k ≈ 25 LPA, about **2.8x** Dev's current.
+  This is where the ceiling actually is.
+
 Candidate snapshot (source of truth: `profile.json` + `resume/resume-content.json`):
 
 - Software Engineer, 2.7 yrs (since Jan 2024) at Gateway Group, Ahmedabad.
@@ -37,8 +52,11 @@ E:\claude sessions\job hunt\
     ├── ROUTINE.md               spec the cloud routine reads and follows
     ├── APPLY-REFERENCE.md       identity + form answers
     ├── profile.json             targeting source of truth
+    ├── OPERATING-LOG.md          what running it taught us — OVERRIDES the spec
     ├── data/
-    │   ├── companies.json       112 companies, 34 verified Tier-A
+    │   ├── companies.json       134 companies, 45 verified Tier-A
+    │   ├── remote-sources.json  17 remote-global boards, with honest health notes
+    │   ├── founder-channels.json 14 founder-sourcing channels + outreach playbook
     │   ├── keywords.json        12 JD archetypes — drives matching AND tailoring
     │   ├── platforms.json       job boards, 6 tiers
     │   ├── recruiters.json      staffing firms (partial — needs a research pass)
@@ -48,7 +66,7 @@ E:\claude sessions\job hunt\
     │   └── tailored/            generated per application (gitignored)
     ├── scripts/                 scan · tailor · digest · verify_ats
     ├── adapters/ats.mjs         greenhouse/lever/ashby/recruitee/smartrecruiters/workable/workday
-    ├── state/                   seen-urls.json · applications.csv
+    ├── state/                   seen-urls.json · sent-log.md · applications.csv
     ├── templates/               cover letter · outreach intro
     └── reports/                 generated digests
 ```
@@ -105,18 +123,44 @@ exactly what it cut.
 ## 3. The scanner
 
 ```bash
-npm run scan              # last 24h, dedupes, records state
-npm run scan:wide         # last 14 days, ignores state
-node scripts/scan.mjs --loc bengaluru
+npm run scan              # both channels, dedupes, records state
+npm run scan:global       # remote-global only
+npm run scan:india        # India only
+npm run scan:wide         # 14 days, ignores state
+npm run daily             # scan + digest + tracker + ledger, in order
+node scripts/scan.mjs --loc bengaluru --rank quality
 ```
 
-Sweeps 34 verified Tier-A boards → filters role, seniority, stack, location →
-scores each survivor → dedupes against `state/seen-urls.json`.
+### Three screening rules worth knowing
+
+**Eligibility is three shapes, and only three** (`scripts/lib/eligibility.mjs`).
+Qualifies: worldwide with no country named; India named; or plain unqualified
+"Remote". Drops: any single-country or bloc lock, US-state-scoped remote, a named
+foreign city. When it cannot be confirmed either way it is **kept and labelled
+Unconfirmed** — never assumed.
+
+**Freshness beats fit.** Hard 21-day cutoff, ranked newest-first: a 70% fit
+posted three hours ago outranks a 90% fit posted six days ago, because on
+competitive roles the queue ahead of you matters more than the margin of fit.
+`--rank quality` inverts it when triaging a backlog.
+
+**Seniority is a gradient.** Full credit when 1–4 years are asked, zero by 6, a
+stretch in between. A "Senior" title that *also* asks 5+ years rejects; a
+"Senior" title asking ≤4 is usually title inflation and stays as a flagged
+stretch. Director/Staff/Principal/Architect titles hard-reject.
+
+Sweeps **45 verified Tier-A boards** → filters role, seniority, stack and
+eligibility → applies the freshness cutoff → scores each survivor → dedupes.
 
 **Location is judged on the ATS location field, not the JD body.** India-founded
 companies mention "India" throughout their postings, which was letting San
-Francisco and London roles through. `foreignRejectRegex` in `profile.json`
-catches the rest.
+Francisco and London roles through.
+
+**And a board's own country tag is not evidence either.** Verified, not assumed:
+Himalayas tagged a role reading *"Location: Fort, Western Province, Sri Lanka"*
+as US-only, and We Work Remotely marks 23 of 25 jobs "Anywhere in the World".
+`data/remote-sources.json` records `countryTagQuality` per source — check it
+before trusting a label.
 
 ### Keeping the registry honest
 
@@ -129,6 +173,34 @@ answered. **Never hand-set `tier: "A"`** — a guessed slug that 404s silently
 removes a whole employer from every future scan. On the first run 33 of 45
 claimed endpoints were live; the 12 failures were downgraded with a dated note,
 not deleted.
+
+### The two state files, and why there are two
+
+| File | Written | Purpose |
+|---|---|---|
+| `state/seen-urls.json` | at **scan** time | fast dedupe within and across runs |
+| `state/sent-log.md` | after **delivery** | the exact record of what actually went out |
+
+That split is Ankur's discipline and it matters: a run that dies between
+scanning and emailing would otherwise bury those roles forever. The ledger is
+read in full before a run and appended to only once outputs are final.
+
+```bash
+node scripts/ledger.mjs list      # what has gone out
+node scripts/ledger.mjs urls      # feeds scan.mjs --exclude-urls
+node scripts/ledger.mjs commit    # append this run, after delivery
+```
+
+Jobs dedupe on **Company + Title + Link**; founder companies on **company name
+alone**. A near-miss — same company, ambiguous whether it is the same underlying
+opening — is dropped and noted rather than risked as a repeat.
+
+### `OPERATING-LOG.md` overrides everything
+
+The spec says what the system was *designed* to do. `OPERATING-LOG.md` says what
+running it actually *taught* us, and **it wins on any conflict** — including
+against `ROUTINE.md` and the routine prompt. Every trap found so far is recorded
+there with a date and a tag. Read it before changing a filter.
 
 ---
 
@@ -159,6 +231,7 @@ commit state back. **No heartbeat email. Silence means nothing new.**
 | `/apply-assist` | filling a form or writing a cover letter |
 | `/registry-edit` | adding a company, board, or recruiter |
 | `/recruiter-outreach` | drafting a note to a recruiter |
+| `/remote-global` | remote-global roles, USD/EOR work, founder outreach |
 
 ---
 

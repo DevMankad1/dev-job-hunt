@@ -12,7 +12,8 @@
       "smartrecruiters": "api.smartrecruiters.com/v1/companies/<slug>/postings",
       "workable": "apply.workable.com/api/v1/widget/accounts/<slug>?details=true",
       "workday": "<host>/<site> -> wd3.myworkdayjobs.com cxs endpoint"
-    }
+    },
+    "channels": "Rows carry `hqCountry` + `indiaEligible` where known. `indiaEligible` is yes/no/unconfirmed and 'unconfirmed' is a legitimate value — never upgrade it to 'yes' without evidence from the actual posting."
   },
   "companies": [
     {
@@ -83,7 +84,7 @@
       "priority": "medium",
       "note": "Bengaluru office (opened Feb 2026) is weighted to Applied AI / Solutions Architect work, and Dev is a daily power user of Claude Code with custom skills, MCP servers and agent loops - strong story, high hiring bar.",
       "evidence": "job-boards.greenhouse.io/anthropic?offices[]=4051957008 filters to Bangalore roles; anthropic.com/careers/jobs?office=4051957008.",
-      "openRoleCount": 587
+      "openRoleCount": 586
     },
     {
       "name": "OpenAI",
@@ -500,7 +501,7 @@
       "priority": "high",
       "note": "Fintech product co hiring both mobile and Node/React product engineers, so Dev's Kotlin + TypeScript/Node combination is usable in one org.",
       "evidence": "Greenhouse board job-boards.greenhouse.io/razorpaysoftwareprivatelimited plus razorpay.com/careers surfaced in search.",
-      "openRoleCount": 24
+      "openRoleCount": 23
     },
     {
       "name": "Swiggy",
@@ -566,7 +567,7 @@
       "priority": "high",
       "note": "Hires Android engineers on Kotlin/Jetpack/MVVM for a very high-scale shopping app - direct match to Dev's production Android architecture work.",
       "evidence": "Official jobs portal meesho.io/jobs confirmed; search summary cites Meesho Android roles using Kotlin, Jetpack, MVVM in Bengaluru.",
-      "openRoleCount": 47
+      "openRoleCount": 50
     },
     {
       "name": "CRED",
@@ -940,7 +941,7 @@
       "priority": "high",
       "note": "Accel/Elevation-backed compliance-automation SaaS built on a JavaScript full-stack, remote-from-India by default - Dev's Node/React/TS plus his EU-regulated (DiGA/HAS) compliance exposure is an unusually literal match.",
       "evidence": "jobs.lever.co/Sprinto board live; 'Senior Full-stack Engineer - Remote' req asks 4+ yrs JS full-stack, SQL and NoSQL",
-      "openRoleCount": 32
+      "openRoleCount": 33
     },
     {
       "name": "UptimeAI",
@@ -1057,7 +1058,7 @@
       "priority": "high",
       "note": "Healthcare data-platform product company with Noida and Bengaluru engineering - Dev's 2.7 yrs shipping regulated healthcare apps (DiGA/HAS/PECAN) is the rarest thing on his CV and it is the core requirement here.",
       "evidence": "innovaccer.com/careers live; internal job board at /careers/jobs, ATS vendor not named on page; India offices listed as Noida and Bengaluru",
-      "openRoleCount": 77
+      "openRoleCount": 76
     },
     {
       "name": "Plum",
@@ -1105,7 +1106,7 @@
       "priority": "medium",
       "note": "AI customer-service agent product with NCR engineering hiring at the SDE II rung - his agent-orchestration experience is a differentiator against pure web candidates.",
       "evidence": "jobs.lever.co/netomi/4fbdaf57-644a-47a6-9248-88fc0bf4a2dd - 'SDE II - Frontend'",
-      "openRoleCount": 20
+      "openRoleCount": 21
     },
     {
       "name": "Everstage",
@@ -1196,7 +1197,7 @@
       "priority": "medium",
       "note": "Governance/compliance SaaS with a Bengaluru engineering centre posting explicit NodeJS+React engineer roles - regulated-industry product work echoes his EU-compliance background.",
       "evidence": "job-boards.greenhouse.io/diligentcorporation/jobs/6009101004 - 'Software Engineer (NodeJS, React)'",
-      "openRoleCount": 114
+      "openRoleCount": 115
     },
     {
       "name": "ASAPP",
@@ -1834,7 +1835,7 @@
       "priority": "high",
       "note": "Contactless remote patient monitoring = regulated medical-device software plus a device-to-app pipeline, exactly the regulated-healthtech + IoT combination Dev already shipped.",
       "evidence": "jobs.lever.co/dozee live Lever board; careers page dozeehealth.ai/careers; Bengaluru HQ, ~17 open roles incl. Firmware Engineer II.",
-      "openRoleCount": 22
+      "openRoleCount": 21
     },
     {
       "name": "Suki AI",
@@ -2271,7 +2272,7 @@
       "priority": "high",
       "note": "Remote-first company with a large India team running multiple production Flutter apps and open SDE II / SDE III (Mobile - Flutter) reqs at exactly Dev's 3-4 yr band.",
       "evidence": "Saw jobs.lever.co/gohighlevel/073828a1-2ec3-41b7-b3bb-08a7a56cb037 'SDE II (Mobile - Flutter)' and .../d792b13b 'SDE III - Content Hub (Mobile Flutter)', Delhi / remote India, 2+ yrs Flutter in production.",
-      "openRoleCount": 89
+      "openRoleCount": 88
     },
     {
       "name": "FamPay (Trio / Fam)",
@@ -2382,7 +2383,7 @@
       "priority": "high",
       "note": "All-remote US company with an India entity posting a Full Stack (front-end focus) role explicitly at 2-4 years — his TypeScript/React/Node lane at his exact band.",
       "evidence": "jobs.lever.co/jumpcloud/4ebbdea9-39c2-465d-bbdf-bf379a8e4a06 'Full Stack Software Engineer, Front-End Focus - India', 2-4 yrs, remote.",
-      "openRoleCount": 18
+      "openRoleCount": 17
     },
     {
       "name": "Walmart Global Tech India",
@@ -2489,8 +2490,8 @@
       "atsVerified": false,
       "lastVerified": "2026-09-08",
       "segments": [
-        "remote-global",
-        "mern"
+        "mern",
+        "remote-global"
       ],
       "locations": [
         "Remote - India",
@@ -2499,7 +2500,11 @@
       "priority": "medium",
       "note": "Fully remote Node/React/TypeScript product org that employs engineers in India through its own EOR — a clean remote-from-India MERN target.",
       "evidence": "jobs.ashbyhq.com/deel board loads; e.g. .../88a8e3b1 'Full-Stack Engineer (Node.js/React.js/TypeScript)' and .../45861dfa 'Senior Full Stack Engineer - APAC'.",
-      "verifyNote": "2026-09-08: ashby/deel returned 0 postings — downgraded, not deleted. Re-check before removing."
+      "verifyNote": "2026-09-08: ashby/deel returned 0 postings — downgraded, not deleted. Re-check before removing.",
+      "hqCountry": "US (fully remote)",
+      "indiaEligible": "unconfirmed",
+      "hiresVia": "EOR",
+      "eligibilityEvidence": "api.ashbyhq.com/posting-api/job-board/deel returned HTTP 200 with a valid but EMPTY payload: {\"jobs\":[],\"apiVersion\":\"1\"}. boards-api.greenhouse.io/v1/boards/deel/jobs returned HTTP 404. So I saw zero postings and zero location strings — no eligibility evidence either way."
     },
     {
       "name": "Salesforce India",
@@ -2557,9 +2562,9 @@
       "atsVerified": true,
       "lastVerified": "2026-09-08",
       "segments": [
-        "remote-global",
+        "mern",
         "mobile-native",
-        "mern"
+        "remote-global"
       ],
       "locations": [
         "Remote - Worldwide"
@@ -2567,7 +2572,568 @@
       "priority": "medium",
       "note": "Fully distributed company hiring worldwide (India included) that maintains React Native and native WordPress mobile apps plus a heavy JS/TS surface — a realistic remote-from-India mobile/full-stack shot.",
       "evidence": "job-boards.greenhouse.io/automatticcareers/jobs/5862239 'Experienced Software Engineer'; board describes a fully-remote global workforce.",
-      "openRoleCount": 18
+      "openRoleCount": 18,
+      "hqCountry": "US (fully distributed)",
+      "indiaEligible": "unconfirmed",
+      "hiresVia": "unknown",
+      "eligibilityEvidence": "Fetched https://automattic.com/work-with-us/ (HTTP 200). Page states \"We're 1,424 Automatticians in 83 countries speaking 108 languages\" and \"Work from anywhere\" / \"Everyone works from the location they choose, during the hours they choose.\" It does NOT name India or publish a country-eligibility list, and no individual job locations were rendered in the fetched content. I also tried boards-api.greenhouse.io/v1/boards/automattic/jobs -> HTTP 404, and automattic.com/jobs/ returned only a job-scam warning page."
+    },
+    {
+      "name": "GitLab",
+      "domain": "gitlab.com",
+      "careersUrl": "https://boards.greenhouse.io/gitlab",
+      "atsProvider": "greenhouse",
+      "atsSlug": "gitlab",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-08",
+      "hqCountry": "US (all-remote)",
+      "indiaEligible": "yes",
+      "eligibilityEvidence": "Fetched boards-api.greenhouse.io/v1/boards/gitlab/jobs (HTTP 200) and read the actual location strings on live postings: 'AI Engineer' -> \"Remote, Bangalore\"; 'Senior Backend Engineer' -> \"Bangalore, India\"; 'Backend Engineer, Geo Team' -> \"Bangalore, India\"; 'Director, Engineering, Platform Operations & Productivity' -> \"Bangalore, India\". Multiple India engineering roles live right now.",
+      "hiresVia": "direct",
+      "segments": [
+        "ai-agentic",
+        "fde",
+        "fullstack",
+        "remote-global"
+      ],
+      "locations": [
+        "Remote"
+      ],
+      "priority": "high",
+      "note": "Best verified fit in this batch. Verified against the ACTUAL ATS API postings, not a job-board label. An 'AI Engineer' role is literally posted as 'Remote, Bangalore'. GitLab is the canonical all-remote company and clearly has an India employing entity (Bangalore titles across engineering + support + director level). careersUrl is the standard Greenhouse board URL derived from the slug I verified via the API.",
+      "evidence": "Fetched boards-api.greenhouse.io/v1/boards/gitlab/jobs (HTTP 200) and read the actual location strings on live postings: 'AI Engineer' -> \"Remote, Bangalore\"; 'Senior Backend Engineer' -> \"Bangalore, India\"; 'Backend Engineer, Geo Team' -> \"Bangalore, India\"; 'Director, Engineering, Platform Operations & Productivity' -> \"Bangalore, India\". Multiple India engineering roles live right now.",
+      "openRoleCount": 228
+    },
+    {
+      "name": "Elastic",
+      "domain": "elastic.co",
+      "careersUrl": "https://boards.greenhouse.io/elastic",
+      "atsProvider": "greenhouse",
+      "atsSlug": "elastic",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-08",
+      "hqCountry": "Netherlands / US (distributed-first)",
+      "indiaEligible": "yes",
+      "eligibilityEvidence": "Fetched boards-api.greenhouse.io/v1/boards/elastic/jobs (HTTP 200). Actual posting locations seen: 'Lead Salesforce Full Stack AI Engineer' -> \"Bangalore, India\"; 'Consulting Architect - Observability' -> \"India\"; 'Consulting Architect - Security' -> \"India\"; 'Consulting Architect - Search' -> \"India\" and \"United States\"; 'Cloud Marketplace Development Manager' -> \"Bangalore, India\".",
+      "hiresVia": "direct",
+      "segments": [
+        "ai-agentic",
+        "fde",
+        "fullstack",
+        "remote-global"
+      ],
+      "locations": [
+        "Remote"
+      ],
+      "priority": "high",
+      "note": "Verified from the live ATS API, not a board tag. The 'Consulting Architect' family is the closest thing here to a Forward Deployed Engineer role and is posted with location \"India\". Note their 'Agentic AI Engineer' role is locked to \"United States\" — so the AI-titled roles are US, while the India-open roles are the customer-facing architect ones. Elastic is distributed-first and clearly employs directly in India.",
+      "evidence": "Fetched boards-api.greenhouse.io/v1/boards/elastic/jobs (HTTP 200). Actual posting locations seen: 'Lead Salesforce Full Stack AI Engineer' -> \"Bangalore, India\"; 'Consulting Architect - Observability' -> \"India\"; 'Consulting Architect - Security' -> \"India\"; 'Consulting Architect - Search' -> \"India\" and \"United States\"; 'Cloud Marketplace Development Manager' -> \"Bangalore, India\".",
+      "openRoleCount": 363
+    },
+    {
+      "name": "Supabase",
+      "domain": "supabase.com",
+      "careersUrl": "https://jobs.ashbyhq.com/supabase",
+      "atsProvider": "ashby",
+      "atsSlug": "supabase",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-08",
+      "hqCountry": "US (fully distributed, no HQ)",
+      "indiaEligible": "yes",
+      "eligibilityEvidence": "Fetched api.ashbyhq.com/posting-api/job-board/supabase (HTTP 200). Actual posting location strings: 'Multigres Engineer' -> \"Remote, Global\"; 'Product Manager - Marketplace' -> \"Remote, Global\"; 'Support Engineer (APAC)' -> \"Remote, APAC\". Company text on the board says \"We hire globally\" and \"Fully Remote\". No country lock on the Global roles.",
+      "hiresVia": "unknown",
+      "segments": [
+        "ai-agentic",
+        "fullstack",
+        "remote-global"
+      ],
+      "locations": [
+        "Remote"
+      ],
+      "priority": "high",
+      "note": "Verified against the actual Ashby posting records. \"Remote, Global\" and \"Remote, APAC\" both qualify under the eligibility model. Caveat I did not spend a call on: I read the board-level location strings, not each posting body, so an in-body country restriction on a specific 'Global' role is still possible. Their other roles are region-scoped (Remote, AMER / Remote, EMEA) which would drop — so filter to the 'Global' and 'APAC' ones.",
+      "evidence": "Fetched api.ashbyhq.com/posting-api/job-board/supabase (HTTP 200). Actual posting location strings: 'Multigres Engineer' -> \"Remote, Global\"; 'Product Manager - Marketplace' -> \"Remote, Global\"; 'Support Engineer (APAC)' -> \"Remote, APAC\". Company text on the board says \"We hire globally\" and \"Fully Remote\". No country lock on the Global roles.",
+      "openRoleCount": 60
+    },
+    {
+      "name": "Grafana Labs",
+      "domain": "grafana.com",
+      "careersUrl": "https://boards.greenhouse.io/grafanalabs",
+      "atsProvider": "greenhouse",
+      "atsSlug": "grafanalabs",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-08",
+      "hqCountry": "US (remote-first, Swedish origin)",
+      "indiaEligible": "yes",
+      "eligibilityEvidence": "Fetched boards-api.greenhouse.io/v1/boards/grafanalabs/jobs (HTTP 200). India postings exist: 'Sales Development Representative | India | Remote' and 'Senior Enterprise Account Executive, Acquisition | Bengaluru, India'. HOWEVER every engineering posting I saw was single-country locked: \"United Kingdom (Remote)\", \"Republic of Ireland (Remote)\", \"Spain (Remote)\", \"Sweden (Remote)\", \"Germany\", \"Canada (Remote)\", \"United States (Remote)\" — including the 'Staff AI Engineer' variants.",
+      "hiresVia": "unknown",
+      "segments": [
+        "ai-agentic",
+        "fullstack",
+        "remote-global"
+      ],
+      "locations": [
+        "Remote"
+      ],
+      "priority": "medium",
+      "note": "Split verdict, stated honestly. Grafana demonstrably CAN employ someone in India (live India-located postings), but as of this check zero engineering roles are open to India — engineering is posted as country-locked EU/UK/US/Canada variants, which DROP under the model. Treat as a watchlist board: re-scan the same API for any engineering title carrying an India variant. Verified from the ATS API, not a board label.",
+      "evidence": "Fetched boards-api.greenhouse.io/v1/boards/grafanalabs/jobs (HTTP 200). India postings exist: 'Sales Development Representative | India | Remote' and 'Senior Enterprise Account Executive, Acquisition | Bengaluru, India'. HOWEVER every engineering posting I saw was single-country locked: \"United Kingdom (Remote)\", \"Republic of Ireland (Remote)\", \"Spain (Remote)\", \"Sweden (Remote)\", \"Germany\", \"Canada (Remote)\", \"United States (Remote)\" — including the 'Staff AI Engineer' variants.",
+      "openRoleCount": 129
+    },
+    {
+      "name": "Zapier",
+      "domain": "zapier.com",
+      "careersUrl": "https://jobs.ashbyhq.com/zapier",
+      "atsProvider": "ashby",
+      "atsSlug": "zapier",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-08",
+      "hqCountry": "US (fully remote)",
+      "indiaEligible": "yes",
+      "eligibilityEvidence": "Fetched api.ashbyhq.com/posting-api/job-board/zapier (HTTP 200). One live posting states \"Location: India\" and requires \"~9:00 pm - 7:00 am IST\" hours ('Sales Assist Representative'). But the engineering role on the board, 'Staff Backend Engineer, Commerce', is scoped \"NAMER\"; other roles \"NAMER\" / \"APAC\".",
+      "hiresVia": "unknown",
+      "segments": [
+        "ai-agentic",
+        "fullstack",
+        "remote-global"
+      ],
+      "locations": [
+        "Remote"
+      ],
+      "priority": "medium",
+      "note": "Company-level India eligibility is confirmed from an actual posting (India-located role with IST hours), so Zapier has a path to pay someone in India. The engineering opening at check time was NAMER-locked and would DROP. Worth re-scanning — Zapier is fully remote and their board is small and fast to poll via the Ashby API. Verified from the ATS API, not a board tag.",
+      "evidence": "Fetched api.ashbyhq.com/posting-api/job-board/zapier (HTTP 200). One live posting states \"Location: India\" and requires \"~9:00 pm - 7:00 am IST\" hours ('Sales Assist Representative'). But the engineering role on the board, 'Staff Backend Engineer, Commerce', is scoped \"NAMER\"; other roles \"NAMER\" / \"APAC\".",
+      "openRoleCount": 7
+    },
+    {
+      "name": "Remote.com",
+      "domain": "remote.com",
+      "careersUrl": "https://boards.greenhouse.io/remotecom",
+      "atsProvider": "greenhouse",
+      "atsSlug": "remotecom",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-08",
+      "hqCountry": "US / Netherlands (fully remote)",
+      "indiaEligible": "yes",
+      "eligibilityEvidence": "Fetched boards-api.greenhouse.io/v1/boards/remotecom/jobs (HTTP 200). Location strings seen include \"Remote-India\" (Payroll Specialist Lead - India), plus \"Remote-APAC\", \"Remote-EMEA\", \"Remote-AMER\", \"Remote-Poland\". No engineering titles appeared in the slice I read.",
+      "hiresVia": "EOR",
+      "segments": [
+        "fde",
+        "fullstack",
+        "remote-global"
+      ],
+      "locations": [
+        "Remote"
+      ],
+      "priority": "medium",
+      "note": "They are an EOR themselves and employ globally, and I saw a literal \"Remote-India\" location string on a live posting, so India employment is real. What I did NOT confirm is any open engineering role — the returned slice was finance/HR/legal/ops heavy. Re-scan the same API filtered to Engineering; treat the engineering opportunity as unproven for now.",
+      "evidence": "Fetched boards-api.greenhouse.io/v1/boards/remotecom/jobs (HTTP 200). Location strings seen include \"Remote-India\" (Payroll Specialist Lead - India), plus \"Remote-APAC\", \"Remote-EMEA\", \"Remote-AMER\", \"Remote-Poland\". No engineering titles appeared in the slice I read.",
+      "openRoleCount": 195
+    },
+    {
+      "name": "Doist",
+      "domain": "todoist.com",
+      "careersUrl": "https://www.todoist.com/careers",
+      "atsProvider": "other",
+      "atsSlug": "",
+      "tier": "B",
+      "atsVerified": false,
+      "lastVerified": null,
+      "hqCountry": "Portugal (fully distributed)",
+      "indiaEligible": "yes",
+      "eligibilityEvidence": "Fetched https://www.todoist.com/careers (doist.com/careers 308-redirects there). The page states verbatim: \"Todoisters can work from anywhere in the world. We never place restrictions on locations.\" That is an employer-stated, unqualified worldwide policy — no timezone or country carve-out mentioned.",
+      "hiresVia": "unknown",
+      "segments": [
+        "fullstack",
+        "mobile",
+        "remote-global"
+      ],
+      "locations": [
+        "Remote"
+      ],
+      "priority": "medium",
+      "note": "Strongest explicit worldwide-hiring statement I verified in this batch, and it came from the company's own careers page rather than a job-board tag. Two caveats: (1) no open roles were visible in the fetched content, so there may be nothing live right now; (2) I could not identify their ATS — the apply links were not exposed in the fetched page, so atsSlug is deliberately empty. Also note Doist is product/mobile-flavoured (Todoist, Twist) rather than AI-agentic, so it fits Dev's Flutter/mobile lane more than the agentic lane.",
+      "evidence": "Fetched https://www.todoist.com/careers (doist.com/careers 308-redirects there). The page states verbatim: \"Todoisters can work from anywhere in the world. We never place restrictions on locations.\" That is an employer-stated, unqualified worldwide policy — no timezone or country carve-out mentioned."
+    },
+    {
+      "name": "PostHog",
+      "domain": "posthog.com",
+      "careersUrl": "https://jobs.ashbyhq.com/posthog",
+      "atsProvider": "ashby",
+      "atsSlug": "posthog",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-08",
+      "hqCountry": "US / UK (fully remote)",
+      "indiaEligible": "unconfirmed",
+      "eligibilityEvidence": "Fetched api.ashbyhq.com/posting-api/job-board/posthog (HTTP 200). Two postings carry a plain unqualified location \"Remote\" with isRemote true and no country named ('Technical Account Executive - EMEA', 'ClickHouse Operations Engineer'). Others are explicitly locked: \"Remote (EMEA)\", \"Hybrid (UK)\", \"San Francisco, CA\", and one titled 'Backend Engineer - Ingestion (Europe/UK timezone)'. No posting mentions India.",
+      "hiresVia": "unknown",
+      "segments": [
+        "ai-agentic",
+        "fullstack",
+        "remote-global"
+      ],
+      "locations": [
+        "Remote"
+      ],
+      "priority": "medium",
+      "note": "Deliberately marked unconfirmed rather than guessed. Under the stated model a plain unqualified \"Remote\" qualifies, but I only read the board-level location field — I did not open the posting body, and PostHog's neighbouring roles are aggressively timezone-gated (Europe/UK timezone, US Pacific time), which makes an in-body restriction likely. Verify by opening the specific posting before Dev spends effort. Zero India signal on the board today.",
+      "evidence": "Fetched api.ashbyhq.com/posting-api/job-board/posthog (HTTP 200). Two postings carry a plain unqualified location \"Remote\" with isRemote true and no country named ('Technical Account Executive - EMEA', 'ClickHouse Operations Engineer'). Others are explicitly locked: \"Remote (EMEA)\", \"Hybrid (UK)\", \"San Francisco, CA\", and one titled 'Backend Engineer - Ingestion (Europe/UK timezone)'. No posting mentions India.",
+      "openRoleCount": 9
+    },
+    {
+      "name": "Canonical",
+      "domain": "canonical.com",
+      "careersUrl": "https://canonical.com/careers/all",
+      "atsProvider": "other",
+      "atsSlug": "",
+      "tier": "B",
+      "atsVerified": false,
+      "lastVerified": null,
+      "hqCountry": "UK (fully remote)",
+      "indiaEligible": "unconfirmed",
+      "eligibilityEvidence": "Fetched https://canonical.com/careers/all (HTTP 200). The board exposes region filters including \"APAC\", \"AMER\", \"EMEA\" and a department filter including Engineering, but the fetch rendered \"There are no open roles matching your criteria\" and returned zero job listings, so I could see no location strings and no country-eligibility statement.",
+      "hiresVia": "unknown",
+      "segments": [
+        "ai-agentic",
+        "fullstack",
+        "remote-global"
+      ],
+      "locations": [
+        "Remote"
+      ],
+      "priority": "medium",
+      "note": "Kept as unconfirmed rather than dropped. The only hard evidence is that the board offers an APAC region filter, which is suggestive but not proof — I saw no actual posting. Canonical is a genuinely remote-first UK employer and worth a manual re-check with the APAC + Engineering filters applied in a browser (their board is JS-rendered, which is likely why the fetch came back empty). No ATS slug claimed because none appeared in a URL.",
+      "evidence": "Fetched https://canonical.com/careers/all (HTTP 200). The board exposes region filters including \"APAC\", \"AMER\", \"EMEA\" and a department filter including Engineering, but the fetch rendered \"There are no open roles matching your criteria\" and returned zero job listings, so I could see no location strings and no country-eligibility statement."
+    },
+    {
+      "name": "Hugging Face",
+      "domain": "huggingface.co",
+      "careersUrl": "https://apply.workable.com/huggingface",
+      "atsProvider": "workable",
+      "atsSlug": "huggingface",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-08",
+      "hqCountry": "US / France",
+      "indiaEligible": "no",
+      "eligibilityEvidence": "Fetched apply.workable.com/api/v1/widget/accounts/huggingface?details=true (HTTP 200, real postings returned). Every live posting is country-locked: 'Low-level Senior Software Engineer, Xet Storage - EMEA Remote' -> \"France\"/\"Paris\"; the same role '- US Remote' -> \"United States\"/\"New York\"; 'Open-Source Machine Learning Engineer' exists only in EMEA-Remote (France) and US-Remote (United States) variants; 'Senior ML Engineer, Voice Agents - EMEA Remote' -> \"France\". telecommuting is true on all of them but the country is always France or the US. No India, no Worldwide, no Anywhere.",
+      "hiresVia": "unknown",
+      "segments": [
+        "ai-agentic",
+        "remote-global"
+      ],
+      "locations": [
+        "Remote"
+      ],
+      "priority": "low",
+      "note": "Dropped on evidence, not assumption — verified against the real Workable API records. This is exactly the trap the brief warned about: the roles are titled 'Remote' but are hard-locked to France or the United States, so a third-party board tagging them 'Worldwide' would be wrong. Board is cheap to re-poll (small, one API call) if Dev wants to watch for an APAC/worldwide opening later.",
+      "evidence": "Fetched apply.workable.com/api/v1/widget/accounts/huggingface?details=true (HTTP 200, real postings returned). Every live posting is country-locked: 'Low-level Senior Software Engineer, Xet Storage - EMEA Remote' -> \"France\"/\"Paris\"; the same role '- US Remote' -> \"United States\"/\"New York\"; 'Open-Source Machine Learning Engineer' exists only in EMEA-Remote (France) and US-Remote (United States) variants; 'Senior ML Engineer, Voice Agents - EMEA Remote' -> \"France\". telecommuting is true on all of them but the country is always France or the US. No India, no Worldwide, no Anywhere.",
+      "openRoleCount": 6
+    },
+    {
+      "name": "Mattermost",
+      "domain": "mattermost.com",
+      "careersUrl": "https://boards.greenhouse.io/mattermost",
+      "atsProvider": "greenhouse",
+      "atsSlug": "mattermost",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-08",
+      "hqCountry": "US (remote-first)",
+      "indiaEligible": "no",
+      "eligibilityEvidence": "Fetched boards-api.greenhouse.io/v1/boards/mattermost/jobs (HTTP 200). Every engineering posting is single-country: 'Lead Site Reliability Engineer' -> \"United States\"; 'Senior Full Stack Engineer' -> \"United States\" and a separate \"Ontario, Canada; Toronto, Ontario, Canada\" variant; 'Senior React Native Engineer' -> \"United States\"; 'Senior Security Engineer' -> \"United Kingdom\" / \"Germany\" / \"Spain\"; 'Staff Full Stack Engineer' -> Toronto / United States. No India, no Remote, no Worldwide, no APAC anywhere on the board.",
+      "hiresVia": "unknown",
+      "segments": [
+        "fullstack",
+        "mobile",
+        "remote-global"
+      ],
+      "locations": [
+        "Remote"
+      ],
+      "priority": "low",
+      "note": "Verified drop from the real ATS API. Painful near-miss — they had a 'Senior React Native Engineer' opening, which is squarely Dev's mobile lane, but it is locked to the United States. Keep the slug for periodic re-scans since a country variant could appear, but nothing actionable today.",
+      "evidence": "Fetched boards-api.greenhouse.io/v1/boards/mattermost/jobs (HTTP 200). Every engineering posting is single-country: 'Lead Site Reliability Engineer' -> \"United States\"; 'Senior Full Stack Engineer' -> \"United States\" and a separate \"Ontario, Canada; Toronto, Ontario, Canada\" variant; 'Senior React Native Engineer' -> \"United States\"; 'Senior Security Engineer' -> \"United Kingdom\" / \"Germany\" / \"Spain\"; 'Staff Full Stack Engineer' -> Toronto / United States. No India, no Remote, no Worldwide, no APAC anywhere on the board.",
+      "openRoleCount": 15
+    },
+    {
+      "name": "Doist (Todoist / Twist)",
+      "domain": "doist.com",
+      "careersUrl": "https://www.todoist.com/careers",
+      "atsProvider": "other",
+      "atsSlug": "",
+      "tier": "B",
+      "atsVerified": false,
+      "lastVerified": null,
+      "hqCountry": "Portugal",
+      "indiaEligible": "yes",
+      "eligibilityEvidence": "Verified on the ACTUAL careers page (doist.com/careers 308-redirects to todoist.com/careers), which states verbatim: \"Todoisters can work from anywhere in the world. We never place restrictions on locations.\" No timezone or country conditions stated anywhere on the page.",
+      "hiresVia": "unknown",
+      "segments": [
+        "fullstack",
+        "mobile",
+        "remote-global"
+      ],
+      "locations": [
+        "Remote"
+      ],
+      "priority": "high",
+      "note": "Strongest verified eligibility statement of anything I found - an explicit, unconditional no-location-restriction policy straight from the employer, not a job board tag. Todoist ships native Android (Kotlin) and iOS (Swift) clients plus a TypeScript/React web app, so both of Dev's lanes fit. CAVEAT: the open-roles list is behind a #open-roles anchor that did not render in my fetch, so I did NOT confirm any specific mobile role is open right now, and I could not determine their ATS. Check the live board before treating this as an active opening. Employment model (employee vs contractor vs EOR) not stated on the page.",
+      "evidence": "Verified on the ACTUAL careers page (doist.com/careers 308-redirects to todoist.com/careers), which states verbatim: \"Todoisters can work from anywhere in the world. We never place restrictions on locations.\" No timezone or country conditions stated anywhere on the page."
+    },
+    {
+      "name": "Very Good Ventures",
+      "domain": "verygood.ventures",
+      "careersUrl": "https://verygood.ventures/careers",
+      "atsProvider": "other",
+      "atsSlug": "",
+      "tier": "B",
+      "atsVerified": false,
+      "lastVerified": null,
+      "hqCountry": "United States",
+      "indiaEligible": "yes",
+      "eligibilityEvidence": "Verified on the ACTUAL careers page verygood.ventures/careers, which states verbatim: \"Work from anywhere in the world (seriously!)\" and describes \"A team that thrives across borders and time zones.\" No country named, no allowlist, no timezone lock stated.",
+      "hiresVia": "unknown",
+      "segments": [
+        "mobile",
+        "remote-global"
+      ],
+      "locations": [
+        "Remote"
+      ],
+      "priority": "high",
+      "note": "Best pure-stack match on this list: VGV is the best-known dedicated Flutter/Dart consultancy globally (they maintain very_good_cli and much of the community tooling), and Dev's production Flutter/Dart depth plus one-prompt Fastlane iOS+Android release automation is exactly the profile they hire. Client-facing consultancy work also overlaps his Forward Deployed Engineer lane and his direct Norway/Germany/France client experience. CAVEAT: the 'Open Roles' section did not render in my fetch - I did NOT confirm any specific Flutter role is currently open, and could not identify their ATS. The 'work from anywhere' line is a company-level policy statement from the employer's own site, not a per-posting confirmation; verify on the individual posting before applying.",
+      "evidence": "Verified on the ACTUAL careers page verygood.ventures/careers, which states verbatim: \"Work from anywhere in the world (seriously!)\" and describes \"A team that thrives across borders and time zones.\" No country named, no allowlist, no timezone lock stated."
+    },
+    {
+      "name": "Chess.com",
+      "domain": "chess.com",
+      "careersUrl": "https://www.chess.com/jobs",
+      "atsProvider": "other",
+      "atsSlug": "",
+      "tier": "B",
+      "atsVerified": false,
+      "lastVerified": null,
+      "hqCountry": "United States",
+      "indiaEligible": "yes",
+      "eligibilityEvidence": "Verified on the ACTUAL careers page chess.com/jobs, which has a \"Work From Anywhere\" section stating \"Set up shop wherever you feel most productive\", reports \"650+ Humans\" across \"60+ Countries\", and adds \"Benefits may vary based on where you live and how you're hired - our team isn't one-size-fits-all.\" No country lock or allowlist stated.",
+      "hiresVia": "unknown",
+      "segments": [
+        "fullstack",
+        "mobile",
+        "remote-global"
+      ],
+      "locations": [
+        "Remote"
+      ],
+      "priority": "high",
+      "note": "Genuinely remote-first at scale with heavy mobile investment - Chess.com ships large native Android (Kotlin) and iOS (Swift) apps alongside a React/TypeScript web product, so both of Dev's lanes apply. The phrase \"how you're hired\" strongly implies a mix of direct employment and contractor/EOR arrangements by country, which is usually how a company reaches India - but the page does NOT name India, so treat India eligibility as policy-implied rather than explicitly confirmed. CAVEAT: the openings list showed \"Loading open positions...\" and did not render, so I did NOT confirm a specific mobile posting or identify their ATS; chess.com/careers returns 404, use chess.com/jobs.",
+      "evidence": "Verified on the ACTUAL careers page chess.com/jobs, which has a \"Work From Anywhere\" section stating \"Set up shop wherever you feel most productive\", reports \"650+ Humans\" across \"60+ Countries\", and adds \"Benefits may vary based on where you live and how you're hired - our team isn't one-size-fits-all.\" No country lock or allowlist stated."
+    },
+    {
+      "name": "Toggl",
+      "domain": "toggl.com",
+      "careersUrl": "https://toggl.com/jobs/",
+      "atsProvider": "other",
+      "atsSlug": "",
+      "tier": "B",
+      "atsVerified": false,
+      "lastVerified": null,
+      "hqCountry": "Estonia",
+      "indiaEligible": "unconfirmed",
+      "eligibilityEvidence": "Verified on the ACTUAL careers page toggl.com/jobs/, which states the company is \"Fully remote since 2014\" with colleagues \"from all around the world\" across \"43 countries in 16 timezones\". No country restriction is stated on that page - but no explicit India or worldwide-eligibility guarantee either, and per-role terms were not visible.",
+      "hiresVia": "unknown",
+      "segments": [
+        "fullstack",
+        "mobile",
+        "remote-global"
+      ],
+      "locations": [
+        "Remote"
+      ],
+      "priority": "medium",
+      "note": "Estonian, fully-distributed, and ships Toggl Track Android/iOS apps plus a React/TypeScript web app, so the stack fits. Marked UNCONFIRMED rather than yes on purpose: the company-level page has no country lock, but Toggl is known to scope individual postings to timezone windows (often Europe-friendly hours), and I could NOT see any individual posting to check - the openings list did not render and I could not identify their ATS. India is UTC+5:30, which is workable for a European-hours role, but verify the specific posting's timezone line before investing time. Their process includes a paid test week, which is a real time commitment to plan for.",
+      "evidence": "Verified on the ACTUAL careers page toggl.com/jobs/, which states the company is \"Fully remote since 2014\" with colleagues \"from all around the world\" across \"43 countries in 16 timezones\". No country restriction is stated on that page - but no explicit India or worldwide-eligibility guarantee either, and per-role terms were not visible."
+    },
+    {
+      "name": "Remote (remote.com)",
+      "domain": "remote.com",
+      "careersUrl": "https://remote.com/careers",
+      "atsProvider": "greenhouse",
+      "atsSlug": "remotecom",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-08",
+      "hqCountry": "United States",
+      "indiaEligible": "unconfirmed",
+      "eligibilityEvidence": "Verified against the LIVE Greenhouse API (boards-api.greenhouse.io/v1/boards/remotecom/jobs), which returned 100+ real postings. Location strings in use include \"Remote-APAC\", \"Remote-EMEA\", \"Remote-AMER\", \"Remote-UK&I\", \"Remote-Germany\", \"Remote-Japan\", \"Remote-Poland\". \"Remote-APAC\" would include India under the eligibility model, but I saw NO posting naming India, and at the time of check there were ZERO mobile, frontend, full-stack or Node roles open - the board was all payroll, HR, legal, ops and sales.",
+      "hiresVia": "EOR",
+      "segments": [
+        "fullstack",
+        "remote-global"
+      ],
+      "locations": [
+        "Remote"
+      ],
+      "priority": "medium",
+      "note": "Worth tracking rather than applying to today. Value here is twofold: Remote is itself a global EOR (so it can legally employ someone in India), and their engineering roles when open are posted with regional rather than single-country locks, including APAC. ATS slug 'remotecom' is CONFIRMED - I saw it return live data from a real API URL. Set a recurring scan on the Greenhouse board for Mobile/React Native/Full-stack titles; skip until an engineering req appears. Remote does operate a mobile app, so mobile reqs do surface periodically.",
+      "evidence": "Verified against the LIVE Greenhouse API (boards-api.greenhouse.io/v1/boards/remotecom/jobs), which returned 100+ real postings. Location strings in use include \"Remote-APAC\", \"Remote-EMEA\", \"Remote-AMER\", \"Remote-UK&I\", \"Remote-Germany\", \"Remote-Japan\", \"Remote-Poland\". \"Remote-APAC\" would include India under the eligibility model, but I saw NO posting naming India, and at the time of check there were ZERO mobile, frontend, full-stack or Node roles open - the board was all payroll, HR, legal, ops and sales.",
+      "openRoleCount": 195
+    },
+    {
+      "name": "Oyster HR",
+      "domain": "oysterhr.com",
+      "careersUrl": "https://www.oysterhr.com/careers",
+      "atsProvider": "ashby",
+      "atsSlug": "oyster",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-08",
+      "hqCountry": "United States",
+      "indiaEligible": "unconfirmed",
+      "eligibilityEvidence": "Verified against the LIVE Ashby posting API (api.ashbyhq.com/posting-api/job-board/oyster), which returned real postings with location strings \"Any Location\" (isRemote true), \"EMEA\", \"The Americas\". The \"Any Location\" posting is only their Talent Community sign-up, not a role. No engineering role of any kind was open at time of check, so per-posting India eligibility could not be established either way.",
+      "hiresVia": "EOR",
+      "segments": [
+        "fullstack",
+        "remote-global"
+      ],
+      "locations": [
+        "Remote"
+      ],
+      "priority": "low",
+      "note": "Low priority for now - I confirmed the ATS slug 'oyster' is real and live, but the board carried only Customer Success, Legal and a Data Platform leadership role. No mobile or full-stack engineering. Kept on the list because Oyster is a global EOR that can employ in India and hires remote-first by policy, so it is a valid low-cost board to scan on a schedule. The 'Any Location' string on their Talent Community entry is the closest thing to a worldwide signal, and it is NOT a role - do not read it as eligibility for their engineering reqs.",
+      "evidence": "Verified against the LIVE Ashby posting API (api.ashbyhq.com/posting-api/job-board/oyster), which returned real postings with location strings \"Any Location\" (isRemote true), \"EMEA\", \"The Americas\". The \"Any Location\" posting is only their Talent Community sign-up, not a role. No engineering role of any kind was open at time of check, so per-posting India eligibility could not be established either way.",
+      "openRoleCount": 24
+    },
+    {
+      "name": "X-Team",
+      "domain": "x-team.com",
+      "careersUrl": "https://jobs.x-team.com/",
+      "atsProvider": "other",
+      "atsSlug": "",
+      "tier": "B",
+      "atsVerified": false,
+      "lastVerified": null,
+      "hqCountry": "Australia",
+      "indiaEligible": "unconfirmed",
+      "eligibilityEvidence": "Partially verified on the ACTUAL company page x-team.com/join, which states \"50+ countries with X-Team developers\", that developers are paid in USD, and that they are \"Matched to global teams in your time zone\", under the headline \"Build Without Borders\". India is NOT named. The jobs board at jobs.x-team.com rendered only \"Loading Job Ad\" placeholders, so I could NOT read a single actual posting or its location line.",
+      "hiresVia": "contractor",
+      "segments": [
+        "fullstack",
+        "mobile",
+        "remote-global"
+      ],
+      "locations": [
+        "Remote"
+      ],
+      "priority": "medium",
+      "note": "Structurally a good fit for the remote-global goal - a developer marketplace placing engineers with clients like Riot Games, Fox, Epic Games and Twitch, paying in USD, which is the mechanism that gets an India-based engineer into the USD 25-40k+ band. React/Node/React Native work is their bread and butter. TWO HONEST CAVEATS: (1) hqCountry Australia is my best understanding and was NOT verified on the site; (2) 'contractor' engagement is the widely-understood model but was NOT explicitly stated on the page I read - the page only confirmed USD payment. Nothing about India was confirmed. Treat as a lead to verify, not a confirmed-open channel.",
+      "evidence": "Partially verified on the ACTUAL company page x-team.com/join, which states \"50+ countries with X-Team developers\", that developers are paid in USD, and that they are \"Matched to global teams in your time zone\", under the headline \"Build Without Borders\". India is NOT named. The jobs board at jobs.x-team.com rendered only \"Loading Job Ad\" placeholders, so I could NOT read a single actual posting or its location line."
+    },
+    {
+      "name": "Invertase",
+      "domain": "invertase.io",
+      "careersUrl": "https://invertase.io/careers",
+      "atsProvider": "other",
+      "atsSlug": "",
+      "tier": "B",
+      "atsVerified": false,
+      "lastVerified": null,
+      "hqCountry": "United Kingdom",
+      "indiaEligible": "unconfirmed",
+      "eligibilityEvidence": "Verified on the ACTUAL careers page invertase.io/careers: describes \"a remote-first team spread across 12+ countries\" and \"Work from wherever you feel most inspired and productive - home office, a co-working space, or even a beachside cafe.\" The same page states verbatim that they have no open positions at the moment, so there is no posting against which to confirm India eligibility.",
+      "hiresVia": "unknown",
+      "segments": [
+        "mobile",
+        "remote-global"
+      ],
+      "locations": [
+        "Remote"
+      ],
+      "priority": "medium",
+      "note": "Watchlist entry with an unusually precise stack match: Invertase maintains react-native-firebase and FlutterFire - i.e. the exact Flutter + React Native + Firebase intersection Dev works in production. If a req opens, his OSS-adjacent credibility here would be high. Currently ZERO open roles by their own statement, so this is a monitor-and-wait target, not an application target. India eligibility genuinely unknown - '12+ countries' is a headcount fact, not an eligibility policy, and I am not treating it as one.",
+      "evidence": "Verified on the ACTUAL careers page invertase.io/careers: describes \"a remote-first team spread across 12+ countries\" and \"Work from wherever you feel most inspired and productive - home office, a co-working space, or even a beachside cafe.\" The same page states verbatim that they have no open positions at the moment, so there is no posting against which to confirm India eligibility."
+    },
+    {
+      "name": "Sword Health",
+      "domain": "swordhealth.com",
+      "careersUrl": "https://swordhealth.com/careers",
+      "atsProvider": "greenhouse",
+      "atsSlug": "swordhealth",
+      "tier": "B",
+      "atsVerified": false,
+      "lastVerified": "2026-09-08",
+      "hqCountry": "Portugal",
+      "indiaEligible": "unconfirmed",
+      "eligibilityEvidence": "The Greenhouse API boards-api.greenhouse.io/v1/boards/swordhealth/jobs responded with a VALID but EMPTY jobs array (total 0) - not a 404, which confirms the slug exists but the board carries no postings. With zero postings there was nothing to read, so India eligibility is entirely unestablished. I did NOT fetch swordhealth.com/careers itself.",
+      "hiresVia": "unknown",
+      "segments": [
+        "mobile",
+        "remote-global"
+      ],
+      "locations": [
+        "Remote"
+      ],
+      "priority": "low",
+      "note": "Included for domain fit rather than confirmed opportunity: Sword Health is EU-founded digital musculoskeletal health with a heavy mobile + connected-sensor product, which lines up with Dev's healthcare, EU-regulated (DiGA/PECAN) and BLE/IoT wearable experience - that is a rare and genuinely differentiating overlap. BUT: the Greenhouse board is empty, which usually means they migrated ATS, so the atsSlug is confirmed-real yet currently useless for scanning. careersUrl is the conventional path and was NOT verified by me - check it manually before adding to any automated scan. Sword also skews heavily toward Porto/Lisbon hybrid roles, so India-remote is a real question mark.",
+      "evidence": "The Greenhouse API boards-api.greenhouse.io/v1/boards/swordhealth/jobs responded with a VALID but EMPTY jobs array (total 0) - not a 404, which confirms the slug exists but the board carries no postings. With zero postings there was nothing to read, so India eligibility is entirely unestablished. I did NOT fetch swordhealth.com/careers itself.",
+      "verifyNote": "2026-09-08: greenhouse/swordhealth returned 0 postings — downgraded, not deleted. Re-check before removing."
+    },
+    {
+      "name": "Proxify",
+      "domain": "proxify.io",
+      "careersUrl": "https://proxify.io/apply",
+      "atsProvider": "other",
+      "atsSlug": "",
+      "tier": "B",
+      "atsVerified": false,
+      "lastVerified": null,
+      "hqCountry": "Sweden",
+      "indiaEligible": "unconfirmed",
+      "eligibilityEvidence": "NOTHING VERIFIED. My fetch of proxify.io/apply returned HTTP 403 Forbidden (bot-blocked). The URL exists - a 403 means the server answered and refused, not that the path is wrong - but I read zero content, so I have no evidence at all about their country eligibility, India acceptance, or engagement model.",
+      "hiresVia": "contractor",
+      "segments": [
+        "fullstack",
+        "mobile",
+        "remote-global"
+      ],
+      "locations": [
+        "Remote"
+      ],
+      "priority": "medium",
+      "note": "Listed as an UNVERIFIED LEAD, deliberately flagged so it is not mistaken for a confirmed channel. Proxify is a Swedish developer-marketplace that places engineers with European clients and pays in EUR/USD, which is the right shape for the remote-global comp jump, and they recruit across Flutter, React Native, Kotlin, React and Node. The 'contractor' engagement model is my understanding, NOT something I confirmed. Everything here needs manual verification via a browser - the site blocks automated fetches, so it cannot be added to an automated ATS scan. Also note marketplaces like this run a long multi-stage vetting funnel before any client match.",
+      "evidence": "NOTHING VERIFIED. My fetch of proxify.io/apply returned HTTP 403 Forbidden (bot-blocked). The URL exists - a 403 means the server answered and refused, not that the path is wrong - but I read zero content, so I have no evidence at all about their country eligibility, India acceptance, or engagement model."
+    },
+    {
+      "name": "Crossover",
+      "domain": "crossover.com",
+      "careersUrl": "https://www.crossover.com/jobs",
+      "atsProvider": "other",
+      "atsSlug": "",
+      "tier": "B",
+      "atsVerified": false,
+      "lastVerified": null,
+      "hqCountry": "United States",
+      "indiaEligible": "unconfirmed",
+      "eligibilityEvidence": "NOTHING VERIFIED. The page at crossover.com/jobs returned no readable content to my fetch (JavaScript-rendered listings). I could not read a single role, pay rate, or location line, so I have no evidence either way on India eligibility.",
+      "hiresVia": "contractor",
+      "segments": [
+        "fullstack",
+        "remote-global"
+      ],
+      "locations": [
+        "Remote"
+      ],
+      "priority": "low",
+      "note": "Listed as an UNVERIFIED LEAD only. Crossover posts fixed hourly USD rates for fully-remote roles and is known to recruit heavily from India, which would fit the comp target - but I confirmed NONE of that in this session and am not asserting it. Lower priority for Dev specifically for two reasons independent of eligibility: their catalogue skews toward backend, cloud and engineering-management roles rather than the Flutter/KMP mobile work he wants, and their model involves timed proctored assessments and monitored work hours that many engineers find a poor trade. Verify manually in a browser before spending application effort.",
+      "evidence": "NOTHING VERIFIED. The page at crossover.com/jobs returned no readable content to my fetch (JavaScript-rendered listings). I could not read a single role, pay rate, or location line, so I have no evidence either way on India eligibility."
     }
   ],
   "_lastVerified": "2026-09-08"

@@ -1,5 +1,5 @@
 {
   "_meta": "Durable dedupe state. scan.mjs --write-state records every URL it has already reported so the same posting is never emailed twice. Committed to git so the cloud routine and local runs share one memory.",
   "urls": {},
-  "lastRun": null
+  "lastRun": "2026-09-08T15:50:33.477Z"
 }
