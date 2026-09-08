@@ -1,0 +1,290 @@
+{
+  "_meta": {
+    "owner": "Dev Mankad",
+    "sourceOfTruth": true,
+    "derivedFrom": "dev-mankad-resume-jul26.pdf (July 2026)",
+    "lastUpdated": "2026-09-08",
+    "rule": "EVERY fact in this file must be literally true and already present in the source resume. The tailoring engine may ONLY reorder, select, and re-emphasise what is here. It may never add a skill, employer, date, metric, or claim that does not appear in this file. To add a genuinely new fact, edit THIS file first."
+  },
+
+  "header": {
+    "name": "Dev Mankad",
+    "title": "Software Engineer",
+    "tagline": "Full-Stack & Cross-Platform Engineer · Agentic Engineering (AI Agent Workflows)",
+    "phone": "+91 7990538590",
+    "email": "devmankad12@gmail.com",
+    "location": "Ahmedabad, India",
+    "links": {
+      "linkedin": "",
+      "github": "",
+      "portfolio": "",
+      "_note": "EMPTY ON PURPOSE. Not present on the source resume. Fill these in profile.json AND here before applying anywhere — a missing GitHub link is a real cost in AI/agentic hiring. Never invent a URL."
+    }
+  },
+
+  "titleVariants": [
+    { "id": "software-engineer",      "text": "Software Engineer",                          "tags": ["generic", "mern", "fullstack"] },
+    { "id": "fullstack-engineer",     "text": "Full-Stack Engineer",                        "tags": ["mern", "fullstack", "react", "node"] },
+    { "id": "mobile-engineer",        "text": "Mobile Engineer",                            "tags": ["mobile", "flutter", "kmp"] },
+    { "id": "flutter-engineer",       "text": "Flutter Engineer",                           "tags": ["flutter", "dart", "mobile"] },
+    { "id": "cross-platform-engineer","text": "Cross-Platform Mobile Engineer",             "tags": ["mobile", "kmp", "flutter", "react-native"] },
+    { "id": "ai-engineer",            "text": "Software Engineer · AI Agent Systems",       "tags": ["agentic", "ai", "llm"] },
+    { "id": "fde",                    "text": "Software Engineer · Forward Deployed",       "tags": ["fde", "client-facing", "agentic"] }
+  ],
+
+  "summary": {
+    "_rule": "The tailoring engine assembles a summary by picking ONE opener plus 2-4 clauses whose tags best match the JD. Every string here is pre-approved as factually true. Nothing outside this pool may be written into a summary.",
+    "openers": [
+      { "id": "open-generic",  "tags": ["generic", "fullstack", "mern"],
+        "text": "Results-driven Software Engineer with 2.5+ years of experience delivering scalable, secure, and high-performance mobile and full-stack applications across healthcare, enterprise, and social-engagement platforms." },
+      { "id": "open-agentic",  "tags": ["agentic", "ai", "llm", "mcp", "multi-agent"],
+        "text": "Software Engineer with 2.5+ years of production delivery and a hands-on agentic engineering practice: designs and operates AI agent systems — autonomous workflows, custom Claude Code skills, MCP server integrations, and the BMad multi-agent method — that drive features end to end from requirement to production." },
+      { "id": "open-mobile",   "tags": ["mobile", "flutter", "kmp", "swiftui", "react-native"],
+        "text": "Cross-platform Mobile Engineer with 2.5+ years shipping production Flutter, Kotlin Multiplatform, and SwiftUI applications for international healthcare and enterprise markets, with full ownership from architecture through App Store and Play Store release." },
+      { "id": "open-mern",     "tags": ["mern", "react", "node", "typescript", "fullstack"],
+        "text": "Full-Stack Engineer with 2.5+ years building and shipping product features across React and Node.js front-to-back, with REST and GraphQL API delivery and TypeScript throughout, alongside deep cross-platform mobile experience." },
+      { "id": "open-fde",      "tags": ["fde", "client-facing", "solutions"],
+        "text": "Software Engineer with 2.5+ years delivering production software directly alongside international clients — collaborating with teams in Norway, Germany, and France to build certified software under rigorous regulatory frameworks — and building the AI agent tooling that accelerates that delivery." },
+      { "id": "open-health",   "tags": ["healthcare", "regulated", "healthtech"],
+        "text": "Software Engineer with 2.5+ years building certified digital-health software, including a DiGA- and PECAN-certified chronic-disease management platform delivered for European clients under rigorous health-compliance frameworks." }
+    ],
+    "clauses": [
+      { "id": "cl-mobile-stack",  "tags": ["mobile", "flutter", "kmp", "swiftui", "compose", "react-native"], "weight": 5,
+        "text": "Specialized in Flutter, Kotlin Multiplatform (KMP), Kotlin, SwiftUI, and React Native." },
+      { "id": "cl-fullstack",     "tags": ["fullstack", "react", "node", "django", "rails", "graphql", "rest"], "weight": 5,
+        "text": "Full-stack delivery across React, Node.js, Django, and Ruby on Rails backends with REST and GraphQL APIs." },
+      { "id": "cl-mern",          "tags": ["mern", "react", "node", "typescript"], "weight": 5,
+        "text": "Full-stack delivery across React and Node.js in TypeScript, consuming and building REST and GraphQL APIs." },
+      { "id": "cl-agentic",       "tags": ["agentic", "ai", "llm", "mcp", "multi-agent"], "weight": 6,
+        "text": "A hands-on agentic engineer who designs and operates AI agent systems — autonomous workflows, custom Claude Code skills, MCP server integrations, and the BMad method — to drive features end-to-end from requirement to production." },
+      { "id": "cl-adapt",         "tags": ["generic", "fullstack", "fde"], "weight": 3,
+        "text": "Adapts rapidly to any full-stack technology or language, pairing deep product-cycle ownership with cross-platform architecture, third-party integrations, and Agile delivery." },
+      { "id": "cl-clients",       "tags": ["fde", "client-facing", "healthcare", "regulated"], "weight": 4,
+        "text": "Collaborates directly with European clients (Norway, Germany, France) on certified software built to DiGA, HAS, and PECAN health-compliance frameworks." },
+      { "id": "cl-integrations",  "tags": ["integrations", "iot", "ble", "realtime", "sdk"], "weight": 4,
+        "text": "Integrates complex third-party SDKs, hardware communication layers, and real-time data pipelines." },
+      { "id": "cl-cicd",          "tags": ["cicd", "fastlane", "github-actions", "release", "devops"], "weight": 3,
+        "text": "Automates release engineering with Fastlane, GitHub Actions, and Firebase App Distribution across App Store and Play Store." },
+      { "id": "cl-domain",        "tags": ["healthcare", "enterprise", "regulated"], "weight": 3,
+        "text": "Domain experience across healthcare, enterprise, and social-engagement platforms." }
+    ]
+  },
+
+  "skills": {
+    "_rule": "Categories and the items inside them are REORDERED by the tailoring engine, never removed. `aliases` are the strings matched against a JD (lowercased substring match). `strength` 1-5 is Dev's honest depth — the engine will not promote a low-strength item above a high-strength one on a weak keyword hit.",
+    "categories": [
+      {
+        "id": "languages-frameworks",
+        "label": "Languages & Frameworks",
+        "tags": ["mobile", "fullstack", "mern", "generic"],
+        "items": [
+          { "name": "Dart",                    "aliases": ["dart"],                                              "tags": ["flutter", "mobile"],              "strength": 5 },
+          { "name": "Flutter",                 "aliases": ["flutter"],                                           "tags": ["flutter", "mobile"],              "strength": 5 },
+          { "name": "Kotlin",                  "aliases": ["kotlin"],                                            "tags": ["kmp", "mobile", "android"],       "strength": 5 },
+          { "name": "Kotlin Multiplatform (KMP)", "aliases": ["kotlin multiplatform", "kmp", "kmm", "compose multiplatform"], "tags": ["kmp", "mobile"],  "strength": 5 },
+          { "name": "SwiftUI",                 "aliases": ["swiftui", "swift", "ios"],                           "tags": ["ios", "mobile"],                  "strength": 4 },
+          { "name": "Jetpack Compose",         "aliases": ["jetpack compose", "compose"],                        "tags": ["android", "mobile"],              "strength": 4 },
+          { "name": "React Native",            "aliases": ["react native", "react-native"],                      "tags": ["react-native", "mobile"],         "strength": 3 },
+          { "name": "React",                   "aliases": ["react", "react.js", "reactjs"],                      "tags": ["react", "frontend", "mern"],      "strength": 4 },
+          { "name": "Node.js",                 "aliases": ["node", "node.js", "nodejs", "express"],              "tags": ["node", "backend", "mern"],        "strength": 4 },
+          { "name": "TypeScript / JavaScript", "aliases": ["typescript", "javascript", "ts", "js", "es6"],       "tags": ["typescript", "mern", "frontend"], "strength": 4 },
+          { "name": "Django",                  "aliases": ["django", "python"],                                  "tags": ["django", "python", "backend"],    "strength": 3 },
+          { "name": "Ruby on Rails",           "aliases": ["ruby on rails", "rails", "ruby"],                    "tags": ["rails", "ruby", "backend"],       "strength": 3 },
+          { "name": "Splitties",               "aliases": ["splitties"],                                         "tags": ["android", "kotlin"],              "strength": 2 }
+        ]
+      },
+      {
+        "id": "agentic-ai",
+        "label": "Agentic Engineering & AI",
+        "tags": ["agentic", "ai", "llm", "mcp", "fde"],
+        "items": [
+          { "name": "Claude Code",                  "aliases": ["claude code", "claude", "anthropic"],                          "tags": ["agentic", "ai"],          "strength": 5 },
+          { "name": "Codex",                        "aliases": ["codex", "openai", "copilot"],                                  "tags": ["agentic", "ai"],          "strength": 3 },
+          { "name": "MCP servers",                  "aliases": ["mcp", "model context protocol", "tool calling", "tool-use"],   "tags": ["mcp", "agentic"],         "strength": 5 },
+          { "name": "Custom slash-command skills",  "aliases": ["custom skills", "slash command", "agent skills"],              "tags": ["agentic"],                "strength": 5 },
+          { "name": "Multi-agent workflows",        "aliases": ["multi-agent", "multi agent", "agent orchestration", "agentic workflow", "ai agents", "agents"], "tags": ["multi-agent", "agentic"], "strength": 5 },
+          { "name": "BMad method",                  "aliases": ["bmad"],                                                        "tags": ["multi-agent"],            "strength": 4 },
+          { "name": "Recurring agent loops",        "aliases": ["agent loop", "autonomous agent", "background agent"],          "tags": ["agentic"],                "strength": 4 },
+          { "name": "Hooks & persistent memory",    "aliases": ["hooks", "persistent memory", "memory", "context management"],  "tags": ["agentic"],                "strength": 4 },
+          { "name": "Prompt engineering",           "aliases": ["prompt engineering", "prompting", "llm", "large language model", "genai", "generative ai"], "tags": ["llm", "ai"], "strength": 4 }
+        ]
+      },
+      {
+        "id": "architecture",
+        "label": "Architecture",
+        "tags": ["architecture", "mobile", "fullstack"],
+        "items": [
+          { "name": "MVVM",                              "aliases": ["mvvm"],                                    "tags": ["architecture", "mobile"], "strength": 5 },
+          { "name": "Clean Architecture",                "aliases": ["clean architecture"],                      "tags": ["architecture"],           "strength": 5 },
+          { "name": "MVI",                               "aliases": ["mvi"],                                     "tags": ["architecture", "android"],"strength": 4 },
+          { "name": "REST & GraphQL APIs",               "aliases": ["rest", "restful", "graphql", "api"],       "tags": ["api", "backend"],         "strength": 5 },
+          { "name": "Cross-platform mobile architecture","aliases": ["cross-platform", "cross platform"],        "tags": ["mobile", "architecture"],  "strength": 5 }
+        ]
+      },
+      {
+        "id": "tools-integrations",
+        "label": "Tools & Integrations",
+        "tags": ["integrations", "generic"],
+        "items": [
+          { "name": "Firebase",   "aliases": ["firebase", "firestore", "fcm"],   "tags": ["firebase", "backend"],  "strength": 4 },
+          { "name": "GraphQL",    "aliases": ["graphql", "apollo"],              "tags": ["graphql", "api"],       "strength": 4 },
+          { "name": "Jira",       "aliases": ["jira", "atlassian"],              "tags": ["agile", "mcp"],         "strength": 4 },
+          { "name": "Confluence", "aliases": ["confluence"],                     "tags": ["docs", "mcp"],          "strength": 3 },
+          { "name": "Slack",      "aliases": ["slack"],                          "tags": ["mcp", "collab"],        "strength": 3 },
+          { "name": "Figma",      "aliases": ["figma", "design system"],         "tags": ["design", "mcp"],        "strength": 3 },
+          { "name": "VIMscore",   "aliases": ["vimscore"],                       "tags": ["healthcare", "sdk"],    "strength": 3 },
+          { "name": "AppThera",   "aliases": ["appthera"],                       "tags": ["healthcare", "sdk"],    "strength": 3 }
+        ]
+      },
+      {
+        "id": "cicd-devops",
+        "label": "CI/CD & DevOps",
+        "tags": ["cicd", "devops", "cloud", "release"],
+        "items": [
+          { "name": "Fastlane",                     "aliases": ["fastlane"],                              "tags": ["cicd", "release", "mobile"], "strength": 5 },
+          { "name": "GitHub Actions",               "aliases": ["github actions", "ci/cd", "cicd", "ci cd", "continuous integration"], "tags": ["cicd"], "strength": 4 },
+          { "name": "Firebase App Distribution",    "aliases": ["app distribution", "firebase distribution"], "tags": ["release", "mobile"],     "strength": 4 },
+          { "name": "AWS",                          "aliases": ["aws", "amazon web services", "ec2", "s3"], "tags": ["cloud", "aws"],            "strength": 3 },
+          { "name": "Azure",                        "aliases": ["azure", "microsoft azure"],              "tags": ["cloud", "azure"],            "strength": 3 },
+          { "name": "App Store / Play Store deployments", "aliases": ["app store", "play store", "google play", "testflight"], "tags": ["release", "mobile"], "strength": 5 }
+        ]
+      },
+      {
+        "id": "version-control",
+        "label": "Version Control",
+        "tags": ["generic", "collab"],
+        "items": [
+          { "name": "Git", "aliases": ["git"], "tags": ["generic"], "strength": 5 },
+          { "name": "GitHub (PRs, tags, branching strategy, code review)", "aliases": ["github", "pull request", "code review", "branching"], "tags": ["collab", "code-review"], "strength": 5 }
+        ]
+      }
+    ]
+  },
+
+  "agenticSection": {
+    "_rule": "A dedicated resume section. The engine SHOWS this section prominently for agentic/ai/fde archetypes, demotes it below Experience for pure mobile/MERN roles, and never deletes it.",
+    "label": "Agentic Engineering",
+    "intro": "Architect and operate custom AI agent systems on Claude Code that automate the software lifecycle end to end, turning a single requirement into shipped, reviewed, and documented production code.",
+    "bullets": [
+      { "id": "ag-devloop",  "weight": 6, "tags": ["agentic", "multi-agent", "ai", "automation", "fde"],
+        "text": "Autonomous delivery pipeline (/dev-loop): Designed an agent workflow that takes one requirement (a Slack thread, PRD, or Jira key) and drives it through triage, ticketing, code generation, a hard definition-of-done gate (automated codebase-standards audit, code review, and tests), and stakeholder documentation." },
+      { "id": "ag-fastlane", "weight": 5, "tags": ["agentic", "cicd", "fastlane", "release", "mobile", "automation"],
+        "text": "One-prompt store releases (Fastlane): Automated the entire release with custom Fastlane lanes for iOS and Android, so a single prompt (for example, \"Add builds 1.4.0\") builds, signs, and ships the app to both the App Store and Google Play in one pass, guarded by an automated static-analysis and test gate." },
+      { "id": "ag-mcp",      "weight": 6, "tags": ["mcp", "agentic", "integrations", "ai", "tool-calling"],
+        "text": "MCP platform integrations: Extended the agent runtime with MCP servers for Jira, Confluence, Slack, and Figma, so agents autonomously manage tickets, publish documentation, and pull live design and project context." },
+      { "id": "ag-bmad",     "weight": 5, "tags": ["multi-agent", "agentic", "ai", "code-review"],
+        "text": "Multi-agent orchestration (BMad method): Plan, build, and review complex features with a coordinated set of analyst, architect, PM, dev, and reviewer agents, using adversarial verification and scheduled agent loops to hold quality and consistency high." },
+      { "id": "ag-designspec","weight": 4, "tags": ["agentic", "design", "frontend", "figma", "ai"],
+        "text": "Design-to-spec workflow (/design-spec): Turns a Figma link or screenshots into production-ready deliverables (a Figma-to-code mapping, a PRD, and a pixel-accurate interactive prototype) governed by a codified design system." }
+    ]
+  },
+
+  "experience": [
+    {
+      "id": "gateway",
+      "company": "Gateway Group of Companies",
+      "role": "Software Engineer",
+      "location": "Ahmedabad, India",
+      "start": "January 2024",
+      "end": "Present",
+      "durationLabel": "2.5+ years",
+      "bullets": [
+        { "id": "gw-arch",    "weight": 6, "pinned": true, "tags": ["mobile", "flutter", "kmp", "architecture", "fullstack", "healthcare", "enterprise"],
+          "text": "Led architectural design and deployment of production-grade Flutter and KMP applications, plus supporting full-stack services, for international healthcare and enterprise markets." },
+        { "id": "gw-agentic", "weight": 6, "tags": ["agentic", "ai", "mcp", "multi-agent", "automation", "llm"],
+          "text": "Architected and operate a suite of agentic engineering workflows on Claude Code (custom slash-command skills, MCP integrations across Jira, Confluence, Slack, and Figma, the BMad multi-agent method, and recurring agent loops) that automate requirement-to-release delivery, code review, and documentation, dramatically increasing engineering throughput." },
+        { "id": "gw-award",   "weight": 5, "pinned": true, "tags": ["generic", "leadership", "impact"],
+          "text": "Received the company R&R (Rewards and Recognition) Award for \"Above and Beyond Performance\" in project execution and delivery." },
+        { "id": "gw-clients", "weight": 5, "tags": ["fde", "client-facing", "healthcare", "regulated", "enterprise"],
+          "text": "Collaborated deeply with European clients (Norway, Germany, France) to build certified software under rigorous health-compliance frameworks (DiGA, HAS, PECAN)." },
+        { "id": "gw-sdk",     "weight": 4, "tags": ["integrations", "iot", "ble", "realtime", "sdk"],
+          "text": "Integrated complex third-party SDKs, hardware communication layers, and real-time data pipelines (VIMscore, AppThera, Livy chatbot)." },
+        { "id": "gw-review",  "weight": 4, "tags": ["code-review", "docs", "collab", "generic"],
+          "text": "Conducted rigorous code reviews, established clear Git branching strategies, and authored comprehensive technical documentation to maintain code modularity and readability." },
+        { "id": "gw-crossfn", "weight": 3, "tags": ["agile", "collab", "generic", "fde"],
+          "text": "Partnered with cross-functional teams (designers, product managers, backend developers, and QA) to deliver mobile and full-stack solutions on time." }
+      ]
+    }
+  ],
+
+  "projects": [
+    {
+      "id": "tymewear",
+      "name": "Tymewear",
+      "region": "USA",
+      "weight": 5,
+      "tags": ["flutter", "dart", "django", "python", "iot", "ble", "realtime", "fullstack", "api", "integrations", "mobile"],
+      "stackLine": "Full-Stack: Flutter / Dart client · Django (Python) backend · BLE, IoT-based fitness platform",
+      "bullets": [
+        { "id": "ty-lead",    "weight": 6, "pinned": true, "tags": ["flutter", "django", "fullstack", "ble", "iot", "api"],
+          "text": "Led development of the Tymewear app across a Flutter/Dart client and Django/Python backend services, managing BLE connectivity, real-time sensor pipelines, and REST APIs (strap plus external sensors)." },
+        { "id": "ty-metrics", "weight": 4, "tags": ["realtime", "mobile", "data", "frontend"],
+          "text": "Enabled live tracking of breathing, heart rate, and other biometric metrics, visualised via graphs and analytics for training-zone monitoring." },
+        { "id": "ty-integ",   "weight": 5, "tags": ["integrations", "api", "rest", "sdk"],
+          "text": "Integrated third-party fitness platforms (Garmin, Wahoo, Intervals.icu) for seamless bidirectional synchronization of workouts, training loads, and biometric data across ecosystems." },
+        { "id": "ty-offline", "weight": 4, "tags": ["mobile", "ble", "offline", "sync"],
+          "text": "Supported sensor-pairing workflows and offline session sync so data was preserved even when the phone was out of range during activity." },
+        { "id": "ty-agentic", "weight": 5, "tags": ["agentic", "ai", "automation", "code-review", "agile"],
+          "text": "Applied agentic engineering (self-built /dev-loop and /design-spec workflows) to drive features from Jira ticket to built feature to release, accelerating delivery while enforcing code-review and definition-of-done gates." }
+      ]
+    },
+    {
+      "id": "lifeness",
+      "name": "Lifeness",
+      "region": "Norway / Germany",
+      "weight": 5,
+      "tags": ["kmp", "kotlin", "swiftui", "rails", "ruby", "graphql", "healthcare", "regulated", "fullstack", "mobile", "release"],
+      "stackLine": "Full-Stack: Kotlin Multiplatform (KMP) & SwiftUI client · Ruby on Rails backend · GraphQL · DiGA & PECAN certified healthcare app",
+      "bullets": [
+        { "id": "lf-lead",    "weight": 6, "pinned": true, "tags": ["kmp", "swiftui", "rails", "graphql", "healthcare", "regulated", "fullstack"],
+          "text": "Delivered full-stack functionality for a research-based, DiGA and PECAN-certified healthcare app for lifestyle and chronic-disease management, spanning a KMP/SwiftUI client and a Ruby on Rails backend consumed via GraphQL." },
+        { "id": "lf-features","weight": 4, "tags": ["healthcare", "mobile", "i18n", "ai", "chatbot"],
+          "text": "Built scalable features supporting chronic-disease prevention and lifestyle tracking, with multilingual support and Livy chatbot integration." },
+        { "id": "lf-integ",   "weight": 4, "tags": ["integrations", "healthcare", "release", "firebase", "sdk"],
+          "text": "Led third-party integration of VIMscore for patient analytics and managed Firebase builds and active release cycles on the App Store and Play Store." },
+        { "id": "lf-agentic", "weight": 5, "tags": ["agentic", "mcp", "ai", "multi-agent", "docs"],
+          "text": "Applied agentic engineering workflows (custom Claude Code skills, MCP-driven Jira/Confluence automation, and the BMad method) to plan, build, and document features end-to-end." }
+      ]
+    }
+  ],
+
+  "education": [
+    { "id": "btech",   "degree": "B.Tech in Information Technology", "institution": "Charotar University of Science and Technology (CHARUSAT)", "location": "Changa, India", "weight": 5 },
+    { "id": "diploma", "degree": "Diploma in Computer Engineering",  "institution": "Government Polytechnic",                                   "location": "Jamnagar",       "weight": 3 }
+  ],
+
+  "certifications": [
+    { "id": "aws-ccp",  "name": "AWS Certified Cloud Practitioner", "tags": ["cloud", "aws"],   "weight": 4 },
+    { "id": "az-900",   "name": "Microsoft Azure Fundamentals",     "tags": ["cloud", "azure"], "weight": 4 }
+  ],
+
+  "publications": {
+    "label": "Publications & Other Experience",
+    "blogs": [
+      { "id": "blog-azure",  "title": "Azure Virtual Machine Deployment with VNet & Resource Groups", "tags": ["cloud", "azure"],   "weight": 3 },
+      { "id": "blog-docker", "title": "Demystifying Docker Commands CLI",                             "tags": ["devops", "docker"], "weight": 3 }
+    ],
+    "internships": [
+      { "id": "int-celebal",     "text": "Cloud Infrastructure & Security (Celebal Technologies)", "tags": ["cloud", "security"], "weight": 3 },
+      { "id": "int-techiebutler","text": "AWS & Jenkins (TechieButler)",                            "tags": ["cloud", "aws", "cicd"], "weight": 3 }
+    ]
+  },
+
+  "doNotClaim": {
+    "_rule": "The tailoring engine reads this list and will REFUSE to emit a resume that asserts any of these, and will surface them as honest gaps in the match report. Extend this list as you learn what JDs ask for that Dev genuinely lacks.",
+    "items": [
+      "MongoDB hands-on production experience (the resume shows React + Node + TypeScript, but NOT MongoDB — do not claim the 'M' in MERN until it is genuinely true)",
+      "Express.js named explicitly (Node.js is on the resume; Express is not)",
+      "Machine-learning model training, fine-tuning, MLOps, or data science",
+      "Vector databases, RAG pipelines, or embeddings work",
+      "Kubernetes, Docker in production, Terraform, or infrastructure-as-code ownership",
+      "Senior, Lead, Staff, Principal, or Architect job titles",
+      "Team management or direct reports",
+      "Hands-on Google Cloud Platform (GCP)",
+      "Native Android in Java, or native iOS in UIKit/Objective-C",
+      "Any specific revenue, user-count, latency, or percentage metric — the source resume contains none, so none may be invented",
+      "Open-source maintainership or published packages",
+      "System design at large scale / distributed systems ownership"
+    ]
+  }
+}

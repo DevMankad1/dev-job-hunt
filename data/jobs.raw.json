@@ -1,0 +1,389 @@
+{
+  "generatedAt": "2026-09-08T09:07:49.485Z",
+  "params": {
+    "maxAgeHours": 720,
+    "loc": null,
+    "all": true
+  },
+  "stats": {
+    "boards": 33,
+    "boardErrors": 0,
+    "rawJobs": 1696,
+    "afterAge": 1181,
+    "afterRole": 221,
+    "afterSeniority": 69,
+    "afterStack": 68,
+    "afterLocation": 15,
+    "reported": 15
+  },
+  "boardErrors": [],
+  "matches": [
+    {
+      "company": "AiPrise",
+      "companyDomain": "aiprise.com",
+      "companyPriority": "high",
+      "companySegments": [
+        "mern",
+        "startup-early",
+        "product-india"
+      ],
+      "title": "Software Engineer II (Bangalore, India)",
+      "location": "Bengaluru",
+      "url": "https://jobs.ashbyhq.com/aiprise/02112df8-70fa-4133-a860-151b5f585ed9",
+      "postedAt": "2026-08-24T19:32:40.453Z",
+      "source": "ashby",
+      "archetype": "sde-generalist",
+      "archetypeScore": 116,
+      "recommendation": "apply",
+      "blockers": [],
+      "seniorityNote": "",
+      "isIndia": true,
+      "isRemote": false,
+      "descriptionExcerpt": "About AiPrise AiPrise is a global compliance orchestration platform helping fintechs, marketplaces, and payment companies verify and onboard customers worldwide. We integrate with 80+ identity and compliance vendors to deliver a holistic view of risk. We're now building AI-powered compliance agents to revolutionize KYB, AML, sanctions screening, and risk scoring — enabling our customers to onboard faster, reduce manual reviews, and prevent financial crime. Role Overview We’re hiring a Software Engineer II to help build and scale the core platform behind AiPrise’s compliance orchestration and A"
+    },
+    {
+      "company": "Dscout",
+      "companyDomain": "dscout.com",
+      "companyPriority": "high",
+      "companySegments": [
+        "ai-agentic",
+        "remote-global",
+        "mern"
+      ],
+      "title": "Applied AI Engineer - India",
+      "location": "Remote - India",
+      "url": "https://job-boards.greenhouse.io/dscout/jobs/4370258009",
+      "postedAt": "2026-08-21T19:48:39.000Z",
+      "source": "greenhouse",
+      "archetype": "ai-agent-engineer",
+      "archetypeScore": 97,
+      "recommendation": "apply",
+      "blockers": [],
+      "seniorityNote": "",
+      "isIndia": true,
+      "isRemote": true,
+      "descriptionExcerpt": "<div class=&quot;content-intro&quot;><p><span style=&quot;font-size: 12pt;&quot;>At Dscout, we’re building the most flexible and powerful UX research platform on the market—trusted by the world’s top brands in finance (JP Morgan Chase, Intuit, Charles Schwab, PayPal), healthcare (Aya, Headspace), consumer goods (Keen, Verizon, Target, Northface), and tech (Google, Amazon, Facebook, Meta, Spotify, AirBnB). Our tools help teams deeply understand the humans behind their products, so they can build better ones.&nbsp;We are expanding our smart and driven team and would love for you to join us.</spa"
+    },
+    {
+      "company": "AiPrise",
+      "companyDomain": "aiprise.com",
+      "companyPriority": "high",
+      "companySegments": [
+        "mern",
+        "startup-early",
+        "product-india"
+      ],
+      "title": "Software Engineer III (Bangalore, India)",
+      "location": "Bengaluru",
+      "url": "https://jobs.ashbyhq.com/aiprise/e7890d9f-8e1f-48a0-92be-071a282e7fe8",
+      "postedAt": "2026-08-24T16:05:20.022Z",
+      "source": "ashby",
+      "archetype": "sde-generalist",
+      "archetypeScore": 56,
+      "recommendation": "apply",
+      "blockers": [],
+      "seniorityNote": "JD asks for 4+ years vs 2.7 — stretch, apply if the fit is otherwise strong",
+      "isIndia": true,
+      "isRemote": false,
+      "descriptionExcerpt": "About AiPrise AiPrise is a global compliance orchestration platform helping fintechs, marketplaces, and payment companies verify and onboard customers worldwide. We integrate with 80+ identity and compliance vendors to deliver a holistic view of risk. We're now building AI-powered compliance agents to revolutionize KYB, AML, sanctions screening, and risk scoring — enabling our customers to onboard faster, reduce manual reviews, and prevent financial crime. Role Overview We’re hiring a Software Engineer II to help build and scale the core platform behind AiPrise’s compliance orchestration and A"
+    },
+    {
+      "company": "AiPrise",
+      "companyDomain": "aiprise.com",
+      "companyPriority": "high",
+      "companySegments": [
+        "mern",
+        "startup-early",
+        "product-india"
+      ],
+      "title": "Software Engineer I (Bangalore, India)",
+      "location": "Bengaluru",
+      "url": "https://jobs.ashbyhq.com/aiprise/3763c791-a387-4078-9ca4-00cbfbf9b1a6",
+      "postedAt": "2026-08-24T19:35:25.230Z",
+      "source": "ashby",
+      "archetype": "sde-generalist",
+      "archetypeScore": 53,
+      "recommendation": "apply",
+      "blockers": [],
+      "seniorityNote": "",
+      "isIndia": true,
+      "isRemote": false,
+      "descriptionExcerpt": "About AiPrise AiPrise is a global compliance orchestration platform helping fintechs, marketplaces, and payment companies verify and onboard customers worldwide. We integrate with 80+ identity and compliance vendors to deliver a holistic view of risk. We're now building AI-powered compliance agents to revolutionize KYB, AML, sanctions screening, and risk scoring — enabling our customers to onboard faster, reduce manual reviews, and prevent financial crime. Role Overview We’re hiring a Software Engineer I to help build and scale the core platform behind AiPrise’s compliance orchestration and AI"
+    },
+    {
+      "company": "Dscout",
+      "companyDomain": "dscout.com",
+      "companyPriority": "high",
+      "companySegments": [
+        "ai-agentic",
+        "remote-global",
+        "mern"
+      ],
+      "title": "Software Engineer - India",
+      "location": "Remote - India",
+      "url": "https://job-boards.greenhouse.io/dscout/jobs/4370266009",
+      "postedAt": "2026-08-21T19:49:32.000Z",
+      "source": "greenhouse",
+      "archetype": "sde-generalist",
+      "archetypeScore": 48,
+      "recommendation": "apply",
+      "blockers": [],
+      "seniorityNote": "",
+      "isIndia": true,
+      "isRemote": true,
+      "descriptionExcerpt": "<div class=&quot;content-intro&quot;><p><span style=&quot;font-size: 12pt;&quot;>At Dscout, we’re building the most flexible and powerful UX research platform on the market—trusted by the world’s top brands in finance (JP Morgan Chase, Intuit, Charles Schwab, PayPal), healthcare (Aya, Headspace), consumer goods (Keen, Verizon, Target, Northface), and tech (Google, Amazon, Facebook, Meta, Spotify, AirBnB). Our tools help teams deeply understand the humans behind their products, so they can build better ones.&nbsp;We are expanding our smart and driven team and would love for you to join us.</spa"
+    },
+    {
+      "company": "Sarvam AI",
+      "companyDomain": "sarvam.ai",
+      "companyPriority": "high",
+      "companySegments": [
+        "ai-agentic",
+        "fde",
+        "product-india",
+        "startup-early"
+      ],
+      "title": "Agent Engineer",
+      "location": "Bengaluru",
+      "url": "https://jobs.ashbyhq.com/sarvam/36f89b00-2010-4d23-aae3-17a2f53d9eaa",
+      "postedAt": "2026-08-20T06:30:48.859Z",
+      "source": "ashby",
+      "archetype": "ai-agent-engineer",
+      "archetypeScore": 47,
+      "recommendation": "apply",
+      "blockers": [],
+      "seniorityNote": "JD asks for 3+ years vs 2.7 — stretch, apply if the fit is otherwise strong",
+      "isIndia": true,
+      "isRemote": false,
+      "descriptionExcerpt": "The distance between an AI system that works and one that millions of people rely on every day is where the real engineering lives. Crossing it is what Agent Engineers at Sarvam do. The agents you build go into live operation at India's largest banks, insurers, NBFCs and government departments, and at some of the country's fastest-growing companies, handling millions of real interactions, measured against outcomes the customer wants to drive. The hard part is not the first version. It is everything after: mapping the full space of what an agent has to handle so the scenarios that matter are co"
+    },
+    {
+      "company": "JumpCloud",
+      "companyDomain": "jumpcloud.com",
+      "companyPriority": "high",
+      "companySegments": [
+        "mern",
+        "remote-global"
+      ],
+      "title": "Full Stack Software Engineer, Front-End Focus - India",
+      "location": "Bangalore, India - Remote",
+      "url": "https://jobs.lever.co/jumpcloud/4ebbdea9-39c2-465d-bbdf-bf379a8e4a06",
+      "postedAt": "2026-08-12T07:47:01.351Z",
+      "source": "lever",
+      "archetype": "sde-generalist",
+      "archetypeScore": 44,
+      "recommendation": "apply",
+      "blockers": [],
+      "seniorityNote": "",
+      "isIndia": true,
+      "isRemote": true,
+      "descriptionExcerpt": "All roles at JumpCloud® are Remote unless otherwise specified in the Job Description. About JumpCloud® JumpCloud® is the AI-powered unified IT management platform designed to secure the modern workforce. By consolidating identity, device, and access management, JumpCloud provides intelligent, secure IT that scales from human users to autonomous AI agents. We help organizations around the globe eliminate complexity and turn AI risk into an optimized advantage, ensuring the right people and agents have secure access to the right resources at all times. JumpCloud is Intelligent, Secure IT."
+    },
+    {
+      "company": "Innovaccer",
+      "companyDomain": "innovaccer.com",
+      "companyPriority": "high",
+      "companySegments": [
+        "healthtech",
+        "mern",
+        "product-india",
+        "enterprise",
+        "ai-agentic"
+      ],
+      "title": "4403 - Software Development Engineer-II (Finance - AI Engineering)",
+      "location": "Noida, Uttar Pradesh, India",
+      "url": "https://apply.workable.com/j/E7CD7FB957",
+      "postedAt": "2026-09-07T00:00:00.000Z",
+      "source": "workable",
+      "archetype": "ai-agent-engineer",
+      "archetypeScore": 31,
+      "recommendation": "apply",
+      "blockers": [],
+      "seniorityNote": "",
+      "isIndia": true,
+      "isRemote": false,
+      "descriptionExcerpt": "About the Role Every finance team runs on spreadsheets, tribal knowledge, and manual reconciliation between systems that were never meant to talk to each other. We think that's about to change — and we want the engineer who builds that change here first. This isn't a \"finance systems\" role. It's not reporting, it's not maintaining dashboards, and it's not writing SQL for someone else's requirements doc. This is a build role for someone who wants to take a real, high-stakes function — the one that runs the company's numbers, forecasts, and capital decisions — and rebuild it from the ground up a"
+    },
+    {
+      "company": "Netomi",
+      "companyDomain": "netomi.com",
+      "companyPriority": "medium",
+      "companySegments": [
+        "ai-agentic",
+        "mern",
+        "startup-early"
+      ],
+      "title": "Agentic Engineer Level II/III",
+      "location": "Remote - India",
+      "url": "https://jobs.lever.co/netomi/0e6b7355-330a-4d10-b8d5-c235bd555622",
+      "postedAt": "2026-08-24T10:53:34.518Z",
+      "source": "lever",
+      "archetype": "ai-agent-engineer",
+      "archetypeScore": 48,
+      "recommendation": "apply",
+      "blockers": [],
+      "seniorityNote": "",
+      "isIndia": true,
+      "isRemote": true,
+      "descriptionExcerpt": "About the Company: Netomi is the leading agentic AI platform for enterprise customer experience. We work with the largest global brands like Delta Airlines, MetLife, MGM, United, and others to enable agentic automation at scale across the entire customer journey. Our no-code platform delivers the fastest time to market, lowest total cost of ownership, and simple, scalable management of AI agents for any CX use case. Backed by WndrCo, Y Combinator, and Index Ventures, we help enterprises drive efficiency, lower costs, and deliver higher quality customer experiences. Want to be part of the AI re"
+    },
+    {
+      "company": "Glean",
+      "companyDomain": "glean.com",
+      "companyPriority": "high",
+      "companySegments": [
+        "ai-agentic",
+        "enterprise",
+        "gcc",
+        "product-india"
+      ],
+      "title": "Strategic Solutions Engineer, West",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/gleanwork/jobs/4722386005",
+      "postedAt": "2026-08-20T15:13:53.000Z",
+      "source": "greenhouse",
+      "archetype": "forward-deployed-engineer",
+      "archetypeScore": 68,
+      "recommendation": "review",
+      "blockers": [
+        "Negative keywords: servicenow"
+      ],
+      "seniorityNote": "JD asks for 5+ years vs 2.7 — stretch, apply if the fit is otherwise strong",
+      "isIndia": false,
+      "isRemote": true,
+      "descriptionExcerpt": "<div class=&quot;content-intro&quot;><div><span style=&quot;font-family: helvetica, arial, sans-serif; color: rgb(0, 0, 0); font-size: 12pt;&quot;><strong>About Glean:</strong></span></div> <div>&nbsp;</div> <div><span style=&quot;font-size: 12pt; font-family: helvetica, arial, sans-serif;&quot;>Glean is the Work AI platform that helps everyone work smarter with AI. What began as the industry’s most advanced enterprise search has evolved into a full-scale Work AI ecosystem, powering intelligent Search, an AI Assistant, and scalable AI agents on one secure, open platform. With over 100 enterpri"
+    },
+    {
+      "company": "Razorpay",
+      "companyDomain": "razorpay.com",
+      "companyPriority": "high",
+      "companySegments": [
+        "mobile-native",
+        "mern",
+        "product-india",
+        "fde",
+        "ai-agentic"
+      ],
+      "title": "Forward Deployed Engineer",
+      "location": "Bengaluru",
+      "url": "https://job-boards.greenhouse.io/razorpaysoftwareprivatelimited/jobs/4723067005",
+      "postedAt": "2026-08-18T07:09:40.000Z",
+      "source": "greenhouse",
+      "archetype": "forward-deployed-engineer",
+      "archetypeScore": 58,
+      "recommendation": "review",
+      "blockers": [
+        "Negative keywords: salesforce"
+      ],
+      "seniorityNote": "JD asks for 4+ years vs 2.7 — stretch, apply if the fit is otherwise strong",
+      "isIndia": true,
+      "isRemote": false,
+      "descriptionExcerpt": "<div class=&quot;content-intro&quot;><p>Razorpay is one of India’s leading full-stack financial technology companies, powering the way businesses move, manage, and grow money. Founded in 2014 by Harshil Mathur and Shashank Kumar with a simple vision - to simplify payments for Indian businesses - we’ve since grown into a fintech powerhouse driving India’s digital payment revolution.</p> <p>Razorpay powers millions of businesses with a smarter, scalable stack that goes beyond transactions to help them truly build and grow.</p> <p>From building AI-native agentic payments, to AI-assisted fraud det"
+    },
+    {
+      "company": "Automattic",
+      "companyDomain": "automattic.com",
+      "companyPriority": "medium",
+      "companySegments": [
+        "remote-global",
+        "mobile-native",
+        "mern"
+      ],
+      "title": "Experienced Software Engineer",
+      "location": "Remote",
+      "url": "https://job-boards.greenhouse.io/automatticcareers/jobs/5862239",
+      "postedAt": "2026-08-17T17:59:04.000Z",
+      "source": "greenhouse",
+      "archetype": "sde-generalist",
+      "archetypeScore": 45,
+      "recommendation": "review",
+      "blockers": [
+        "Negative keywords: wordpress"
+      ],
+      "seniorityNote": "",
+      "isIndia": false,
+      "isRemote": true,
+      "descriptionExcerpt": "<p>WordPress doesn’t try to keep its users inside walled gardens, a rare thing in a world that is dangerously moving away from the open web. Instead, WordPress gives them the freedom to build a business website, an online store, or a personal blog – the way they like it. Big sites or small, using the community-run <a href=&quot;https://wordpress.org/&quot;>open source project</a> or Automattic’s <a href=&quot;https://wordpress.com/&quot;>WordPress.com</a>, vanilla or customized with hundreds of plugins, WordPress users always get to own and control their data, their expression, and their freed"
+    },
+    {
+      "company": "UptimeAI",
+      "companyDomain": "uptimeai.com",
+      "companyPriority": "high",
+      "companySegments": [
+        "mern",
+        "startup-early",
+        "iot"
+      ],
+      "title": "Solutions Engineer",
+      "location": "Bangalore (India)",
+      "url": "https://jobs.ashbyhq.com/uptimeai/649d33ff-a0e4-4385-bbbd-455733f35875",
+      "postedAt": "2026-08-14T03:57:31.498Z",
+      "source": "ashby",
+      "archetype": "forward-deployed-engineer",
+      "archetypeScore": 56,
+      "recommendation": "skip",
+      "blockers": [
+        "Seniority: JD asks for 8+ years vs 2.7 — beyond the stretch band",
+        "Negative keywords: 8+ years"
+      ],
+      "seniorityNote": "JD asks for 8+ years vs 2.7 — beyond the stretch band",
+      "isIndia": true,
+      "isRemote": false,
+      "descriptionExcerpt": "Solutions Engineer About UptimeAI: UptimeAI provides AI reasoning agents that help industrial operations teams make goal-oriented, real-time decisions. Industrial facilities are rich in data but constrained by the expertise required to maintain and interpret it. As experienced engineers retire and operational complexity grows, organizations struggle to scale the expert judgment needed to maintain reliability, safety, and performance. UptimeAI addresses this challenge by embedding engineering reasoning directly into AI agents that continuously analyze operational data, diagnose issues, and guid"
+    },
+    {
+      "company": "Glean",
+      "companyDomain": "glean.com",
+      "companyPriority": "high",
+      "companySegments": [
+        "ai-agentic",
+        "enterprise",
+        "gcc",
+        "product-india"
+      ],
+      "title": "Software Engineer, Agents Governance",
+      "location": "Bangalore, India",
+      "url": "https://job-boards.greenhouse.io/gleanwork/jobs/4712434005",
+      "postedAt": "2026-08-18T10:43:34.000Z",
+      "source": "greenhouse",
+      "archetype": "sde-generalist",
+      "archetypeScore": 45,
+      "recommendation": "skip",
+      "blockers": [
+        "Seniority: JD asks for 6+ years vs 2.7 — beyond the stretch band",
+        "Negative keywords: servicenow"
+      ],
+      "seniorityNote": "JD asks for 6+ years vs 2.7 — beyond the stretch band",
+      "isIndia": true,
+      "isRemote": false,
+      "descriptionExcerpt": "<div class=&quot;content-intro&quot;><div><span style=&quot;font-family: helvetica, arial, sans-serif; color: rgb(0, 0, 0); font-size: 12pt;&quot;><strong>About Glean:</strong></span></div> <div>&nbsp;</div> <div><span style=&quot;font-size: 12pt; font-family: helvetica, arial, sans-serif;&quot;>Glean is the Work AI platform that helps everyone work smarter with AI. What began as the industry’s most advanced enterprise search has evolved into a full-scale Work AI ecosystem, powering intelligent Search, an AI Assistant, and scalable AI agents on one secure, open platform. With over 100 enterpri"
+    },
+    {
+      "company": "Turing",
+      "companyDomain": "turing.com",
+      "companyPriority": "medium",
+      "companySegments": [
+        "ai-agentic",
+        "remote-global",
+        "enterprise",
+        "fde"
+      ],
+      "title": "Software Engineer",
+      "location": "India - Remote",
+      "url": "https://job-boards.greenhouse.io/turing/jobs/6115695004",
+      "postedAt": "2026-09-03T05:01:14.000Z",
+      "source": "greenhouse",
+      "archetype": "sde-generalist",
+      "archetypeScore": 47,
+      "recommendation": "skip",
+      "blockers": [
+        "Seniority: JD asks for 6+ years vs 2.7 — beyond the stretch band",
+        "Negative keywords: senior software engineer"
+      ],
+      "seniorityNote": "JD asks for 6+ years vs 2.7 — beyond the stretch band",
+      "isIndia": true,
+      "isRemote": true,
+      "descriptionExcerpt": "<div class=&quot;content-intro&quot;><h1><span style=&quot;font-family: helvetica, arial, sans-serif;&quot;><strong><span style=&quot;font-size: 24pt;&quot;>About Turing</span></strong></span></h1> <p><span id=&quot;m_-1033525666082252048m_-8288224233410703305gmail-docs-internal-guid-39386146-7fff-394b-7c89-9e58d80485b6&quot;>Turing’s mission is to accelerate superintelligence to drive real economic progress. Headquartered in San Francisco, Turing works with frontier AI labs to generate high-quality datasets, reinforcement learning environments, and frontier research benchmarks that improve mo"
+    }
+  ]
+}

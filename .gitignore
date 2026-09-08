@@ -1,0 +1,8 @@
+node_modules/
+*.log
+.DS_Store
+.env
+.env.*
+# Tailored resumes are generated per application — regenerate, don't commit.
+resume/tailored/*
+!resume/tailored/.gitkeep

@@ -1,0 +1,33 @@
+{
+  "_meta": {
+    "purpose": "Compensation reference for a ~2.7-year engineer with Dev's profile. Used to sanity-check offers and to anchor recruiter conversations.",
+    "lastUpdated": "2026-09-08",
+    "provenance": "ESTIMATES, not sourced data. The automated comp-research pass did not complete (session limit). These are directional bands based on the shape of the Indian market for a 2-4 year product engineer. VERIFY every number on Levels.fyi, AmbitionBox and 6figr before you quote it in a negotiation — see data/platforms.json tier6_salary_intel.",
+    "unit": "INR lakhs per annum (LPA), total fixed + typical variable, excluding equity",
+    "warning": "Never treat a band here as a reason to reject a posting. Indian JDs almost never state comp, and the real number is set at the recruiter call."
+  },
+
+  "bands": [
+    { "lane": "ai-agent-engineer", "location": "Bengaluru",     "lowLPA": 18, "midLPA": 28, "highLPA": 45, "confidence": "medium", "note": "Widest band of any lane. Well-funded AI startups pay far above the market median for engineers who have genuinely shipped agent systems — which Dev has. This is where his differentiator converts into money." },
+    { "lane": "ai-agent-engineer", "location": "Remote-India",  "lowLPA": 16, "midLPA": 25, "highLPA": 40, "confidence": "medium", "note": "Remote-India roles at Indian AI startups track Bengaluru with a modest discount." },
+    { "lane": "forward-deployed-engineer", "location": "Bengaluru", "lowLPA": 18, "midLPA": 26, "highLPA": 40, "confidence": "low", "note": "FDE is still a thin title in India, so the sample is small. Often carries a variable component tied to customer outcomes — clarify the fixed/variable split early." },
+    { "lane": "flutter-mobile", "location": "Bengaluru",        "lowLPA": 12, "midLPA": 18, "highLPA": 28, "confidence": "medium", "note": "Steady demand, deep supply. Dev's BLE/IoT and regulated-healthcare depth is what pushes him toward the upper half." },
+    { "lane": "flutter-mobile", "location": "Ahmedabad",        "lowLPA": 8,  "midLPA": 13, "highLPA": 19, "confidence": "medium", "note": "Gujarat market runs materially below the Bengaluru/Hyderabad bands. This gap is the single strongest financial argument for remote or relocation." },
+    { "lane": "kmp-android", "location": "Bengaluru",           "lowLPA": 14, "midLPA": 21, "highLPA": 32, "confidence": "low", "note": "KMP adopters are few, so postings are rare — but the scarcity works in his favour when one appears. 'Shipped a DiGA-certified KMP app to both stores' is a rare sentence." },
+    { "lane": "mern-fullstack", "location": "Bengaluru",        "lowLPA": 12, "midLPA": 18, "highLPA": 27, "confidence": "medium", "note": "Highest posting volume, most competition, lowest differentiation. Treat as the fallback lane." },
+    { "lane": "mern-fullstack", "location": "Pune",             "lowLPA": 10, "midLPA": 16, "highLPA": 24, "confidence": "medium", "note": "" },
+    { "lane": "mern-fullstack", "location": "Hyderabad",        "lowLPA": 11, "midLPA": 17, "highLPA": 26, "confidence": "medium", "note": "" },
+    { "lane": "any", "location": "Remote-Global-USD",           "lowLPA": 25, "midLPA": 45, "highLPA": 80, "confidence": "low", "note": "Roughly USD 30k-95k, usually as a contractor or via an EOR (Deel, Remote.com, Oyster). Almost always excludes Indian statutory benefits and shifts tax handling onto him. Very competitive to land, but a single such role can be worth 2-3x a local offer." }
+  ],
+
+  "negotiationNotes": [
+    "Anchor on the ROLE's band, not on a percentage of the current salary. Indian recruiters ask for current CTC specifically to cap the offer — answer with your expected range instead wherever the form allows it.",
+    "Fill in profile.json currentCtcLPA and expectedCtcLPA. Application forms demand both constantly, and Claude must never guess them on your behalf.",
+    "The agentic-engineering work is the strongest lever Dev has. Most 2-3 year engineers cannot say they designed and operate a multi-agent delivery pipeline in production. Lead with it in the first recruiter call, not the fourth.",
+    "A jump from a Gujarat-market salary to a Bengaluru product-company band is often 1.6-2.2x. That is normal for this move, not greedy.",
+    "Ask for the fixed/variable/equity split in writing before saying yes to any number.",
+    "The two cloud certifications (AWS CCP, Azure Fundamentals) are worth mentioning but are entry-level — they will not move a band on their own. Do not over-index on them."
+  ],
+
+  "_todo": "Re-run the comp research pass to replace these estimates with sourced figures and citations."
+}

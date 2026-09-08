@@ -1,0 +1,118 @@
+{
+  "_meta": {
+    "owner": "Dev Mankad",
+    "purpose": "Targeting source of truth. scan.mjs, match.mjs, tailor.mjs and both cloud routines read this. Change targeting HERE, then push.",
+    "lastUpdated": "2026-09-08"
+  },
+
+  "identity": {
+    "name": "Dev Mankad",
+    "email": "devmankad12@gmail.com",
+    "phone": "+91 7990538590",
+    "location": "Ahmedabad, Gujarat, India",
+    "citizenship": "Indian",
+    "workAuth": "Indian citizen — no sponsorship required for India roles.",
+    "linkedin": "",
+    "github": "",
+    "portfolio": "",
+    "_linksNote": "TODO(Dev): fill linkedin + github. Both are missing from the resume and both materially matter for AI/agentic roles, where a public repo is often the strongest signal you can send."
+  },
+
+  "experience": {
+    "totalYears": 2.7,
+    "fullTimeSince": "2024-01",
+    "currentEmployer": "Gateway Group of Companies",
+    "currentTitle": "Software Engineer",
+    "levelLabels": ["SDE-2", "Software Engineer II", "Software Engineer", "Engineer II", "Mid-level", "SDE 2"],
+    "seniorityNote": "2.7 years as of Sep 2026. APPLY to: 1-4 yr, 2-5 yr, 2-4 yr, SDE-2, Software Engineer II, mid-level. STRETCH (apply anyway if the JD is otherwise a strong match — Indian JDs routinely over-state the number): 3-6 yr. SKIP: 5+, 6+, 8+ minimum, Senior/Staff/Principal/Lead/Architect in the title, or any role requiring people management. For AI/agent roles specifically the field is young enough that '3-5 years' often means 'has actually shipped agents' — Dev qualifies on substance, so apply."
+  },
+
+  "targetLanes": [
+    {
+      "id": "ai-agentic",
+      "label": "AI / Agentic Engineer",
+      "priority": 1,
+      "rationale": "Dev's scarcest, highest-leverage asset. He has genuinely operated multi-agent systems (Claude Code skills, MCP servers, BMad, agent loops) in a production delivery pipeline — that is rare at any level and very rare at 2.7 years. Highest comp ceiling of the three lanes.",
+      "titles": ["AI Engineer", "AI Agent Engineer", "Agent Engineer", "Applied AI Engineer", "LLM Engineer", "GenAI Engineer", "AI Software Engineer", "AI Platform Engineer", "AI Automation Engineer", "Member of Technical Staff"]
+    },
+    {
+      "id": "fde",
+      "label": "Forward Deployed Engineer",
+      "priority": 1,
+      "rationale": "Direct hit: client-facing delivery with Norway/Germany/France teams, full-stack breadth, regulated-domain discipline, and agent tooling. FDE explicitly rewards the generalist-who-ships-with-the-customer profile.",
+      "titles": ["Forward Deployed Engineer", "Forward Deployed Software Engineer", "FDE", "Solutions Engineer", "Solutions Architect", "Deployment Engineer", "Implementation Engineer", "Customer Engineer", "Delivery Engineer", "Field Engineer"],
+      "judgeFromJdBody": "Read the JD body before trusting the title. GOOD: builds software with/for customers, writes production code, integrations, deploys, technical depth expected. SKIP: pure pre-sales, quota-carrying, demo-only, account management, or a support/L2 role wearing an engineering title."
+    },
+    {
+      "id": "mobile",
+      "label": "Mobile — Flutter / KMP / cross-platform",
+      "priority": 2,
+      "rationale": "Deepest hands-on track record: 2.7 yrs shipping production Flutter and KMP/SwiftUI to the App Store and Play Store, including BLE/IoT and a DiGA/PECAN-certified app. Most reliable volume of interviews.",
+      "titles": ["Flutter Developer", "Flutter Engineer", "Mobile Engineer", "Mobile Application Developer", "Android Engineer", "Android Developer", "Kotlin Developer", "KMP Engineer", "Kotlin Multiplatform Engineer", "Cross-Platform Engineer", "React Native Developer", "iOS Engineer", "Software Engineer - Mobile"]
+    },
+    {
+      "id": "mern",
+      "label": "Full-stack — MERN only",
+      "priority": 3,
+      "rationale": "React + Node + TypeScript are real and on the resume. Treated as the third lane: broadest volume, lowest differentiation, and one honest gap (MongoDB) — see resume-content.json doNotClaim.",
+      "titles": ["Full Stack Developer", "Full Stack Engineer", "MERN Stack Developer", "MERN Developer", "Software Engineer - Full Stack", "Node.js Developer", "React Developer", "Frontend Engineer", "Backend Engineer - Node", "Javascript Engineer", "Typescript Engineer"],
+      "constraint": "MERN ONLY. Do NOT surface Java, .NET, PHP, Golang, Django-first, or Rails-first full-stack roles. Django and Rails stay on the resume as delivered facts, but they are not targets."
+    }
+  ],
+
+  "excludedLanes": [
+    { "id": "devops-sre", "reason": "Dev explicitly de-scoped this on 2026-09-08. AWS CCP + Azure Fundamentals + Fastlane/GitHub Actions and two cloud internships stay on the resume as supporting facts, but no DevOps/SRE/Platform/Cloud-Engineer roles are targeted." },
+    { "id": "data-ml",    "reason": "No ML/data-science background. Applied-AI product engineering only — not model training, MLOps, or data engineering." },
+    { "id": "qa-support", "reason": "Not a target: QA/automation-testing-only, L1/L2 support, or manual-testing roles." }
+  ],
+
+  "locations": {
+    "preferred": ["Ahmedabad", "Gandhinagar", "GIFT City", "Remote"],
+    "willingToRelocate": ["Bengaluru", "Bangalore", "Pune", "Hyderabad", "Mumbai", "Gurugram", "Gurgaon", "Noida", "Delhi", "NCR", "Chennai"],
+    "remoteOk": true,
+    "remoteGlobalOk": true,
+    "remoteGlobalNote": "Remote roles for non-India companies are in scope where the company hires from India (direct or via EOR such as Deel / Remote.com / Oyster). Confirm India eligibility on the JD before applying.",
+    "excluded": ["on-site outside India requiring relocation abroad"],
+    "_note": "Overseas / visa-sponsorship is NOT an active channel (Dev chose India metros + Remote on 2026-09-08). The relocation channel is scaffolded but disabled — see data/relocation.json and HANDOFF.md §10 to switch it on."
+  },
+
+  "compensation": {
+    "currentCtcLPA": null,
+    "expectedCtcLPA": null,
+    "_note": "TODO(Dev): fill these two in. They are needed for application forms and for the digest's 'is this worth your time' filter. Nothing outside this repo knows them.",
+    "targetBandLPA": { "min": 14, "aim": 22, "stretch": 30 },
+    "salaryIsHardFilter": false,
+    "salaryRule": "Salary in a digest is ALWAYS marked (estimated) unless the JD states a number. Never used as a hard reject — Indian JDs usually omit comp and the band is only established at the recruiter call."
+  },
+
+  "availability": {
+    "noticePeriodDays": null,
+    "_note": "TODO(Dev): fill in your actual notice period. Application forms ask for it constantly and Claude must never guess it."
+  },
+
+  "scanning": {
+    "maxAgeHours": 24,
+    "roleRegex": "(flutter|dart|kotlin|kmp|multiplatform|android|swiftui|jetpack compose|react native|mobile (engineer|developer)|cross.?platform|forward.?deployed|solutions engineer|ai engineer|agent(ic)? engineer|applied ai|llm engineer|genai|generative ai|ml engineer.*(product|application)|member of technical staff|full.?stack|mern|react (developer|engineer)|node(\\.?js)? (developer|engineer)|typescript|javascript engineer|software engineer)",
+    "seniorityRejectRegex": "(senior|staff|principal|lead\\b|architect|manager|director|head of|vp\\b|sr\\.?\\s|8\\+|9\\+|10\\+|7\\+ years|6\\+ years|minimum of (6|7|8|9|10))",
+    "stackRejectRegex": "(salesforce|sap\\b|abap|mainframe|cobol|sharepoint|dynamics 365|servicenow|drupal|wordpress|magento|\\.net|c#|asp\\.net|spring boot|java developer|golang developer|php|laravel|manual test|qa engineer|automation test|selenium|sdet|technical support|desktop support|network engineer|site reliability|\\bsre\\b|devops engineer|platform engineer|cloud engineer|data engineer|data scientist|business analyst|scrum master|product manager)",
+    "indiaRegex": "(india|bengaluru|bangalore|hyderabad|pune|mumbai|gurugram|gurgaon|noida|delhi|ncr|chennai|ahmedabad|gandhinagar|gift city|kolkata|jaipur|indore|kochi|coimbatore|trivandrum|thiruvananthapuram)",
+    "remoteRegex": "(remote|work from home|wfh|distributed|anywhere|home.?based)",
+    "foreignRejectRegex": "(united states|usa|u\\.s\\.|united kingdom|\\buk\\b|england|london|manchester|ireland|dublin|canada|toronto|vancouver|san francisco|new york|\\bnyc\\b|california|texas|austin|seattle|washington|boston|chicago|denver|atlanta|cupertino|palo alto|mountain view|sunnyvale|germany|berlin|munich|netherlands|amsterdam|france|paris|spain|madrid|barcelona|portugal|lisbon|poland|warsaw|krakow|czech|prague|sweden|stockholm|denmark|copenhagen|norway|oslo|finland|helsinki|estonia|israel|tel aviv|singapore|japan|tokyo|australia|sydney|melbourne|new zealand|dubai|\\buae\\b|abu dhabi|saudi|qatar|brazil|mexico|argentina|colombia|chile|philippines|manila|vietnam|indonesia|jakarta|malaysia|kuala lumpur|thailand|bangkok|china|shanghai|beijing|hong kong|korea|seoul|taiwan|egypt|nigeria|kenya|south africa|\\bemea\\b|\\bapac\\b|\\blatam\\b|italy|rome|milan|switzerland|zurich|geneva|austria|vienna|belgium|brussels|greece|athens|turkey|istanbul|romania|bucharest|hungary|budapest|bulgaria|sofia|ukraine|russia|moscow|serbia|croatia|slovakia|slovenia|lithuania|latvia|iceland|luxembourg|malta|cyprus|morocco|ghana|tanzania|uganda|peru|uruguay|ecuador|costa rica|panama|bangladesh|pakistan|sri lanka|nepal|cambodia|myanmar|scotland|wales|belfast|birmingham|leeds|glasgow|edinburgh|bristol|oxford|zagreb|tallinn|riga|vilnius)",
+    "_locationRule": "A posting is in scope when its LOCATION FIELD names an India city/country, or it is remote and its location names no foreign market. The JD body is deliberately NOT used for the India test: India-founded companies mention 'India' throughout their JDs, which let San Francisco and London roles through."
+  },
+
+  "delivery": {
+    "digestEmail": "devmankad12@gmail.com",
+    "digestOnlyIfMatches": true,
+    "digestNote": "No heartbeat email. Silence means zero new matches — that is normal and expected.",
+    "timezone": "Asia/Kolkata"
+  },
+
+  "guardrails": {
+    "autoApply": false,
+    "autoRegister": false,
+    "coldMail": false,
+    "autoSubmitForms": false,
+    "note": "Discovery, matching, tailoring and reporting only. Every outward-facing action — application submit, profile signup, any email to a third party — is Dev's deliberate manual action, or is drafted, shown to him, and sent only on his explicit in-session go-ahead."
+  }
+}

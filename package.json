@@ -1,0 +1,16 @@
+{
+  "name": "dev-job-hunt",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Dev Mankad's job-hunt automation: ATS scanning, JD matching, and automatic resume tailoring.",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "scan": "node scripts/scan.mjs --write-state",
+    "scan:wide": "node scripts/scan.mjs --maxAgeHours 336 --all",
+    "verify": "node scripts/verify_ats.mjs --write",
+    "digest": "node scripts/digest.mjs",
+    "tailor": "node scripts/tailor.mjs",
+    "daily": "node scripts/scan.mjs --write-state && node scripts/digest.mjs"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "_meta": {
+    "purpose": "Third-party recruiting / staffing firms that place product-engineering talent in India.",
+    "lastUpdated": "2026-09-08",
+    "provenance": "PARTIAL — the automated research pass for this file did not complete (session limit reset at 2pm IST). The entries below are firms that are well established and long-operating in the Indian tech-recruiting market. Their URLs are their known primary domains. registerUrl and contactEmail are deliberately EMPTY everywhere: a fabricated recruiter email is worse than no email. Run `/recruiter-outreach` Task A to verify and enrich each row before using it.",
+    "hardRule": "NEVER write a contactEmail into this file unless it was literally seen on a page that was actually fetched. Pattern-constructing 'careers@<domain>' is forbidden.",
+    "priorityLegend": "high = strong fit for Dev's lanes at 2-5 yrs; medium = plausible; low = generalist bulk staffing, last resort."
+  },
+
+  "recruiters": [
+    { "name": "Xpheno", "domain": "xpheno.com", "url": "https://www.xpheno.com/", "registerUrl": "", "contactEmail": "", "type": "perm-placement", "specialisms": ["product engineering", "GCC hiring", "specialist tech"], "locations": ["Bengaluru", "Hyderabad", "Pune", "Chennai"], "priority": "high", "note": "Specialist-staffing firm with heavy GCC and product-company mandates — the segment most likely to want Dev's mobile + AI mix.", "verified": false },
+    { "name": "CIEL HR", "domain": "cielhr.com", "url": "https://www.cielhr.com/", "registerUrl": "", "contactEmail": "", "type": "perm-placement", "specialisms": ["IT staffing", "mid-level tech"], "locations": ["Bengaluru", "Mumbai", "Ahmedabad", "Pune"], "priority": "medium", "note": "Broad Indian IT staffing with a real Gujarat presence.", "verified": false },
+    { "name": "Careernet", "domain": "careernet.in", "url": "https://www.careernet.in/", "registerUrl": "", "contactEmail": "", "type": "perm-placement", "specialisms": ["product engineering", "startups", "GCC"], "locations": ["Bengaluru", "Hyderabad", "NCR"], "priority": "high", "note": "One of the strongest India product-company recruiters; mandates from unicorns and GCCs.", "verified": false },
+    { "name": "ABC Consultants", "domain": "abcconsultants.in", "url": "https://www.abcconsultants.in/", "registerUrl": "", "contactEmail": "", "type": "perm-placement", "specialisms": ["technology", "mid-senior"], "locations": ["Mumbai", "Bengaluru", "NCR", "Ahmedabad"], "priority": "medium", "note": "Long-established generalist search firm with a technology practice.", "verified": false },
+    { "name": "Michael Page India", "domain": "michaelpage.co.in", "url": "https://www.michaelpage.co.in/", "registerUrl": "", "contactEmail": "", "type": "perm-placement", "specialisms": ["technology", "digital"], "locations": ["Bengaluru", "Mumbai", "NCR"], "priority": "medium", "note": "International search firm; their India tech desk covers product and digital roles.", "verified": false },
+    { "name": "Antal International India", "domain": "antal.com", "url": "https://www.antal.com/", "registerUrl": "", "contactEmail": "", "type": "perm-placement", "specialisms": ["technology", "engineering"], "locations": ["Bengaluru", "Pune", "Ahmedabad"], "priority": "medium", "note": "Franchise model — individual India offices run their own tech desks, including Gujarat.", "verified": false },
+    { "name": "Randstad India", "domain": "randstad.in", "url": "https://www.randstad.in/", "registerUrl": "", "contactEmail": "", "type": "staff-aug-c2h", "specialisms": ["IT staffing", "contract-to-hire"], "locations": ["Bengaluru", "Hyderabad", "Ahmedabad", "Pune"], "priority": "low", "note": "High volume, mostly services and contract roles. Lower fit for product work but occasional GCC mandates.", "verified": false },
+    { "name": "Adecco India", "domain": "adecco.co.in", "url": "https://www.adecco.co.in/", "registerUrl": "", "contactEmail": "", "type": "staff-aug-c2h", "specialisms": ["IT staffing"], "locations": ["Bengaluru", "Chennai", "Mumbai"], "priority": "low", "note": "Volume staffing. Register once, expect noise.", "verified": false }
+  ],
+
+  "_todo": [
+    "Run the automated research pass to expand this to 20-25 firms including AI/mobile boutiques and Ahmedabad-local agencies.",
+    "For each row: load the site, find the real candidate-registration URL, and record any contactEmail literally shown on the page.",
+    "Outreach state (who was contacted, when, what came back) belongs in state/recruiter-outreach.json — NEVER write it back into this registry."
+  ]
+}

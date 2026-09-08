@@ -1,0 +1,69 @@
+{
+  "_meta": {
+    "purpose": "Job boards, aggregators and communities, tiered by signal-to-noise for Dev's three lanes.",
+    "lastUpdated": "2026-09-08",
+    "provenance": "Hand-authored 2026-09-08. The automated research pass for this file did not complete (session limit). Every entry below is a board that is well established and long-running, but the searchUrlTemplate values have NOT each been individually load-tested — treat a template that 404s as a bug to fix here, not as a reason to distrust the file.",
+    "rule": "Login-gated boards are for MANUAL use only. Never point an automated scraper at them — see HANDOFF.md guardrails.",
+    "placeholders": "{QUERY} = url-encoded search terms, {LOCATION} = url-encoded city or 'remote'."
+  },
+
+  "tier1_ai_specialist": {
+    "rationale": "Where AI / agent / FDE roles surface first. Lowest volume, highest relevance to Dev's differentiator. Check these before anything else.",
+    "boards": [
+      { "name": "YC Work at a Startup", "url": "https://www.workatastartup.com/jobs", "searchUrlTemplate": "https://www.workatastartup.com/jobs?query={QUERY}", "lanes": ["ai-agentic", "fde", "mern"], "loginRequired": true, "scrapeFriendly": "login-gated", "note": "Free login. The single best source of AI-agent roles at funded early startups, many remote-friendly. Set your profile to 'open to remote' and let founders find you." },
+      { "name": "Wellfound (AngelList Talent)", "url": "https://wellfound.com/jobs", "searchUrlTemplate": "https://wellfound.com/role/r/{QUERY}", "lanes": ["ai-agentic", "mern", "fde"], "loginRequired": true, "scrapeFriendly": "login-gated", "note": "Startup roles with salary bands shown up front. Good remote-India filtering." },
+      { "name": "AI Jobs (ai-jobs.net)", "url": "https://ai-jobs.net/", "searchUrlTemplate": "https://ai-jobs.net/?search={QUERY}", "lanes": ["ai-agentic"], "loginRequired": false, "scrapeFriendly": "public-html", "note": "Aggregates AI/ML roles globally; filter to India or remote. Skews research-heavy, so read past the ML-scientist listings for engineering roles." },
+      { "name": "Hacker News 'Who is Hiring'", "url": "https://news.ycombinator.com/submitted?id=whoishiring", "searchUrlTemplate": "", "lanes": ["ai-agentic", "fde", "mern"], "loginRequired": false, "scrapeFriendly": "public-html", "note": "Monthly thread, 1st of each month. Search it for 'REMOTE' + 'India'. Direct-to-engineer, no recruiter layer — unusually high response rate for a well-written reply." }
+    ]
+  },
+
+  "tier2_high_signal_india": {
+    "rationale": "Curated Indian tech boards. Far less noise than Naukri, and recruiters on these actually read profiles.",
+    "boards": [
+      { "name": "Instahyre", "url": "https://www.instahyre.com/", "searchUrlTemplate": "https://www.instahyre.com/search-jobs/?q={QUERY}", "lanes": ["ai-agentic", "mobile", "mern"], "loginRequired": true, "scrapeFriendly": "login-gated", "note": "Highest signal of the Indian boards for product companies. Complete the profile fully — matching is algorithmic and a thin profile gets buried." },
+      { "name": "Cutshort", "url": "https://cutshort.io/", "searchUrlTemplate": "https://cutshort.io/jobs/{QUERY}", "lanes": ["mern", "mobile", "ai-agentic"], "loginRequired": true, "scrapeFriendly": "login-gated", "note": "Strong for startup product roles. Skill-tag driven — tag Flutter, Kotlin, React, Node and AI to get matched." },
+      { "name": "Hirist", "url": "https://www.hirist.tech/", "searchUrlTemplate": "https://www.hirist.tech/search/{QUERY}", "lanes": ["mern", "mobile"], "loginRequired": true, "scrapeFriendly": "login-gated", "note": "Tech-only arm of the iimjobs group. Decent mid-level product volume." },
+      { "name": "Wellfound India", "url": "https://wellfound.com/location/india", "searchUrlTemplate": "", "lanes": ["ai-agentic", "mern"], "loginRequired": true, "scrapeFriendly": "login-gated", "note": "India-filtered view of Wellfound." }
+    ]
+  },
+
+  "tier3_volume_generalist": {
+    "rationale": "High volume, high noise. Use with tight filters and expect recruiter spam. Worth it purely for coverage.",
+    "boards": [
+      { "name": "LinkedIn Jobs", "url": "https://www.linkedin.com/jobs/", "searchUrlTemplate": "https://www.linkedin.com/jobs/search/?keywords={QUERY}&location={LOCATION}&f_TPR=r86400", "lanes": ["ai-agentic", "fde", "mobile", "mern"], "loginRequired": false, "scrapeFriendly": "login-gated", "note": "The f_TPR=r86400 parameter filters to the last 24h — always use it. NEVER point an automated scraper at LinkedIn; it violates their ToS and risks the account. Guest search in a browser only." },
+      { "name": "Naukri", "url": "https://www.naukri.com/", "searchUrlTemplate": "https://www.naukri.com/{QUERY}-jobs-in-{LOCATION}", "lanes": ["mobile", "mern"], "loginRequired": false, "scrapeFriendly": "public-html", "note": "Largest Indian volume. Set the resume to 'visible to recruiters' and refresh it weekly — freshness materially drives recruiter search ranking." },
+      { "name": "Indeed India", "url": "https://in.indeed.com/", "searchUrlTemplate": "https://in.indeed.com/jobs?q={QUERY}&l={LOCATION}&fromage=1", "lanes": ["mobile", "mern"], "loginRequired": false, "scrapeFriendly": "public-html", "note": "fromage=1 limits to the last day. Heavy duplication with company boards." },
+      { "name": "Foundit (ex-Monster India)", "url": "https://www.foundit.in/", "searchUrlTemplate": "https://www.foundit.in/srp/results?query={QUERY}&locations={LOCATION}", "lanes": ["mobile", "mern"], "loginRequired": false, "scrapeFriendly": "public-html", "note": "Lower quality than Naukri but occasionally carries roles the others miss." }
+    ]
+  },
+
+  "tier4_remote_global": {
+    "rationale": "Remote roles that may accept an India-based engineer. Always verify India eligibility on the JD itself — many say 'remote' and mean 'remote within the US'.",
+    "boards": [
+      { "name": "RemoteOK", "url": "https://remoteok.com/", "searchUrlTemplate": "https://remoteok.com/remote-{QUERY}-jobs", "lanes": ["mern", "ai-agentic", "mobile"], "loginRequired": false, "scrapeFriendly": "api", "note": "Has a public JSON feed at https://remoteok.com/api — genuinely scrapeable. Check the 'region' field for India eligibility." },
+      { "name": "We Work Remotely", "url": "https://weworkremotely.com/", "searchUrlTemplate": "https://weworkremotely.com/remote-jobs/search?term={QUERY}", "lanes": ["mern", "ai-agentic"], "loginRequired": false, "scrapeFriendly": "public-html", "note": "Long-running and reputable. Many roles are US/EU-only — read the fine print before spending time." },
+      { "name": "Remotive", "url": "https://remotive.com/", "searchUrlTemplate": "https://remotive.com/remote-jobs/search?search={QUERY}", "lanes": ["mern", "ai-agentic"], "loginRequired": false, "scrapeFriendly": "api", "note": "Public API at https://remotive.com/api/remote-jobs. Good tagging." },
+      { "name": "Himalayas", "url": "https://himalayas.app/jobs", "searchUrlTemplate": "https://himalayas.app/jobs?search={QUERY}", "lanes": ["mern", "ai-agentic", "mobile"], "loginRequired": false, "scrapeFriendly": "public-html", "note": "Explicit per-country hiring filters, which makes India eligibility unusually easy to confirm." }
+    ]
+  },
+
+  "tier5_startup_direct": {
+    "rationale": "Bypass the recruiter layer entirely. VC portfolio boards list roles at funded companies, often before they hit the aggregators.",
+    "boards": [
+      { "name": "Peak XV (ex-Sequoia India) portfolio jobs", "url": "https://jobs.peakxv.com/jobs", "searchUrlTemplate": "", "lanes": ["ai-agentic", "mern", "mobile"], "loginRequired": false, "scrapeFriendly": "public-html", "note": "India's largest VC portfolio board. Strong overlap with the Tier-A companies already in companies.json." },
+      { "name": "Accel India portfolio jobs", "url": "https://jobs.accel.com/jobs", "searchUrlTemplate": "", "lanes": ["ai-agentic", "mern"], "loginRequired": false, "scrapeFriendly": "public-html", "note": "Filter to India-based portfolio companies." },
+      { "name": "Blume Ventures jobs", "url": "https://jobs.blume.vc/jobs", "searchUrlTemplate": "", "lanes": ["mern", "mobile", "ai-agentic"], "loginRequired": false, "scrapeFriendly": "public-html", "note": "Early-stage Indian startups — smaller teams, broader scope, faster hiring loops." },
+      { "name": "Elevation Capital jobs", "url": "https://jobs.elevationcapital.com/jobs", "searchUrlTemplate": "", "lanes": ["mern", "mobile"], "loginRequired": false, "scrapeFriendly": "public-html", "note": "Consumer and fintech heavy." }
+    ]
+  },
+
+  "tier6_salary_intel": {
+    "rationale": "NOT job boards. Use these only to establish a comp band before a recruiter call, and to sanity-check an offer.",
+    "boards": [
+      { "name": "Levels.fyi India", "url": "https://www.levels.fyi/t/software-engineer/locations/india", "searchUrlTemplate": "", "lanes": [], "loginRequired": false, "scrapeFriendly": "public-html", "note": "Best data for product companies and GCCs. Thin for early startups." },
+      { "name": "AmbitionBox", "url": "https://www.ambitionbox.com/", "searchUrlTemplate": "https://www.ambitionbox.com/salaries/{QUERY}-salary", "lanes": [], "loginRequired": false, "scrapeFriendly": "public-html", "note": "Broadest Indian coverage including services companies. Self-reported, so read the median not the max." },
+      { "name": "6figr", "url": "https://6figr.com/", "searchUrlTemplate": "", "lanes": [], "loginRequired": false, "scrapeFriendly": "public-html", "note": "Good for India tech comp percentiles by years of experience." },
+      { "name": "Glassdoor India", "url": "https://www.glassdoor.co.in/", "searchUrlTemplate": "", "lanes": [], "loginRequired": true, "scrapeFriendly": "login-gated", "note": "Use for interview-process reports as much as for salary." }
+    ]
+  }
+}
