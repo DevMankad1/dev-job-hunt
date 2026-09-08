@@ -153,7 +153,23 @@ let seen = { urls: {}, lastRun: null };
 if (fs.existsSync(statePath)) { try { seen = JSON.parse(fs.readFileSync(statePath, 'utf8')); } catch { /* corrupt state is not fatal */ } }
 seen.urls = seen.urls || {};
 
-const fresh = args.all ? matches : matches.filter((m) => !seen.urls[m.url]);
+// --exclude-urls <file>: one URL per line (blank lines and #comments ignored).
+// The cloud routine uses this to dedupe against roles it has already emailed,
+// which lets it run without any write access back to the repo.
+let excluded = new Set();
+if (args['exclude-urls'] && args['exclude-urls'] !== true) {
+  const p = path.isAbsolute(args['exclude-urls']) ? args['exclude-urls'] : path.resolve(process.cwd(), args['exclude-urls']);
+  if (fs.existsSync(p)) {
+    excluded = new Set(
+      fs.readFileSync(p, 'utf8').split('\n').map((s) => s.trim()).filter((s) => s && !s.startsWith('#')),
+    );
+    say(`  excluding ${excluded.size} previously-reported URLs from ${path.basename(p)}`);
+  } else {
+    say(`  ! --exclude-urls file not found: ${p} (continuing without it)`);
+  }
+}
+
+const fresh = matches.filter((m) => !excluded.has(m.url) && (args.all || !seen.urls[m.url]));
 
 // Rank: recommendation, then company priority, then archetype confidence.
 const recRank = { apply: 3, review: 2, skip: 1 };
