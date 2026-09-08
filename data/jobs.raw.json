@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T15:51:15.966Z",
+  "generatedAt": "2026-09-08T16:30:32.753Z",
   "params": {
     "maxAgeHours": 2000,
     "loc": null,
@@ -124,37 +124,6 @@
         "startup-early",
         "product-india"
       ],
-      "title": "Software Engineer III (Bangalore, India)",
-      "location": "Bengaluru",
-      "url": "https://jobs.ashbyhq.com/aiprise/e7890d9f-8e1f-48a0-92be-071a282e7fe8",
-      "postedAt": "2026-08-24T16:05:20.022Z",
-      "source": "ashby",
-      "archetype": "sde-generalist",
-      "archetypeScore": 56,
-      "recommendation": "apply",
-      "blockers": [],
-      "seniorityNote": "JD asks for 4+ years vs 2.7 — stretch, apply if the fit is otherwise strong",
-      "seniorityScore": 1,
-      "seniorityAsked": 4,
-      "channel": "india",
-      "eligibility": "qualifies",
-      "eligibilityShape": "india-named",
-      "eligibilityReason": "On-site or hybrid at a named Indian location.",
-      "ageDays": 14,
-      "freshnessLabel": "14d ago",
-      "isIndia": true,
-      "isRemote": false,
-      "descriptionExcerpt": "About AiPrise AiPrise is a global compliance orchestration platform helping fintechs, marketplaces, and payment companies verify and onboard customers worldwide. We integrate with 80+ identity and compliance vendors to deliver a holistic view of risk. We're now building AI-powered compliance agents to revolutionize KYB, AML, sanctions screening, and risk scoring — enabling our customers to onboard faster, reduce manual reviews, and prevent financial crime. Role Overview We’re hiring a Software Engineer II to help build and scale the core platform behind AiPrise’s compliance orchestration and A"
-    },
-    {
-      "company": "AiPrise",
-      "companyDomain": "aiprise.com",
-      "companyPriority": "high",
-      "companySegments": [
-        "mern",
-        "startup-early",
-        "product-india"
-      ],
       "title": "Software Engineer I (Bangalore, India)",
       "location": "Bengaluru",
       "url": "https://jobs.ashbyhq.com/aiprise/3763c791-a387-4078-9ca4-00cbfbf9b1a6",
@@ -176,6 +145,37 @@
       "isIndia": true,
       "isRemote": false,
       "descriptionExcerpt": "About AiPrise AiPrise is a global compliance orchestration platform helping fintechs, marketplaces, and payment companies verify and onboard customers worldwide. We integrate with 80+ identity and compliance vendors to deliver a holistic view of risk. We're now building AI-powered compliance agents to revolutionize KYB, AML, sanctions screening, and risk scoring — enabling our customers to onboard faster, reduce manual reviews, and prevent financial crime. Role Overview We’re hiring a Software Engineer I to help build and scale the core platform behind AiPrise’s compliance orchestration and AI"
+    },
+    {
+      "company": "AiPrise",
+      "companyDomain": "aiprise.com",
+      "companyPriority": "high",
+      "companySegments": [
+        "mern",
+        "startup-early",
+        "product-india"
+      ],
+      "title": "Software Engineer III (Bangalore, India)",
+      "location": "Bengaluru",
+      "url": "https://jobs.ashbyhq.com/aiprise/e7890d9f-8e1f-48a0-92be-071a282e7fe8",
+      "postedAt": "2026-08-24T16:05:20.022Z",
+      "source": "ashby",
+      "archetype": "sde-generalist",
+      "archetypeScore": 56,
+      "recommendation": "apply",
+      "blockers": [],
+      "seniorityNote": "JD asks for 4+ years vs 2.7 — stretch, apply if the fit is otherwise strong",
+      "seniorityScore": 1,
+      "seniorityAsked": 4,
+      "channel": "india",
+      "eligibility": "qualifies",
+      "eligibilityShape": "india-named",
+      "eligibilityReason": "On-site or hybrid at a named Indian location.",
+      "ageDays": 15,
+      "freshnessLabel": "15d ago",
+      "isIndia": true,
+      "isRemote": false,
+      "descriptionExcerpt": "About AiPrise AiPrise is a global compliance orchestration platform helping fintechs, marketplaces, and payment companies verify and onboard customers worldwide. We integrate with 80+ identity and compliance vendors to deliver a holistic view of risk. We're now building AI-powered compliance agents to revolutionize KYB, AML, sanctions screening, and risk scoring — enabling our customers to onboard faster, reduce manual reviews, and prevent financial crime. Role Overview We’re hiring a Software Engineer II to help build and scale the core platform behind AiPrise’s compliance orchestration and A"
     },
     {
       "company": "Netomi",

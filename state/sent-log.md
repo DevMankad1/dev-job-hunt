@@ -32,6 +32,8 @@ underlying opening) is dropped and noted rather than risked as a repeat.
 | Anthropic | Applied AI Architect | https://job-boards.greenhouse.io/anthropic/jobs/5390746008 | 2026-09-08 |
 | Tide | Staff Software Engineer, Agentic Platform | https://job-boards.greenhouse.io/tide/jobs/7703991003 | 2026-09-08 |
 | Glean | Software Engineer, Agents Governance | https://job-boards.greenhouse.io/gleanwork/jobs/4712434005 | 2026-09-08 |
+| Supabase | Software Engineer - Branching | https://jobs.ashbyhq.com/supabase/06752423-eebb-472c-95b5-c7ff2559fd60 | 2026-09-08 |
+| GitLab | AI Engineer | https://job-boards.greenhouse.io/gitlab/jobs/8556658002 | 2026-09-08 |
 
 ## Founder companies
 

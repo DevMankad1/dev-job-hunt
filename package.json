@@ -17,6 +17,8 @@
     "tailor": "node scripts/tailor.mjs",
     "ledger": "node scripts/ledger.mjs",
     "tracker": "python scripts/tracker.py --append",
-    "daily": "node scripts/scan.mjs --write-state && node scripts/digest.mjs && python scripts/tracker.py --append && node scripts/ledger.mjs commit"
+    "daily": "node scripts/jobhunt.mjs",
+    "jobhunt": "node scripts/jobhunt.mjs",
+    "jobhunt:wide": "node scripts/jobhunt.mjs --wide"
   }
 }

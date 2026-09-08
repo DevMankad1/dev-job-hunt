@@ -1,5 +1,76 @@
 {
   "_meta": "Durable dedupe state. scan.mjs --write-state records every URL it has already reported so the same posting is never emailed twice. Committed to git so the cloud routine and local runs share one memory.",
-  "urls": {},
-  "lastRun": "2026-09-08T15:50:33.477Z"
+  "urls": {
+    "https://jobs.ashbyhq.com/supabase/06752423-eebb-472c-95b5-c7ff2559fd60": {
+      "firstSeen": "2026-09-08T16:30:32.754Z",
+      "company": "Supabase",
+      "title": "Software Engineer - Branching"
+    },
+    "https://job-boards.greenhouse.io/gitlab/jobs/8556658002": {
+      "firstSeen": "2026-09-08T16:30:32.754Z",
+      "company": "GitLab",
+      "title": "AI Engineer"
+    },
+    "https://apply.workable.com/j/E7CD7FB957": {
+      "firstSeen": "2026-09-08T16:30:32.754Z",
+      "company": "Innovaccer",
+      "title": "4403 - Software Development Engineer-II (Finance - AI Engineering)"
+    },
+    "https://jobs.ashbyhq.com/aiprise/02112df8-70fa-4133-a860-151b5f585ed9": {
+      "firstSeen": "2026-09-08T16:30:32.754Z",
+      "company": "AiPrise",
+      "title": "Software Engineer II (Bangalore, India)"
+    },
+    "https://jobs.ashbyhq.com/aiprise/3763c791-a387-4078-9ca4-00cbfbf9b1a6": {
+      "firstSeen": "2026-09-08T16:30:32.754Z",
+      "company": "AiPrise",
+      "title": "Software Engineer I (Bangalore, India)"
+    },
+    "https://jobs.ashbyhq.com/aiprise/e7890d9f-8e1f-48a0-92be-071a282e7fe8": {
+      "firstSeen": "2026-09-08T16:30:32.754Z",
+      "company": "AiPrise",
+      "title": "Software Engineer III (Bangalore, India)"
+    },
+    "https://jobs.lever.co/netomi/0e6b7355-330a-4d10-b8d5-c235bd555622": {
+      "firstSeen": "2026-09-08T16:30:32.754Z",
+      "company": "Netomi",
+      "title": "Agentic Engineer Level II/III"
+    },
+    "https://job-boards.greenhouse.io/dscout/jobs/4370258009": {
+      "firstSeen": "2026-09-08T16:30:32.754Z",
+      "company": "Dscout",
+      "title": "Applied AI Engineer - India"
+    },
+    "https://job-boards.greenhouse.io/dscout/jobs/4370266009": {
+      "firstSeen": "2026-09-08T16:30:32.754Z",
+      "company": "Dscout",
+      "title": "Software Engineer - India"
+    },
+    "https://jobs.ashbyhq.com/sarvam/36f89b00-2010-4d23-aae3-17a2f53d9eaa": {
+      "firstSeen": "2026-09-08T16:30:32.754Z",
+      "company": "Sarvam AI",
+      "title": "Agent Engineer"
+    },
+    "https://job-boards.greenhouse.io/gleanwork/jobs/4722386005": {
+      "firstSeen": "2026-09-08T16:30:32.754Z",
+      "company": "Glean",
+      "title": "Strategic Solutions Engineer, West"
+    },
+    "https://job-boards.greenhouse.io/razorpaysoftwareprivatelimited/jobs/4723067005": {
+      "firstSeen": "2026-09-08T16:30:32.754Z",
+      "company": "Razorpay",
+      "title": "Forward Deployed Engineer"
+    },
+    "https://job-boards.greenhouse.io/automatticcareers/jobs/5862239": {
+      "firstSeen": "2026-09-08T16:30:32.754Z",
+      "company": "Automattic",
+      "title": "Experienced Software Engineer"
+    },
+    "https://job-boards.greenhouse.io/gleanwork/jobs/4712434005": {
+      "firstSeen": "2026-09-08T16:30:32.754Z",
+      "company": "Glean",
+      "title": "Software Engineer, Agents Governance"
+    }
+  },
+  "lastRun": "2026-09-08T16:30:32.754Z"
 }
