@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-08T16:30:32.753Z",
+  "generatedAt": "2026-09-08T16:31:34.255Z",
   "params": {
     "maxAgeHours": 2000,
     "loc": null,
@@ -8,8 +8,8 @@
   "stats": {
     "boards": 44,
     "boardErrors": 0,
-    "rawJobs": 2927,
-    "afterAge": 2610,
+    "rawJobs": 2928,
+    "afterAge": 2611,
     "afterRole": 440,
     "afterSeniority": 123,
     "afterStack": 120,
