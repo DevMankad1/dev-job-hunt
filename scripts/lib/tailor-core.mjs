@@ -11,7 +11,18 @@
 //   always appear in full; only their ORDER changes. Bullets are reordered, and
 //   only trimmed when --max-bullets is passed, which logs exactly what it cut.
 
-import { norm, hasTerm, matchTerms, sortBy, pct } from './text.mjs';
+import { norm, hasTerm, matchTerms, sortBy, pct, tokens } from './text.mjs';
+
+/** Jaccard overlap of the distinctive words in two strings, 0..1. */
+const STOP = new Set(['the','and','a','an','of','to','in','for','with','that','on','as','by','from','at','is','are','it','its','into','across','who','end','be','or']);
+function overlap(a, b) {
+  const set = (s) => new Set(tokens(s).filter((w) => w.length > 2 && !STOP.has(w)));
+  const A = set(a), B = set(b);
+  if (!A.size || !B.size) return 0;
+  let inter = 0;
+  for (const w of A) if (B.has(w)) inter++;
+  return inter / Math.min(A.size, B.size);
+}
 
 const TAG_SYNONYMS = {
   agentic: ['agent', 'agents', 'agentic', 'ai agent', 'autonomous', 'orchestration', 'workflow automation'],
@@ -120,16 +131,22 @@ export function buildPlan({ content, analysis, profile, maxBullets = null }) {
   const opener = openers[0];
 
   const clausesRanked = sortBy(content.summary.clauses || [], scoreOf);
-  // Take the top clauses, but never two that say the same thing (mern vs fullstack).
+  // Take the top clauses, but never two that say the same thing. Two guards:
+  // a tag signature (mern vs fullstack), and actual word overlap — the agentic
+  // opener and the agentic clause are near-paraphrases, and printing both makes
+  // the summary read as if nobody proofread it.
   const chosenClauses = [];
   const seenTagSig = new Set();
+  const picked = opener ? [opener.text] : [];
   for (const c of clausesRanked) {
     const sig = (c.tags || []).slice(0, 2).sort().join('|');
     if (seenTagSig.has(sig)) continue;
     if (c.id === 'cl-mern' && chosenClauses.some((x) => x.id === 'cl-fullstack')) continue;
     if (c.id === 'cl-fullstack' && chosenClauses.some((x) => x.id === 'cl-mern')) continue;
+    if (picked.some((p) => overlap(p, c.text) > 0.34)) continue;
     seenTagSig.add(sig);
     chosenClauses.push(c);
+    picked.push(c.text);
     if (chosenClauses.length >= 3) break;
   }
 

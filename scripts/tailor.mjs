@@ -26,6 +26,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { fetchBoard } from '../adapters/ats.mjs';
 import { analyseJd } from './lib/jd.mjs';
 import { buildPlan, verifyHonesty } from './lib/tailor-core.mjs';
 import { renderTex, renderMd, renderTxt, renderReportMd } from './lib/render.mjs';
@@ -47,30 +48,59 @@ function parseArgs(argv) {
   return a;
 }
 
+/**
+ * Pull a posting through its ATS's public API rather than scraping the page.
+ * Ashby, Greenhouse and Lever all serve their job pages as JS shells, so
+ * fetching the HTML yields an empty description and a 0% keyword match.
+ * Returns {text, location, title} or null when the URL is not a known ATS.
+ */
+async function loadViaAts(url) {
+  const patterns = [
+    { re: /jobs\.ashbyhq\.com\/([^/?#]+)\/([0-9a-f-]{16,})/i, provider: 'ashby' },
+    { re: /(?:job-boards|boards)\.greenhouse\.io\/([^/?#]+)\/jobs\/(\d+)/i, provider: 'greenhouse' },
+    { re: /jobs\.lever\.co\/([^/?#]+)\/([0-9a-f-]{16,})/i, provider: 'lever' },
+  ];
+  for (const { re, provider } of patterns) {
+    const m = url.match(re);
+    if (!m) continue;
+    const [, slug, jobRef] = m;
+    const jobs = await fetchBoard(provider, slug);
+    const hit = jobs.find((j) => String(j.id).includes(jobRef) || String(j.url || '').includes(jobRef));
+    if (!hit) throw new Error(`${provider}/${slug} board loaded but posting ${jobRef} is not on it — it may have closed.`);
+    if (!hit.description) throw new Error(`${provider}/${slug} returned no description for ${jobRef}.`);
+    return { text: `${hit.title}\n${hit.location}\n\n${hit.description}`, location: hit.location, title: hit.title };
+  }
+  return null;
+}
+
 async function loadJd(args) {
-  if (args['jd-text']) return String(args['jd-text']);
+  if (args['jd-text']) return { text: String(args['jd-text']) };
   if (args.jd) {
     const p = path.isAbsolute(args.jd) ? args.jd : path.resolve(process.cwd(), args.jd);
-    return fs.readFileSync(p, 'utf8');
+    return { text: fs.readFileSync(p, 'utf8') };
   }
   if (args.url) {
+    const viaAts = await loadViaAts(args.url);
+    if (viaAts) return viaAts;
+
     const res = await fetch(args.url, { headers: { 'user-agent': 'Mozilla/5.0 (compatible; job-hunt/1.0)' } });
     if (!res.ok) throw new Error(`Fetch failed ${res.status} for ${args.url}`);
     const html = await res.text();
-    return html
+    const text = html
       .replace(/<script[\s\S]*?<\/script>/gi, ' ')
       .replace(/<style[\s\S]*?<\/style>/gi, ' ')
       .replace(/<[^>]+>/g, ' ')
       .replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>')
       .replace(/\s+/g, ' ')
       .trim();
+    return { text };
   }
   // stdin fallback
   if (!process.stdin.isTTY) {
     const chunks = [];
     for await (const c of process.stdin) chunks.push(c);
     const s = Buffer.concat(chunks).toString('utf8').trim();
-    if (s) return s;
+    if (s) return { text: s };
   }
   throw new Error('No JD supplied. Use --jd <file>, --jd-text "...", --url <link>, or pipe the JD on stdin.');
 }
@@ -81,14 +111,16 @@ async function main() {
   const profile = readJson('profile.json');
   const keywords = readJson('data/keywords.json');
 
-  const jdText = await loadJd(args);
+  const jd = await loadJd(args);
+  const jdText = jd.text;
   if (jdText.trim().length < 120) {
     console.error('! JD is very short (<120 chars). Detection will be unreliable — paste the full posting.');
   }
 
   const analysis = analyseJd({
     jdText,
-    title: args.title || '',
+    title: args.title || jd.title || '',
+    location: jd.location || '',
     company: args.company || '',
     keywords,
     profile,
