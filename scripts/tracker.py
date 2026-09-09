@@ -58,12 +58,15 @@ JOB_COLS = [
     ("Source", 13), ("Title", 44), ("Company", 19), ("HQ Country", 12),
     ("Location Tag", 24), ("India-Eligible?", 14), ("Channel", 13),
     ("Salary", 12), ("Experience Asked", 15), ("Posted", 11), ("Age (days)", 10),
-    ("Apply", 11), ("JD Link", 52), ("Tailor Command", 60),
-    ("Applied?", 10), ("Notes", 40),
+    ("Send Resume", 15), ("Apply", 11), ("JD Link", 50), ("Tailor Command", 58),
+    ("Applied?", 10), ("Notes", 38),
 ]
 
 # Column indexes used after the header is written (1-based, matching JOB_COLS).
-COL_APPLY, COL_JD, COL_TAILOR, COL_APPLIED, COL_NOTES = 12, 13, 14, 15, 16
+COL_RESUME, COL_APPLY, COL_JD, COL_TAILOR, COL_APPLIED, COL_NOTES = 12, 13, 14, 15, 16, 17
+
+MOBILE_FILL = PatternFill("solid", fgColor="DCE9F7")   # blue: send the mobile resume
+MERN_FILL = PatternFill("solid", fgColor="D8EEE2")     # green: send the MERN resume
 
 
 def apply_url(url, source=""):
@@ -126,6 +129,7 @@ def job_row(m):
         m.get("channel") or "", "",                      # Salary: JDs rarely state it
         f"{asked}+ yrs" if asked else "", posted,
         m.get("ageDays") if m.get("ageDays") is not None else "",
+        (m.get("resumeLabel") or "?") + ("" if m.get("resumeConfidence") == "high" else " (check)"),
         "Apply →",                                       # hyperlinked to the form
         m.get("url", ""),                                # the JD itself
         tailor_cmd(m),
@@ -189,6 +193,13 @@ def main():
             cell = ws.cell(row=r, column=c, value=v)
             cell.font, cell.fill = BODY_FONT, fill
             cell.alignment = Alignment(vertical="top", wrap_text=(c in (2, 5, COL_TAILOR, COL_NOTES)))
+
+        # Colour the resume cell so the right file is obvious at a glance.
+        is_mern = str(m.get("resume", "")).endswith("-mern")
+        rc = ws.cell(row=r, column=COL_RESUME)
+        rc.fill = MERN_FILL if is_mern else MOBILE_FILL
+        rc.font = Font(name="Arial", size=10, bold=True, color="197A55" if is_mern else "1D4ED8")
+        rc.alignment = Alignment(vertical="top", horizontal="center")
 
         link = LINK_FONT
         au = apply_url(m.get("url", ""), m.get("source", ""))
