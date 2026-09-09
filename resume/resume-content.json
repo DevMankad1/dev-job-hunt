@@ -5,7 +5,8 @@
     "derivedFrom": "dev-mankad-resume-jul26.pdf (July 2026)",
     "lastUpdated": "2026-09-08",
     "rule": "EVERY fact in this file must be literally true and already present in the source resume. The tailoring engine may ONLY reorder, select, and re-emphasise what is here. It may never add a skill, employer, date, metric, or claim that does not appear in this file. To add a genuinely new fact, edit THIS file first.",
-    "altsRule": "A bullet, stackLine or tagline may carry `alts`: alternate phrasings of the SAME fact, each independently true, tagged for when they apply. The engine picks the alt whose tags best match the JD and falls back to `text`. An alt may re-order or omit a detail; it may NEVER add a claim. Adding an alt that says something the base text does not is fabrication."
+    "altsRule": "A bullet, stackLine or tagline may carry `alts`: alternate phrasings of the SAME fact, each independently true, tagged for when they apply. The engine picks the alt whose tags best match the JD and falls back to `text`. An alt may re-order or omit a detail; it may NEVER add a claim. Adding an alt that says something the base text does not is fabrication.",
+    "reactProvenance": "Confirmed by Dev on 2026-09-09: React was genuinely used on Tymewear (web/admin dashboard), Lifeness (web portal) and other Gateway Group work. These bullets are written at the level of detail he confirmed and no further — deliberately conservative. SHARPEN THEM with the real specifics (what the dashboard did, who used it, what it replaced) before applying; a vague true bullet is safe but a specific true bullet interviews far better."
   },
   "header": {
     "name": "Dev Mankad",
@@ -433,11 +434,12 @@
               "reactjs"
             ],
             "tags": [
-              "react",
               "frontend",
-              "mern"
+              "mern",
+              "react",
+              "web"
             ],
-            "strength": 4
+            "strength": 5
           },
           {
             "name": "Node.js",
@@ -1048,6 +1050,22 @@
           ]
         },
         {
+          "id": "gw-react",
+          "weight": 6,
+          "tags": [
+            "react",
+            "frontend",
+            "mern",
+            "typescript",
+            "fullstack",
+            "web",
+            "javascript"
+          ],
+          "text": "Built React web applications and internal tools in TypeScript, consuming the same REST and GraphQL services as the client applications.",
+          "_confirmed": "2026-09-09 by Dev",
+          "_sharpen": "Name the actual tools/apps and who used them."
+        },
+        {
           "id": "gw-agentic",
           "weight": 6,
           "tags": [
@@ -1139,19 +1157,23 @@
       "region": "USA",
       "weight": 5,
       "tags": [
-        "flutter",
+        "api",
+        "ble",
         "dart",
         "django",
-        "python",
-        "iot",
-        "ble",
-        "realtime",
+        "flutter",
+        "frontend",
         "fullstack",
-        "api",
         "integrations",
-        "mobile"
+        "iot",
+        "mern",
+        "mobile",
+        "python",
+        "react",
+        "realtime",
+        "web"
       ],
-      "stackLine": "Full-Stack: Flutter / Dart client · Django (Python) backend · BLE, IoT-based fitness platform",
+      "stackLine": "Full-Stack: Flutter / Dart client · React web dashboard · Django (Python) backend · BLE, IoT-based fitness platform",
       "bullets": [
         {
           "id": "ty-lead",
@@ -1181,6 +1203,37 @@
                 "realtime"
               ],
               "text": "Led development of the Tymewear platform end to end — client application plus Django/Python backend services — designing REST APIs, real-time sensor data pipelines, and device connectivity."
+            }
+          ]
+        },
+        {
+          "id": "ty-react",
+          "weight": 6,
+          "tags": [
+            "react",
+            "frontend",
+            "mern",
+            "typescript",
+            "fullstack",
+            "web",
+            "data",
+            "javascript"
+          ],
+          "text": "Built the React web dashboard for the platform, consuming the same Django REST APIs to surface training and biometric data alongside the mobile client.",
+          "_confirmed": "2026-09-09 by Dev",
+          "_sharpen": "Who used the dashboard - coaches, athletes, internal ops? What did it let them do?",
+          "alts": [
+            {
+              "tags": [
+                "mern",
+                "react",
+                "frontend",
+                "typescript",
+                "fullstack",
+                "web",
+                "data"
+              ],
+              "text": "Built the React web dashboard for the platform in TypeScript, consuming the Django REST APIs to surface training and biometric data."
             }
           ]
         },
@@ -1265,7 +1318,7 @@
             "react",
             "typescript"
           ],
-          "text": "Full-Stack: Django (Python) backend · REST API design · real-time sensor data pipelines · third-party platform integrations"
+          "text": "Full-Stack: React web dashboard · Django (Python) backend · REST API design · real-time sensor data pipelines"
         }
       ]
     },
@@ -1275,19 +1328,23 @@
       "region": "Norway / Germany",
       "weight": 5,
       "tags": [
-        "kmp",
-        "kotlin",
-        "swiftui",
-        "rails",
-        "ruby",
+        "frontend",
+        "fullstack",
         "graphql",
         "healthcare",
-        "regulated",
-        "fullstack",
+        "kmp",
+        "kotlin",
+        "mern",
         "mobile",
-        "release"
+        "rails",
+        "react",
+        "regulated",
+        "release",
+        "ruby",
+        "swiftui",
+        "web"
       ],
-      "stackLine": "Full-Stack: Kotlin Multiplatform (KMP) & SwiftUI client · Ruby on Rails backend · GraphQL · DiGA & PECAN certified healthcare app",
+      "stackLine": "Full-Stack: Kotlin Multiplatform (KMP) & SwiftUI client · React web portal · Ruby on Rails backend · GraphQL · DiGA & PECAN certified healthcare app",
       "bullets": [
         {
           "id": "lf-lead",
@@ -1317,6 +1374,39 @@
                 "healthcare"
               ],
               "text": "Delivered full-stack functionality for a research-based, DiGA and PECAN-certified healthcare application for lifestyle and chronic-disease management, spanning the client and a Ruby on Rails backend consumed via GraphQL."
+            }
+          ]
+        },
+        {
+          "id": "lf-react",
+          "weight": 6,
+          "tags": [
+            "react",
+            "frontend",
+            "mern",
+            "typescript",
+            "fullstack",
+            "web",
+            "healthcare",
+            "graphql",
+            "javascript"
+          ],
+          "text": "Built the React web portal for the platform, consuming the same Ruby on Rails GraphQL API as the client application.",
+          "_confirmed": "2026-09-09 by Dev",
+          "_sharpen": "Was it a clinician portal, a content/CMS admin, or a research view? Say which.",
+          "alts": [
+            {
+              "tags": [
+                "mern",
+                "react",
+                "frontend",
+                "typescript",
+                "fullstack",
+                "web",
+                "graphql",
+                "healthcare"
+              ],
+              "text": "Built the React web portal for the platform in TypeScript, consuming the Ruby on Rails GraphQL API."
             }
           ]
         },
@@ -1394,7 +1484,7 @@
             "fullstack",
             "react"
           ],
-          "text": "Full-Stack: Ruby on Rails backend · GraphQL API · DiGA & PECAN certified healthcare platform"
+          "text": "Full-Stack: React web portal · Ruby on Rails backend · GraphQL API · DiGA & PECAN certified healthcare platform"
         }
       ]
     }

@@ -22,6 +22,7 @@ Full-Stack Engineer with 2.5+ years building and shipping production features ac
 ### Software Engineer · Gateway Group of Companies, Ahmedabad, India
 *January 2024 – Present · 2.5+ years*
 
+- Built React web applications and internal tools in TypeScript, consuming the same REST and GraphQL services as the client applications.
 - Led architectural design and deployment of production-grade client applications and their supporting full-stack services for international healthcare and enterprise markets.
 - Received the company R&R (Rewards and Recognition) Award for "Above and Beyond Performance" in project execution and delivery.
 - Partnered with cross-functional teams (designers, product managers, backend developers, and QA) to deliver full-stack solutions on time.
@@ -32,8 +33,9 @@ Full-Stack Engineer with 2.5+ years building and shipping production features ac
 ## Key Projects
 
 ### Tymewear — USA
-*Full-Stack: Django (Python) backend · REST API design · real-time sensor data pipelines · third-party platform integrations*
+*Full-Stack: React web dashboard · Django (Python) backend · REST API design · real-time sensor data pipelines*
 
+- Built the React web dashboard for the platform in TypeScript, consuming the Django REST APIs to surface training and biometric data.
 - Integrated third-party fitness platforms (Garmin, Wahoo, Intervals.icu) for seamless bidirectional synchronization of workouts, training loads, and biometric data across ecosystems.
 - Led development of the Tymewear platform end to end — client application plus Django/Python backend services — designing REST APIs, real-time sensor data pipelines, and device connectivity.
 - Applied agentic engineering (self-built /dev-loop and /design-spec workflows) to drive features from Jira ticket to built feature to release, accelerating delivery while enforcing code-review and definition-of-done gates.
@@ -41,8 +43,9 @@ Full-Stack Engineer with 2.5+ years building and shipping production features ac
 - Supported device-pairing workflows and offline session sync so data was preserved and reconciled server-side even when the client was out of range.
 
 ### Lifeness — Norway / Germany
-*Full-Stack: Ruby on Rails backend · GraphQL API · DiGA & PECAN certified healthcare platform*
+*Full-Stack: React web portal · Ruby on Rails backend · GraphQL API · DiGA & PECAN certified healthcare platform*
 
+- Built the React web portal for the platform, consuming the same Ruby on Rails GraphQL API as the client application.
 - Delivered full-stack functionality for a research-based, DiGA and PECAN-certified healthcare application for lifestyle and chronic-disease management, spanning the client and a Ruby on Rails backend consumed via GraphQL.
 - Led third-party integration of VIMscore for patient analytics, and managed build and release cycles across the delivery pipeline.
 - Applied agentic engineering workflows (custom Claude Code skills, MCP-driven Jira/Confluence automation, and the BMad method) to plan, build, and document features end-to-end.

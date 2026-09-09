@@ -176,9 +176,39 @@ function _buildPlanInner({ content, analysis, profile, maxBullets = null, dropTa
   // Now that tagWeight/archTags exist, resolve effective tags through alts.
   effTags = (item) => {
     for (const a of (item.alts || [])) {
-      if (pickPhrasing(item, jdNorm, archTags) === a.text) return a.tags || [];
+      if (phraseOf(item) === a.text) return a.tags || [];
     }
     return item.tags || [];
+  };
+
+  // Literal words implied by the drop set. Tag-scoring alone is not enough: a
+  // base text can outscore its alt on tags and still contain the very word the
+  // drop exists to remove ("...alongside the mobile client").
+  const DROP_WORDS = [];
+  for (const t of DROP) {
+    DROP_WORDS.push(t);
+    if (t === 'mobile') DROP_WORDS.push('mobile client', 'mobile app');
+    if (t === 'kmp') DROP_WORDS.push('kotlin multiplatform');
+    if (t === 'release') DROP_WORDS.push('app store', 'play store', 'fastlane');
+    if (t === 'ios') DROP_WORDS.push('swiftui');
+    if (t === 'android') DROP_WORDS.push('jetpack compose');
+  }
+  const mentionsDropped = (text) => {
+    const n = norm(text);
+    return DROP_WORDS.some((w) => hasTerm(n, w));
+  };
+
+  /**
+   * Choose a phrasing, then — when a drop set is active — reject one that still
+   * names a dropped concept and fall back to the best alt that does not.
+   */
+  const phraseOf = (item) => {
+    const first = pickPhrasing(item, jdNorm, archTags);
+    if (!DROP.size || !mentionsDropped(first)) return first;
+    const clean = (item.alts || []).map((a) => a.text).filter((t) => !mentionsDropped(t));
+    if (clean.length) return clean[0];
+    if (!mentionsDropped(item.text)) return item.text;
+    return first; // nothing clean available; kill() will have removed it if tagged
   };
 
   // ---- summary --------------------------------------------------------------
@@ -211,8 +241,8 @@ function _buildPlanInner({ content, analysis, profile, maxBullets = null, dropTa
   // Summary uses the chosen alt phrasing too — without this, a clause whose alt
   // was selected for the DROP decision still printed its mobile-worded original.
   const summaryText = [
-    opener ? pickPhrasing(opener, jdNorm, archTags) : null,
-    ...chosenClauses.map((c) => pickPhrasing(c, jdNorm, archTags)),
+    opener ? phraseOf(opener) : null,
+    ...chosenClauses.map((c) => phraseOf(c)),
   ].filter(Boolean).join(' ');
 
   // ---- skills: reorder categories AND items, drop nothing -------------------
@@ -280,7 +310,7 @@ function _buildPlanInner({ content, analysis, profile, maxBullets = null, dropTa
     : agenticBullets.slice(0, 3);
 
   // ---- experience -----------------------------------------------------------
-  const phrase = (b) => ({ ...b, text: pickPhrasing(b, jdNorm, archTags) });
+  const phrase = (b) => ({ ...b, text: phraseOf(b) });
 
   const experience = (content.experience || []).map((role) => {
     const live = (role.bullets || []).filter((b) => !kill(b, 'experience'));
@@ -295,7 +325,7 @@ function _buildPlanInner({ content, analysis, profile, maxBullets = null, dropTa
       const liveB = (p.bullets || []).filter((b) => !kill(b, `project/${p.id}`));
       const ranked = sortBy(liveB, (b) => scoreOf(b) + (b.pinned ? 4 : 0));
       const { kept, dropped } = applyMax(ranked, maxBullets);
-      const stackLine = pickPhrasing({ text: p.stackLine, tags: p.tags, alts: p.stackLineAlts }, jdNorm, archTags);
+      const stackLine = phraseOf({ text: p.stackLine, tags: p.tags, alts: p.stackLineAlts });
       return { ...p, stackLine, bullets: kept.map(phrase), _dropped: dropped, _score: (p.weight || 0) + tagsScore(p.tags, jdNorm) * 1.6 + boost(p.tags) };
     }),
     (p) => p._score,
@@ -314,10 +344,7 @@ function _buildPlanInner({ content, analysis, profile, maxBullets = null, dropTa
 
   const header = {
     ...content.header,
-    tagline: pickPhrasing(
-      { text: content.header.tagline, tags: ['generic'], alts: content.header.taglineAlts },
-      jdNorm, archTags,
-    ),
+    tagline: phraseOf({ text: content.header.tagline, tags: ['generic'], alts: content.header.taglineAlts }),
   };
 
   const plan = {

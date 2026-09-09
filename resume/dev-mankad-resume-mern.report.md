@@ -56,5 +56,5 @@ These are true facts left out because they are off-target for this role. Omissio
 - **Skill category order:** Languages & Frameworks → Architecture → Tools & Integrations → Version Control → CI/CD & DevOps → Agentic Engineering & AI
 - **Agentic section:** below-experience (relevance 0)
 - **Project order:** Tymewear → Lifeness
-- **Lead experience bullet:** gw-arch
+- **Lead experience bullet:** gw-react
 - **Nothing was dropped.** Every skill, bullet, certification and qualification from the master is present.
