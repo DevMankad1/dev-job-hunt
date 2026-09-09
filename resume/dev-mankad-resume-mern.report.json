@@ -27,13 +27,12 @@
     },
     "atsCoverage": {
       "jdRelevantKeywords": 18,
-      "covered": 17,
-      "percent": 94,
+      "covered": 16,
+      "percent": 89,
       "coveredList": [
         "React",
         "React.js",
         "Node.js",
-        "JavaScript",
         "TypeScript",
         "GraphQL",
         "backend",
@@ -49,6 +48,7 @@
         "Clean Architecture"
       ],
       "missingList": [
+        "JavaScript",
         "Scrum"
       ]
     },
@@ -77,6 +77,7 @@
       "summary/opener: open-mern [mobile]",
       "summary/clause: cl-mobile-stack [mobile]",
       "summary/clause: cl-cicd [release]",
+      "summary/clause: cl-mobile-depth [mobile]",
       "skill/languages-frameworks: Dart [flutter]",
       "skill/languages-frameworks: Flutter [flutter]",
       "skill/languages-frameworks: Kotlin [kmp]",
@@ -84,6 +85,7 @@
       "skill/languages-frameworks: SwiftUI [ios]",
       "skill/languages-frameworks: Jetpack Compose [android]",
       "skill/languages-frameworks: React Native [react-native]",
+      "skill/languages-frameworks: TypeScript / JavaScript [react-native]",
       "skill/languages-frameworks: Splitties [android]",
       "skill/architecture: MVI [android]",
       "skill/architecture: Cross-platform mobile architecture [mobile]",

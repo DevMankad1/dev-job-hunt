@@ -29,6 +29,9 @@ const BUILDS = [
     name: 'dev-mankad-resume',
     archetype: 'mobile-generalist',
     title: 'Software Engineer - Mobile',
+    // Web and backend are OMITTED here, mirroring what the MERN build does to
+    // mobile. Two focused resumes beat one that hedges.
+    dropTags: 'react,node,django,python,rails,ruby,backend,web,mern',
     jd: `Software Engineer / Mobile Application Developer. Build production cross-platform mobile
 applications with Flutter, Dart, Kotlin Multiplatform, SwiftUI and Jetpack Compose, plus supporting
 backend services and REST/GraphQL APIs. Integrate third-party SDKs, hardware layers and real-time

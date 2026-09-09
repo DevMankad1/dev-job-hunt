@@ -73,7 +73,24 @@
       "Owns releases end to end on both App Store and Play Store, automated with Fastlane",
       "Two production apps for international markets: Tymewear (USA) and Lifeness (Norway/Germany)"
     ],
-    "dropped": []
+    "dropped": [
+      "summary/opener: open-generic [mern]",
+      "summary/opener: open-mern [mern]",
+      "summary/opener: open-mern-pure [mern]",
+      "summary/clause: cl-fullstack [react]",
+      "summary/clause: cl-mern [mern]",
+      "summary/clause: cl-adapt [mern]",
+      "summary/clause: cl-integrations [mern]",
+      "skill/languages-frameworks: React [mern]",
+      "skill/languages-frameworks: Node.js [node]",
+      "skill/languages-frameworks: TypeScript / JavaScript [mern]",
+      "skill/languages-frameworks: Django [django]",
+      "skill/languages-frameworks: Ruby on Rails [rails]",
+      "skill/tools-integrations: Firebase [backend]",
+      "experience: gw-react [react]",
+      "project/tymewear: ty-react [react]",
+      "project/lifeness: lf-react [react]"
+    ]
   },
   "plan": {
     "archetypeId": "mobile-generalist",
@@ -82,8 +99,8 @@
       "opener": "open-mobile",
       "clauses": [
         "cl-cicd",
-        "cl-integrations",
-        "cl-fullstack"
+        "cl-agentic",
+        "cl-clients"
       ]
     },
     "skillOrder": [
@@ -106,7 +123,6 @@
         "gw-review",
         "gw-award",
         "gw-crossfn",
-        "gw-react",
         "gw-agentic",
         "gw-clients"
       ]

@@ -314,7 +314,21 @@
           "mobile"
         ],
         "weight": 3,
-        "text": "Automates release engineering with Fastlane, GitHub Actions, and Firebase App Distribution across App Store and Play Store."
+        "text": "Automates release engineering with Fastlane, GitHub Actions, and Firebase App Distribution across App Store and Play Store.",
+        "alts": [
+          {
+            "tags": [
+              "mobile",
+              "cicd",
+              "release",
+              "flutter",
+              "kmp",
+              "ios",
+              "android"
+            ],
+            "text": "Automates release engineering with Fastlane, GitHub Actions, and Firebase App Distribution."
+          }
+        ]
       },
       {
         "id": "cl-domain",
@@ -325,6 +339,19 @@
         ],
         "weight": 3,
         "text": "Domain experience across healthcare, enterprise, and social-engagement platforms."
+      },
+      {
+        "id": "cl-mobile-depth",
+        "tags": [
+          "mobile",
+          "flutter",
+          "kmp",
+          "ios",
+          "android",
+          "release"
+        ],
+        "weight": 5,
+        "text": "Owns delivery end to end from architecture through App Store and Play Store release, automated with Fastlane and Firebase App Distribution."
       }
     ]
   },
@@ -467,8 +494,9 @@
             ],
             "tags": [
               "typescript",
+              "javascript",
               "mern",
-              "frontend"
+              "react-native"
             ],
             "strength": 4
           },
@@ -694,7 +722,8 @@
             ],
             "tags": [
               "api",
-              "backend"
+              "rest",
+              "graphql"
             ],
             "strength": 5
           },
@@ -1046,6 +1075,18 @@
                 "architecture"
               ],
               "text": "Led architectural design and deployment of production-grade client applications and their supporting full-stack services for international healthcare and enterprise markets."
+            },
+            {
+              "tags": [
+                "mobile",
+                "flutter",
+                "kmp",
+                "ios",
+                "android",
+                "architecture",
+                "healthcare"
+              ],
+              "text": "Led architectural design and deployment of production-grade Flutter and Kotlin Multiplatform applications for international healthcare and enterprise markets."
             }
           ]
         },
@@ -1144,6 +1185,14 @@
                 "collab"
               ],
               "text": "Partnered with cross-functional teams (designers, product managers, backend developers, and QA) to deliver full-stack solutions on time."
+            },
+            {
+              "tags": [
+                "mobile",
+                "agile",
+                "collab"
+              ],
+              "text": "Partnered with cross-functional teams (designers, product managers, backend developers, and QA) to deliver mobile solutions on time."
             }
           ]
         }
@@ -1203,6 +1252,18 @@
                 "realtime"
               ],
               "text": "Led development of the Tymewear platform end to end — client application plus Django/Python backend services — designing REST APIs, real-time sensor data pipelines, and device connectivity."
+            },
+            {
+              "tags": [
+                "mobile",
+                "flutter",
+                "dart",
+                "ble",
+                "iot",
+                "realtime",
+                "api"
+              ],
+              "text": "Led development of the Tymewear mobile app in Flutter/Dart, managing BLE connectivity, real-time sensor pipelines, and REST API integration (strap plus external sensors)."
             }
           ]
         },
@@ -1291,6 +1352,16 @@
                 "backend"
               ],
               "text": "Supported device-pairing workflows and offline session sync so data was preserved and reconciled server-side even when the client was out of range."
+            },
+            {
+              "tags": [
+                "mobile",
+                "flutter",
+                "ble",
+                "offline",
+                "sync"
+              ],
+              "text": "Supported sensor-pairing workflows and offline session sync so data was preserved even when the phone was out of range during activity."
             }
           ]
         },
@@ -1319,6 +1390,16 @@
             "typescript"
           ],
           "text": "Full-Stack: React web dashboard · Django (Python) backend · REST API design · real-time sensor data pipelines"
+        },
+        {
+          "tags": [
+            "mobile",
+            "flutter",
+            "dart",
+            "ble",
+            "iot"
+          ],
+          "text": "Mobile: Flutter / Dart · BLE & IoT sensor integration · real-time biometric tracking"
         }
       ]
     },
@@ -1374,6 +1455,19 @@
                 "healthcare"
               ],
               "text": "Delivered full-stack functionality for a research-based, DiGA and PECAN-certified healthcare application for lifestyle and chronic-disease management, spanning the client and a Ruby on Rails backend consumed via GraphQL."
+            },
+            {
+              "tags": [
+                "mobile",
+                "kmp",
+                "kotlin",
+                "swiftui",
+                "ios",
+                "android",
+                "healthcare",
+                "graphql"
+              ],
+              "text": "Delivered a research-based, DiGA and PECAN-certified healthcare app for lifestyle and chronic-disease management, built with Kotlin Multiplatform and SwiftUI against a GraphQL API."
             }
           ]
         },
@@ -1485,6 +1579,18 @@
             "react"
           ],
           "text": "Full-Stack: React web portal · Ruby on Rails backend · GraphQL API · DiGA & PECAN certified healthcare platform"
+        },
+        {
+          "tags": [
+            "mobile",
+            "kmp",
+            "kotlin",
+            "swiftui",
+            "ios",
+            "android",
+            "healthcare"
+          ],
+          "text": "Mobile: Kotlin Multiplatform (KMP) & SwiftUI · GraphQL API · DiGA & PECAN certified healthcare app"
         }
       ]
     }

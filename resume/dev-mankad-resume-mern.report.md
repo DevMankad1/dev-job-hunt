@@ -5,7 +5,7 @@
 | Recommendation | **REVIEW** |
 | Detected archetype | mern-fullstack (score 999) |
 | Runner-up | node-backend (36) |
-| ATS keyword coverage | **94%** (17/18 JD-relevant terms) |
+| ATS keyword coverage | **89%** (16/18 JD-relevant terms) |
 | Location | India: no · Remote: no |
 | Resume variant | `dev-mankad-resume-mern` |
 
@@ -17,6 +17,7 @@
 
 Check each one honestly. If it is genuinely true and missing from `resume-content.json`, **add it there** — never straight into a tailored file.
 
+- `JavaScript`
 - `Scrum`
 
 ## Your strongest evidence for this role
@@ -33,6 +34,7 @@ These are true facts left out because they are off-target for this role. Omissio
 - summary/opener: open-mern [mobile]
 - summary/clause: cl-mobile-stack [mobile]
 - summary/clause: cl-cicd [release]
+- summary/clause: cl-mobile-depth [mobile]
 - skill/languages-frameworks: Dart [flutter]
 - skill/languages-frameworks: Flutter [flutter]
 - skill/languages-frameworks: Kotlin [kmp]
@@ -40,6 +42,7 @@ These are true facts left out because they are off-target for this role. Omissio
 - skill/languages-frameworks: SwiftUI [ios]
 - skill/languages-frameworks: Jetpack Compose [android]
 - skill/languages-frameworks: React Native [react-native]
+- skill/languages-frameworks: TypeScript / JavaScript [react-native]
 - skill/languages-frameworks: Splitties [android]
 - skill/architecture: MVI [android]
 - skill/architecture: Cross-platform mobile architecture [mobile]

@@ -192,6 +192,11 @@ function _buildPlanInner({ content, analysis, profile, maxBullets = null, dropTa
     if (t === 'release') DROP_WORDS.push('app store', 'play store', 'fastlane');
     if (t === 'ios') DROP_WORDS.push('swiftui');
     if (t === 'android') DROP_WORDS.push('jetpack compose');
+    if (t === 'react') DROP_WORDS.push('react.js', 'reactjs');
+    if (t === 'node') DROP_WORDS.push('node.js', 'nodejs', 'express');
+    if (t === 'rails') DROP_WORDS.push('ruby on rails');
+    if (t === 'backend') DROP_WORDS.push('back-end', 'server-side', 'full-stack services');
+    if (t === 'web') DROP_WORDS.push('web dashboard', 'web portal', 'web application');
   }
   const mentionsDropped = (text) => {
     const n = norm(text);

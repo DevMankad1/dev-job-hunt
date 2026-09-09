@@ -10,7 +10,7 @@ Full-Stack Engineer with 2.5+ years building and shipping production features ac
 
 ## Technical Skills
 
-- **Languages & Frameworks:** TypeScript / JavaScript, Node.js, React, Django, Ruby on Rails
+- **Languages & Frameworks:** Node.js, React, Django, Ruby on Rails
 - **Architecture:** REST & GraphQL APIs, MVVM, Clean Architecture
 - **Tools & Integrations:** GraphQL, Firebase, Jira, VIMscore, AppThera, Figma, Confluence, Slack
 - **Version Control:** GitHub (PRs, tags, branching strategy, code review), Git
