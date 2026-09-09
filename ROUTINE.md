@@ -35,6 +35,21 @@ Ahmedabad) or Remote.
 
 ---
 
+## Sources
+
+Two kinds, swept in the same run:
+
+- **45 verified company ATS boards** — Greenhouse, Lever, Ashby, Workable. One
+  employer each, high signal.
+- **4 aggregator boards with public APIs** — RemoteOK, Remotive, Himalayas, and
+  the monthly Hacker News "Who is hiring" thread. Whole marketplaces, so the
+  employer is read off the posting and **their eligibility tags are not
+  trustworthy**. Rows from these carry `viaBoard` and must be verified against
+  the actual posting before applying.
+
+LinkedIn, Naukri, Instahyre, Cutshort and Wellfound are login-gated. They are
+manual-search channels in `data/platforms.json`; never point a scraper at them.
+
 ## Step 1 — scan
 
 ```bash
@@ -83,7 +98,7 @@ Otherwise send exactly one email:
 |---|---|
 | to | `devmankad12@gmail.com` |
 | subject | exact stdout of `node scripts/digest.mjs --subject` |
-| htmlBody | full contents of `reports/latest.html` |
+| htmlBody | full contents of `reports/latest.html` — this already carries the Job Hunt Console link in its header and footer |
 | body | plain-text fallback: one `Company — Title — URL` per line |
 
 Add a line at the bottom naming any boards that errored, so Dev can fix the

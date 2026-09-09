@@ -29,6 +29,7 @@ const args = new Set(process.argv.slice(2));
 const jobs = rd('data/jobs.raw.json');
 const profile = rd('profile.json');
 const matches = jobs.matches || [];
+const portalUrl = profile.delivery?.portalUrl || '';
 
 const CHANNELS = [
   { id: 'remote-global', label: 'Remote — global', blurb: 'Non-Indian companies that will hire you where you live. Highest ceiling: USD 30k ≈ 25 LPA, ~2.8x your current. Verify India eligibility on the posting itself — a board\'s country tag is not evidence.' },
@@ -145,7 +146,10 @@ const subject = clean.length
 const html = `
 <div style="max-width:680px;margin:0 auto;padding:20px;background:#ffffff;">
   <div style="border-bottom:2px solid #111827;padding-bottom:10px;margin-bottom:20px;">
-    <div style="font:700 19px/1.2 -apple-system,Segoe UI,Roboto,sans-serif;color:#111827;">Job matches</div>
+    <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:baseline;justify-content:space-between;">
+      <div style="font:700 19px/1.2 -apple-system,Segoe UI,Roboto,sans-serif;color:#111827;">Job matches</div>
+      ${portalUrl ? `<a href="${esc(portalUrl)}" style="font:600 12.5px/1 -apple-system,Segoe UI,Roboto,sans-serif;color:#146B5F;text-decoration:none;border:1px solid #146B5F;border-radius:5px;padding:7px 11px;">Open the console &rarr;</a>` : ''}
+    </div>
     <div style="font:13px/1.5 -apple-system,Segoe UI,Roboto,sans-serif;color:#6b7280;margin-top:3px;">
       ${new Date(jobs.generatedAt).toLocaleString('en-IN', { timeZone: 'Asia/Kolkata', dateStyle: 'medium', timeStyle: 'short' })} IST ·
       ${jobs.stats.boards} boards · ${jobs.stats.rawJobs} postings scanned · ${matches.length} survived filtering
@@ -171,6 +175,7 @@ const html = `
     <code style="background:#f3f4f6;padding:2px 5px;border-radius:3px;">node scripts/tailor.mjs --url &lt;JD link&gt; --company "X" --title "Y"</code><br><br>
     Ranked newest-first: a 70% fit posted three hours ago beats a 90% fit posted six days ago.
     Salary is always an estimate unless the JD states a number — never a reason to skip.<br><br>
+    ${portalUrl ? `<strong style="color:#374151;">Console:</strong> <a href="${esc(portalUrl)}" style="color:#146B5F;">${esc(portalUrl)}</a><br>` : ''}
     Full tracker: <code style="background:#f3f4f6;padding:2px 5px;border-radius:3px;">reports/tracker.xlsx</code> ·
     already-sent ledger: <code style="background:#f3f4f6;padding:2px 5px;border-radius:3px;">state/sent-log.md</code><br>
     Nothing here was applied to automatically; every application is your own deliberate action.
@@ -185,6 +190,7 @@ fs.mkdirSync(path.join(ROOT, 'reports'), { recursive: true });
 fs.writeFileSync(path.join(ROOT, 'reports/latest.html'), html);
 
 const mdLines = [`# Job matches — ${new Date().toISOString().slice(0, 10)}`, '',
+  portalUrl ? `Console: ${portalUrl}` : '', '',
   `${jobs.stats.boards} boards · ${jobs.stats.rawJobs} postings scanned · ${matches.length} matched`, ''];
 for (const ch of byChannel(clean)) {
  mdLines.push(`# ${ch.label} — ${ch.rows.length}`, '', ch.blurb, '');

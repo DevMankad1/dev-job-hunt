@@ -205,13 +205,16 @@
     "_freshnessNote": "Hard 21-day cutoff, from Ankur Kapuriya's runbook. Ranking is newest-first, match quality second: a 70% fit posted three hours ago beats a 90% fit posted six days ago, because on competitive roles the queue ahead of you matters more than the margin of fit. Override with --maxAgeDays / --rank quality.",
     "marketplaceRejectRegex": "(micro1|andela|toptal|crossover|turing\\.com|deel talent|gun\\.io|arc\\.dev|lemon\\.io|proxify|revelo|braintrust|upwork|fiverr|freelancer\\.com)",
     "_marketplaceNote": "Training/gig marketplaces that list their own sourcing roles rather than a real employer's. Ankur flags micro1 specifically as always out of scope regardless of how a listing is titled. Turing is kept as a Tier-A board for visibility, but a listing whose employer IS the marketplace is out of scope — only pursue ones naming a real end client.",
-    "_aiNote": "AI/ML specialist titles are rejected as of 2026-09-09. Dev uses agentic tooling to write code; he is not applying to be an AI engineer. This is a TITLE filter only, so a plainly-titled Software Engineer role at an AI company still matches on its stack."
+    "_aiNote": "AI/ML specialist titles are rejected as of 2026-09-09. Dev uses agentic tooling to write code; he is not applying to be an AI engineer. This is a TITLE filter only, so a plainly-titled Software Engineer role at an AI company still matches on its stack.",
+    "_apacNote": "A location listing several regions (e.g. 'LATAM, Europe, USA, Canada, APAC') is an allowlist, not an invitation. classifyLocation still treats a bare APAC/Asia mention as qualifying, but such rows are worth reading before applying — the employer usually means specific markets."
   },
   "delivery": {
     "digestEmail": "devmankad12@gmail.com",
     "digestOnlyIfMatches": true,
     "digestNote": "No heartbeat email. Silence means zero new matches — that is normal and expected.",
-    "timezone": "Asia/Kolkata"
+    "timezone": "Asia/Kolkata",
+    "portalUrl": "https://claude.ai/code/artifact/63ffe3ad-bdf6-4798-a15d-cb345f88332c",
+    "portalNote": "The live Job Hunt Console. Linked from every digest so the full picture is one tap away on a phone."
   },
   "guardrails": {
     "autoApply": false,

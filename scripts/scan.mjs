@@ -17,6 +17,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { fetchBoard } from '../adapters/ats.mjs';
+import { fetchAllBoards } from '../adapters/boards.mjs';
 import { analyseJd } from './lib/jd.mjs';
 import { classifyLocation, freshness, seniorityFit } from './lib/eligibility.mjs';
 import { pickResume } from './lib/resume-router.mjs';
@@ -72,20 +73,57 @@ const stackRe = new RegExp(sc.stackRejectRegex, 'i');
 const indiaRe = new RegExp(sc.indiaRegex, 'i');
 const remoteRe = new RegExp(sc.remoteRegex, 'i');
 const foreignRe = new RegExp(sc.foreignRejectRegex, 'i');
+// Training/gig marketplaces that list their OWN sourcing roles rather than a
+// real employer's. This was added to profile.json earlier but never actually
+// applied — which is how a Lemon.io listing reached the digest.
+const marketRe = sc.marketplaceRejectRegex ? new RegExp(sc.marketplaceRejectRegex, 'i') : null;
 
+const errors = [];
 const tierA = companies.filter((c) => c.tier === 'A' && c.atsVerified && c.atsSlug);
 say(`Scanning ${tierA.length} verified Tier-A boards · postings newer than ${maxAgeHours}h${locFilter ? ` · location ~ "${locFilter}"` : ''}\n`);
 
 const boards = await pool(tierA, 8, async (c) => ({ company: c, jobs: await fetchBoard(c.atsProvider, c.atsSlug) }));
 
-const stats = { boards: 0, boardErrors: 0, rawJobs: 0, afterAge: 0, afterRole: 0, afterSeniority: 0, afterStack: 0, afterLocation: 0, afterFreshness: 0, staleDropped: 0, reported: 0 };
-const errors = [];
+// Aggregator boards (RemoteOK, Remotive, Himalayas, HN "Who is hiring").
+// Unlike an ATS board, these span every employer, so the company comes off the
+// posting — and their eligibility tags are NOT reliable, so every row from here
+// is treated as needing verification against the actual posting.
+let boardJobs = [];
+if (!args['no-boards']) {
+  const feeds = await fetchAllBoards({ onError: (n, e) => errors.push(`board ${n}: ${e}`) });
+  for (const f of feeds) {
+    if (f.jobs.length) say(`  ${f.name}: ${f.jobs.length} postings`);
+    for (const j of f.jobs) {
+      boardJobs.push({ __board: f.name, ...j });
+    }
+  }
+  if (boardJobs.length) say('');
+}
+
+const stats = { boards: 0, boardErrors: 0, rawJobs: 0, afterAge: 0, afterRole: 0, afterSeniority: 0, afterStack: 0, afterLocation: 0, afterFreshness: 0, staleDropped: 0, reported: 0, fromAggregators: 0 };
 const matches = [];
 
+// One list, two origins: {company} from the registry for ATS rows, or read off
+// the posting for aggregator rows.
+const streams = [];
 for (const b of boards) {
   if (!b || b.__error) { stats.boardErrors++; errors.push(`${b?.__item?.name || '?'}: ${b?.__error}`); continue; }
   stats.boards++;
-  for (const j of b.jobs) {
+  for (const j of b.jobs) streams.push({ j, company: b.company, viaBoard: null });
+}
+for (const j of boardJobs) {
+  streams.push({
+    j,
+    company: {
+      name: j.company || '(company on the posting)',
+      domain: '', priority: 'medium', segments: ['aggregator'], hqCountry: '',
+    },
+    viaBoard: j.__board,
+  });
+}
+
+{
+  for (const { j, company: comp, viaBoard } of streams) {
     stats.rawJobs++;
 
     // Age. A board with no date is kept — some ATSes omit it, and dropping
@@ -108,12 +146,14 @@ for (const b of boards) {
     stats.afterSeniority++;
 
     if (stackRe.test(titleN)) continue;
+    // Match the employer name too: on these rows the marketplace IS the company.
+    if (marketRe && (marketRe.test(titleN) || marketRe.test(norm(comp.name)) || marketRe.test(norm(comp.domain || '')))) continue;
     stats.afterStack++;
 
     // Location is judged on the LOCATION FIELD only. Testing the JD body lets
     // London and San Francisco roles through, because India-founded companies
     // mention India all over their postings.
-    const elig = classifyLocation(j.location, j.title, { companyHqCountry: b.company.hqCountry || '' });
+    const elig = classifyLocation(j.location, j.title, { companyHqCountry: comp.hqCountry || '' });
     if (elig.verdict === 'drops') continue;
     if (elig.verdict === 'unconfirmed' && !args['keep-unconfirmed']) continue;
 
@@ -134,7 +174,7 @@ for (const b of boards) {
       jdText: j.description || `${j.title} ${j.location}`,
       title: j.title,
       location: j.location,
-      company: b.company.name,
+      company: comp.name,
       keywords,
       profile,
     });
@@ -146,14 +186,16 @@ for (const b of boards) {
     });
 
     matches.push({
+      viaBoard,
+      tagTrust: j.tagTrust || null,
       resume: pick.file,
       resumeLabel: pick.label,
       resumeConfidence: pick.confidence,
       resumeWhy: pick.why,
-      company: b.company.name,
-      companyDomain: b.company.domain,
-      companyPriority: b.company.priority,
-      companySegments: b.company.segments,
+      company: comp.name,
+      companyDomain: comp.domain,
+      companyPriority: comp.priority,
+      companySegments: comp.segments,
       title: j.title,
       location: j.location,
       url: j.url,
@@ -176,6 +218,7 @@ for (const b of boards) {
       isRemote,
       descriptionExcerpt: (j.description || '').slice(0, 600),
     });
+    if (viaBoard) stats.fromAggregators++;
   }
 }
 
@@ -247,6 +290,7 @@ if (args.json) {
   process.stdout.write(JSON.stringify(out, null, 2));
 } else {
   say(`  boards ok ${stats.boards}  ·  errors ${stats.boardErrors}  ·  raw postings ${stats.rawJobs}`);
+  if (stats.fromAggregators) say(`  ${stats.fromAggregators} of the matches came from aggregator boards (verify those on the posting)`);
   say(`  funnel: age ${stats.afterAge} → role ${stats.afterRole} → seniority ${stats.afterSeniority} → stack ${stats.afterStack} → eligible ${stats.afterLocation} → fresh(${maxAgeDays}d) ${stats.afterFreshness}`);
   const byChan = out.matches.reduce((m, x) => ((m[x.channel || 'unknown'] = (m[x.channel || 'unknown'] || 0) + 1), m), {});
   say(`  channels: ${Object.entries(byChan).map(([k, v]) => k + ' ' + v).join(' · ') || 'none'}`);
@@ -258,6 +302,7 @@ if (args.json) {
     say(`     [${chan}] ${m.location || 'location?'} · ${m.freshnessLabel} · ${m.archetype} (${m.archetypeScore})`);
     say(`     ${m.url}`);
     say(`     send: ${m.resumeLabel} resume (${m.resume}) - ${m.resumeConfidence} confidence`);
+    if (m.viaBoard) say(`     via ${m.viaBoard} - board tags are unreliable, verify eligibility on the posting`);
     if (m.eligibility === 'unconfirmed') say(`     ~ ${m.eligibilityReason}`);
     if (m.blockers.length) say(`     ! ${m.blockers.join(' | ')}`);
   }
