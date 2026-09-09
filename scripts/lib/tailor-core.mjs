@@ -90,6 +90,31 @@ const TAG_SYNONYMS = {
   devops: ['devops', 'infrastructure'],
 };
 
+/**
+ * Pick the best phrasing of a fact.
+ *
+ * `alts` are alternate wordings of the SAME fact, each independently true and
+ * tagged for when it applies. This is what lets the MERN resume lead with the
+ * full-stack and API work instead of "Flutter and KMP", without deleting a true
+ * fact or inventing a false one. An alt only ever re-orders or omits a detail.
+ *
+ * Falls back to `text` whenever no alt scores above it.
+ */
+function pickPhrasing(item, jdNorm, archTags) {
+  const alts = item.alts || [];
+  if (!alts.length) return item.text;
+  const score = (tags = []) =>
+    tags.reduce((s, t) => s + tagWeight(t, jdNorm) + (archTags.has(t) ? 2 : 0), 0);
+  const baseScore = score(item.tags);
+  let best = { text: item.text, s: baseScore };
+  for (const a of alts) {
+    const s = score(a.tags);
+    // Strictly greater: a tie keeps the canonical wording.
+    if (s > best.s) best = { text: a.text, s };
+  }
+  return best.text;
+}
+
 /** How strongly does the JD care about this tag? 0 if not mentioned. */
 function tagWeight(tag, jdNorm) {
   const syns = TAG_SYNONYMS[tag] || [tag];
@@ -216,10 +241,12 @@ export function buildPlan({ content, analysis, profile, maxBullets = null }) {
     : agenticBullets.slice(0, 3);
 
   // ---- experience -----------------------------------------------------------
+  const phrase = (b) => ({ ...b, text: pickPhrasing(b, jdNorm, archTags) });
+
   const experience = (content.experience || []).map((role) => {
     const ranked = sortBy(role.bullets || [], (b) => scoreOf(b) + (b.pinned ? 4 : 0));
     const { kept, dropped } = applyMax(ranked, maxBullets);
-    return { ...role, bullets: kept, _dropped: dropped };
+    return { ...role, bullets: kept.map(phrase), _dropped: dropped };
   });
 
   // ---- projects: reorder, and order bullets inside each ---------------------
@@ -227,7 +254,8 @@ export function buildPlan({ content, analysis, profile, maxBullets = null }) {
     (content.projects || []).map((p) => {
       const ranked = sortBy(p.bullets || [], (b) => scoreOf(b) + (b.pinned ? 4 : 0));
       const { kept, dropped } = applyMax(ranked, maxBullets);
-      return { ...p, bullets: kept, _dropped: dropped, _score: (p.weight || 0) + tagsScore(p.tags, jdNorm) * 1.6 + boost(p.tags) };
+      const stackLine = pickPhrasing({ text: p.stackLine, tags: p.tags, alts: p.stackLineAlts }, jdNorm, archTags);
+      return { ...p, stackLine, bullets: kept.map(phrase), _dropped: dropped, _score: (p.weight || 0) + tagsScore(p.tags, jdNorm) * 1.6 + boost(p.tags) };
     }),
     (p) => p._score,
   );
@@ -243,6 +271,14 @@ export function buildPlan({ content, analysis, profile, maxBullets = null }) {
   else sectionOrder.push('experience', 'projects', 'agentic');
   sectionOrder.push('education', 'certifications', 'publications');
 
+  const header = {
+    ...content.header,
+    tagline: pickPhrasing(
+      { text: content.header.tagline, tags: ['generic'], alts: content.header.taglineAlts },
+      jdNorm, archTags,
+    ),
+  };
+
   const plan = {
     archetypeId: arch?.id || 'sde-generalist',
     archetypeName: arch?.displayName || 'Software Engineer',
@@ -257,7 +293,7 @@ export function buildPlan({ content, analysis, profile, maxBullets = null }) {
     certifications,
     publications: { label: content.publications?.label, blogs, internships },
     sectionOrder,
-    header: content.header,
+    header,
   };
 
   plan.report = buildReport({ plan, content, analysis, profile, arch });
@@ -364,6 +400,9 @@ export function verifyHonesty(plan, content) {
   const master = norm(JSON.stringify(content));
   const violations = [];
 
+  // Alts live inside resume-content.json, so `master` already contains them —
+  // an alt cannot smuggle in a token the master does not have.
+  //
   // 1. Nothing in the output may be absent from the master content.
   //    (Catches a future edit that starts generating prose.)
   const FORBIDDEN_TOKENS = [

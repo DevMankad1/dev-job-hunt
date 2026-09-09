@@ -1,6 +1,6 @@
 DEV MANKAD
 Cross-Platform Mobile Engineer | +91 7990538590 | devmankad12@gmail.com | Ahmedabad, India
-Full-Stack & Cross-Platform Engineer · Agentic Engineering (AI Agent Workflows)
+Cross-Platform Mobile Engineer · Flutter · Kotlin Multiplatform · SwiftUI
 
 PROFESSIONAL SUMMARY
 ====================
@@ -40,7 +40,7 @@ Full-Stack: Flutter / Dart client - Django (Python) backend - BLE, IoT-based fit
 
 Lifeness - Norway / Germany
 Full-Stack: Kotlin Multiplatform (KMP) & SwiftUI client - Ruby on Rails backend - GraphQL - DiGA & PECAN certified healthcare app
-- Delivered full-stack functionality for a research-based, DiGA and PECAN-certified healthcare app for lifestyle and chronic-disease management, spanning a KMP/SwiftUI client and a Ruby on Rails backend consumed via GraphQL.
+- Delivered full-stack functionality for a research-based, DiGA and PECAN-certified healthcare application for lifestyle and chronic-disease management, spanning the client and a Ruby on Rails backend consumed via GraphQL.
 - Led third-party integration of VIMscore for patient analytics and managed Firebase builds and active release cycles on the App Store and Play Store.
 - Built scalable features supporting chronic-disease prevention and lifestyle tracking, with multilingual support and Livy chatbot integration.
 - Applied agentic engineering workflows (custom Claude Code skills, MCP-driven Jira/Confluence automation, and the BMad method) to plan, build, and document features end-to-end.

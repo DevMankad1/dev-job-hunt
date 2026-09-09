@@ -9,3 +9,6 @@ resume/tailored/*
 
 # Windows crash dumps
 *.stackdump
+
+# Standing-resume build artefacts (regenerate with `npm run resumes`)
+resume/*.jd.txt
