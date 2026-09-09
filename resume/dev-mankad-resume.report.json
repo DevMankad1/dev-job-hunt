@@ -1,0 +1,124 @@
+{
+  "meta": {
+    "company": "Standing",
+    "title": "Software Engineer - Mobile",
+    "url": null,
+    "outBase": "dev-mankad-resume"
+  },
+  "report": {
+    "archetype": "mobile-generalist",
+    "archetypeScore": 999,
+    "runnerUpArchetype": "sde-generalist (59)",
+    "recommendation": "review",
+    "blockers": [
+      "Location: neither an India location nor remote could be detected"
+    ],
+    "seniority": {
+      "tooSenior": false,
+      "tooJunior": false,
+      "reason": "",
+      "minYears": null,
+      "maxYears": null,
+      "titleLevel": null
+    },
+    "location": {
+      "india": false,
+      "remote": false
+    },
+    "atsCoverage": {
+      "jdRelevantKeywords": 19,
+      "covered": 18,
+      "percent": 95,
+      "coveredList": [
+        "cross-platform",
+        "Flutter",
+        "Dart",
+        "Kotlin",
+        "Kotlin Multiplatform",
+        "SwiftUI",
+        "Jetpack Compose",
+        "App Store",
+        "Play Store",
+        "MVVM",
+        "Clean Architecture",
+        "MVI",
+        "REST",
+        "GraphQL",
+        "Fastlane",
+        "CI/CD",
+        "code review",
+        "Git"
+      ],
+      "missingList": [
+        "Agile"
+      ]
+    },
+    "honestGaps": [],
+    "doNotClaimReminder": [
+      "MongoDB hands-on production experience (the resume shows React + Node + TypeScript, but NOT MongoDB — do not claim the 'M' in MERN until it is genuinely true)",
+      "Express.js named explicitly (Node.js is on the resume; Express is not)",
+      "Machine-learning model training, fine-tuning, MLOps, or data science",
+      "Vector databases, RAG pipelines, or embeddings work",
+      "Kubernetes, Docker in production, Terraform, or infrastructure-as-code ownership",
+      "Senior, Lead, Staff, Principal, or Architect job titles",
+      "Team management or direct reports",
+      "Hands-on Google Cloud Platform (GCP)",
+      "Native Android in Java, or native iOS in UIKit/Objective-C",
+      "Any specific revenue, user-count, latency, or percentage metric — the source resume contains none, so none may be invented",
+      "Open-source maintainership or published packages",
+      "System design at large scale / distributed systems ownership"
+    ],
+    "evidenceForThisRole": [
+      "Shipped across Flutter, KMP, SwiftUI, Jetpack Compose and React Native — unusually broad for 2.7 years",
+      "Owns releases end to end on both App Store and Play Store, automated with Fastlane",
+      "Two production apps for international markets: Tymewear (USA) and Lifeness (Norway/Germany)"
+    ]
+  },
+  "plan": {
+    "archetypeId": "mobile-generalist",
+    "title": "Cross-Platform Mobile Engineer",
+    "summaryParts": {
+      "opener": "open-mobile",
+      "clauses": [
+        "cl-integrations",
+        "cl-cicd",
+        "cl-fullstack"
+      ]
+    },
+    "skillOrder": [
+      "Languages & Frameworks",
+      "Architecture",
+      "CI/CD & DevOps",
+      "Version Control",
+      "Tools & Integrations",
+      "Agentic Engineering & AI"
+    ],
+    "agenticPlacement": "below-experience",
+    "projectOrder": [
+      "Tymewear",
+      "Lifeness"
+    ],
+    "experienceBulletOrder": [
+      [
+        "gw-arch",
+        "gw-sdk",
+        "gw-review",
+        "gw-award",
+        "gw-crossfn",
+        "gw-agentic",
+        "gw-clients"
+      ]
+    ],
+    "sectionOrder": [
+      "header",
+      "summary",
+      "skills",
+      "experience",
+      "projects",
+      "agentic",
+      "education",
+      "certifications",
+      "publications"
+    ]
+  }
+}

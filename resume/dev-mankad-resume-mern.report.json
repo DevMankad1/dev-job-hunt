@@ -1,0 +1,123 @@
+{
+  "meta": {
+    "company": "Standing",
+    "title": "Full Stack Developer",
+    "url": null,
+    "outBase": "dev-mankad-resume-mern"
+  },
+  "report": {
+    "archetype": "mern-fullstack",
+    "archetypeScore": 999,
+    "runnerUpArchetype": "node-backend (36)",
+    "recommendation": "review",
+    "blockers": [
+      "Location: neither an India location nor remote could be detected"
+    ],
+    "seniority": {
+      "tooSenior": false,
+      "tooJunior": false,
+      "reason": "",
+      "minYears": null,
+      "maxYears": null,
+      "titleLevel": null
+    },
+    "location": {
+      "india": false,
+      "remote": false
+    },
+    "atsCoverage": {
+      "jdRelevantKeywords": 18,
+      "covered": 17,
+      "percent": 94,
+      "coveredList": [
+        "React",
+        "React.js",
+        "Node.js",
+        "JavaScript",
+        "TypeScript",
+        "GraphQL",
+        "backend",
+        "Firebase",
+        "Git",
+        "GitHub",
+        "CI/CD",
+        "GitHub Actions",
+        "Agile",
+        "Jira",
+        "code review",
+        "MVVM",
+        "Clean Architecture"
+      ],
+      "missingList": [
+        "Scrum"
+      ]
+    },
+    "honestGaps": [],
+    "doNotClaimReminder": [
+      "MongoDB hands-on production experience (the resume shows React + Node + TypeScript, but NOT MongoDB — do not claim the 'M' in MERN until it is genuinely true)",
+      "Express.js named explicitly (Node.js is on the resume; Express is not)",
+      "Machine-learning model training, fine-tuning, MLOps, or data science",
+      "Vector databases, RAG pipelines, or embeddings work",
+      "Kubernetes, Docker in production, Terraform, or infrastructure-as-code ownership",
+      "Senior, Lead, Staff, Principal, or Architect job titles",
+      "Team management or direct reports",
+      "Hands-on Google Cloud Platform (GCP)",
+      "Native Android in Java, or native iOS in UIKit/Objective-C",
+      "Any specific revenue, user-count, latency, or percentage metric — the source resume contains none, so none may be invented",
+      "Open-source maintainership or published packages",
+      "System design at large scale / distributed systems ownership"
+    ],
+    "evidenceForThisRole": [
+      "React, Node.js and TypeScript are all on the resume as delivered full-stack work",
+      "Backend delivery in Django and Ruby on Rails with REST and GraphQL APIs consumed at scale",
+      "Full product-cycle ownership from architecture through release"
+    ]
+  },
+  "plan": {
+    "archetypeId": "mern-fullstack",
+    "title": "Full-Stack Engineer",
+    "summaryParts": {
+      "opener": "open-mern",
+      "clauses": [
+        "cl-integrations",
+        "cl-adapt",
+        "cl-cicd"
+      ]
+    },
+    "skillOrder": [
+      "Languages & Frameworks",
+      "Architecture",
+      "Tools & Integrations",
+      "Version Control",
+      "CI/CD & DevOps",
+      "Agentic Engineering & AI"
+    ],
+    "agenticPlacement": "below-experience",
+    "projectOrder": [
+      "Tymewear",
+      "Lifeness"
+    ],
+    "experienceBulletOrder": [
+      [
+        "gw-arch",
+        "gw-sdk",
+        "gw-award",
+        "gw-crossfn",
+        "gw-review",
+        "gw-agentic",
+        "gw-clients"
+      ]
+    ],
+    "sectionOrder": [
+      "header",
+      "summary",
+      "skills",
+      "experience",
+      "projects",
+      "agentic",
+      "education",
+      "certifications",
+      "publications"
+    ]
+  }
+}

@@ -1,0 +1,93 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[left=0.55in,right=0.55in,top=0.5in,bottom=0.5in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{helvet}
+\renewcommand{\familydefault}{\sfdefault}
+
+\definecolor{accent}{HTML}{1F3A5F}
+\hypersetup{colorlinks=true, urlcolor=accent, linkcolor=accent}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlist[itemize]{leftmargin=1.1em, itemsep=1.2pt, topsep=2pt, parsep=0pt}
+
+\titleformat{\section}{\normalsize\bfseries\color{accent}}{}{0em}{}[\vspace{-0.7em}\rule{\linewidth}{0.7pt}]
+\titlespacing*{\section}{0pt}{7pt}{4pt}
+
+\newcommand{\entry}[2]{\textbf{#1}\hfill{\small #2}\par}
+
+\begin{document}
+\begin{center}
+{\LARGE\bfseries Dev Mankad}\\[3pt]
+{\small Full-Stack Engineer $\mid$ +91 7990538590 $\mid$ devmankad12@gmail.com $\mid$ Ahmedabad, India}\\[2pt]
+{\small\itshape Full-Stack \& Cross-Platform Engineer $\cdot$ Agentic Engineering (AI Agent Workflows)}
+\end{center}
+\vspace{2pt}
+\section*{Professional Summary}
+Full-Stack Engineer with 2.5+ years building and shipping product features across React and Node.js front-to-back, with REST and GraphQL API delivery and TypeScript throughout, alongside deep cross-platform mobile experience. Integrates complex third-party SDKs, hardware communication layers, and real-time data pipelines. Adapts rapidly to any full-stack technology or language, pairing deep product-cycle ownership with cross-platform architecture, third-party integrations, and Agile delivery. Automates release engineering with Fastlane, GitHub Actions, and Firebase App Distribution across App Store and Play Store.
+\section*{Technical Skills}
+\begin{itemize}
+  \item \textbf{Languages \& Frameworks:} TypeScript / JavaScript, Node.js, React, Dart, Flutter, Kotlin, Kotlin Multiplatform (KMP), Django, Ruby on Rails, SwiftUI, Jetpack Compose, React Native, Splitties
+  \item \textbf{Architecture:} REST \& GraphQL APIs, MVVM, Clean Architecture, Cross-platform mobile architecture, MVI
+  \item \textbf{Tools \& Integrations:} GraphQL, Firebase, Jira, VIMscore, AppThera, Figma, Confluence, Slack
+  \item \textbf{Version Control:} GitHub (PRs, tags, branching strategy, code review), Git
+  \item \textbf{CI/CD \& DevOps:} GitHub Actions, Fastlane, App Store / Play Store deployments, Firebase App Distribution, AWS, Azure
+  \item \textbf{Agentic Engineering \& AI:} Claude Code, MCP servers, Custom slash-command skills, Multi-agent workflows, BMad method, Recurring agent loops, Hooks \& persistent memory, Prompt engineering, Codex
+\end{itemize}
+\section*{Professional Experience}
+\entry{Software Engineer $\cdot$ Gateway Group of Companies, Ahmedabad, India}{January 2024 -- Present $\cdot$ 2.5+ years}
+\begin{itemize}
+  \item Led architectural design and deployment of production-grade Flutter and KMP applications, plus supporting full-stack services, for international healthcare and enterprise markets.
+  \item Integrated complex third-party SDKs, hardware communication layers, and real-time data pipelines (VIMscore, AppThera, Livy chatbot).
+  \item Received the company R\&R (Rewards and Recognition) Award for "Above and Beyond Performance" in project execution and delivery.
+  \item Partnered with cross-functional teams (designers, product managers, backend developers, and QA) to deliver mobile and full-stack solutions on time.
+  \item Conducted rigorous code reviews, established clear Git branching strategies, and authored comprehensive technical documentation to maintain code modularity and readability.
+  \item Architected and operate a suite of agentic engineering workflows on Claude Code (custom slash-command skills, MCP integrations across Jira, Confluence, Slack, and Figma, the BMad multi-agent method, and recurring agent loops) that automate requirement-to-release delivery, code review, and documentation, dramatically increasing engineering throughput.
+  \item Collaborated deeply with European clients (Norway, Germany, France) to build certified software under rigorous health-compliance frameworks (DiGA, HAS, PECAN).
+\end{itemize}
+\section*{Key Projects}
+\entry{Tymewear}{USA}
+{\small\itshape Full-Stack: Flutter / Dart client $\cdot$ Django (Python) backend $\cdot$ BLE, IoT-based fitness platform}
+\begin{itemize}
+  \item Integrated third-party fitness platforms (Garmin, Wahoo, Intervals.icu) for seamless bidirectional synchronization of workouts, training loads, and biometric data across ecosystems.
+  \item Led development of the Tymewear app across a Flutter/Dart client and Django/Python backend services, managing BLE connectivity, real-time sensor pipelines, and REST APIs (strap plus external sensors).
+  \item Applied agentic engineering (self-built /dev-loop and /design-spec workflows) to drive features from Jira ticket to built feature to release, accelerating delivery while enforcing code-review and definition-of-done gates.
+  \item Enabled live tracking of breathing, heart rate, and other biometric metrics, visualised via graphs and analytics for training-zone monitoring.
+  \item Supported sensor-pairing workflows and offline session sync so data was preserved even when the phone was out of range during activity.
+\end{itemize}
+\entry{Lifeness}{Norway / Germany}
+{\small\itshape Full-Stack: Kotlin Multiplatform (KMP) \& SwiftUI client $\cdot$ Ruby on Rails backend $\cdot$ GraphQL $\cdot$ DiGA \& PECAN certified healthcare app}
+\begin{itemize}
+  \item Delivered full-stack functionality for a research-based, DiGA and PECAN-certified healthcare app for lifestyle and chronic-disease management, spanning a KMP/SwiftUI client and a Ruby on Rails backend consumed via GraphQL.
+  \item Led third-party integration of VIMscore for patient analytics and managed Firebase builds and active release cycles on the App Store and Play Store.
+  \item Applied agentic engineering workflows (custom Claude Code skills, MCP-driven Jira/Confluence automation, and the BMad method) to plan, build, and document features end-to-end.
+  \item Built scalable features supporting chronic-disease prevention and lifestyle tracking, with multilingual support and Livy chatbot integration.
+\end{itemize}
+\section*{Agentic Engineering}
+Architect and operate custom AI agent systems on Claude Code that automate the software lifecycle end to end, turning a single requirement into shipped, reviewed, and documented production code.
+\begin{itemize}
+  \item \textbf{MCP platform integrations:} Extended the agent runtime with MCP servers for Jira, Confluence, Slack, and Figma, so agents autonomously manage tickets, publish documentation, and pull live design and project context.
+  \item \textbf{Design-to-spec workflow (/design-spec):} Turns a Figma link or screenshots into production-ready deliverables (a Figma-to-code mapping, a PRD, and a pixel-accurate interactive prototype) governed by a codified design system.
+  \item \textbf{One-prompt store releases (Fastlane):} Automated the entire release with custom Fastlane lanes for iOS and Android, so a single prompt (for example, "Add builds 1.4.0") builds, signs, and ships the app to both the App Store and Google Play in one pass, guarded by an automated static-analysis and test gate.
+\end{itemize}
+\section*{Education}
+\begin{itemize}
+  \item \textbf{B.Tech in Information Technology} $\cdot$ Charotar University of Science and Technology (CHARUSAT), Changa, India
+  \item \textbf{Diploma in Computer Engineering} $\cdot$ Government Polytechnic, Jamnagar
+\end{itemize}
+\section*{Certifications}
+\begin{itemize}
+  \item AWS Certified Cloud Practitioner
+  \item Microsoft Azure Fundamentals
+\end{itemize}
+\section*{Publications \& Other Experience}
+\begin{itemize}
+  \item \textbf{Blogs:} "Azure Virtual Machine Deployment with VNet \& Resource Groups"; "Demystifying Docker Commands CLI".
+  \item \textbf{Internships:} AWS \& Jenkins (TechieButler); Cloud Infrastructure \& Security (Celebal Technologies).
+\end{itemize}
+\end{document}

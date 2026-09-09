@@ -33,92 +33,108 @@
   },
   "targetLanes": [
     {
-      "id": "ai-agentic",
-      "label": "AI / Agentic Engineer",
-      "priority": 1,
-      "rationale": "Dev's scarcest, highest-leverage asset. He has genuinely operated multi-agent systems (Claude Code skills, MCP servers, BMad, agent loops) in a production delivery pipeline — that is rare at any level and very rare at 2.7 years. Highest comp ceiling of the three lanes.",
-      "titles": [
-        "AI Engineer",
-        "AI Agent Engineer",
-        "Agent Engineer",
-        "Applied AI Engineer",
-        "LLM Engineer",
-        "GenAI Engineer",
-        "AI Software Engineer",
-        "AI Platform Engineer",
-        "AI Automation Engineer",
-        "Member of Technical Staff"
-      ]
-    },
-    {
-      "id": "fde",
-      "label": "Forward Deployed Engineer",
-      "priority": 1,
-      "rationale": "Direct hit: client-facing delivery with Norway/Germany/France teams, full-stack breadth, regulated-domain discipline, and agent tooling. FDE explicitly rewards the generalist-who-ships-with-the-customer profile.",
-      "titles": [
-        "Forward Deployed Engineer",
-        "Forward Deployed Software Engineer",
-        "FDE",
-        "Solutions Engineer",
-        "Solutions Architect",
-        "Deployment Engineer",
-        "Implementation Engineer",
-        "Customer Engineer",
-        "Delivery Engineer",
-        "Field Engineer"
-      ],
-      "judgeFromJdBody": "Read the JD body before trusting the title. GOOD: builds software with/for customers, writes production code, integrations, deploys, technical depth expected. SKIP: pure pre-sales, quota-carrying, demo-only, account management, or a support/L2 role wearing an engineering title."
-    },
-    {
       "id": "mobile",
-      "label": "Mobile — Flutter / KMP / cross-platform",
-      "priority": 2,
-      "rationale": "Deepest hands-on track record: 2.7 yrs shipping production Flutter and KMP/SwiftUI to the App Store and Play Store, including BLE/IoT and a DiGA/PECAN-certified app. Most reliable volume of interviews.",
+      "label": "Mobile — Flutter / KMP / Android / iOS / cross-platform",
+      "priority": 1,
+      "rationale": "Deepest hands-on track record: 2.7 yrs shipping production Flutter and KMP/SwiftUI to the App Store and Play Store, including BLE/IoT and a DiGA/PECAN-certified app.",
       "titles": [
+        "Mobile App Developer",
+        "Mobile Application Developer",
+        "Mobile Developer",
+        "Mobile Engineer",
+        "Application Developer",
+        "Android Developer",
+        "Android Engineer",
+        "iOS Developer",
+        "iOS Engineer",
+        "KMP Developer",
+        "Kotlin Multiplatform Developer",
+        "Kotlin Developer",
         "Flutter Developer",
         "Flutter Engineer",
-        "Mobile Engineer",
-        "Mobile Application Developer",
-        "Android Engineer",
-        "Android Developer",
-        "Kotlin Developer",
-        "KMP Engineer",
-        "Kotlin Multiplatform Engineer",
-        "Cross-Platform Engineer",
+        "Dart Developer",
         "React Native Developer",
-        "iOS Engineer",
+        "Cross-Platform Developer",
         "Software Engineer - Mobile"
       ]
     },
     {
       "id": "mern",
-      "label": "Full-stack — MERN only",
-      "priority": 3,
-      "rationale": "React + Node + TypeScript are real and on the resume. Treated as the third lane: broadest volume, lowest differentiation, and one honest gap (MongoDB) — see resume-content.json doNotClaim.",
+      "label": "Full-stack — MERN / JavaScript",
+      "priority": 1,
+      "rationale": "React, Node.js and TypeScript are all real and on the resume, backed by delivered REST and GraphQL API work. Broadest posting volume of the lanes.",
       "titles": [
-        "Full Stack Developer",
-        "Full Stack Engineer",
         "MERN Stack Developer",
         "MERN Developer",
+        "MEAN Stack Developer",
+        "Full Stack Developer",
+        "Full Stack Engineer",
+        "Fullstack Developer",
         "Software Engineer - Full Stack",
         "Node.js Developer",
+        "Node Developer",
         "React Developer",
-        "Frontend Engineer",
-        "Backend Engineer - Node",
-        "Javascript Engineer",
-        "Typescript Engineer"
+        "React Engineer",
+        "React.js Developer",
+        "JavaScript Developer",
+        "TypeScript Developer",
+        "Frontend Developer",
+        "Backend Developer"
       ],
-      "constraint": "MERN ONLY. Do NOT surface Java, .NET, PHP, Golang, Django-first, or Rails-first full-stack roles. Django and Rails stay on the resume as delivered facts, but they are not targets."
+      "constraint": "MERN / JavaScript-first only. Do NOT surface Java, .NET, PHP, Golang, Django-first or Rails-first full-stack roles. Django and Rails stay on the resume as delivered facts, but they are not targets.",
+      "gap": "MongoDB is NOT on the resume. A MERN JD that is hard on MongoDB is a stretch, and the match report will say so."
+    },
+    {
+      "id": "software-generalist",
+      "label": "Software Developer / Software Engineer",
+      "priority": 2,
+      "rationale": "The broadest catch-all. Many good product roles are titled plainly and only reveal their stack in the body.",
+      "titles": [
+        "Software Developer",
+        "Software Engineer",
+        "Software Engineer II",
+        "SDE",
+        "SDE-2",
+        "SDE 2",
+        "Software Development Engineer",
+        "Product Engineer",
+        "Application Engineer",
+        "Associate Software Engineer"
+      ],
+      "judgeFromJdBody": "Title alone says nothing here. Read the body: if the stack is Flutter/Kotlin/React/Node/TypeScript it is a match; if it is Java/.NET/PHP/Go/Python-ML it is not."
+    },
+    {
+      "id": "fde",
+      "label": "Forward Deployed Engineer",
+      "priority": 2,
+      "rationale": "Client-facing delivery with Norway/Germany/France teams, full-stack breadth, and regulated-domain discipline. FDE rewards the generalist-who-ships-with-the-customer profile.",
+      "titles": [
+        "Forward Deployed Engineer",
+        "Forward Deployed Software Engineer",
+        "FDE",
+        "Solutions Engineer",
+        "Deployment Engineer",
+        "Implementation Engineer",
+        "Customer Engineer",
+        "Delivery Engineer",
+        "Field Engineer",
+        "Integration Engineer"
+      ],
+      "judgeFromJdBody": "Read the JD body before trusting the title. GOOD: builds software with/for customers, writes production code, integrations, deploys. SKIP: pure pre-sales, quota-carrying, demo-only, account management, or a support/L2 role wearing an engineering title."
     }
   ],
   "excludedLanes": [
     {
+      "id": "ai-ml-engineer",
+      "reason": "REMOVED AS A TARGET 2026-09-09 at Dev's direction. His agentic engineering is HOW he writes code — custom Claude Code skills, MCP servers, the BMad method, /dev-loop — not what he is hired to build. He is not an AI/ML engineer and does not want AI Engineer, Agent Engineer, LLM Engineer, Applied AI or ML/data-science roles. The agentic work STAYS on the resume as a differentiator and a productivity story; it is simply not the job title being hunted."
+    },
+    {
       "id": "devops-sre",
-      "reason": "Dev explicitly de-scoped this on 2026-09-08. AWS CCP + Azure Fundamentals + Fastlane/GitHub Actions and two cloud internships stay on the resume as supporting facts, but no DevOps/SRE/Platform/Cloud-Engineer roles are targeted."
+      "reason": "De-scoped 2026-09-08. AWS CCP + Azure Fundamentals + Fastlane/GitHub Actions and two cloud internships stay on the resume as supporting facts, but no DevOps/SRE/Platform/Cloud-Engineer roles are targeted."
     },
     {
       "id": "data-ml",
-      "reason": "No ML/data-science background. Applied-AI product engineering only — not model training, MLOps, or data engineering."
+      "reason": "No ML/data-science background. Not model training, MLOps, or data engineering."
     },
     {
       "id": "qa-support",
@@ -178,9 +194,9 @@
   },
   "scanning": {
     "maxAgeHours": 24,
-    "roleRegex": "(flutter|dart|kotlin|kmp|multiplatform|android|swiftui|jetpack compose|react native|mobile (engineer|developer)|cross.?platform|forward.?deployed|solutions engineer|ai engineer|agent(ic)? engineer|applied ai|llm engineer|genai|generative ai|ml engineer.*(product|application)|member of technical staff|full.?stack|mern|react (developer|engineer)|node(\\.?js)? (developer|engineer)|typescript|javascript engineer|software engineer)",
+    "roleRegex": "(flutter|dart\\b|kotlin|kmp\\b|multiplatform|android|swiftui|jetpack compose|react native|\\bios\\b|mobile (app )?(engineer|developer|application)|mobile application|application developer|cross.?platform|forward.?deployed|solutions engineer|deployment engineer|implementation engineer|integration engineer|customer engineer|delivery engineer|mern|mean stack|full.?stack|react(\\.?js)? (developer|engineer)|node(\\.?js)? (developer|engineer)|javascript (developer|engineer)|typescript (developer|engineer)|frontend|front.?end|backend|back.?end|software (developer|engineer)|software development engineer|\\bsde\\b|product engineer|application engineer)",
     "seniorityRejectRegex": "(senior|staff|principal|lead\\b|architect|manager|director|head of|vp\\b|sr\\.?\\s|8\\+|9\\+|10\\+|7\\+ years|6\\+ years|minimum of (6|7|8|9|10))",
-    "stackRejectRegex": "(salesforce|sap\\b|abap|mainframe|cobol|sharepoint|dynamics 365|servicenow|drupal|wordpress|magento|\\.net|c#|asp\\.net|spring boot|java developer|golang developer|php|laravel|manual test|qa engineer|automation test|selenium|sdet|technical support|desktop support|network engineer|site reliability|\\bsre\\b|devops engineer|platform engineer|cloud engineer|data engineer|data scientist|business analyst|scrum master|product manager)",
+    "stackRejectRegex": "(salesforce|sap\\b|abap|mainframe|cobol|sharepoint|dynamics 365|servicenow|drupal|wordpress|magento|\\.net|c#|asp\\.net|spring boot|java developer|golang developer|\\bgo developer\\b|php|laravel|manual test|qa engineer|automation test|selenium|sdet|technical support|desktop support|network engineer|site reliability|\\bsre\\b|devops engineer|platform engineer|cloud engineer|data engineer|data scientist|business analyst|scrum master|product manager|\\bai engineer\\b|\\bml engineer\\b|machine learning engineer|applied ai|llm engineer|genai engineer|generative ai engineer|agent engineer|agentic engineer|research scientist|deep learning|\\bnlp\\b engineer|computer vision|mlops|prompt engineer)",
     "indiaRegex": "(india|bengaluru|bangalore|hyderabad|pune|mumbai|gurugram|gurgaon|noida|delhi|ncr|chennai|ahmedabad|gandhinagar|gift city|kolkata|jaipur|indore|kochi|coimbatore|trivandrum|thiruvananthapuram)",
     "remoteRegex": "(remote|work from home|wfh|distributed|anywhere|home.?based)",
     "foreignRejectRegex": "(united states|usa|u\\.s\\.|united kingdom|\\buk\\b|england|london|manchester|ireland|dublin|canada|toronto|vancouver|san francisco|new york|\\bnyc\\b|california|texas|austin|seattle|washington|boston|chicago|denver|atlanta|cupertino|palo alto|mountain view|sunnyvale|germany|berlin|munich|netherlands|amsterdam|france|paris|spain|madrid|barcelona|portugal|lisbon|poland|warsaw|krakow|czech|prague|sweden|stockholm|denmark|copenhagen|norway|oslo|finland|helsinki|estonia|israel|tel aviv|singapore|japan|tokyo|australia|sydney|melbourne|new zealand|dubai|\\buae\\b|abu dhabi|saudi|qatar|brazil|mexico|argentina|colombia|chile|philippines|manila|vietnam|indonesia|jakarta|malaysia|kuala lumpur|thailand|bangkok|china|shanghai|beijing|hong kong|korea|seoul|taiwan|egypt|nigeria|kenya|south africa|\\bemea\\b|\\bapac\\b|\\blatam\\b|italy|rome|milan|switzerland|zurich|geneva|austria|vienna|belgium|brussels|greece|athens|turkey|istanbul|romania|bucharest|hungary|budapest|bulgaria|sofia|ukraine|russia|moscow|serbia|croatia|slovakia|slovenia|lithuania|latvia|iceland|luxembourg|malta|cyprus|morocco|ghana|tanzania|uganda|peru|uruguay|ecuador|costa rica|panama|bangladesh|pakistan|sri lanka|nepal|cambodia|myanmar|scotland|wales|belfast|birmingham|leeds|glasgow|edinburgh|bristol|oxford|zagreb|tallinn|riga|vilnius)",
@@ -188,7 +204,8 @@
     "maxAgeDays": 21,
     "_freshnessNote": "Hard 21-day cutoff, from Ankur Kapuriya's runbook. Ranking is newest-first, match quality second: a 70% fit posted three hours ago beats a 90% fit posted six days ago, because on competitive roles the queue ahead of you matters more than the margin of fit. Override with --maxAgeDays / --rank quality.",
     "marketplaceRejectRegex": "(micro1|andela|toptal|crossover|turing\\.com|deel talent|gun\\.io|arc\\.dev|lemon\\.io|proxify|revelo|braintrust|upwork|fiverr|freelancer\\.com)",
-    "_marketplaceNote": "Training/gig marketplaces that list their own sourcing roles rather than a real employer's. Ankur flags micro1 specifically as always out of scope regardless of how a listing is titled. Turing is kept as a Tier-A board for visibility, but a listing whose employer IS the marketplace is out of scope — only pursue ones naming a real end client."
+    "_marketplaceNote": "Training/gig marketplaces that list their own sourcing roles rather than a real employer's. Ankur flags micro1 specifically as always out of scope regardless of how a listing is titled. Turing is kept as a Tier-A board for visibility, but a listing whose employer IS the marketplace is out of scope — only pursue ones naming a real end client.",
+    "_aiNote": "AI/ML specialist titles are rejected as of 2026-09-09. Dev uses agentic tooling to write code; he is not applying to be an AI engineer. This is a TITLE filter only, so a plainly-titled Software Engineer role at an AI company still matches on its stack."
   },
   "delivery": {
     "digestEmail": "devmankad12@gmail.com",

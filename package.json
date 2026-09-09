@@ -19,6 +19,7 @@
     "tracker": "python scripts/tracker.py --append",
     "daily": "node scripts/jobhunt.mjs",
     "jobhunt": "node scripts/jobhunt.mjs",
-    "jobhunt:wide": "node scripts/jobhunt.mjs --wide"
+    "jobhunt:wide": "node scripts/jobhunt.mjs --wide",
+    "resumes": "node scripts/build-resumes.mjs"
   }
 }

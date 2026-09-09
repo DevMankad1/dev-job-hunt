@@ -7,10 +7,13 @@
  *   node scripts/digest.mjs --subject       # print just the subject line
  *
  * Sections are grouped by LANE so Dev can triage by intent, not by company:
- *   1. AI / Agentic + Forward Deployed   (purple)  — his differentiator lane
- *   2. Mobile — Flutter / KMP            (blue)
- *   3. Full-stack MERN                   (green)
- *   4. Worth a look / needs judgement    (amber)   — anything with blockers
+ *   1. Mobile — Flutter / KMP / Android / iOS  (blue)
+ *   2. Full-stack — MERN / JavaScript          (green)
+ *   3. Forward Deployed / Solutions            (purple)
+ *   4. Software Developer / Engineer           (slate)
+ *
+ * There is deliberately no AI lane: Dev's agentic engineering is how he writes
+ * code, not the job he is applying for.
  *
  * Every row carries the DIRECT apply link, never a careers-page root.
  */
@@ -34,13 +37,13 @@ const CHANNELS = [
 ];
 
 const LANES = [
-  { id: 'ai', label: 'AI / Agentic + Forward Deployed', color: '#6d28d9', bg: '#f5f3ff',
-    test: (m) => ['ai-agent-engineer', 'llm-app-engineer', 'forward-deployed-engineer', 'fullstack-ai'].includes(m.archetype) },
-  { id: 'mobile', label: 'Mobile — Flutter / KMP / cross-platform', color: '#1d4ed8', bg: '#eff6ff',
+  { id: 'mobile', label: 'Mobile — Flutter / KMP / Android / iOS', color: '#1d4ed8', bg: '#eff6ff',
     test: (m) => ['flutter-engineer', 'kmp-android-engineer', 'mobile-generalist', 'healthtech-mobile'].includes(m.archetype) },
-  { id: 'mern', label: 'Full-stack — MERN', color: '#047857', bg: '#ecfdf5',
+  { id: 'mern', label: 'Full-stack — MERN / JavaScript', color: '#047857', bg: '#ecfdf5',
     test: (m) => ['mern-fullstack', 'react-frontend', 'node-backend'].includes(m.archetype) },
-  { id: 'other', label: 'Other / generalist', color: '#475569', bg: '#f8fafc',
+  { id: 'fde', label: 'Forward Deployed / Solutions', color: '#6d28d9', bg: '#f5f3ff',
+    test: (m) => ['forward-deployed-engineer'].includes(m.archetype) },
+  { id: 'other', label: 'Software Developer / Engineer', color: '#475569', bg: '#f8fafc',
     test: () => true },
 ];
 
