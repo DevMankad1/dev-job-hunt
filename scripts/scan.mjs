@@ -222,6 +222,36 @@ for (const j of boardJobs) {
   }
 }
 
+// --- spray-poster guard ----------------------------------------------------
+// Some employers duplicate one req across every country they can name. Bjak's
+// Ashby board carries 3,072 postings, 424 of them mobile-titled, at roughly 20
+// per country — an "India" tag there means the row exists, not that they are
+// hiring in India. Left alone, five near-identical Bjak rows crowd out the real
+// matches in a digest.
+const boardSize = new Map();
+for (const b of boards) if (b && !b.__error) boardSize.set(b.company.name, b.jobs.length);
+
+const SPRAY_BOARD = 400;   // postings on one board
+const PER_COMPANY = 3;     // rows any single employer may contribute
+const perCompany = new Map();
+const crowdedOut = [];
+
+for (const m of matches) {
+  const size = boardSize.get(m.company) || 0;
+  m.sprayPosted = size >= SPRAY_BOARD;
+  if (m.sprayPosted) m.blockers = [...(m.blockers || []), `Employer board carries ${size} postings — the same req is duplicated across many countries. Verify this is a real India role.`];
+}
+
+const capped = [];
+for (const m of matches) {
+  const n = perCompany.get(m.company) || 0;
+  if (n >= PER_COMPANY) { crowdedOut.push(`${m.company} — ${m.title}`); continue; }
+  perCompany.set(m.company, n + 1);
+  capped.push(m);
+}
+matches.length = 0;
+matches.push(...capped);
+
 // --- dedupe against durable state ------------------------------------------
 const statePath = path.join(ROOT, 'state/seen-urls.json');
 let seen = { urls: {}, lastRun: null };

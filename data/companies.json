@@ -1,7 +1,7 @@
 {
   "_meta": {
     "purpose": "Company registry. Tier A = verified public ATS API, scanned automatically every run. Tier B = careers page only, swept by WebFetch on a rotating third. Tier C = manual.",
-    "lastUpdated": "2026-09-08",
+    "lastUpdated": "2026-09-10",
     "source": "Built 2026-09-08 by 6 parallel research agents, then every ATS endpoint verified live by scripts/verify_ats.mjs. Never mark tier A on an unverified slug.",
     "tierRule": "Run: node scripts/verify_ats.mjs --write",
     "_atsAdapters": {
@@ -24,7 +24,7 @@
       "atsSlug": "sarvam",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "ai-agentic",
         "fde",
@@ -38,7 +38,7 @@
       "priority": "high",
       "note": "Has a live 'Forward Deployed Software Engineer | 2-5 years' role in Bengaluru asking for production LLM/agent systems and eval pipelines - almost an exact match for Dev's agentic-engineering differentiator at his exact YOE band.",
       "evidence": "sarvam.ai/careers lists FDE 2-5 yrs (Bengaluru) + Backend SWE, Autonomous Agents team; Ashby board jobs.ashbyhq.com/sarvam confirmed.",
-      "openRoleCount": 63
+      "openRoleCount": 62
     },
     {
       "name": "Glean",
@@ -48,7 +48,7 @@
       "atsSlug": "gleanwork",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "ai-agentic",
         "enterprise",
@@ -61,7 +61,7 @@
       "priority": "high",
       "note": "Actively hiring 'Software Engineer, Agents' and 'Software Engineer, Evals' in-person in Bangalore - agent-building and eval work is precisely what Dev already does with Claude Code skills and MCP servers.",
       "evidence": "job-boards.greenhouse.io/gleanwork jobs 4712442005 (Agents, Bangalore) and 4712438005 (Evals, Bangalore); India-specific Product Backend req 4012744005.",
-      "openRoleCount": 115
+      "openRoleCount": 112
     },
     {
       "name": "Anthropic",
@@ -71,7 +71,7 @@
       "atsSlug": "anthropic",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "ai-agentic",
         "fde",
@@ -84,7 +84,7 @@
       "priority": "medium",
       "note": "Bengaluru office (opened Feb 2026) is weighted to Applied AI / Solutions Architect work, and Dev is a daily power user of Claude Code with custom skills, MCP servers and agent loops - strong story, high hiring bar.",
       "evidence": "job-boards.greenhouse.io/anthropic?offices[]=4051957008 filters to Bangalore roles; anthropic.com/careers/jobs?office=4051957008.",
-      "openRoleCount": 586
+      "openRoleCount": 595
     },
     {
       "name": "OpenAI",
@@ -163,7 +163,7 @@
       "atsSlug": "atomicwork",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "ai-agentic",
         "enterprise",
@@ -186,7 +186,7 @@
       "atsSlug": "",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "ai-agentic",
         "fde",
@@ -319,7 +319,7 @@
       "atsSlug": "levelai",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "ai-agentic",
         "enterprise",
@@ -366,7 +366,7 @@
       "atsSlug": "postman",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "ai-agentic",
         "mern",
@@ -382,7 +382,7 @@
       "priority": "high",
       "note": "Bengaluru product org building Agent Mode with JDs that name agentic architectures, LLM tool use and MCP explicitly - the single best overlap of Dev's MCP-server work with a mainstream TypeScript/Node product company in India.",
       "evidence": "Bengaluru reqs for Engineering Manager, Postman AI (JD names agentic architectures, LLM tool use, MCP) plus Member of Technical Staff, AI infra; Built In board is the verified aggregate listing.",
-      "openRoleCount": 64
+      "openRoleCount": 65
     },
     {
       "name": "Turing",
@@ -392,7 +392,7 @@
       "atsSlug": "turing",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "ai-agentic",
         "remote-global",
@@ -462,11 +462,14 @@
       "atsSlug": "phonepe",
       "tier": "B",
       "atsVerified": false,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
+        "consumer",
+        "enterprise",
+        "fintech",
         "mobile-native",
-        "product-india",
-        "enterprise"
+        "mobile-rn",
+        "product-india"
       ],
       "locations": [
         "Bengaluru",
@@ -476,7 +479,8 @@
       "priority": "high",
       "note": "Posts SDE-2 Android roles asking exactly Dev's stack - Kotlin, MVVM, modern Android - on a huge consumer transactional app.",
       "evidence": "Live Greenhouse post 'Software Engineer, Android at PhonePe' at job-boards.greenhouse.io/phonepe/jobs/7749157003 (search result, Sep 2026).",
-      "verifyNote": "2026-09-08: greenhouse/phonepe failed (HTTP 404) — downgraded, not deleted. Re-check before removing."
+      "verifyNote": "2026-09-09: greenhouse/phonepe failed (HTTP 404) — downgraded, not deleted. Re-check before removing.",
+      "mobileEvidence": "Live SmartRecruiters posting 'Software Engineer - React Native' at PHONEPE LIMITED, Bellandur, Bengaluru (jobs.smartrecruiters.com/PHONEPELIMITED/1000000000001903-software-engineer-react-native). Separately a live Greenhouse posting 'Software Engineer, Android' at PhonePe (job-boards.greenhouse.io/phonepe/jobs/7799494003) and an 'SDE 2 / 3 Android, 2-6 yrs, Kotlin/Java/RxJava/Dagger' listing on Instahyre."
     },
     {
       "name": "Razorpay",
@@ -486,13 +490,14 @@
       "atsSlug": "razorpaysoftwareprivatelimited",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
-        "mobile-native",
-        "mern",
-        "product-india",
+        "ai-agentic",
         "fde",
-        "ai-agentic"
+        "fintech",
+        "mern",
+        "mobile-native",
+        "product-india"
       ],
       "locations": [
         "Bengaluru",
@@ -501,7 +506,8 @@
       "priority": "high",
       "note": "Fintech product co hiring both mobile and Node/React product engineers, so Dev's Kotlin + TypeScript/Node combination is usable in one org.",
       "evidence": "Greenhouse board job-boards.greenhouse.io/razorpaysoftwareprivatelimited plus razorpay.com/careers surfaced in search.",
-      "openRoleCount": 23
+      "openRoleCount": 25,
+      "mobileEvidence": "Greenhouse board verified by API: boards-api.greenhouse.io/v1/boards/razorpaysoftwareprivatelimited/jobs returned 25 live jobs (Bengaluru, Malaysia, Singapore) - but ZERO with Android, iOS, Flutter, Kotlin, Swift, React Native or Mobile in the title on the day I checked. Razorpay ships merchant-facing Android/iOS apps and payment SDKs."
     },
     {
       "name": "Swiggy",
@@ -532,7 +538,7 @@
       "atsSlug": "",
       "tier": "B",
       "atsVerified": false,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "mobile-native",
         "product-india",
@@ -545,7 +551,7 @@
       "priority": "high",
       "note": "Fast-scaling quick-commerce product co with several mobile apps; suits a 2-3 yr engineer who ships releases end-to-end like Dev's Fastlane one-prompt pipeline.",
       "evidence": "Official careers page zepto.com/s/careers confirmed in search results.",
-      "verifyNote": "2026-09-08: other/ returned 0 postings — downgraded, not deleted. Re-check before removing."
+      "verifyNote": "2026-09-09: other/ returned 0 postings — downgraded, not deleted. Re-check before removing."
     },
     {
       "name": "Meesho",
@@ -555,7 +561,7 @@
       "atsSlug": "meesho",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "mobile-native",
         "product-india",
@@ -577,11 +583,13 @@
       "atsSlug": "cred",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
+        "consumer",
+        "fintech",
+        "mern",
         "mobile-native",
-        "product-india",
-        "mern"
+        "product-india"
       ],
       "locations": [
         "Bengaluru"
@@ -589,7 +597,8 @@
       "priority": "high",
       "note": "Design-led native mobile shop where Compose/SwiftUI craft matters - Dev has both plus a Figma-to-spec agent workflow that fits their design bar.",
       "evidence": "Official openings page careers.cred.club/openings confirmed in search results.",
-      "openRoleCount": 11
+      "openRoleCount": 11,
+      "mobileEvidence": "Confirmed a live self-hosted openings board at careers.cred.club/openings. CRED is an invite-only credit-card-payments app and is widely known for a large in-house Android/iOS team and a design-heavy native app. I did not open individual reqs, so no specific mobile title verified."
     },
     {
       "name": "Groww",
@@ -599,11 +608,13 @@
       "atsSlug": "groww",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
+        "consumer",
+        "fintech",
+        "mern",
         "mobile-native",
-        "product-india",
-        "mern"
+        "product-india"
       ],
       "locations": [
         "Bengaluru",
@@ -612,7 +623,8 @@
       "priority": "high",
       "note": "Mobile-first investing product with a big Android/iOS team; mid-level app engineers with fintech-grade release discipline are the standard hire.",
       "evidence": "Official careers page groww.in/careers confirmed in search results.",
-      "openRoleCount": 7
+      "openRoleCount": 7,
+      "mobileEvidence": "Public Greenhouse board confirmed at job-boards.eu.greenhouse.io/groww (I saw the live board, showing e.g. 'Manager - Controllership (NBFC)', Bengaluru). No mobile req was open at the time I checked. Groww's investing product is an app-first consumer product and they run in-house Android and iOS teams."
     },
     {
       "name": "Eternal (Zomato / District / Hyperpure)",
@@ -666,18 +678,20 @@
       "atsVerified": false,
       "lastVerified": null,
       "segments": [
-        "mobile-flutter",
+        "consumer",
         "healthtech",
-        "product-india",
         "iot",
-        "mobile-native"
+        "mobile-flutter",
+        "mobile-native",
+        "product-india"
       ],
       "locations": [
         "Bengaluru"
       ],
       "priority": "high",
       "note": "One of the few Indian product companies openly hiring Flutter app engineers at 2-6 yrs, and it is health/fitness - Dev's exact Flutter + healthtech + BLE-fitness overlap.",
-      "evidence": "Multiple current Cult Fit listings on Instahyre: 'App Engineer (Flutter Developer)' and 'Mobile Apps Developer (Flutter)', Bangalore, 2-6 and 5-8 yrs."
+      "evidence": "Multiple current Cult Fit listings on Instahyre: 'App Engineer (Flutter Developer)' and 'Mobile Apps Developer (Flutter)', Bangalore, 2-6 and 5-8 yrs.",
+      "mobileEvidence": "www.cult.fit/careers 301-redirects to careers.cult.fit/cult/, confirming a live dedicated careers portal. The page body is JS-rendered so no role list came back, and I could not confirm a live mobile req or the ATS vendor. Evidence is the existence of the board plus the fact that cult.fit is an app-first fitness product (workout streaming, wearable/health-data integrations) with a large Bengaluru mobile team."
     },
     {
       "name": "Ultrahuman",
@@ -691,6 +705,7 @@
       "segments": [
         "healthtech",
         "iot",
+        "mobile-kmp",
         "mobile-native",
         "product-india",
         "startup-early"
@@ -702,7 +717,8 @@
       ],
       "priority": "high",
       "note": "Wearable ring/health company whose app is BLE-device-driven - matches Dev's IoT/BLE fitness app and regulated-health app background almost one-to-one.",
-      "evidence": "Official Freshteam careers board ultrahuman-talent.freshteam.com/jobs with mobile developer roles (also listed on Welcome to the Jungle)."
+      "evidence": "Official Freshteam careers board ultrahuman-talent.freshteam.com/jobs with mobile developer roles (also listed on Welcome to the Jungle).",
+      "mobileEvidence": "Two real Ultrahuman ATS URLs surfaced: ultrahuman-talent.freshteam.com/jobs and ultrahuman.zohorecruit.in/jobs/Careers. I fetched the Freshteam board and it returned no listings under its default filter at check time, so I saw the board but not a live mobile req. The product (Ultrahuman Ring AIR, M1 CGM, Home) is a BLE wearable whose entire value is the companion app, and the company is Bengaluru-headquartered."
     },
     {
       "name": "PhysicsWallah (PW)",
@@ -835,15 +851,16 @@
       "name": "Zeta",
       "domain": "zeta.tech",
       "careersUrl": "https://careers.zeta.tech/",
-      "atsProvider": "other",
-      "atsSlug": "",
-      "tier": "B",
-      "atsVerified": false,
-      "lastVerified": null,
+      "atsProvider": "lever",
+      "atsSlug": "zeta",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-09",
       "segments": [
+        "enterprise",
+        "fintech",
         "mobile-native",
-        "product-india",
-        "enterprise"
+        "product-india"
       ],
       "locations": [
         "Bengaluru",
@@ -852,7 +869,9 @@
       ],
       "priority": "medium",
       "note": "Banking-tech product co hiring mid-senior Android engineers to build mobile SDKs in Kotlin - matches Dev's Kotlin + enterprise/regulated delivery background.",
-      "evidence": "Official careers portal careers.zeta.tech and zeta.tech/in/careers; Built In listing 'Mid-Senior level Mobile Engineer, Android' at Zeta, Bengaluru, Kotlin + mobile SDKs."
+      "evidence": "Official careers portal careers.zeta.tech and zeta.tech/in/careers; Built In listing 'Mid-Senior level Mobile Engineer, Android' at Zeta, Bengaluru, Kotlin + mobile SDKs.",
+      "mobileEvidence": "Public Lever board confirmed (jobs.lever.co/zeta). The API read returned only 4 postings (Legal, Cloud Network Engineer II Hyderabad, Risk & Compliance, senior IT leader) - no mobile titles open. Zeta builds modern card-issuing and banking stacks including mobile banking SDKs that partner banks embed.",
+      "openRoleCount": 19
     },
     {
       "name": "Zerodha",
@@ -864,6 +883,8 @@
       "atsVerified": false,
       "lastVerified": null,
       "segments": [
+        "consumer",
+        "fintech",
         "mobile-native",
         "product-india"
       ],
@@ -872,7 +893,8 @@
       ],
       "priority": "low",
       "note": "Small, high-bar in-house team on the Kite mobile apps; rare openings, but a strong culture fit for an engineer who builds his own tooling.",
-      "evidence": "Official careers site careers.zerodha.com confirmed in search results."
+      "evidence": "Official careers site careers.zerodha.com confirmed in search results.",
+      "mobileEvidence": "Confirmed the real self-hosted careers site careers.zerodha.com. An 'Android Developer' req at Zerodha, Bangalore, was listed on Instahyre asking 5-10 years with Java/Kotlin - so they do hire Android, but the open band sits above Dev's 2.7 years."
     },
     {
       "name": "Angel One",
@@ -884,7 +906,10 @@
       "atsVerified": false,
       "lastVerified": null,
       "segments": [
+        "consumer",
+        "fintech",
         "mobile-flutter",
+        "mobile-native",
         "product-india"
       ],
       "locations": [
@@ -894,7 +919,8 @@
       ],
       "priority": "medium",
       "note": "Remote-first fintech that has run Flutter/Dart cross-platform mobile hiring for its trading app - a rare Indian listed product co using Flutter.",
-      "evidence": "HackerEarth 'Angel One Mobile Application Developer Hiring Challenge' spec asks for cross-platform Flutter/Dart apps; company careers path not verified so homepage root given."
+      "evidence": "HackerEarth 'Angel One Mobile Application Developer Hiring Challenge' spec asks for cross-platform Flutter/Dart apps; company careers path not verified so homepage root given.",
+      "mobileEvidence": "Confirmed the live careers page at angelone.in/careers (startup-culture, flexible-work framing) and ~8 vacancies visible on Indeed. Angel One is a listed retail broker whose growth is entirely app-driven. I did NOT see any mobile-titled posting - this is the weakest evidence in the list."
     },
     {
       "name": "Khatabook",
@@ -927,7 +953,7 @@
       "atsSlug": "Sprinto",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "mern",
         "startup-early",
@@ -941,7 +967,7 @@
       "priority": "high",
       "note": "Accel/Elevation-backed compliance-automation SaaS built on a JavaScript full-stack, remote-from-India by default - Dev's Node/React/TS plus his EU-regulated (DiGA/HAS) compliance exposure is an unusually literal match.",
       "evidence": "jobs.lever.co/Sprinto board live; 'Senior Full-stack Engineer - Remote' req asks 4+ yrs JS full-stack, SQL and NoSQL",
-      "openRoleCount": 33
+      "openRoleCount": 36
     },
     {
       "name": "UptimeAI",
@@ -951,7 +977,7 @@
       "atsSlug": "uptimeai",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "mern",
         "startup-early",
@@ -973,7 +999,7 @@
       "atsSlug": "aiprise",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "mern",
         "startup-early",
@@ -995,7 +1021,7 @@
       "atsSlug": "ema",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "ai-agentic",
         "mern",
@@ -1040,7 +1066,7 @@
       "atsSlug": "innovaccer-analytics",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "healthtech",
         "mern",
@@ -1068,7 +1094,7 @@
       "atsSlug": "plum",
       "tier": "B",
       "atsVerified": false,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "healthtech",
         "mern",
@@ -1083,7 +1109,7 @@
       "priority": "high",
       "note": "Tiger Global/Peak XV-backed employee-health-insurance platform running a full SDE I/II/III ladder in Bengaluru - health-benefits domain plus his API-integration work is a clean overlap (note some backend reqs are Java, target the JS/frontend-leaning ones).",
       "evidence": "jobs.lever.co/plum - live reqs incl. 'Software Development Engineer I', 'Software Engineer - II - Backend', 'Software Engineer - III - Frontend'",
-      "verifyNote": "2026-09-08: lever/plum failed (HTTP 404) — downgraded, not deleted. Re-check before removing."
+      "verifyNote": "2026-09-09: lever/plum failed (HTTP 404) — downgraded, not deleted. Re-check before removing."
     },
     {
       "name": "Netomi",
@@ -1093,7 +1119,7 @@
       "atsSlug": "netomi",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "ai-agentic",
         "mern",
@@ -1106,7 +1132,7 @@
       "priority": "medium",
       "note": "AI customer-service agent product with NCR engineering hiring at the SDE II rung - his agent-orchestration experience is a differentiator against pure web candidates.",
       "evidence": "jobs.lever.co/netomi/4fbdaf57-644a-47a6-9248-88fc0bf4a2dd - 'SDE II - Frontend'",
-      "openRoleCount": 21
+      "openRoleCount": 23
     },
     {
       "name": "Everstage",
@@ -1138,7 +1164,7 @@
       "atsSlug": "zepto-11",
       "tier": "B",
       "atsVerified": false,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "mern",
         "product-india",
@@ -1152,7 +1178,7 @@
       "priority": "medium",
       "note": "High-scale Indian consumer commerce product with heavy Node/TypeScript service work and a public Workable board - good SDE-2 velocity fit, though consumer scale not healthcare.",
       "evidence": "apply.workable.com/zepto-11 - 'Zepto - Current Openings' board live",
-      "verifyNote": "2026-09-08: workable/zepto-11 returned 0 postings — downgraded, not deleted. Re-check before removing."
+      "verifyNote": "2026-09-09: workable/zepto-11 returned 0 postings — downgraded, not deleted. Re-check before removing."
     },
     {
       "name": "Simpplr",
@@ -1162,7 +1188,7 @@
       "atsSlug": "simpplr",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "mern",
         "enterprise",
@@ -1185,7 +1211,7 @@
       "atsSlug": "diligentcorporation",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "mern",
         "enterprise",
@@ -1197,7 +1223,7 @@
       "priority": "medium",
       "note": "Governance/compliance SaaS with a Bengaluru engineering centre posting explicit NodeJS+React engineer roles - regulated-industry product work echoes his EU-compliance background.",
       "evidence": "job-boards.greenhouse.io/diligentcorporation/jobs/6009101004 - 'Software Engineer (NodeJS, React)'",
-      "openRoleCount": 115
+      "openRoleCount": 114
     },
     {
       "name": "ASAPP",
@@ -1207,7 +1233,7 @@
       "atsSlug": "asapp-2",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "fde",
         "ai-agentic",
@@ -1220,7 +1246,7 @@
       "priority": "medium",
       "note": "AI CX company hiring India-based engineers who build customer-facing demos across a React front end and Node back end - the closest thing on a public board to an FDE role in Dev's stack.",
       "evidence": "jobs.lever.co/asapp-2/152c4868-2708-4817-a2eb-25fc4141398c - 'Demo Engineer', Bengaluru/Chennai, React + Node.js",
-      "openRoleCount": 11
+      "openRoleCount": 14
     },
     {
       "name": "Bespoke Labs",
@@ -1230,7 +1256,7 @@
       "atsSlug": "bespokelabs",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "mern",
         "ai-agentic",
@@ -1252,7 +1278,7 @@
       "atsSlug": "atlan",
       "tier": "B",
       "atsVerified": false,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "mern",
         "remote-global",
@@ -1264,7 +1290,7 @@
       "priority": "medium",
       "note": "India-founded, fully remote metadata platform with a TS/React product surface - strong remote-from-India employer, but the currently visible engineering reqs are Staff/Principal, so treat as a watch-list until a mid-level product role opens.",
       "evidence": "jobs.lever.co/atlan (Staff/Principal Software Engineer - Product/Platform, 'remote India'); second board at jobs.ashbyhq.com/atlan",
-      "verifyNote": "2026-09-08: lever/atlan failed (HTTP 404) — downgraded, not deleted. Re-check before removing."
+      "verifyNote": "2026-09-09: lever/atlan failed (HTTP 404) — downgraded, not deleted. Re-check before removing."
     },
     {
       "name": "Meditab Software India",
@@ -1526,7 +1552,7 @@
       "atsSlug": "techholding",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "mern",
         "product-india",
@@ -1795,7 +1821,7 @@
       "atsSlug": "healthify",
       "tier": "B",
       "atsVerified": false,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "healthtech",
         "mobile-native",
@@ -1811,7 +1837,7 @@
       "priority": "high",
       "note": "Consumer fitness/nutrition app at scale with wearable-sync — matches Dev's IoT/BLE fitness and consumer mobile track, and they hire mid-level mobile in Bengaluru.",
       "evidence": "Public Workable board apply.workable.com/healthify; careers page healthifyme.com/careers lists Tech roles in Bangalore/Mumbai/Delhi with remote options.",
-      "verifyNote": "2026-09-08: workable/healthify returned 0 postings — downgraded, not deleted. Re-check before removing."
+      "verifyNote": "2026-09-09: workable/healthify returned 0 postings — downgraded, not deleted. Re-check before removing."
     },
     {
       "name": "Dozee",
@@ -1821,7 +1847,7 @@
       "atsSlug": "dozee",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "healthtech",
         "iot",
@@ -1835,7 +1861,7 @@
       "priority": "high",
       "note": "Contactless remote patient monitoring = regulated medical-device software plus a device-to-app pipeline, exactly the regulated-healthtech + IoT combination Dev already shipped.",
       "evidence": "jobs.lever.co/dozee live Lever board; careers page dozeehealth.ai/careers; Bengaluru HQ, ~17 open roles incl. Firmware Engineer II.",
-      "openRoleCount": 21
+      "openRoleCount": 22
     },
     {
       "name": "Suki AI",
@@ -1868,7 +1894,7 @@
       "atsSlug": "zocdoc",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "healthtech",
         "mern",
@@ -1882,7 +1908,7 @@
       "priority": "high",
       "note": "US health-tech product company with a real Pune engineering centre hiring Senior Software Engineers — good MERN/TypeScript home for Dev without leaving India.",
       "evidence": "job-boards.greenhouse.io/zocdoc Greenhouse board; zocdoc.com/about/careers-list/; Pune-located Senior Software Engineer and QA Engineer II postings.",
-      "openRoleCount": 54
+      "openRoleCount": 52
     },
     {
       "name": "Tata 1mg",
@@ -2080,6 +2106,7 @@
         "healthtech",
         "iot",
         "mobile-native",
+        "product-india",
         "startup-early"
       ],
       "locations": [
@@ -2087,7 +2114,8 @@
       ],
       "priority": "medium",
       "note": "Diabetes platform pairing a BLE glucometer with a chronic-care app — the same device-plus-app chronic-disease pattern Dev shipped in his DiGA work.",
-      "evidence": "Wellfound company page wellfound.com/company/beato-1; New Delhi HQ, Series A (Blume, Orios, Leo Capital); full-stack digital health platform for diabetes/hypertension."
+      "evidence": "Wellfound company page wellfound.com/company/beato-1; New Delhi HQ, Series A (Blume, Orios, Leo Capital); full-stack digital health platform for diabetes/hypertension.",
+      "mobileEvidence": "No live posting verified in this pass - my web-call budget ran out before I could open their board. Listed as a segment lead rather than an evidenced one: BeatO's core product is a BLE-connected glucometer that pairs to its Android/iOS app, which is the single closest Indian analogue to Dev's BLE biometric platform."
     },
     {
       "name": "Fittr",
@@ -2120,13 +2148,14 @@
       "atsSlug": "jobs-and-careers",
       "tier": "B",
       "atsVerified": false,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
-        "healthtech",
-        "gcc",
         "enterprise",
+        "gcc",
+        "healthtech",
+        "iot",
         "mobile-native",
-        "iot"
+        "mobile-rn"
       ],
       "locations": [
         "Bengaluru",
@@ -2136,7 +2165,8 @@
       "priority": "medium",
       "note": "Europe-headquartered regulated medtech with a huge Bengaluru R&D campus — Dev's EU-regulated medical-software track record reads natively to Philips hiring managers.",
       "evidence": "philips.wd3.myworkdayjobs.com/jobs-and-careers with a Bangalore Software Engineer requisition; careers.philips.com/in/en India portal.",
-      "verifyNote": "2026-09-08: workday/jobs-and-careers failed (workday slug must be \"<host>/<site>\") — downgraded, not deleted. Re-check before removing."
+      "verifyNote": "2026-09-09: workday/jobs-and-careers failed (workday slug must be \"<host>/<site>\") — downgraded, not deleted. Re-check before removing.",
+      "mobileEvidence": "Live req 'Software Engineer (Mobile)' in Bangalore on careers.philips.com (job 562737) and 'Software Technologist I - Mobile' asking 5-9 yrs across Android (Java/Kotlin), iOS (Objective-C/Swift) and React Native. Philips Innovation Campus Bengaluru is their largest global innovation hub, ~5,000 engineers/scientists/clinical experts."
     },
     {
       "name": "Siemens Healthineers",
@@ -2148,16 +2178,18 @@
       "atsVerified": false,
       "lastVerified": null,
       "segments": [
-        "healthtech",
+        "enterprise",
         "gcc",
-        "enterprise"
+        "healthtech",
+        "iot"
       ],
       "locations": [
         "Bengaluru"
       ],
       "priority": "medium",
       "note": "German medtech with a large Bengaluru development centre — his DiGA/EU medical-device delivery is unusually legible here, though roles skew C++/Python over mobile.",
-      "evidence": "siemens-healthineers.com/en-in/careers India careers page; 61 open India positions reported; Bengaluru software roles incl. UI Frontend Developer and Senior Software Engineer."
+      "evidence": "siemens-healthineers.com/en-in/careers India careers page; 61 open India positions reported; Bengaluru software roles incl. UI Frontend Developer and Senior Software Engineer.",
+      "mobileEvidence": "No live mobile posting observed. What I saw: siemens-healthineers.com/en-in (a substantial India presence) and their published mobile-workflow / patient-engagement and AR mobile app products, which imply app engineering. This is the weakest evidence in the list - do not treat it as confirmed mobile hiring."
     },
     {
       "name": "ResMed",
@@ -2169,10 +2201,12 @@
       "atsVerified": false,
       "lastVerified": null,
       "segments": [
+        "enterprise",
+        "gcc",
         "healthtech",
         "iot",
-        "gcc",
-        "enterprise"
+        "mobile-native",
+        "product-india"
       ],
       "locations": [
         "Bengaluru",
@@ -2180,7 +2214,8 @@
       ],
       "priority": "medium",
       "note": "Connected sleep/respiratory devices with the myAir companion app, expanding global R&D into Bengaluru — device-to-app regulated work in Dev's wheelhouse.",
-      "evidence": "careers.resmed.com/careers/technology-team/ describes expanding the global R&D technology team to Bengaluru; open Software Engineer roles in Bengaluru and Chennai."
+      "evidence": "careers.resmed.com/careers/technology-team/ describes expanding the global R&D technology team to Bengaluru; open Software Engineer roles in Bengaluru and Chennai.",
+      "mobileEvidence": "careers.resmed.com/careers/technology-team/ is a live ResMed page dedicated to its Bengaluru R&D technology team; it states the team designs, develops and delivers the apps and platforms used by patients and healthcare organisations, and ResMed's core products are cloud/BLE-connected CPAP devices with the myAir companion app. I did not see a named Android/iOS req live in this pass."
     },
     {
       "name": "Medtronic",
@@ -2190,12 +2225,13 @@
       "atsSlug": "medtroniccareers",
       "tier": "B",
       "atsVerified": false,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
-        "healthtech",
-        "gcc",
         "enterprise",
-        "iot"
+        "gcc",
+        "healthtech",
+        "iot",
+        "mobile-native"
       ],
       "locations": [
         "Hyderabad"
@@ -2203,7 +2239,8 @@
       "priority": "medium",
       "note": "MEIC Hyderabad is Medtronic's largest R&D centre outside the US (1,400+ engineers) doing regulated device and enterprise software — a stable medtech landing spot for a mid-level engineer with SaMD exposure.",
       "evidence": "medtronic.wd1.myworkdayjobs.com/en-us/medtroniccareers with a Nanakramguda Hyderabad Enterprise Software Engineer II requisition; medtronic.com/in-en MEIC page.",
-      "verifyNote": "2026-09-08: workday/medtroniccareers failed (workday slug must be \"<host>/<site>\") — downgraded, not deleted. Re-check before removing."
+      "verifyNote": "2026-09-09: workday/medtroniccareers failed (workday slug must be \"<host>/<site>\") — downgraded, not deleted. Re-check before removing.",
+      "mobileEvidence": "A Hyderabad (Nanakramguda) 'Senior Enterprise Software Engineer' req whose actual scope is designing, developing and testing Android and iOS applications for their BYOD programme, and a Pune 'Senior Software Engineer (Mobile Apps)' leading mobile app development for diabetes management."
     },
     {
       "name": "athenahealth",
@@ -2259,11 +2296,13 @@
       "atsSlug": "gohighlevel",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
+        "consumer",
+        "mern",
         "mobile-flutter",
-        "remote-global",
-        "mern"
+        "product-india",
+        "remote-global"
       ],
       "locations": [
         "Remote - India",
@@ -2272,7 +2311,8 @@
       "priority": "high",
       "note": "Remote-first company with a large India team running multiple production Flutter apps and open SDE II / SDE III (Mobile - Flutter) reqs at exactly Dev's 3-4 yr band.",
       "evidence": "Saw jobs.lever.co/gohighlevel/073828a1-2ec3-41b7-b3bb-08a7a56cb037 'SDE II (Mobile - Flutter)' and .../d792b13b 'SDE III - Content Hub (Mobile Flutter)', Delhi / remote India, 2+ yrs Flutter in production.",
-      "openRoleCount": 88
+      "openRoleCount": 88,
+      "mobileEvidence": "Two separate live Lever postings: 'Software Development Engineer III (Mobile - Flutter)' and 'Software Development Engineer III - Content Hub (Mobile Flutter)'. The JD asks for 4+ yrs engineering including 3+ yrs Flutter/Dart and talks about having architected complex systems and shipped high-performance mobile apps at scale — a dedicated Flutter mobile team, not an incidental req."
     },
     {
       "name": "FamPay (Trio / Fam)",
@@ -2282,8 +2322,10 @@
       "atsSlug": "fampay",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
+        "consumer",
+        "fintech",
         "mobile-flutter",
         "mobile-kmp",
         "product-india",
@@ -2295,7 +2337,8 @@
       "priority": "high",
       "note": "Flutter-first consumer fintech app posting a 'Flutter Engineer (2-4 Years)' req — his exact stack and exact experience window.",
       "evidence": "jobs.lever.co/fampay/82c3936c-5afd-4347-9c4e-613475a73913 'Flutter Engineer (2-4 Years)'; also .../a53b52f0 Mobile Architect listing Flutter, React Native, KMP, Compose, SwiftUI.",
-      "openRoleCount": 13
+      "openRoleCount": 12,
+      "mobileEvidence": "Live Lever posting 'Flutter Engineer (2-4 Years)' (jobs.lever.co/fampay/82c3936c-5afd-4347-9c4e-613475a73913) - the JD is about building the FamX mobile money experience for teens. A second Lever posting 'Mobile Intern' confirms a standing mobile team."
     },
     {
       "name": "Degreed",
@@ -2305,11 +2348,12 @@
       "atsSlug": "degreed",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
+        "enterprise",
+        "gcc",
         "mobile-flutter",
-        "remote-global",
-        "enterprise"
+        "remote-global"
       ],
       "locations": [
         "Bengaluru"
@@ -2317,7 +2361,8 @@
       "priority": "high",
       "note": "US learning-platform company running its Flutter mobile engineering out of Bengaluru — a rare India-based, Flutter-titled role at mid level.",
       "evidence": "job-boards.greenhouse.io/degreed/jobs/5623000004 'Senior Flutter Developer | Bengaluru, India' and /jobs/5431938004 'Flutter Engineering - Mobile | Hybrid | Bengaluru, India'.",
-      "openRoleCount": 3
+      "openRoleCount": 3,
+      "mobileEvidence": "Two Greenhouse postings found: 'Senior Flutter Developer | Bengaluru, India' (jobs/5623000004) and 'Flutter Engineering - Mobile | Hybrid | Bengaluru, India' (jobs/5431938004), the latter describing leading and mentoring a team of Flutter developers and architecting/deploying Flutter apps for iOS and Android. So Degreed's Bengaluru mobile team is Flutter-based."
     },
     {
       "name": "100ms",
@@ -2327,7 +2372,7 @@
       "atsSlug": "100ms",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "ai-agentic",
         "healthtech",
@@ -2350,7 +2395,7 @@
       "atsSlug": "dscout",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "ai-agentic",
         "remote-global",
@@ -2372,7 +2417,7 @@
       "atsSlug": "jumpcloud",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "mern",
         "remote-global"
@@ -2383,7 +2428,7 @@
       "priority": "high",
       "note": "All-remote US company with an India entity posting a Full Stack (front-end focus) role explicitly at 2-4 years — his TypeScript/React/Node lane at his exact band.",
       "evidence": "jobs.lever.co/jumpcloud/4ebbdea9-39c2-465d-bbdf-bf379a8e4a06 'Full Stack Software Engineer, Front-End Focus - India', 2-4 yrs, remote.",
-      "openRoleCount": 17
+      "openRoleCount": 20
     },
     {
       "name": "Walmart Global Tech India",
@@ -2393,11 +2438,14 @@
       "atsSlug": "walmart.wd5/WalmartExternal",
       "tier": "B",
       "atsVerified": false,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
+        "consumer",
+        "enterprise",
         "gcc",
         "mern",
-        "enterprise"
+        "mobile-native",
+        "mobile-rn"
       ],
       "locations": [
         "Bengaluru",
@@ -2406,7 +2454,8 @@
       "priority": "high",
       "note": "Largest product GCC in India, hiring Software Engineer III (Full Stack) at 3-6 yrs in Bangalore — the standard SDE-2 landing spot for his profile with strong comp.",
       "evidence": "walmart.wd5.myworkdayjobs.com/WalmartExternal/job/IN-KA-BANGALORE-Home-Office-PTPP2/...Software-Engineer-III---Full-Stack_R-2435391 (3-6 yrs).",
-      "verifyNote": "2026-09-08: workday/walmart.wd5/WalmartExternal failed (fetch failed) — downgraded, not deleted. Re-check before removing."
+      "verifyNote": "2026-09-09: workday/walmart.wd5/WalmartExternal failed (fetch failed) — downgraded, not deleted. Re-check before removing.",
+      "mobileEvidence": "'Software Engineer - Android' at Walmart Global Tech India, Bangalore, explicitly 3-5 yrs Mobile Development/Android; a 'Staff Software Engineer - Android' Bangalore role listing Android + React Native + hybrid apps; and a recent Bengaluru 'Senior Software Engineer' role written around building and maintaining Android applications in Kotlin."
     },
     {
       "name": "Tide",
@@ -2416,10 +2465,12 @@
       "atsSlug": "tide",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
-        "mobile-flutter",
+        "fintech",
         "gcc",
+        "mobile-flutter",
+        "mobile-native",
         "remote-global"
       ],
       "locations": [
@@ -2430,7 +2481,8 @@
       "priority": "medium",
       "note": "UK fintech whose engineering centres are in Gurugram/New Delhi/Hyderabad and which posts Flutter-titled engineer roles — European-client working style he already has from Norway/Germany/France work.",
       "evidence": "job-boards.greenhouse.io/tide/jobs/6292647003 'Senior Engineer, Flutter'; Tide India tech centres in Gurugram and New Delhi.",
-      "openRoleCount": 84
+      "openRoleCount": 83,
+      "mobileEvidence": "Pulled the live Greenhouse board API (boards-api.greenhouse.io/v1/boards/tide/jobs) and found FIVE open Flutter roles, three of them in India: 'Senior Software Engineer, Flutter' in Bengaluru, in Hyderabad and in Delhi NCR, plus 'Senior Engineer, Flutter' in Bulgaria and Lithuania. This is a company running Flutter as a first-class mobile stack with a real India engineering org, not a one-off req."
     },
     {
       "name": "BrowserStack",
@@ -2440,7 +2492,7 @@
       "atsSlug": "browserstack-2",
       "tier": "B",
       "atsVerified": false,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "product-india",
         "mobile-native",
@@ -2454,7 +2506,7 @@
       "priority": "medium",
       "note": "Indian unicorn built entirely around real mobile-device testing — his Android/iOS/Flutter release and Fastlane CI experience is directly relevant product knowledge.",
       "evidence": "apply.workable.com/browserstack-2/ 'BrowserStack - Current Openings' board loads.",
-      "verifyNote": "2026-09-08: workable/browserstack-2 returned 0 postings — downgraded, not deleted. Re-check before removing."
+      "verifyNote": "2026-09-09: workable/browserstack-2 returned 0 postings — downgraded, not deleted. Re-check before removing."
     },
     {
       "name": "Composio",
@@ -2464,7 +2516,7 @@
       "atsSlug": "composio",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "ai-agentic",
         "fde",
@@ -2488,7 +2540,7 @@
       "atsSlug": "deel",
       "tier": "B",
       "atsVerified": false,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "mern",
         "remote-global"
@@ -2500,7 +2552,7 @@
       "priority": "medium",
       "note": "Fully remote Node/React/TypeScript product org that employs engineers in India through its own EOR — a clean remote-from-India MERN target.",
       "evidence": "jobs.ashbyhq.com/deel board loads; e.g. .../88a8e3b1 'Full-Stack Engineer (Node.js/React.js/TypeScript)' and .../45861dfa 'Senior Full Stack Engineer - APAC'.",
-      "verifyNote": "2026-09-08: ashby/deel returned 0 postings — downgraded, not deleted. Re-check before removing.",
+      "verifyNote": "2026-09-09: ashby/deel returned 0 postings — downgraded, not deleted. Re-check before removing.",
       "hqCountry": "US (fully remote)",
       "indiaEligible": "unconfirmed",
       "hiresVia": "EOR",
@@ -2514,7 +2566,7 @@
       "atsSlug": "salesforce.wd12/External_Career_Site",
       "tier": "B",
       "atsVerified": false,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "gcc",
         "mobile-native",
@@ -2527,7 +2579,7 @@
       "priority": "medium",
       "note": "Major India GCC that staffs dedicated mobile app teams in Bangalore (iOS/Android product engineering), a fit for his native + MVVM background at SDE-2 grade.",
       "evidence": "salesforce.wd12.myworkdayjobs.com/External_Career_Site/job/India---Bangalore/Software-Engineering-SMTS---Mobile-Apps-iOS_JR319867.",
-      "verifyNote": "2026-09-08: workday/salesforce.wd12/External_Career_Site failed (fetch failed) — downgraded, not deleted. Re-check before removing."
+      "verifyNote": "2026-09-09: workday/salesforce.wd12/External_Career_Site failed (fetch failed) — downgraded, not deleted. Re-check before removing."
     },
     {
       "name": "GE HealthCare",
@@ -2537,11 +2589,11 @@
       "atsSlug": "gehc.wd5/GEHC_ExternalSite",
       "tier": "B",
       "atsVerified": false,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
+        "enterprise",
         "gcc",
         "healthtech",
-        "enterprise",
         "iot"
       ],
       "locations": [
@@ -2550,7 +2602,8 @@
       "priority": "medium",
       "note": "Large healthcare-device GCC in Bengaluru where his regulated-medical-software experience (DiGA/HAS/PECAN class apps, device connectivity) is a genuine differentiator over generic app devs.",
       "evidence": "gehc.wd5.myworkdayjobs.com/GEHC_ExternalSite/job/IND19-01-Bengaluru-EPIP-122-Phase-II/Sr-Software-Engineer_R4019119-1.",
-      "verifyNote": "2026-09-08: workday/gehc.wd5/GEHC_ExternalSite failed (fetch failed) — downgraded, not deleted. Re-check before removing."
+      "verifyNote": "2026-09-09: workday/gehc.wd5/GEHC_ExternalSite failed (fetch failed) — downgraded, not deleted. Re-check before removing.",
+      "mobileEvidence": "Verified live URL careers.gehealthcare.com/global/en/india-jobs-digital-tech-it - a dedicated India Digital Tech & IT jobs landing page, confirming India software hiring at scale. I saw no Android/iOS/Flutter posting on it in this pass, so mobile hiring is inferred from their connected-device/patient-app portfolio, not observed."
     },
     {
       "name": "Automattic",
@@ -2560,7 +2613,7 @@
       "atsSlug": "automatticcareers",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "segments": [
         "mern",
         "mobile-native",
@@ -2572,7 +2625,7 @@
       "priority": "medium",
       "note": "Fully distributed company hiring worldwide (India included) that maintains React Native and native WordPress mobile apps plus a heavy JS/TS surface — a realistic remote-from-India mobile/full-stack shot.",
       "evidence": "job-boards.greenhouse.io/automatticcareers/jobs/5862239 'Experienced Software Engineer'; board describes a fully-remote global workforce.",
-      "openRoleCount": 18,
+      "openRoleCount": 16,
       "hqCountry": "US (fully distributed)",
       "indiaEligible": "unconfirmed",
       "hiresVia": "unknown",
@@ -2586,7 +2639,7 @@
       "atsSlug": "gitlab",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "hqCountry": "US (all-remote)",
       "indiaEligible": "yes",
       "eligibilityEvidence": "Fetched boards-api.greenhouse.io/v1/boards/gitlab/jobs (HTTP 200) and read the actual location strings on live postings: 'AI Engineer' -> \"Remote, Bangalore\"; 'Senior Backend Engineer' -> \"Bangalore, India\"; 'Backend Engineer, Geo Team' -> \"Bangalore, India\"; 'Director, Engineering, Platform Operations & Productivity' -> \"Bangalore, India\". Multiple India engineering roles live right now.",
@@ -2603,7 +2656,7 @@
       "priority": "high",
       "note": "Best verified fit in this batch. Verified against the ACTUAL ATS API postings, not a job-board label. An 'AI Engineer' role is literally posted as 'Remote, Bangalore'. GitLab is the canonical all-remote company and clearly has an India employing entity (Bangalore titles across engineering + support + director level). careersUrl is the standard Greenhouse board URL derived from the slug I verified via the API.",
       "evidence": "Fetched boards-api.greenhouse.io/v1/boards/gitlab/jobs (HTTP 200) and read the actual location strings on live postings: 'AI Engineer' -> \"Remote, Bangalore\"; 'Senior Backend Engineer' -> \"Bangalore, India\"; 'Backend Engineer, Geo Team' -> \"Bangalore, India\"; 'Director, Engineering, Platform Operations & Productivity' -> \"Bangalore, India\". Multiple India engineering roles live right now.",
-      "openRoleCount": 228
+      "openRoleCount": 229
     },
     {
       "name": "Elastic",
@@ -2613,7 +2666,7 @@
       "atsSlug": "elastic",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "hqCountry": "Netherlands / US (distributed-first)",
       "indiaEligible": "yes",
       "eligibilityEvidence": "Fetched boards-api.greenhouse.io/v1/boards/elastic/jobs (HTTP 200). Actual posting locations seen: 'Lead Salesforce Full Stack AI Engineer' -> \"Bangalore, India\"; 'Consulting Architect - Observability' -> \"India\"; 'Consulting Architect - Security' -> \"India\"; 'Consulting Architect - Search' -> \"India\" and \"United States\"; 'Cloud Marketplace Development Manager' -> \"Bangalore, India\".",
@@ -2630,7 +2683,7 @@
       "priority": "high",
       "note": "Verified from the live ATS API, not a board tag. The 'Consulting Architect' family is the closest thing here to a Forward Deployed Engineer role and is posted with location \"India\". Note their 'Agentic AI Engineer' role is locked to \"United States\" — so the AI-titled roles are US, while the India-open roles are the customer-facing architect ones. Elastic is distributed-first and clearly employs directly in India.",
       "evidence": "Fetched boards-api.greenhouse.io/v1/boards/elastic/jobs (HTTP 200). Actual posting locations seen: 'Lead Salesforce Full Stack AI Engineer' -> \"Bangalore, India\"; 'Consulting Architect - Observability' -> \"India\"; 'Consulting Architect - Security' -> \"India\"; 'Consulting Architect - Search' -> \"India\" and \"United States\"; 'Cloud Marketplace Development Manager' -> \"Bangalore, India\".",
-      "openRoleCount": 363
+      "openRoleCount": 345
     },
     {
       "name": "Supabase",
@@ -2640,7 +2693,7 @@
       "atsSlug": "supabase",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "hqCountry": "US (fully distributed, no HQ)",
       "indiaEligible": "yes",
       "eligibilityEvidence": "Fetched api.ashbyhq.com/posting-api/job-board/supabase (HTTP 200). Actual posting location strings: 'Multigres Engineer' -> \"Remote, Global\"; 'Product Manager - Marketplace' -> \"Remote, Global\"; 'Support Engineer (APAC)' -> \"Remote, APAC\". Company text on the board says \"We hire globally\" and \"Fully Remote\". No country lock on the Global roles.",
@@ -2648,6 +2701,7 @@
       "segments": [
         "ai-agentic",
         "fullstack",
+        "mobile-flutter",
         "remote-global"
       ],
       "locations": [
@@ -2656,7 +2710,8 @@
       "priority": "high",
       "note": "Verified against the actual Ashby posting records. \"Remote, Global\" and \"Remote, APAC\" both qualify under the eligibility model. Caveat I did not spend a call on: I read the board-level location strings, not each posting body, so an in-body country restriction on a specific 'Global' role is still possible. Their other roles are region-scoped (Remote, AMER / Remote, EMEA) which would drop — so filter to the 'Global' and 'APAC' ones.",
       "evidence": "Fetched api.ashbyhq.com/posting-api/job-board/supabase (HTTP 200). Actual posting location strings: 'Multigres Engineer' -> \"Remote, Global\"; 'Product Manager - Marketplace' -> \"Remote, Global\"; 'Support Engineer (APAC)' -> \"Remote, APAC\". Company text on the board says \"We hire globally\" and \"Fully Remote\". No country lock on the Global roles.",
-      "openRoleCount": 60
+      "openRoleCount": 60,
+      "mobileEvidence": "Live Ashby posting 'SDK Engineer - Flutter' (jobs.ashbyhq.com/supabase/5436c7ae-8254-4a28-9755-c5c39de5980b) — hiring specifically to bring first-class Supabase support to the Flutter and Dart ecosystems. They maintain supabase-flutter as a first-party SDK."
     },
     {
       "name": "Grafana Labs",
@@ -2666,7 +2721,7 @@
       "atsSlug": "grafanalabs",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "hqCountry": "US (remote-first, Swedish origin)",
       "indiaEligible": "yes",
       "eligibilityEvidence": "Fetched boards-api.greenhouse.io/v1/boards/grafanalabs/jobs (HTTP 200). India postings exist: 'Sales Development Representative | India | Remote' and 'Senior Enterprise Account Executive, Acquisition | Bengaluru, India'. HOWEVER every engineering posting I saw was single-country locked: \"United Kingdom (Remote)\", \"Republic of Ireland (Remote)\", \"Spain (Remote)\", \"Sweden (Remote)\", \"Germany\", \"Canada (Remote)\", \"United States (Remote)\" — including the 'Staff AI Engineer' variants.",
@@ -2682,7 +2737,7 @@
       "priority": "medium",
       "note": "Split verdict, stated honestly. Grafana demonstrably CAN employ someone in India (live India-located postings), but as of this check zero engineering roles are open to India — engineering is posted as country-locked EU/UK/US/Canada variants, which DROP under the model. Treat as a watchlist board: re-scan the same API for any engineering title carrying an India variant. Verified from the ATS API, not a board label.",
       "evidence": "Fetched boards-api.greenhouse.io/v1/boards/grafanalabs/jobs (HTTP 200). India postings exist: 'Sales Development Representative | India | Remote' and 'Senior Enterprise Account Executive, Acquisition | Bengaluru, India'. HOWEVER every engineering posting I saw was single-country locked: \"United Kingdom (Remote)\", \"Republic of Ireland (Remote)\", \"Spain (Remote)\", \"Sweden (Remote)\", \"Germany\", \"Canada (Remote)\", \"United States (Remote)\" — including the 'Staff AI Engineer' variants.",
-      "openRoleCount": 129
+      "openRoleCount": 126
     },
     {
       "name": "Zapier",
@@ -2692,7 +2747,7 @@
       "atsSlug": "zapier",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "hqCountry": "US (fully remote)",
       "indiaEligible": "yes",
       "eligibilityEvidence": "Fetched api.ashbyhq.com/posting-api/job-board/zapier (HTTP 200). One live posting states \"Location: India\" and requires \"~9:00 pm - 7:00 am IST\" hours ('Sales Assist Representative'). But the engineering role on the board, 'Staff Backend Engineer, Commerce', is scoped \"NAMER\"; other roles \"NAMER\" / \"APAC\".",
@@ -2708,7 +2763,7 @@
       "priority": "medium",
       "note": "Company-level India eligibility is confirmed from an actual posting (India-located role with IST hours), so Zapier has a path to pay someone in India. The engineering opening at check time was NAMER-locked and would DROP. Worth re-scanning — Zapier is fully remote and their board is small and fast to poll via the Ashby API. Verified from the ATS API, not a board tag.",
       "evidence": "Fetched api.ashbyhq.com/posting-api/job-board/zapier (HTTP 200). One live posting states \"Location: India\" and requires \"~9:00 pm - 7:00 am IST\" hours ('Sales Assist Representative'). But the engineering role on the board, 'Staff Backend Engineer, Commerce', is scoped \"NAMER\"; other roles \"NAMER\" / \"APAC\".",
-      "openRoleCount": 7
+      "openRoleCount": 6
     },
     {
       "name": "Remote.com",
@@ -2718,7 +2773,7 @@
       "atsSlug": "remotecom",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "hqCountry": "US / Netherlands (fully remote)",
       "indiaEligible": "yes",
       "eligibilityEvidence": "Fetched boards-api.greenhouse.io/v1/boards/remotecom/jobs (HTTP 200). Location strings seen include \"Remote-India\" (Payroll Specialist Lead - India), plus \"Remote-APAC\", \"Remote-EMEA\", \"Remote-AMER\", \"Remote-Poland\". No engineering titles appeared in the slice I read.",
@@ -2734,7 +2789,7 @@
       "priority": "medium",
       "note": "They are an EOR themselves and employ globally, and I saw a literal \"Remote-India\" location string on a live posting, so India employment is real. What I did NOT confirm is any open engineering role — the returned slice was finance/HR/legal/ops heavy. Re-scan the same API filtered to Engineering; treat the engineering opportunity as unproven for now.",
       "evidence": "Fetched boards-api.greenhouse.io/v1/boards/remotecom/jobs (HTTP 200). Location strings seen include \"Remote-India\" (Payroll Specialist Lead - India), plus \"Remote-APAC\", \"Remote-EMEA\", \"Remote-AMER\", \"Remote-Poland\". No engineering titles appeared in the slice I read.",
-      "openRoleCount": 195
+      "openRoleCount": 186
     },
     {
       "name": "Doist",
@@ -2769,7 +2824,7 @@
       "atsSlug": "posthog",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "hqCountry": "US / UK (fully remote)",
       "indiaEligible": "unconfirmed",
       "eligibilityEvidence": "Fetched api.ashbyhq.com/posting-api/job-board/posthog (HTTP 200). Two postings carry a plain unqualified location \"Remote\" with isRemote true and no country named ('Technical Account Executive - EMEA', 'ClickHouse Operations Engineer'). Others are explicitly locked: \"Remote (EMEA)\", \"Hybrid (UK)\", \"San Francisco, CA\", and one titled 'Backend Engineer - Ingestion (Europe/UK timezone)'. No posting mentions India.",
@@ -2785,17 +2840,17 @@
       "priority": "medium",
       "note": "Deliberately marked unconfirmed rather than guessed. Under the stated model a plain unqualified \"Remote\" qualifies, but I only read the board-level location field — I did not open the posting body, and PostHog's neighbouring roles are aggressively timezone-gated (Europe/UK timezone, US Pacific time), which makes an in-body restriction likely. Verify by opening the specific posting before Dev spends effort. Zero India signal on the board today.",
       "evidence": "Fetched api.ashbyhq.com/posting-api/job-board/posthog (HTTP 200). Two postings carry a plain unqualified location \"Remote\" with isRemote true and no country named ('Technical Account Executive - EMEA', 'ClickHouse Operations Engineer'). Others are explicitly locked: \"Remote (EMEA)\", \"Hybrid (UK)\", \"San Francisco, CA\", and one titled 'Backend Engineer - Ingestion (Europe/UK timezone)'. No posting mentions India.",
-      "openRoleCount": 9
+      "openRoleCount": 10
     },
     {
       "name": "Canonical",
       "domain": "canonical.com",
       "careersUrl": "https://canonical.com/careers/all",
-      "atsProvider": "other",
-      "atsSlug": "",
-      "tier": "B",
-      "atsVerified": false,
-      "lastVerified": null,
+      "atsProvider": "greenhouse",
+      "atsSlug": "canonical",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-09",
       "hqCountry": "UK (fully remote)",
       "indiaEligible": "unconfirmed",
       "eligibilityEvidence": "Fetched https://canonical.com/careers/all (HTTP 200). The board exposes region filters including \"APAC\", \"AMER\", \"EMEA\" and a department filter including Engineering, but the fetch rendered \"There are no open roles matching your criteria\" and returned zero job listings, so I could see no location strings and no country-eligibility statement.",
@@ -2803,6 +2858,7 @@
       "segments": [
         "ai-agentic",
         "fullstack",
+        "mobile-flutter",
         "remote-global"
       ],
       "locations": [
@@ -2810,7 +2866,9 @@
       ],
       "priority": "medium",
       "note": "Kept as unconfirmed rather than dropped. The only hard evidence is that the board offers an APAC region filter, which is suggestive but not proof — I saw no actual posting. Canonical is a genuinely remote-first UK employer and worth a manual re-check with the APAC + Engineering filters applied in a browser (their board is JS-rendered, which is likely why the fetch came back empty). No ATS slug claimed because none appeared in a URL.",
-      "evidence": "Fetched https://canonical.com/careers/all (HTTP 200). The board exposes region filters including \"APAC\", \"AMER\", \"EMEA\" and a department filter including Engineering, but the fetch rendered \"There are no open roles matching your criteria\" and returned zero job listings, so I could see no location strings and no country-eligibility statement."
+      "evidence": "Fetched https://canonical.com/careers/all (HTTP 200). The board exposes region filters including \"APAC\", \"AMER\", \"EMEA\" and a department filter including Engineering, but the fetch rendered \"There are no open roles matching your criteria\" and returned zero job listings, so I could see no location strings and no country-eligibility statement.",
+      "mobileEvidence": "Greenhouse board job-boards.greenhouse.io/canonical is live; 'Web Frontend Engineer - JS, CSS, React, Flutter' (canonical.com/careers/5150422) is a globally remote role and their copy says Flutter is a strategic front-end technology for them with openings on both web and Ubuntu engineering. 1,100+ colleagues across 75+ countries, almost no office-based roles.",
+      "openRoleCount": 301
     },
     {
       "name": "Hugging Face",
@@ -2820,7 +2878,7 @@
       "atsSlug": "huggingface",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "hqCountry": "US / France",
       "indiaEligible": "no",
       "eligibilityEvidence": "Fetched apply.workable.com/api/v1/widget/accounts/huggingface?details=true (HTTP 200, real postings returned). Every live posting is country-locked: 'Low-level Senior Software Engineer, Xet Storage - EMEA Remote' -> \"France\"/\"Paris\"; the same role '- US Remote' -> \"United States\"/\"New York\"; 'Open-Source Machine Learning Engineer' exists only in EMEA-Remote (France) and US-Remote (United States) variants; 'Senior ML Engineer, Voice Agents - EMEA Remote' -> \"France\". telecommuting is true on all of them but the country is always France or the US. No India, no Worldwide, no Anywhere.",
@@ -2845,7 +2903,7 @@
       "atsSlug": "mattermost",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "hqCountry": "US (remote-first)",
       "indiaEligible": "no",
       "eligibilityEvidence": "Fetched boards-api.greenhouse.io/v1/boards/mattermost/jobs (HTTP 200). Every engineering posting is single-country: 'Lead Site Reliability Engineer' -> \"United States\"; 'Senior Full Stack Engineer' -> \"United States\" and a separate \"Ontario, Canada; Toronto, Ontario, Canada\" variant; 'Senior React Native Engineer' -> \"United States\"; 'Senior Security Engineer' -> \"United Kingdom\" / \"Germany\" / \"Spain\"; 'Staff Full Stack Engineer' -> Toronto / United States. No India, no Remote, no Worldwide, no APAC anywhere on the board.",
@@ -2861,7 +2919,7 @@
       "priority": "low",
       "note": "Verified drop from the real ATS API. Painful near-miss — they had a 'Senior React Native Engineer' opening, which is squarely Dev's mobile lane, but it is locked to the United States. Keep the slug for periodic re-scans since a country variant could appear, but nothing actionable today.",
       "evidence": "Fetched boards-api.greenhouse.io/v1/boards/mattermost/jobs (HTTP 200). Every engineering posting is single-country: 'Lead Site Reliability Engineer' -> \"United States\"; 'Senior Full Stack Engineer' -> \"United States\" and a separate \"Ontario, Canada; Toronto, Ontario, Canada\" variant; 'Senior React Native Engineer' -> \"United States\"; 'Senior Security Engineer' -> \"United Kingdom\" / \"Germany\" / \"Spain\"; 'Staff Full Stack Engineer' -> Toronto / United States. No India, no Remote, no Worldwide, no APAC anywhere on the board.",
-      "openRoleCount": 15
+      "openRoleCount": 10
     },
     {
       "name": "Doist (Todoist / Twist)",
@@ -2970,7 +3028,7 @@
       "atsSlug": "remotecom",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "hqCountry": "United States",
       "indiaEligible": "unconfirmed",
       "eligibilityEvidence": "Verified against the LIVE Greenhouse API (boards-api.greenhouse.io/v1/boards/remotecom/jobs), which returned 100+ real postings. Location strings in use include \"Remote-APAC\", \"Remote-EMEA\", \"Remote-AMER\", \"Remote-UK&I\", \"Remote-Germany\", \"Remote-Japan\", \"Remote-Poland\". \"Remote-APAC\" would include India under the eligibility model, but I saw NO posting naming India, and at the time of check there were ZERO mobile, frontend, full-stack or Node roles open - the board was all payroll, HR, legal, ops and sales.",
@@ -2985,7 +3043,7 @@
       "priority": "medium",
       "note": "Worth tracking rather than applying to today. Value here is twofold: Remote is itself a global EOR (so it can legally employ someone in India), and their engineering roles when open are posted with regional rather than single-country locks, including APAC. ATS slug 'remotecom' is CONFIRMED - I saw it return live data from a real API URL. Set a recurring scan on the Greenhouse board for Mobile/React Native/Full-stack titles; skip until an engineering req appears. Remote does operate a mobile app, so mobile reqs do surface periodically.",
       "evidence": "Verified against the LIVE Greenhouse API (boards-api.greenhouse.io/v1/boards/remotecom/jobs), which returned 100+ real postings. Location strings in use include \"Remote-APAC\", \"Remote-EMEA\", \"Remote-AMER\", \"Remote-UK&I\", \"Remote-Germany\", \"Remote-Japan\", \"Remote-Poland\". \"Remote-APAC\" would include India under the eligibility model, but I saw NO posting naming India, and at the time of check there were ZERO mobile, frontend, full-stack or Node roles open - the board was all payroll, HR, legal, ops and sales.",
-      "openRoleCount": 195
+      "openRoleCount": 186
     },
     {
       "name": "Oyster HR",
@@ -2995,7 +3053,7 @@
       "atsSlug": "oyster",
       "tier": "A",
       "atsVerified": true,
-      "lastVerified": "2026-09-08",
+      "lastVerified": "2026-09-09",
       "hqCountry": "United States",
       "indiaEligible": "unconfirmed",
       "eligibilityEvidence": "Verified against the LIVE Ashby posting API (api.ashbyhq.com/posting-api/job-board/oyster), which returned real postings with location strings \"Any Location\" (isRemote true), \"EMEA\", \"The Americas\". The \"Any Location\" posting is only their Talent Community sign-up, not a role. No engineering role of any kind was open at time of check, so per-posting India eligibility could not be established either way.",
@@ -3067,9 +3125,9 @@
       "careersUrl": "https://swordhealth.com/careers",
       "atsProvider": "greenhouse",
       "atsSlug": "swordhealth",
-      "tier": "B",
-      "atsVerified": false,
-      "lastVerified": "2026-09-08",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-09",
       "hqCountry": "Portugal",
       "indiaEligible": "unconfirmed",
       "eligibilityEvidence": "The Greenhouse API boards-api.greenhouse.io/v1/boards/swordhealth/jobs responded with a VALID but EMPTY jobs array (total 0) - not a 404, which confirms the slug exists but the board carries no postings. With zero postings there was nothing to read, so India eligibility is entirely unestablished. I did NOT fetch swordhealth.com/careers itself.",
@@ -3084,7 +3142,7 @@
       "priority": "low",
       "note": "Included for domain fit rather than confirmed opportunity: Sword Health is EU-founded digital musculoskeletal health with a heavy mobile + connected-sensor product, which lines up with Dev's healthcare, EU-regulated (DiGA/PECAN) and BLE/IoT wearable experience - that is a rare and genuinely differentiating overlap. BUT: the Greenhouse board is empty, which usually means they migrated ATS, so the atsSlug is confirmed-real yet currently useless for scanning. careersUrl is the conventional path and was NOT verified by me - check it manually before adding to any automated scan. Sword also skews heavily toward Porto/Lisbon hybrid roles, so India-remote is a real question mark.",
       "evidence": "The Greenhouse API boards-api.greenhouse.io/v1/boards/swordhealth/jobs responded with a VALID but EMPTY jobs array (total 0) - not a 404, which confirms the slug exists but the board carries no postings. With zero postings there was nothing to read, so India eligibility is entirely unestablished. I did NOT fetch swordhealth.com/careers itself.",
-      "verifyNote": "2026-09-08: greenhouse/swordhealth returned 0 postings — downgraded, not deleted. Re-check before removing."
+      "openRoleCount": 25
     },
     {
       "name": "Proxify",
@@ -3134,7 +3192,1334 @@
       "priority": "low",
       "note": "Listed as an UNVERIFIED LEAD only. Crossover posts fixed hourly USD rates for fully-remote roles and is known to recruit heavily from India, which would fit the comp target - but I confirmed NONE of that in this session and am not asserting it. Lower priority for Dev specifically for two reasons independent of eligibility: their catalogue skews toward backend, cloud and engineering-management roles rather than the Flutter/KMP mobile work he wants, and their model involves timed proctored assessments and monitored work hours that many engineers find a poor trade. Verify manually in a browser before spending application effort.",
       "evidence": "NOTHING VERIFIED. The page at crossover.com/jobs returned no readable content to my fetch (JavaScript-rendered listings). I could not read a single role, pay rate, or location line, so I have no evidence either way on India eligibility."
+    },
+    {
+      "name": "Paytm (One97 Communications)",
+      "domain": "paytm.com",
+      "careersUrl": "https://jobs.lever.co/paytm",
+      "atsProvider": "lever",
+      "atsSlug": "paytm",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-09",
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "consumer",
+        "fintech",
+        "mobile",
+        "mobile-flutter",
+        "mobile-native",
+        "product-india"
+      ],
+      "locations": [
+        "Noida/NCR",
+        "Bengaluru",
+        "Mumbai"
+      ],
+      "priority": "high",
+      "note": "Public Lever board confirmed. Caution: when I pulled api.lever.co/v0/postings/paytm?mode=json the summarizer returned only non-engineering roles, so the JSON is long and the mobile reqs sit deeper in the payload - the scanner should parse the full JSON rather than trust a truncated read. Paytm Money Flutter role is the closest match to Dev's exact stack (Flutter + Kotlin + Swift).",
+      "mobileEvidence": "Three live Lever postings seen: 'Android - Senior Software Engineer (Nayara)', 'Android Engineer - Software Engineer (Nayara)' (Bangalore / Mumbai), and 'Software Engineer-Flutter Developer - Paytm Money' whose JD asks for Flutter plus native Kotlin and Swift. One Android req states 1-2 yrs with Kotlin, Dagger 2, MVVM, LiveData, data binding.",
+      "evidence": "Three live Lever postings seen: 'Android - Senior Software Engineer (Nayara)', 'Android Engineer - Software Engineer (Nayara)' (Bangalore / Mumbai), and 'Software Engineer-Flutter Developer - Paytm Money' whose JD asks for Flutter plus native Kotlin and Swift. One Android req states 1-2 yrs with Kotlin, Dagger 2, MVVM, LiveData, data binding.",
+      "openRoleCount": 213
+    },
+    {
+      "name": "slice (Garagepreneurs / slice Small Finance Bank)",
+      "domain": "slice.bank.in",
+      "careersUrl": "https://slice.bank.in/careers",
+      "atsProvider": "unknown",
+      "atsSlug": "",
+      "tier": "B",
+      "atsVerified": false,
+      "lastVerified": null,
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "consumer",
+        "fintech",
+        "mobile",
+        "mobile-native",
+        "product-india"
+      ],
+      "locations": [
+        "Bengaluru"
+      ],
+      "priority": "high",
+      "note": "Careers listing lives at slice.bank.in/careers/open-positions with a Software Engineering filter; I also saw slice.careers/careers-listing and startslice.com/careers as alternate hosts. No public ATS API found, so this one needs a manual/HTML scrape rather than the automatic scanner. 'iOS Developer 3' and 'SDE 1 - Android' bracket Dev's level - the mid rung between them is where he fits.",
+      "mobileEvidence": "Multiple concurrent live mobile reqs: 'iOS Developer 3' Bengaluru (posted ~1 week ago), 'SDE 1 - Android' Bengaluru quoted at 28-34 LPA, and 'Engineering Manager - Mobile' leading the Android and iOS app teams (builtin.com/job/engineering-manager-mobile/3236581). An EM-Mobile req is the clearest proof of a funded, standing mobile org.",
+      "evidence": "Multiple concurrent live mobile reqs: 'iOS Developer 3' Bengaluru (posted ~1 week ago), 'SDE 1 - Android' Bengaluru quoted at 28-34 LPA, and 'Engineering Manager - Mobile' leading the Android and iOS app teams (builtin.com/job/engineering-manager-mobile/3236581). An EM-Mobile req is the clearest proof of a funded, standing mobile org."
+    },
+    {
+      "name": "Glomopay",
+      "domain": "glomopay.com",
+      "careersUrl": "https://jobs.ashbyhq.com/glomo",
+      "atsProvider": "ashby",
+      "atsSlug": "glomo",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-09",
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "fintech",
+        "mobile",
+        "mobile-flutter",
+        "mobile-native",
+        "product-india"
+      ],
+      "locations": [
+        "Bengaluru",
+        "India"
+      ],
+      "priority": "high",
+      "note": "Ashby slug 'glomo' confirmed from the real posting URL, so boards-api-style scanning works: api.ashbyhq.com/posting-api/job-board/glomo. Smaller than the PhonePe/Paytm tier but the SDK/native charter maps well onto Dev's BLE/SDK and KMP background. Domain glomopay.com is inferred from the brand name, not verified - confirm before using it in outreach.",
+      "mobileEvidence": "Live Ashby posting 'Mobile Engineer - Frontend' (jobs.ashbyhq.com/glomo/39498f1a-a5e6-49d3-92e4-5334e462f8fb). The JD says they are taking mobile in-house and going native with first-class Android and iOS SDKs for cross-border payments and KYC - i.e. a greenfield mobile charter, not a maintenance seat.",
+      "evidence": "Live Ashby posting 'Mobile Engineer - Frontend' (jobs.ashbyhq.com/glomo/39498f1a-a5e6-49d3-92e4-5334e462f8fb). The JD says they are taking mobile in-house and going native with first-class Android and iOS SDKs for cross-border payments and KYC - i.e. a greenfield mobile charter, not a maintenance seat.",
+      "openRoleCount": 8
+    },
+    {
+      "name": "Fi Money (epiFi Technologies)",
+      "domain": "fi.money",
+      "careersUrl": "https://fi.money/careers",
+      "atsProvider": "unknown",
+      "atsSlug": "",
+      "tier": "B",
+      "atsVerified": false,
+      "lastVerified": null,
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "consumer",
+        "fintech",
+        "mobile",
+        "mobile-native",
+        "product-india",
+        "remote"
+      ],
+      "locations": [
+        "Bengaluru",
+        "Remote (India)"
+      ],
+      "priority": "high",
+      "note": "No public ATS API surfaced; applications route through fi.money/careers. Neobank whose entire product is the app, so mobile hiring is structural rather than occasional. The documented Android assignment stage is worth Dev knowing about in advance.",
+      "mobileEvidence": "Live 'Remote Android Software Engineer' req for Bangalore listed on RemoteOK at ~$65k-$90k (remoteok.com/remote-jobs/remote-android-software-engineer-fi-money-1067788). An engineer's published epiFi interview writeup describes the Android track as: career-page application, an Android take-home assignment, then 3-4 interview rounds - which only exists if they hire Android regularly.",
+      "evidence": "Live 'Remote Android Software Engineer' req for Bangalore listed on RemoteOK at ~$65k-$90k (remoteok.com/remote-jobs/remote-android-software-engineer-fi-money-1067788). An engineer's published epiFi interview writeup describes the Android track as: career-page application, an Android take-home assignment, then 3-4 interview rounds - which only exists if they hire Android regularly."
+    },
+    {
+      "name": "Aspora (formerly Vance)",
+      "domain": "aspora.com",
+      "careersUrl": "https://jobs.ashbyhq.com/aspora",
+      "atsProvider": "ashby",
+      "atsSlug": "aspora",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-09",
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "consumer",
+        "fintech",
+        "mobile",
+        "mobile-native",
+        "product-india"
+      ],
+      "locations": [
+        "Bengaluru"
+      ],
+      "priority": "medium",
+      "note": "Ashby slug 'aspora' confirmed from a real posting URL; scan api.ashbyhq.com/posting-api/job-board/aspora. Downgraded to medium only because the open req is titled Senior and Dev is at 2.7 yrs - worth watching the board for the non-senior iOS/Android rung rather than applying to this exact one.",
+      "mobileEvidence": "Live Ashby posting 'Senior iOS Engineer' based in Bangalore (jobs.ashbyhq.com/aspora/f3582612-7ed0-4b23-828d-63f5261e876e). Company blurb states 150+ people across India, UK, UAE, EU and US building cross-border remittance - the consumer product is the app.",
+      "evidence": "Live Ashby posting 'Senior iOS Engineer' based in Bangalore (jobs.ashbyhq.com/aspora/f3582612-7ed0-4b23-828d-63f5261e876e). Company blurb states 150+ people across India, UK, UAE, EU and US building cross-border remittance - the consumer product is the app.",
+      "openRoleCount": 5
+    },
+    {
+      "name": "Upstox (RKSV Securities)",
+      "domain": "upstox.com",
+      "careersUrl": "https://jobs.lever.co/upstox",
+      "atsProvider": "lever",
+      "atsSlug": "upstox",
+      "tier": "B",
+      "atsVerified": false,
+      "lastVerified": "2026-09-09",
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "consumer",
+        "fintech",
+        "mobile",
+        "mobile-native",
+        "product-india"
+      ],
+      "locations": [
+        "Mumbai",
+        "Bengaluru"
+      ],
+      "priority": "medium",
+      "note": "CAVEAT: the lever slug 'upstox' came from a search-result summary quoting the URL, not from a job page I opened. Verify api.lever.co/v0/postings/upstox?mode=json returns 200 before trusting it; if it 404s, downgrade atsProvider to unknown and use upstox.com careers root. Listed as medium precisely because the mobile evidence is inferential, not a seen posting.",
+      "mobileEvidence": "Search results state Upstox hosts openings on jobs.lever.co/upstox with ~93 roles, and aggregators showed 9 open positions as of Sep 2026. Upstox's product is a trading app (Demat, MF, IPO) with 1cr+ customers, so Android/iOS is the primary surface. I did NOT see a specific mobile job title with my own eyes.",
+      "evidence": "Search results state Upstox hosts openings on jobs.lever.co/upstox with ~93 roles, and aggregators showed 9 open positions as of Sep 2026. Upstox's product is a trading app (Demat, MF, IPO) with 1cr+ customers, so Android/iOS is the primary surface. I did NOT see a specific mobile job title with my own eyes.",
+      "verifyNote": "2026-09-09: lever/upstox failed (HTTP 404) — downgraded, not deleted. Re-check before removing."
+    },
+    {
+      "name": "Navi Technologies",
+      "domain": "navi.com",
+      "careersUrl": "https://navi.com/careers/jobs",
+      "atsProvider": "unknown",
+      "atsSlug": "",
+      "tier": "B",
+      "atsVerified": false,
+      "lastVerified": null,
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "consumer",
+        "fintech",
+        "mobile",
+        "mobile-native",
+        "product-india"
+      ],
+      "locations": [
+        "Bengaluru"
+      ],
+      "priority": "medium",
+      "note": "ATS is TurboHire - not one of the scannable providers, and the listings render client-side, so the automatic scanner will miss this. Needs a manual check or a headless fetch of the TurboHire dashboard URL. Sachin Bansal's shop, large in-house Android/iOS org, but I could not verify a live req.",
+      "mobileEvidence": "Fetched navi.com/careers/jobs and confirmed the apply links route to TurboHire (navi.turbohire.co, orgId 3e818601-0baa-429c-b6f8-4b21903ae0e6). ~26 open positions reported as of Sep 2026. Navi's lending, UPI, insurance and mutual-fund products are all delivered through one consumer app. No mobile title visible in the HTML I could read.",
+      "evidence": "Fetched navi.com/careers/jobs and confirmed the apply links route to TurboHire (navi.turbohire.co, orgId 3e818601-0baa-429c-b6f8-4b21903ae0e6). ~26 open positions reported as of Sep 2026. Navi's lending, UPI, insurance and mutual-fund products are all delivered through one consumer app. No mobile title visible in the HTML I could read."
+    },
+    {
+      "name": "Jupiter Money (Amica Financial)",
+      "domain": "jupiter.money",
+      "careersUrl": "https://jupiter.keka.com/careers",
+      "atsProvider": "unknown",
+      "atsSlug": "",
+      "tier": "B",
+      "atsVerified": false,
+      "lastVerified": null,
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "consumer",
+        "fintech",
+        "mobile",
+        "mobile-native",
+        "product-india"
+      ],
+      "locations": [
+        "Bengaluru",
+        "Mumbai"
+      ],
+      "priority": "medium",
+      "note": "Keka is not on the scannable-ATS list - provider recorded as 'other' with slug 'jupiter' taken from the real jupiter.keka.com host. Requires a manual visit to see live mobile roles. Include in the weekly manual sweep rather than the automatic scan.",
+      "mobileEvidence": "Fetched jupiter.money/careers and confirmed the 'View all openings' CTA points to Keka at jupiter.keka.com/careers. Aggregators show ~13 open positions. Jupiter is a pure app-based neobank (savings, UPI, credit) so the app is the whole product; I could not read individual titles because the careers page defers everything to the Keka portal.",
+      "evidence": "Fetched jupiter.money/careers and confirmed the 'View all openings' CTA points to Keka at jupiter.keka.com/careers. Aggregators show ~13 open positions. Jupiter is a pure app-based neobank (savings, UPI, credit) so the app is the whole product; I could not read individual titles because the careers page defers everything to the Keka portal."
+    },
+    {
+      "name": "CoinDCX (Neblio Technologies)",
+      "domain": "coindcx.com",
+      "careersUrl": "https://careers.coindcx.com/opportunities/openings",
+      "atsProvider": "unknown",
+      "atsSlug": "",
+      "tier": "B",
+      "atsVerified": false,
+      "lastVerified": null,
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "consumer",
+        "fintech",
+        "mobile",
+        "mobile-native",
+        "product-india"
+      ],
+      "locations": [
+        "Bengaluru",
+        "Mumbai",
+        "Hyderabad"
+      ],
+      "priority": "medium",
+      "note": "Honest: real company, real careers portal, but the mobile evidence is 'their product is an app', which per the brief is not sufficient - hence no high priority. The 403 blocks automated scraping; needs a browser check. Indian crypto exchanges historically hire Android/iOS heavily for trading UX and security.",
+      "mobileEvidence": "Verified a live, self-hosted careers portal at careers.coindcx.com/opportunities/openings with 46 open positions reported (Jul 2026) and 600+ employees. Crypto exchange whose retail product is the CoinDCX Android/iOS app. My fetch of the openings page returned HTTP 403, so I could NOT confirm a specific mobile title.",
+      "evidence": "Verified a live, self-hosted careers portal at careers.coindcx.com/opportunities/openings with 46 open positions reported (Jul 2026) and 600+ employees. Crypto exchange whose retail product is the CoinDCX Android/iOS app. My fetch of the openings page returned HTTP 403, so I could NOT confirm a specific mobile title."
+    },
+    {
+      "name": "smallcase Technologies",
+      "domain": "smallcase.com",
+      "careersUrl": "https://smallcase.freshteam.com/jobs",
+      "atsProvider": "unknown",
+      "atsSlug": "",
+      "tier": "B",
+      "atsVerified": false,
+      "lastVerified": null,
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "consumer",
+        "fintech",
+        "mobile",
+        "mobile-native",
+        "product-india"
+      ],
+      "locations": [
+        "Bengaluru"
+      ],
+      "priority": "medium",
+      "note": "Freshteam board - provider 'other', slug 'smallcase' taken from the real subdomain. Freshteam has a semi-public JSON endpoint but it is not on the approved list, so treat as manual. The embedded-SDK angle is a genuinely good match for Dev's SDK/KMP work if a req appears.",
+      "mobileEvidence": "Verified the real hosted board at smallcase.freshteam.com/jobs (Freshteam). smallcase ships a consumer investing app plus white-labelled investing SDKs embedded inside broker apps (Zerodha, Groww, Upstox), which is why they carry mobile engineers. No specific mobile title read.",
+      "evidence": "Verified the real hosted board at smallcase.freshteam.com/jobs (Freshteam). smallcase ships a consumer investing app plus white-labelled investing SDKs embedded inside broker apps (Zerodha, Groww, Upstox), which is why they carry mobile engineers. No specific mobile title read."
+    },
+    {
+      "name": "MobiKwik (One MobiKwik Systems)",
+      "domain": "mobikwik.com",
+      "careersUrl": "https://mobikwik.hire.trakstar.com/",
+      "atsProvider": "unknown",
+      "atsSlug": "",
+      "tier": "B",
+      "atsVerified": false,
+      "lastVerified": null,
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "consumer",
+        "fintech",
+        "mobile",
+        "mobile-native",
+        "product-india"
+      ],
+      "locations": [
+        "Gurugram/NCR",
+        "Bengaluru"
+      ],
+      "priority": "medium",
+      "note": "Trakstar board, so provider 'other' and slug 'mobikwik' from the real subdomain; not auto-scannable. Listed company, NCR-centric. Weaker mobile signal than the rest of the medium tier - keep, but low expectation until a req is seen.",
+      "mobileEvidence": "Verified a real hosted job board at mobikwik.hire.trakstar.com (Trakstar), plus mobikwik.com/careers. Publicly listed fintech operating India's largest digital wallet - the wallet, Zaakpay and lending products all ship through the consumer app. Departments advertised skew Business Ops/Growth/Risk; no mobile title confirmed.",
+      "evidence": "Verified a real hosted job board at mobikwik.hire.trakstar.com (Trakstar), plus mobikwik.com/careers. Publicly listed fintech operating India's largest digital wallet - the wallet, Zaakpay and lending products all ship through the consumer app. Departments advertised skew Business Ops/Growth/Risk; no mobile title confirmed."
+    },
+    {
+      "name": "Zolve Innovations",
+      "domain": "zolve.com",
+      "careersUrl": "https://zolve.freshteam.com/jobs",
+      "atsProvider": "unknown",
+      "atsSlug": "",
+      "tier": "B",
+      "atsVerified": false,
+      "lastVerified": null,
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "consumer",
+        "fintech",
+        "mobile",
+        "mobile-native",
+        "product-india"
+      ],
+      "locations": [
+        "Bengaluru"
+      ],
+      "priority": "medium",
+      "note": "Freshteam - provider 'other', slug 'zolve' from the real subdomain. Bangalore HQ, US-facing product, so timezone-friendly with a global product surface. Manual sweep; treat the mobile signal as product-based inference, not a seen posting.",
+      "mobileEvidence": "Verified a real hosted board at zolve.freshteam.com/jobs (Freshteam), with ~31 openings reported on aggregators and 7 on Cutshort. Zolve's cross-border banking product (US credit card / bank account for Indians moving abroad) is delivered as a consumer mobile app. No mobile-titled req confirmed by me.",
+      "evidence": "Verified a real hosted board at zolve.freshteam.com/jobs (Freshteam), with ~31 openings reported on aggregators and 7 on Cutshort. Zolve's cross-border banking product (US credit card / bank account for Indians moving abroad) is delivered as a consumer mobile app. No mobile-titled req confirmed by me."
+    },
+    {
+      "name": "Dozee",
+      "domain": "dozee.io",
+      "careersUrl": "https://jobs.lever.co/dozee",
+      "atsProvider": "lever",
+      "atsSlug": "dozee",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-09",
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "healthtech",
+        "iot",
+        "mobile",
+        "product-india"
+      ],
+      "locations": [
+        "Bengaluru",
+        "Chennai",
+        "Kochi",
+        "Ahmedabad"
+      ],
+      "priority": "medium",
+      "note": "Scannable Lever slug verified, so add it to the auto-scan and it will surface a mobile role the day one is posted. India-first regulated remote patient monitoring is a direct match for Dev's DiGA/PECAN background.",
+      "mobileEvidence": "Verified public Lever board (api.lever.co/v0/postings/dozee returned valid JSON, 6 open roles, India-heavy, plus a Bangalore location filter URL jobs.lever.co/dozee?location=Bangalore). At check time the open roles were sales and biomedical/field engineering - no mobile, embedded or firmware req live. Product is contactless remote patient monitoring (ballistocardiography sensor under the mattress) with clinician and caregiver apps.",
+      "evidence": "Verified public Lever board (api.lever.co/v0/postings/dozee returned valid JSON, 6 open roles, India-heavy, plus a Bangalore location filter URL jobs.lever.co/dozee?location=Bangalore). At check time the open roles were sales and biomedical/field engineering - no mobile, embedded or firmware req live. Product is contactless remote patient monitoring (ballistocardiography sensor under the mattress) with clinician and caregiver apps.",
+      "openRoleCount": 22
+    },
+    {
+      "name": "Niramai Health Analytix",
+      "domain": "niramai.com",
+      "careersUrl": "https://www.niramai.com/careers",
+      "atsProvider": "unknown",
+      "atsSlug": "",
+      "tier": "B",
+      "atsVerified": false,
+      "lastVerified": null,
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "healthtech",
+        "iot",
+        "mobile",
+        "mobile-native",
+        "product-india"
+      ],
+      "locations": [
+        "Bengaluru"
+      ],
+      "priority": "medium",
+      "note": "Thermal-imaging breast cancer screening device (hardware + companion software) out of Bengaluru - device-plus-app shape matches his BLE/IoT work. The /careers path is the conventional one but was NOT verified in this pass; confirm the exact URL before registering.",
+      "mobileEvidence": "A search result summary for Niramai described an open Software/App Developer role requiring at least 2-3 years building apps for the Android/iOS platform - i.e. a mobile req at exactly Dev's experience band. I did not open the posting itself, so treat the requirement text as second-hand.",
+      "evidence": "A search result summary for Niramai described an open Software/App Developer role requiring at least 2-3 years building apps for the Android/iOS platform - i.e. a mobile req at exactly Dev's experience band. I did not open the posting itself, so treat the requirement text as second-hand."
+    },
+    {
+      "name": "Welleazy Healthtech Solutions",
+      "domain": "welleazy.com",
+      "careersUrl": "https://www.welleazy.com/careers",
+      "atsProvider": "unknown",
+      "atsSlug": "",
+      "tier": "B",
+      "atsVerified": false,
+      "lastVerified": null,
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "healthtech",
+        "mobile",
+        "mobile-flutter",
+        "product-india"
+      ],
+      "locations": [
+        "Bengaluru"
+      ],
+      "priority": "medium",
+      "note": "Corporate wellness / employee health platform, smaller company. Named-Flutter healthtech reqs in India are rare, so worth an application even though the ATS is unknown. Verify the careers URL - the /careers path was not confirmed.",
+      "mobileEvidence": "A search result summary reported Welleazy Healthtech Solution Pvt Ltd hiring an experienced Flutter Developer with 3+ years in Bengaluru to build their mobile solutions. Flutter is named explicitly, which is the strongest keyword match found for an India healthtech in this pass; I did not open the posting itself.",
+      "evidence": "A search result summary reported Welleazy Healthtech Solution Pvt Ltd hiring an experienced Flutter Developer with 3+ years in Bengaluru to build their mobile solutions. Flutter is named explicitly, which is the strongest keyword match found for an India healthtech in this pass; I did not open the posting itself."
+    },
+    {
+      "name": "WHOOP",
+      "domain": "whoop.com",
+      "careersUrl": "https://jobs.ashbyhq.com/whoop",
+      "atsProvider": "ashby",
+      "atsSlug": "whoop",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-09",
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "healthtech",
+        "iot",
+        "mobile",
+        "mobile-native",
+        "remote-global"
+      ],
+      "locations": [
+        "Boston, MA",
+        "United States"
+      ],
+      "priority": "low",
+      "note": "Textbook BLE wearable mobile org, but US-based and I saw no India or remote-worldwide posting - hence low. Both ATS slugs verified ('whoop' on Ashby and on Lever, Ashby appears to be the newer board); scan Ashby first and fall back to Lever.",
+      "mobileEvidence": "Strongest live mobile hiring seen anywhere in this segment: multiple concurrent open reqs - 'iOS Engineer II (Healthcare)', 'Senior iOS Engineer (Healthcare)', 'Senior iOS Engineer (Core & Health)' and 'Android Engineer I (Fitness)' - on jobs.lever.co/whoop, plus an 'iOS Engineer @ Whoop' posting on jobs.ashbyhq.com/whoop, confirming both slugs are real.",
+      "evidence": "Strongest live mobile hiring seen anywhere in this segment: multiple concurrent open reqs - 'iOS Engineer II (Healthcare)', 'Senior iOS Engineer (Healthcare)', 'Senior iOS Engineer (Core & Health)' and 'Android Engineer I (Fitness)' - on jobs.lever.co/whoop, plus an 'iOS Engineer @ Whoop' posting on jobs.ashbyhq.com/whoop, confirming both slugs are real.",
+      "openRoleCount": 159
+    },
+    {
+      "name": "MyFitnessPal",
+      "domain": "myfitnesspal.com",
+      "careersUrl": "https://job-boards.greenhouse.io/myfitnesspal",
+      "atsProvider": "greenhouse",
+      "atsSlug": "myfitnesspal",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-09",
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "consumer",
+        "healthtech",
+        "mobile",
+        "mobile-native",
+        "remote-global"
+      ],
+      "locations": [
+        "United States (remote)"
+      ],
+      "priority": "low",
+      "note": "Fully-remote-US company; no India entity seen, so this is a long shot on geography only. Greenhouse slug verified - cheap to keep in the auto-scan in case a remote-worldwide or contractor req appears.",
+      "mobileEvidence": "Live paired reqs on their public Greenhouse board: 'Software Engineer III, Android - Partnerships' (job-boards.greenhouse.io/myfitnesspal/jobs/6763591) and 'Software Engineer III, iOS - Partnerships' (jobs/6756143), plus an engineering manager req - so a continuously staffed native mobile org. Level III maps to Dev's 2-5 year band.",
+      "evidence": "Live paired reqs on their public Greenhouse board: 'Software Engineer III, Android - Partnerships' (job-boards.greenhouse.io/myfitnesspal/jobs/6763591) and 'Software Engineer III, iOS - Partnerships' (jobs/6756143), plus an engineering manager req - so a continuously staffed native mobile org. Level III maps to Dev's 2-5 year band.",
+      "openRoleCount": 13
+    },
+    {
+      "name": "Beacon Biosignals",
+      "domain": "beacon.bio",
+      "careersUrl": "https://job-boards.greenhouse.io/beaconbiosignals",
+      "atsProvider": "greenhouse",
+      "atsSlug": "beaconbiosignals",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-09",
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "healthtech",
+        "iot",
+        "mobile",
+        "mobile-rn",
+        "remote-global"
+      ],
+      "locations": [
+        "United States (remote, Eastern time)"
+      ],
+      "priority": "low",
+      "note": "The single closest job-description match to Dev's actual resume found in this pass - BLE device SDKs plus React Native plus regulated neuro/health data. Blocked purely by the US Eastern-timezone requirement; worth a speculative application because the skill overlap is unusually exact.",
+      "mobileEvidence": "Live req 'Senior Mobile App Engineer (React Native/iOS/Android)' (job-boards.greenhouse.io/beaconbiosignals/jobs/4370828009) that explicitly asks for cross-platform apps for wearables, native iOS and Android BLE device SDKs, and experience with BLE, sensor integration or health data streams.",
+      "evidence": "Live req 'Senior Mobile App Engineer (React Native/iOS/Android)' (job-boards.greenhouse.io/beaconbiosignals/jobs/4370828009) that explicitly asks for cross-platform apps for wearables, native iOS and Android BLE device SDKs, and experience with BLE, sensor integration or health data streams.",
+      "openRoleCount": 22
+    },
+    {
+      "name": "Circadia Health",
+      "domain": "circadia.health",
+      "careersUrl": "https://jobs.lever.co/circadiahealth",
+      "atsProvider": "lever",
+      "atsSlug": "circadiahealth",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-09",
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "healthtech",
+        "iot",
+        "mobile",
+        "mobile-flutter",
+        "mobile-kmp"
+      ],
+      "locations": [
+        "El Segundo, CA",
+        "London, UK"
+      ],
+      "priority": "low",
+      "note": "One of very few postings anywhere that names BOTH Flutter and KMP in a healthcare context - exactly Dev's stack. Contactless respiratory/vitals monitoring hardware, so the BLE/device hook applies too. Lever slug verified; keep it scanned and apply the moment the mobile req reopens. No India or remote-worldwide hiring seen.",
+      "mobileEvidence": "A live Lever posting 'Mobile Developer (iOS and Android)' (jobs.lever.co/circadiahealth/533fc0d7-...) that names cross-platform frameworks like Flutter and Kotlin Multiplatform, Swift and Kotlin, and Google/Apple healthcare APIs for a sensitive healthcare platform. When I then fetched the full board it listed 6 US and 2 London roles and the mobile req was not among them, so it may have just closed or be region-gated.",
+      "evidence": "A live Lever posting 'Mobile Developer (iOS and Android)' (jobs.lever.co/circadiahealth/533fc0d7-...) that names cross-platform frameworks like Flutter and Kotlin Multiplatform, Swift and Kotlin, and Google/Apple healthcare APIs for a sensitive healthcare platform. When I then fetched the full board it listed 6 US and 2 London roles and the mobile req was not among them, so it may have just closed or be region-gated.",
+      "openRoleCount": 54
+    },
+    {
+      "name": "Included Health",
+      "domain": "includedhealth.com",
+      "careersUrl": "https://jobs.lever.co/includedhealth",
+      "atsProvider": "lever",
+      "atsSlug": "includedhealth",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-09",
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "healthtech",
+        "mobile",
+        "mobile-native",
+        "remote-global"
+      ],
+      "locations": [
+        "United States (remote)"
+      ],
+      "priority": "low",
+      "note": "Consistent native mobile hiring in digital health, but US-only employment as far as I could see. Verified Lever slug - low cost to keep in the scanner for a future remote-global opening.",
+      "mobileEvidence": "Two live Lever reqs seen: 'Android Engineer, Member Experience' (jobs.lever.co/includedhealth/05e97f3e-...) and 'Senior Software Engineer, Mobile' (28f3dec4-...), for a healthcare navigation app with telemedicine and provider matching.",
+      "evidence": "Two live Lever reqs seen: 'Android Engineer, Member Experience' (jobs.lever.co/includedhealth/05e97f3e-...) and 'Senior Software Engineer, Mobile' (28f3dec4-...), for a healthcare navigation app with telemedicine and provider matching.",
+      "openRoleCount": 85
+    },
+    {
+      "name": "Afero",
+      "domain": "afero.io",
+      "careersUrl": "https://jobs.lever.co/afero",
+      "atsProvider": "lever",
+      "atsSlug": "afero",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-09",
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "iot",
+        "mobile",
+        "mobile-flutter",
+        "mobile-kmp",
+        "remote-global"
+      ],
+      "locations": [
+        "United States"
+      ],
+      "priority": "medium",
+      "note": "Not health, but the only Flutter+KMP+IoT title found in the whole pass, so it belongs in this segment's shortlist on stack grounds. Title says Senior which is a half-step above his band; geography (US) unverified for remote-India eligibility. Lever slug verified.",
+      "mobileEvidence": "Live Lever posting titled 'Senior Software Engineer - Mobile (Flutter / KMP)' (jobs.lever.co/afero/ade6ac1b-...) at an IoT connectivity-platform company - Flutter and Kotlin Multiplatform named in the job title itself, on a product whose job is connecting devices to phones.",
+      "evidence": "Live Lever posting titled 'Senior Software Engineer - Mobile (Flutter / KMP)' (jobs.lever.co/afero/ade6ac1b-...) at an IoT connectivity-platform company - Flutter and Kotlin Multiplatform named in the job title itself, on a product whose job is connecting devices to phones.",
+      "openRoleCount": 3
+    },
+    {
+      "name": "Fitify",
+      "domain": "gofitify.com",
+      "careersUrl": "https://jobs.lever.co/FitifyWorkouts",
+      "atsProvider": "lever",
+      "atsSlug": "FitifyWorkouts",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-09",
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "consumer",
+        "healthtech",
+        "mobile",
+        "mobile-native",
+        "remote-global"
+      ],
+      "locations": [
+        "Prague, Czechia",
+        "Europe (remote)"
+      ],
+      "priority": "low",
+      "note": "Small European fitness app company that hires mobile engineers directly rather than through an agency. Remote policy is likely CET-anchored rather than worldwide, so India eligibility is unconfirmed - the reason this is low, not medium. Lever slug verified from a real URL (note the capitalisation).",
+      "mobileEvidence": "Live Lever posting 'Android Developer | Health & Fitness Startup' (jobs.lever.co/FitifyWorkouts/88727ef3-...) for a fitness app used by 20M+ people.",
+      "evidence": "Live Lever posting 'Android Developer | Health & Fitness Startup' (jobs.lever.co/FitifyWorkouts/88727ef3-...) for a fitness app used by 20M+ people.",
+      "openRoleCount": 8
+    },
+    {
+      "name": "Reveal HealthTech",
+      "domain": "revealhealthtech.com",
+      "careersUrl": "https://jobs.workable.com/company/641c8ae212ee3c1782e3ecbf/jobs-at-reveal-health-tech",
+      "atsProvider": "workable",
+      "atsSlug": "",
+      "tier": "B",
+      "atsVerified": false,
+      "lastVerified": null,
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "healthtech",
+        "mobile",
+        "product-india",
+        "remote-global"
+      ],
+      "locations": [
+        "India",
+        "United States"
+      ],
+      "priority": "low",
+      "note": "Health-tech product engineering services with India staffing - the kind of shop that posts mobile roles episodically per client project. Workable account id captured from the URL rather than a text slug, so the widget endpoint needs the slug resolved before auto-scanning.",
+      "mobileEvidence": "Verified public Workable board for Reveal Health Tech surfaced in an India-filtered engineering search; the company is a healthcare product-engineering firm with India-based delivery teams. I did not see a live Android/iOS/Flutter req on it in this pass, so mobile hiring is unconfirmed.",
+      "evidence": "Verified public Workable board for Reveal Health Tech surfaced in an India-filtered engineering search; the company is a healthcare product-engineering firm with India-based delivery teams. I did not see a live Android/iOS/Flutter req on it in this pass, so mobile hiring is unconfirmed."
+    },
+    {
+      "name": "Twin Health",
+      "domain": "twinhealth.com",
+      "careersUrl": "https://job-boards.greenhouse.io/twinhealth",
+      "atsProvider": "greenhouse",
+      "atsSlug": "twinhealth",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-09",
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "healthtech",
+        "iot",
+        "mobile",
+        "mobile-flutter",
+        "product-india"
+      ],
+      "locations": [
+        "Chennai",
+        "Bengaluru",
+        "Remote (India)",
+        "US"
+      ],
+      "priority": "high",
+      "note": "Closest domain+stack match in the whole segment. Twin Health is a precision-health platform (Whole Body Digital Twin) combining IoT sensors, ML and medical science to reverse type-2 diabetes — that is Dev's exact two-for-two: DiGA/PECAN-certified healthcare app plus a BLE/IoT fitness platform. Flutter + BLE sensor integration + regulated healthcare + a real Chennai/Bengaluru engineering base. Lead with the DiGA and BLE work in the resume.",
+      "mobileEvidence": "Live Greenhouse posting 'Senior Software Engineer, Mobile' (job-boards.greenhouse.io/twinhealth/jobs/5669318004) asking for 3+ yrs Android or iOS, 1+ yr Flutter/Dart, and explicitly for building apps that integrate health sensors over Bluetooth/IoT. Company job pages list openings in Chennai, Tamil Nadu and Bengaluru, Karnataka; they also appear on Built In Chennai as a local employer.",
+      "evidence": "Live Greenhouse posting 'Senior Software Engineer, Mobile' (job-boards.greenhouse.io/twinhealth/jobs/5669318004) asking for 3+ yrs Android or iOS, 1+ yr Flutter/Dart, and explicitly for building apps that integrate health sensors over Bluetooth/IoT. Company job pages list openings in Chennai, Tamil Nadu and Bengaluru, Karnataka; they also appear on Built In Chennai as a local employer.",
+      "openRoleCount": 35
+    },
+    {
+      "name": "GoTo Group (Gojek / GoPay)",
+      "domain": "gotocompany.com",
+      "careersUrl": "https://jobs.lever.co/GoToGroup",
+      "atsProvider": "lever",
+      "atsSlug": "GoToGroup",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-09",
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "fintech",
+        "gcc",
+        "mobile",
+        "mobile-flutter",
+        "mobile-native"
+      ],
+      "locations": [
+        "Bengaluru",
+        "Remote"
+      ],
+      "priority": "high",
+      "note": "Gojek's Bengaluru engineering centre is a genuine product org, not a support GCC. The 'Android OR Flutter, we will train you across' framing is unusually friendly to Dev's exact profile (Kotlin + Flutter both in production). Large-scale payments app — good story alongside his offline-sync work. Case-sensitive Lever slug: GoToGroup, not gotogroup.",
+      "mobileEvidence": "Live Lever posting 'Software Engineer (Android Flutter) - Consumer Payments' explicitly for the GoPay team, based in Bengaluru, hybrid, permanent. The JD states Flutter will be the main stream of work even if the candidate's current expertise is native Android — i.e. they will take an Android engineer and move them onto Flutter. A second 'Lead Software Engineer (Android Flutter) - Consumer Lending' req also exists at GoTo Financial.",
+      "evidence": "Live Lever posting 'Software Engineer (Android Flutter) - Consumer Payments' explicitly for the GoPay team, based in Bengaluru, hybrid, permanent. The JD states Flutter will be the main stream of work even if the candidate's current expertise is native Android — i.e. they will take an Android engineer and move them onto Flutter. A second 'Lead Software Engineer (Android Flutter) - Consumer Lending' req also exists at GoTo Financial.",
+      "openRoleCount": 35
+    },
+    {
+      "name": "Nexthink",
+      "domain": "nexthink.com",
+      "careersUrl": "https://jobs.smartrecruiters.com/Nexthink",
+      "atsProvider": "smartrecruiters",
+      "atsSlug": "Nexthink",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-09",
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "gcc",
+        "mobile",
+        "mobile-kmp",
+        "mobile-native"
+      ],
+      "locations": [
+        "Bengaluru"
+      ],
+      "priority": "high",
+      "note": "Rare and valuable: an actual KMP requirement on a mobile role physically in Bengaluru. KMP adoption in India is thin, so this is exactly the kind of req where Dev's production KMP experience is a differentiator rather than a nice-to-have — most Indian applicants will have Android-only Kotlin. Swiss/Boston digital-employee-experience company with a growing Bengaluru R&D site.",
+      "mobileEvidence": "Live SmartRecruiters posting 'Software Engineer-Mobile' located in Bengaluru, Karnataka, India, whose requirements call out experience or exposure to Kotlin Multiplatform (KMP) for sharing code across platforms.",
+      "evidence": "Live SmartRecruiters posting 'Software Engineer-Mobile' located in Bengaluru, Karnataka, India, whose requirements call out experience or exposure to Kotlin Multiplatform (KMP) for sharing code across platforms.",
+      "openRoleCount": 100
+    },
+    {
+      "name": "AFRY",
+      "domain": "afry.com",
+      "careersUrl": "https://jobs.smartrecruiters.com/AFRY",
+      "atsProvider": "smartrecruiters",
+      "atsSlug": "AFRY",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-09",
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "gcc",
+        "iot",
+        "mobile",
+        "mobile-flutter"
+      ],
+      "locations": [
+        "Pune"
+      ],
+      "priority": "high",
+      "note": "Swedish engineering and design consultancy with an India delivery centre in Pune. Consultancy rather than product, so the work varies — but AFRY's mobile work skews industrial/IoT/energy clients, which lines up with Dev's BLE and device-connectivity background. Titled Senior; at 2.7 yrs treat as a stretch but a live, geographically-real India Flutter req.",
+      "mobileEvidence": "Live SmartRecruiters posting 'Senior Flutter Developer' located in Pune, Maharashtra, India, hiring for AFRY's APMEA region to develop and maintain cross-platform mobile applications.",
+      "evidence": "Live SmartRecruiters posting 'Senior Flutter Developer' located in Pune, Maharashtra, India, hiring for AFRY's APMEA region to develop and maintain cross-platform mobile applications.",
+      "openRoleCount": 100
+    },
+    {
+      "name": "Affinidi",
+      "domain": "affinidi.com",
+      "careersUrl": "https://job-boards.greenhouse.io/affinidi",
+      "atsProvider": "greenhouse",
+      "atsSlug": "affinidi",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-09",
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "mobile",
+        "mobile-flutter",
+        "product-india",
+        "remote-global"
+      ],
+      "locations": [
+        "Bengaluru",
+        "Singapore",
+        "Remote"
+      ],
+      "priority": "medium",
+      "note": "Singapore-headquartered decentralised-identity company (Temasek-backed) with a Bengaluru engineering presence. Flutter is their client stack for the identity wallet app. I did not independently confirm the location field on this specific req — verify Bengaluru vs Singapore before applying. Titled Senior.",
+      "mobileEvidence": "Greenhouse posting 'Flutter Engineer, Senior' at Affinidi (job-boards.greenhouse.io/affinidi/jobs/6210918003) — a Flutter-titled engineering role on their own public board, surfaced while searching specifically for Flutter roles in India.",
+      "evidence": "Greenhouse posting 'Flutter Engineer, Senior' at Affinidi (job-boards.greenhouse.io/affinidi/jobs/6210918003) — a Flutter-titled engineering role on their own public board, surfaced while searching specifically for Flutter roles in India.",
+      "openRoleCount": 11
+    },
+    {
+      "name": "Trust Wallet",
+      "domain": "trustwallet.com",
+      "careersUrl": "https://jobs.ashbyhq.com/trust-wallet",
+      "atsProvider": "ashby",
+      "atsSlug": "trust-wallet",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-09",
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "fintech",
+        "mobile",
+        "mobile-kmp",
+        "remote-global"
+      ],
+      "locations": [
+        "Remote (global)",
+        "APAC"
+      ],
+      "priority": "medium",
+      "note": "One of very few companies with a standing KMP team rather than a KMP-curious req. Binance-affiliated crypto wallet, remote-first and hires across APAC including India. Crypto is a domain judgement call for Dev, but the KMP shared-logic architecture experience here is directly transferable and rare. Also check the Binance board (lever slug: binance) which had a 'Flutter Engineer (iOS/Android)' req at 1+ yrs — though that specific posting required English/Mandarin bilingual.",
+      "mobileEvidence": "Live Ashby posting 'Kotlin Multiplatform (KMP) Engineer' (jobs.ashbyhq.com/trust-wallet/5fe84aab-870a-40fa-9b30-6b6b25269906) — a whole team dedicated to creating and maintaining a shared business-logic layer used across their Android, iOS and Web apps. That is a genuine, funded KMP investment, not an experiment.",
+      "evidence": "Live Ashby posting 'Kotlin Multiplatform (KMP) Engineer' (jobs.ashbyhq.com/trust-wallet/5fe84aab-870a-40fa-9b30-6b6b25269906) — a whole team dedicated to creating and maintaining a shared business-logic layer used across their Android, iOS and Web apps. That is a genuine, funded KMP investment, not an experiment.",
+      "openRoleCount": 14
+    },
+    {
+      "name": "PayPay",
+      "domain": "paypay.ne.jp",
+      "careersUrl": "https://boards.greenhouse.io/paypay",
+      "atsProvider": "greenhouse",
+      "atsSlug": "paypay",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-09",
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "fintech",
+        "mobile",
+        "mobile-kmp",
+        "remote-global"
+      ],
+      "locations": [
+        "Tokyo",
+        "Remote"
+      ],
+      "priority": "medium",
+      "note": "Japanese payments giant (SoftBank), allied with Paytm. Known for hiring heavily from India and sponsoring relocation to Tokyo, and their engineering org runs in English. If Dev is open to Japan this is one of the strongest KMP-specific opportunities available to an Indian mid-level engineer. Verify whether this particular req is still open — the URL uses the older boards.greenhouse.io host.",
+      "mobileEvidence": "Greenhouse posting 'Kotlin Multiplatform Mobile Engineer' (boards.greenhouse.io/paypay/jobs/4515037004) — the role is to build and maintain high-quality, robust KMP SDKs consumed by their mobile development teams. A dedicated KMP SDK function inside a 58M-user payments app.",
+      "evidence": "Greenhouse posting 'Kotlin Multiplatform Mobile Engineer' (boards.greenhouse.io/paypay/jobs/4515037004) — the role is to build and maintain high-quality, robust KMP SDKs consumed by their mobile development teams. A dedicated KMP SDK function inside a 58M-user payments app.",
+      "openRoleCount": 87
+    },
+    {
+      "name": "Valtech",
+      "domain": "valtech.com",
+      "careersUrl": "https://job-boards.greenhouse.io/valtech",
+      "atsProvider": "greenhouse",
+      "atsSlug": "valtech",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-09",
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "gcc",
+        "mobile",
+        "mobile-kmp",
+        "remote-global"
+      ],
+      "locations": [
+        "Bengaluru",
+        "Remote",
+        "Europe"
+      ],
+      "priority": "medium",
+      "note": "Global digital agency with substantial India delivery capacity (Bengaluru). The KMP req I verified is a freelance European lead role, so it is not itself a fit for Dev — but it proves Valtech staffs KMP projects, and their Greenhouse board is public and scannable for India-located mobile reqs. Register the board and watch it rather than applying to this one.",
+      "mobileEvidence": "Greenhouse posting 'Freelance Lead Mobile Developer (Kotlin Multiplatform)' (job-boards.greenhouse.io/valtech/jobs/4790501101) seeking a KMP developer with both iOS and Android native experience to build a cross-platform application — that specific req is remote/Portugal and freelance.",
+      "evidence": "Greenhouse posting 'Freelance Lead Mobile Developer (Kotlin Multiplatform)' (job-boards.greenhouse.io/valtech/jobs/4790501101) seeking a KMP developer with both iOS and Android native experience to build a cross-platform application — that specific req is remote/Portugal and freelance.",
+      "openRoleCount": 129
+    },
+    {
+      "name": "Ventrata",
+      "domain": "ventrata.com",
+      "careersUrl": "https://apply.workable.com/ventrata",
+      "atsProvider": "workable",
+      "atsSlug": "ventrata",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-09",
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "mobile",
+        "mobile-kmp",
+        "mobile-native",
+        "remote-global"
+      ],
+      "locations": [
+        "Remote",
+        "Europe"
+      ],
+      "priority": "medium",
+      "note": "Ticketing and attractions platform building a KMP kiosk product. Hits three of Dev's stack strengths at once — Kotlin, KMP and Jetpack Compose — with a modular-architecture emphasis that matches his MVVM/MVI/Clean Architecture background. Remote and Workable-based so easy to scan, but Europe-centric hiring; check whether they can contract from India.",
+      "mobileEvidence": "Live Workable posting 'Senior Android Developer KMP for Kiosk app' (apply.workable.com/ventrata/j/A01A9CC2F2). Requirements include a strong understanding of Kotlin Multiplatform, a track record of designing modular architectures, and comfort with Jetpack Compose, in a remote fast-paced environment.",
+      "evidence": "Live Workable posting 'Senior Android Developer KMP for Kiosk app' (apply.workable.com/ventrata/j/A01A9CC2F2). Requirements include a strong understanding of Kotlin Multiplatform, a track record of designing modular architectures, and comfort with Jetpack Compose, in a remote fast-paced environment.",
+      "openRoleCount": 12
+    },
+    {
+      "name": "Talkdesk",
+      "domain": "talkdesk.com",
+      "careersUrl": "https://job-boards.greenhouse.io/talkdesk2",
+      "atsProvider": "greenhouse",
+      "atsSlug": "talkdesk2",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-09",
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "mobile",
+        "mobile-kmp",
+        "mobile-native",
+        "remote-global"
+      ],
+      "locations": [
+        "Remote",
+        "Portugal",
+        "India"
+      ],
+      "priority": "medium",
+      "note": "Real KMP-in-production signal — shared call-state logic across iOS/Android is exactly the 'shared business logic, native UI' pattern Dev has shipped. Talkdesk is a CCaaS company that hires across Portugal, India and remote. Note the ATS slug is talkdesk2, not talkdesk — easy to get wrong when registering the board.",
+      "mobileEvidence": "Greenhouse posting 'Senior Software Engineer I - Mobile Developer' (job-boards.greenhouse.io/talkdesk2/jobs/8155890) whose JD is explicit: design and build shared Kotlin Multiplatform modules for call-state logic, and implement the platform-specific pieces on iOS and Android.",
+      "evidence": "Greenhouse posting 'Senior Software Engineer I - Mobile Developer' (job-boards.greenhouse.io/talkdesk2/jobs/8155890) whose JD is explicit: design and build shared Kotlin Multiplatform modules for call-state logic, and implement the platform-specific pieces on iOS and Android.",
+      "openRoleCount": 47
+    },
+    {
+      "name": "IDT Corporation",
+      "domain": "idt.net",
+      "careersUrl": "https://jobs.lever.co/idt",
+      "atsProvider": "lever",
+      "atsSlug": "idt",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-09",
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "fintech",
+        "mobile",
+        "mobile-flutter",
+        "remote-global"
+      ],
+      "locations": [
+        "Remote",
+        "US",
+        "Israel"
+      ],
+      "priority": "medium",
+      "note": "The platform-channels-plus-native requirement is Dev's exact shape — he has Flutter, Kotlin and SwiftUI in production, which is rarer than it sounds and is the specific thing this JD screens for. A 100+ package Flutter monorepo is a serious engineering environment worth learning in. Telecom/remittance fintech; remote-friendly but US/Israel centred, so confirm India eligibility.",
+      "mobileEvidence": "Live Lever posting 'Senior Flutter Software Engineer' (jobs.lever.co/idt/027b0693-41d8-4262-a0de-26fd2b186d28, posted July 2026) for the BOSS Revolution app, described as one of the largest Flutter codebases in production — a monorepo of 100+ internal packages. JD asks for hands-on native Kotlin/Android and/or Swift/iOS plus integrating native code with Flutter via platform channels, and covers mobile architecture patterns, performance and security.",
+      "evidence": "Live Lever posting 'Senior Flutter Software Engineer' (jobs.lever.co/idt/027b0693-41d8-4262-a0de-26fd2b186d28, posted July 2026) for the BOSS Revolution app, described as one of the largest Flutter codebases in production — a monorepo of 100+ internal packages. JD asks for hands-on native Kotlin/Android and/or Swift/iOS plus integrating native code with Flutter via platform channels, and covers mobile architecture patterns, performance and security.",
+      "openRoleCount": 101
+    },
+    {
+      "name": "Remedy Product Studio",
+      "domain": "remedyproductstudio.com",
+      "careersUrl": "https://jobs.lever.co/remedyproductstudio",
+      "atsProvider": "lever",
+      "atsSlug": "remedyproductstudio",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-09",
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "consumer",
+        "healthtech",
+        "mobile",
+        "mobile-flutter",
+        "remote-global"
+      ],
+      "locations": [
+        "Remote"
+      ],
+      "priority": "low",
+      "note": "Product studio rather than a product company, so expect client work and variable stability — hence low priority. But the domain overlap is notable: health, wellness and fitness is precisely where Dev's two shipped products sit (DiGA/PECAN healthcare app and a BLE fitness platform), so his portfolio reads as directly relevant here in a way it will not at a generic agency. Worth a low-effort application.",
+      "mobileEvidence": "Live Lever posting 'Mobile Engineer (Flutter)' (jobs.lever.co/remedyproductstudio/ab9b6bf7-09c7-4bcf-858f-ab2daa36bcc0). The studio's own description says it builds digital products with startups and brands and is best known for work in health, wellness, fitness and sports.",
+      "evidence": "Live Lever posting 'Mobile Engineer (Flutter)' (jobs.lever.co/remedyproductstudio/ab9b6bf7-09c7-4bcf-858f-ab2daa36bcc0). The studio's own description says it builds digital products with startups and brands and is best known for work in health, wellness, fitness and sports.",
+      "openRoleCount": 6
+    },
+    {
+      "name": "Bjak",
+      "domain": "bjak.com",
+      "careersUrl": "https://jobs.ashbyhq.com/bjakcareer",
+      "atsProvider": "ashby",
+      "atsSlug": "bjakcareer",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-09",
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "fintech",
+        "mobile",
+        "mobile-native",
+        "remote-global"
+      ],
+      "locations": [
+        "Remote (India)",
+        "Kuala Lumpur"
+      ],
+      "priority": "high",
+      "note": "Malaysian insurtech/neobank hiring an India-resident Android engineer directly. 3+ yrs Kotlin is a clean fit. Public Ashby board, scannable.",
+      "mobileEvidence": "Ashby posting 'Android Software Engineer - AI Neobank App (India)' at jobs.ashbyhq.com/bjakcareer — India-specific, fully remote, asking 3+ yrs Android with Kotlin and modern architecture components. Company is SE Asia's largest digital insurance platform and 99% of their indexed roles are remote.",
+      "evidence": "Ashby posting 'Android Software Engineer - AI Neobank App (India)' at jobs.ashbyhq.com/bjakcareer — India-specific, fully remote, asking 3+ yrs Android with Kotlin and modern architecture components. Company is SE Asia's largest digital insurance platform and 99% of their indexed roles are remote.",
+      "openRoleCount": 3072
+    },
+    {
+      "name": "Target (Target in India)",
+      "domain": "target.com",
+      "careersUrl": "https://indiajobs.target.com/",
+      "atsProvider": "unknown",
+      "atsSlug": "",
+      "tier": "B",
+      "atsVerified": false,
+      "lastVerified": null,
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "consumer",
+        "gcc",
+        "mobile",
+        "mobile-native"
+      ],
+      "locations": [
+        "Bengaluru"
+      ],
+      "priority": "high",
+      "note": "4,000+ team members in Bengaluru with a real flagship-app mobile org, not just backend. Career portal is a custom board — needs a scraper or manual check, not an ATS API. Titles skew 'Sr', so target the junior end of senior.",
+      "mobileEvidence": "Their own India careers portal carries live mobile roles: 'Sr IOS Engineer' and 'Senior Android Engineer- Target India' (indiajobs.target.com/job/bengaluru/...), plus 'Android Engineer - Target India' and 'Sr Engineer- iOS' on corporate.target.com/jobs. The iOS roles are on Target's flagship consumer app team based in Bangalore; the Android role covers the app plus their MDM agent.",
+      "evidence": "Their own India careers portal carries live mobile roles: 'Sr IOS Engineer' and 'Senior Android Engineer- Target India' (indiajobs.target.com/job/bengaluru/...), plus 'Android Engineer - Target India' and 'Sr Engineer- iOS' on corporate.target.com/jobs. The iOS roles are on Target's flagship consumer app team based in Bangalore; the Android role covers the app plus their MDM agent."
+    },
+    {
+      "name": "Uber",
+      "domain": "uber.com",
+      "careersUrl": "https://www.uber.com/global/en/careers/list/",
+      "atsProvider": "unknown",
+      "atsSlug": "",
+      "tier": "B",
+      "atsVerified": false,
+      "lastVerified": null,
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "consumer",
+        "gcc",
+        "mobile",
+        "mobile-native"
+      ],
+      "locations": [
+        "Bengaluru",
+        "Hyderabad"
+      ],
+      "priority": "high",
+      "note": "SE II + '3+ yrs Kotlin/Jetpack' is a direct level match, and there are several open at once. Hybrid — expects ~half the week in the Bengaluru/Hyderabad office. Custom careers board, no ATS API.",
+      "mobileEvidence": "Multiple live India postings on Uber's own careers list: 'Software Engineer II (Android)' Hyderabad (Payment Methods Mobile team, 3+ yrs, Kotlin/Jetpack), 'Software Engineer II - Android' Bangalore, 'Software Engineer II - iOS' Bangalore and 'Software Engineer II, iOS: Earner loyalty' Bangalore.",
+      "evidence": "Multiple live India postings on Uber's own careers list: 'Software Engineer II (Android)' Hyderabad (Payment Methods Mobile team, 3+ yrs, Kotlin/Jetpack), 'Software Engineer II - Android' Bangalore, 'Software Engineer II - iOS' Bangalore and 'Software Engineer II, iOS: Earner loyalty' Bangalore."
+    },
+    {
+      "name": "Tesco Technology (Tesco Bengaluru)",
+      "domain": "tesco.com",
+      "careersUrl": "https://careers.tesco.com/",
+      "atsProvider": "unknown",
+      "atsSlug": "",
+      "tier": "B",
+      "atsVerified": false,
+      "lastVerified": null,
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "consumer",
+        "gcc",
+        "mobile",
+        "mobile-native",
+        "mobile-rn"
+      ],
+      "locations": [
+        "Bengaluru"
+      ],
+      "priority": "high",
+      "note": "SDE II is the right rung and they run native iOS, native Android AND React Native on the grocery app — three ways in. Hybrid Bengaluru. Careers portal is a custom/Talentlink-style board; scrape rather than API.",
+      "mobileEvidence": "Tesco's own careers site lists Bengaluru mobile roles: 'Software Development Engineer II - DDS - iOS' (req 168314), 'Software Development Engineer III - Android' (req 160205), plus a React Native SDE role on Tesco's customer-facing mobile app and a senior iOS role in the Design Systems team.",
+      "evidence": "Tesco's own careers site lists Bengaluru mobile roles: 'Software Development Engineer II - DDS - iOS' (req 168314), 'Software Development Engineer III - Android' (req 160205), plus a React Native SDE role on Tesco's customer-facing mobile app and a senior iOS role in the Design Systems team."
+    },
+    {
+      "name": "Expedia Group",
+      "domain": "expediagroup.com",
+      "careersUrl": "https://careers.expediagroup.com/jobs",
+      "atsProvider": "unknown",
+      "atsSlug": "",
+      "tier": "B",
+      "atsVerified": false,
+      "lastVerified": null,
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "consumer",
+        "gcc",
+        "mobile",
+        "mobile-native"
+      ],
+      "locations": [
+        "Gurgaon"
+      ],
+      "priority": "high",
+      "note": "The 2-4 yrs Mobile Engineer II band is the single closest level match in this whole segment. Gurgaon (NCR) is on Dev's location list. Careers site is a custom portal — no public ATS API found.",
+      "mobileEvidence": "'Mobile Engineer II - iOS' at Expedia, Gurgaon, listed at 2-4 yrs with Swift/SwiftUI; 'Mobile Engineer II, Android' in Gurugram building native app experiences; a 'Mobile Engineer III, iOS' Gurgaon req at 5-7 yrs (now closed). Expedia's own careers blog names Gurgaon as one of its mobile-engineering hubs.",
+      "evidence": "'Mobile Engineer II - iOS' at Expedia, Gurgaon, listed at 2-4 yrs with Swift/SwiftUI; 'Mobile Engineer II, Android' in Gurugram building native app experiences; a 'Mobile Engineer III, iOS' Gurgaon req at 5-7 yrs (now closed). Expedia's own careers blog names Gurgaon as one of its mobile-engineering hubs."
+    },
+    {
+      "name": "ServiceNow",
+      "domain": "servicenow.com",
+      "careersUrl": "https://careers.smartrecruiters.com/servicenow",
+      "atsProvider": "smartrecruiters",
+      "atsSlug": "servicenow",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-09",
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "gcc",
+        "mobile",
+        "mobile-native"
+      ],
+      "locations": [
+        "Hyderabad",
+        "Bengaluru",
+        "Mumbai"
+      ],
+      "priority": "high",
+      "note": "SmartRecruiters slug verified from a real URL, so this one can be auto-scanned. Mobile hiring is thinner than at the retail GCCs — usually one or two native Android/iOS roles at a time in Hyderabad.",
+      "mobileEvidence": "Live posting 'Mobile Software Engineer (Backend & Native Android)' in Hyderabad on careers.servicenow.com; their careers site is served by SmartRecruiters (careers.smartrecruiters.com/servicenow) and India is their second-largest employee base with Hyderabad, Bangalore and Mumbai offices.",
+      "evidence": "Live posting 'Mobile Software Engineer (Backend & Native Android)' in Hyderabad on careers.servicenow.com; their careers site is served by SmartRecruiters (careers.smartrecruiters.com/servicenow) and India is their second-largest employee base with Hyderabad, Bangalore and Mumbai offices.",
+      "openRoleCount": 100
+    },
+    {
+      "name": "Moniepoint",
+      "domain": "moniepoint.com",
+      "careersUrl": "https://job-boards.greenhouse.io/moniepoint",
+      "atsProvider": "greenhouse",
+      "atsSlug": "moniepoint",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-09",
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "fintech",
+        "mobile",
+        "mobile-native",
+        "remote-global"
+      ],
+      "locations": [
+        "Remote (India)",
+        "Lagos",
+        "London"
+      ],
+      "priority": "medium",
+      "note": "African fintech that hires India-resident engineers remotely. The mobile opening I could see is architect-level (too senior), so this is a watch-the-board target rather than an apply-today one — but the board is public and scannable, so it costs nothing to keep.",
+      "mobileEvidence": "A 'Mobile Architect' role listed India-only on a remote-jobs index, and their Greenhouse board (job-boards.greenhouse.io/moniepoint, slug seen in a live job URL) carries India-eligible openings.",
+      "evidence": "A 'Mobile Architect' role listed India-only on a remote-jobs index, and their Greenhouse board (job-boards.greenhouse.io/moniepoint, slug seen in a live job URL) carries India-eligible openings.",
+      "openRoleCount": 164
+    },
+    {
+      "name": "Wells Fargo",
+      "domain": "wellsfargo.com",
+      "careersUrl": "https://www.wellsfargojobs.com/en/jobs/",
+      "atsProvider": "unknown",
+      "atsSlug": "",
+      "tier": "B",
+      "atsVerified": false,
+      "lastVerified": null,
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "fintech",
+        "gcc",
+        "mobile",
+        "mobile-native"
+      ],
+      "locations": [
+        "Bengaluru",
+        "Hyderabad"
+      ],
+      "priority": "medium",
+      "note": "Evidence is a manager req plus generic 4+ yrs SWE reqs rather than a live IC Android/iOS posting, so verify the individual req before applying. Large, stable GCC; custom careers portal (no public ATS API).",
+      "mobileEvidence": "'Mobile Application Software Engineering Manager' based in BENGALURU on wellsfargojobs.com, describing management of the Retail Mobile App development teams building interfaces in modern iOS, Android and web technology — i.e. the retail-app mobile org itself sits in Bengaluru. Senior Software Engineer reqs (4+ yrs) open in Bengaluru and Hyderabad.",
+      "evidence": "'Mobile Application Software Engineering Manager' based in BENGALURU on wellsfargojobs.com, describing management of the Retail Mobile App development teams building interfaces in modern iOS, Android and web technology — i.e. the retail-app mobile org itself sits in Bengaluru. Senior Software Engineer reqs (4+ yrs) open in Bengaluru and Hyderabad."
+    },
+    {
+      "name": "PayPal",
+      "domain": "paypal.com",
+      "careersUrl": "https://careers.pypl.com/",
+      "atsProvider": "unknown",
+      "atsSlug": "",
+      "tier": "B",
+      "atsVerified": false,
+      "lastVerified": null,
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "fintech",
+        "gcc",
+        "mobile",
+        "mobile-native"
+      ],
+      "locations": [
+        "Bengaluru",
+        "Chennai",
+        "Hyderabad"
+      ],
+      "priority": "medium",
+      "note": "India mobile hiring is real but intermittent and the visible senior title is Staff. Careers root careers.pypl.com was not directly opened in this pass — verify before adding to the registry; PayPal's board is Eightfold-based, so treat as unknown until confirmed.",
+      "mobileEvidence": "A 'Software Engineer - Mobile (Android)' req surfaced for PayPal Bengaluru (designing/optimising the mobile app), alongside a 'Staff Engineer - Mobile (iOS)' opening in Bengaluru; PayPal runs large engineering centres in Chennai and Bengaluru.",
+      "evidence": "A 'Software Engineer - Mobile (Android)' req surfaced for PayPal Bengaluru (designing/optimising the mobile app), alongside a 'Staff Engineer - Mobile (iOS)' opening in Bengaluru; PayPal runs large engineering centres in Chennai and Bengaluru."
+    },
+    {
+      "name": "Samsung R&D Institute India - Bangalore (SRI-B)",
+      "domain": "samsung.com",
+      "careersUrl": "https://sec.wd3.myworkdayjobs.com/en-US/Samsung_Careers",
+      "atsProvider": "workday",
+      "atsSlug": "sec/Samsung_Careers",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-09",
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "consumer",
+        "gcc",
+        "iot",
+        "mobile",
+        "mobile-native"
+      ],
+      "locations": [
+        "Bengaluru"
+      ],
+      "priority": "medium",
+      "note": "Platform/framework Android rather than product-app Android — closer to AOSP, wearables and device software than to Flutter feature work, so screening is systems-heavy. Workday tenant 'sec' + site 'Samsung_Careers' both came from a live URL, so it is scannable.",
+      "mobileEvidence": "SRI-B's own site lists Android/Tizen platforms, wearable computing, IoT and healthcare/medical solutions among its active hiring areas, and their careers link resolves to a real Workday board (sec.wd3.myworkdayjobs.com/en-US/Samsung_Careers, e.g. req R114583 tagged 'Careers - SRI-B'). Largest Samsung R&D centre outside Korea.",
+      "evidence": "SRI-B's own site lists Android/Tizen platforms, wearable computing, IoT and healthcare/medical solutions among its active hiring areas, and their careers link resolves to a real Workday board (sec.wd3.myworkdayjobs.com/en-US/Samsung_Careers, e.g. req R114583 tagged 'Careers - SRI-B'). Largest Samsung R&D centre outside Korea.",
+      "openRoleCount": 20
+    },
+    {
+      "name": "Halodoc",
+      "domain": "halodoc.com",
+      "careersUrl": "https://www.halodoc.com/careers",
+      "atsProvider": "unknown",
+      "atsSlug": "",
+      "tier": "B",
+      "atsVerified": false,
+      "lastVerified": null,
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "healthtech",
+        "mobile",
+        "mobile-flutter",
+        "mobile-native",
+        "remote-global"
+      ],
+      "locations": [
+        "Bengaluru",
+        "Jakarta"
+      ],
+      "priority": "medium",
+      "note": "Indonesian healthtech with a real Bengaluru engineering centre — healthcare-app domain match for Dev. Evidence found was the manager-level Apps role, so confirm an IC Android/Flutter opening before investing. Careers root not directly opened in this pass; verify the URL when registering.",
+      "mobileEvidence": "An 'EM Apps' opening at Halodoc, Bangalore covering Mobile Development / Android / Java / Objective-C / iOS — i.e. they run a mobile apps team out of Bengaluru, not just Jakarta. Halodoc is an Indonesian telemedicine/pharmacy platform (Galen Growth's most innovative Asian healthtech, 2018).",
+      "evidence": "An 'EM Apps' opening at Halodoc, Bangalore covering Mobile Development / Android / Java / Objective-C / iOS — i.e. they run a mobile apps team out of Bengaluru, not just Jakarta. Halodoc is an Indonesian telemedicine/pharmacy platform (Galen Growth's most innovative Asian healthtech, 2018)."
+    },
+    {
+      "name": "Tamara",
+      "domain": "tamara.co",
+      "careersUrl": "https://job-boards.greenhouse.io/tamara",
+      "atsProvider": "greenhouse",
+      "atsSlug": "tamara",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-09",
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "fintech",
+        "mobile",
+        "mobile-flutter",
+        "mobile-native",
+        "remote-global"
+      ],
+      "locations": [
+        "Remote (India)",
+        "Riyadh"
+      ],
+      "priority": "medium",
+      "note": "Saudi BNPL fintech that hires India-remote. Level ('Mobile Engineer II', 3 yrs Android + Flutter) was an exact match, so this is worth watching — the Greenhouse slug is verified, so an auto-scan will catch the next opening.",
+      "mobileEvidence": "A Greenhouse posting 'Mobile Engineer II (Android/Flutter)' at Tamara indexed as India - Remote, asking minimum 3 yrs Android plus 1+ yr Flutter, Dart and Kotlin. I then pulled their live board API: 31 open jobs, none mobile right now, but several are India-based ('Engineering Manager - II', 'Product Engineer II - Web', all India) — so the India-remote hiring channel is genuine and the mobile req has simply closed.",
+      "evidence": "A Greenhouse posting 'Mobile Engineer II (Android/Flutter)' at Tamara indexed as India - Remote, asking minimum 3 yrs Android plus 1+ yr Flutter, Dart and Kotlin. I then pulled their live board API: 31 open jobs, none mobile right now, but several are India-based ('Engineering Manager - II', 'Product Engineer II - Web', all India) — so the India-remote hiring channel is genuine and the mobile req has simply closed.",
+      "openRoleCount": 31
+    },
+    {
+      "name": "Mindera",
+      "domain": "mindera.com",
+      "careersUrl": "https://mindera.com/careers",
+      "atsProvider": "unknown",
+      "atsSlug": "",
+      "tier": "B",
+      "atsVerified": false,
+      "lastVerified": null,
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "mobile",
+        "mobile-native",
+        "remote-global"
+      ],
+      "locations": [
+        "Remote (India)",
+        "Chennai",
+        "Porto"
+      ],
+      "priority": "medium",
+      "note": "Product-engineering consultancy rather than a product company, so the work is client projects — but they do hire India-resident Android engineers remotely. Careers URL not directly opened; verify before registering.",
+      "mobileEvidence": "A 'Senior Android Developer' opening listed India-only on a remote-jobs index aggregating their board; Mindera is a Portugal-headquartered software company with an India delivery centre.",
+      "evidence": "A 'Senior Android Developer' opening listed India-only on a remote-jobs index aggregating their board; Mindera is a Portugal-headquartered software company with an India delivery centre."
+    },
+    {
+      "name": "Eltropy",
+      "domain": "eltropy.com",
+      "careersUrl": "https://job-boards.greenhouse.io/eltropyinc",
+      "atsProvider": "greenhouse",
+      "atsSlug": "eltropyinc",
+      "tier": "A",
+      "atsVerified": true,
+      "lastVerified": "2026-09-09",
+      "hqCountry": "",
+      "indiaEligible": "unconfirmed",
+      "segments": [
+        "fintech",
+        "mobile",
+        "mobile-flutter",
+        "mobile-native",
+        "remote-global"
+      ],
+      "locations": [
+        "Remote",
+        "Hyderabad"
+      ],
+      "priority": "low",
+      "note": "US digital-communications platform for credit unions, with an India engineering presence. Long shot right now — the mobile req has closed and India eligibility on that specific posting was not stated — but the Greenhouse slug is verified so it costs nothing to keep on the scan list.",
+      "mobileEvidence": "Greenhouse posting 'Senior Mobile Developer (Remote)' at Eltropy Inc. (job-boards.greenhouse.io/eltropyinc/jobs/4288310009) wanting extensive Android (Kotlin), iOS (Swift) and Flutter. I pulled their live board: 20 open jobs, none mobile at the moment.",
+      "evidence": "Greenhouse posting 'Senior Mobile Developer (Remote)' at Eltropy Inc. (job-boards.greenhouse.io/eltropyinc/jobs/4288310009) wanting extensive Android (Kotlin), iOS (Swift) and Flutter. I pulled their live board: 20 open jobs, none mobile at the moment.",
+      "openRoleCount": 19
     }
   ],
-  "_lastVerified": "2026-09-08"
+  "_lastVerified": "2026-09-09"
 }
