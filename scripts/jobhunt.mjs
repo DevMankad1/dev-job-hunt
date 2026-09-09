@@ -112,7 +112,9 @@ for (const ch of Object.keys(byChannel).sort((a, b) => (order[a] ?? 9) - (order[
   for (const m of matches.filter((x) => (x.channel || 'unconfirmed') === ch)) {
     const flag = m.recommendation === 'apply' ? `${C.g}+${C.x}` : m.recommendation === 'review' ? `${C.y}~${C.x}` : `${C.dim}·${C.x}`;
     console.log(`  ${flag} ${m.company} — ${m.title}`);
+    const rc = m.resume === 'dev-mankad-resume-mern' ? C.g : C.c;
     console.log(`    ${C.dim}${m.location || 'location?'} · ${m.freshnessLabel} · ${m.archetype}${C.x}`);
+    console.log(`    ${rc}send ${m.resumeLabel} resume${C.x}${C.dim} (${m.resume}.pdf)${m.resumeConfidence !== 'high' ? ` - ${m.resumeConfidence} confidence` : ''}${C.x}`);
     console.log(`    ${m.url}`);
     if (m.blockers?.length) console.log(`    ${C.y}${m.blockers.join(' · ')}${C.x}`);
   }

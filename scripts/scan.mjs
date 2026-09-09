@@ -19,6 +19,7 @@ import { fileURLToPath } from 'node:url';
 import { fetchBoard } from '../adapters/ats.mjs';
 import { analyseJd } from './lib/jd.mjs';
 import { classifyLocation, freshness, seniorityFit } from './lib/eligibility.mjs';
+import { pickResume } from './lib/resume-router.mjs';
 import { norm } from './lib/text.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -138,7 +139,17 @@ for (const b of boards) {
       profile,
     });
 
+    const pick = pickResume({
+      archetype: analysis.bestArchetype?.id,
+      jdText: j.description || '',
+      title: j.title,
+    });
+
     matches.push({
+      resume: pick.file,
+      resumeLabel: pick.label,
+      resumeConfidence: pick.confidence,
+      resumeWhy: pick.why,
       company: b.company.name,
       companyDomain: b.company.domain,
       companyPriority: b.company.priority,
@@ -246,6 +257,7 @@ if (args.json) {
     const chan = m.channel === 'remote-global' ? 'GLOBAL' : m.channel === 'india' ? 'INDIA ' : '  ?   ';
     say(`     [${chan}] ${m.location || 'location?'} · ${m.freshnessLabel} · ${m.archetype} (${m.archetypeScore})`);
     say(`     ${m.url}`);
+    say(`     send: ${m.resumeLabel} resume (${m.resume}) - ${m.resumeConfidence} confidence`);
     if (m.eligibility === 'unconfirmed') say(`     ~ ${m.eligibilityReason}`);
     if (m.blockers.length) say(`     ! ${m.blockers.join(' | ')}`);
   }

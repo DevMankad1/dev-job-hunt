@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-09T17:19:08.848Z",
+  "generatedAt": "2026-09-09T17:42:33.948Z",
   "params": {
     "maxAgeHours": 2000,
     "loc": null,
@@ -8,19 +8,23 @@
   "stats": {
     "boards": 44,
     "boardErrors": 0,
-    "rawJobs": 2896,
-    "afterAge": 2573,
-    "afterRole": 478,
-    "afterSeniority": 121,
-    "afterStack": 116,
-    "afterLocation": 30,
-    "afterFreshness": 14,
+    "rawJobs": 2899,
+    "afterAge": 2576,
+    "afterRole": 479,
+    "afterSeniority": 125,
+    "afterStack": 119,
+    "afterLocation": 29,
+    "afterFreshness": 13,
     "staleDropped": 16,
-    "reported": 14
+    "reported": 13
   },
   "boardErrors": [],
   "matches": [
     {
+      "resume": "dev-mankad-resume-mern",
+      "resumeLabel": "MERN",
+      "resumeConfidence": "medium",
+      "resumeWhy": "JD leans web — 0 mobile signals vs 1 web signals. Close call, worth a glance at the posting.",
       "company": "HighLevel (GoHighLevel)",
       "companyDomain": "gohighlevel.com",
       "companyPriority": "high",
@@ -52,6 +56,10 @@
       "descriptionExcerpt": "About HighLevel: HighLevel is an AI-powered business operating system that gives agencies, entrepreneurs and SMBs the infrastructure to build, automate and scale. Today, HighLevel supports SMBs across 150+ countries, fueling community-driven growth rooted in real customer outcomes. To date, businesses operating on HighLevel have generated over $7 billion in ecosystem value, demonstrating the impact of shared infrastructure at scale. By centralizing conversations, automation and intelligence into one system, we help businesses move faster, reduce complexity and execute efficiently. Behind the p"
     },
     {
+      "resume": "dev-mankad-resume-mern",
+      "resumeLabel": "MERN",
+      "resumeConfidence": "medium",
+      "resumeWhy": "JD leans web — 0 mobile signals vs 1 web signals. Close call, worth a glance at the posting.",
       "company": "HighLevel (GoHighLevel)",
       "companyDomain": "gohighlevel.com",
       "companyPriority": "high",
@@ -77,12 +85,16 @@
       "eligibilityShape": "india-named",
       "eligibilityReason": "On-site or hybrid at a named Indian location.",
       "ageDays": 0,
-      "freshnessLabel": "6h ago",
+      "freshnessLabel": "7h ago",
       "isIndia": true,
       "isRemote": false,
       "descriptionExcerpt": "About HighLevel: HighLevel is an AI-powered business operating system that gives agencies, entrepreneurs and SMBs the infrastructure to build, automate and scale. Today, HighLevel supports SMBs across 150+ countries, fueling community-driven growth rooted in real customer outcomes. To date, businesses operating on HighLevel have generated over $7 billion in ecosystem value, demonstrating the impact of shared infrastructure at scale. By centralizing conversations, automation and intelligence into one system, we help businesses move faster, reduce complexity and execute efficiently. Behind the p"
     },
     {
+      "resume": "dev-mankad-resume-mern",
+      "resumeLabel": "MERN",
+      "resumeConfidence": "high",
+      "resumeWhy": "Archetype \"node-backend\" is unambiguously web/full-stack.",
       "company": "GitLab",
       "companyDomain": "gitlab.com",
       "companyPriority": "high",
@@ -112,9 +124,13 @@
       "freshnessLabel": "5d ago",
       "isIndia": false,
       "isRemote": false,
-      "descriptionExcerpt": "<div class=&quot;content-intro&quot;><p>GitLab is the intelligent orchestration platform for DevSecOps. GitLab enables organizations to increase developer productivity, improve operational efficiency, reduce security and compliance risk, and accelerate digital transformation. More than 50 million registered users and more than 50% of the Fortune 100* trust GitLab to ship better, more secure software faster.</p> <p>The same principles built into our products are reflected in how our team works: we embrace AI as a core productivity multiplier, with all team members expected to incorporate AI int"
+      "descriptionExcerpt": "GitLab is the intelligent orchestration platform for DevSecOps. GitLab enables organizations to increase developer productivity, improve operational efficiency, reduce security and compliance risk, and accelerate digital transformation. More than 50 million registered users and more than 50% of the Fortune 100* trust GitLab to ship better, more secure software faster. The same principles built into our products are reflected in how our team works: we embrace AI as a core productivity multiplier, with all team members expected to incorporate AI into their daily workflows to drive efficiency, in"
     },
     {
+      "resume": "dev-mankad-resume-mern",
+      "resumeLabel": "MERN",
+      "resumeConfidence": "high",
+      "resumeWhy": "Archetype \"node-backend\" is unambiguously web/full-stack.",
       "company": "GitLab",
       "companyDomain": "gitlab.com",
       "companyPriority": "high",
@@ -144,9 +160,13 @@
       "freshnessLabel": "6d ago",
       "isIndia": false,
       "isRemote": false,
-      "descriptionExcerpt": "<div class=&quot;content-intro&quot;><p>GitLab is the intelligent orchestration platform for DevSecOps. GitLab enables organizations to increase developer productivity, improve operational efficiency, reduce security and compliance risk, and accelerate digital transformation. More than 50 million registered users and more than 50% of the Fortune 100* trust GitLab to ship better, more secure software faster.</p> <p>The same principles built into our products are reflected in how our team works: we embrace AI as a core productivity multiplier, with all team members expected to incorporate AI int"
+      "descriptionExcerpt": "GitLab is the intelligent orchestration platform for DevSecOps. GitLab enables organizations to increase developer productivity, improve operational efficiency, reduce security and compliance risk, and accelerate digital transformation. More than 50 million registered users and more than 50% of the Fortune 100* trust GitLab to ship better, more secure software faster. The same principles built into our products are reflected in how our team works: we embrace AI as a core productivity multiplier, with all team members expected to incorporate AI into their daily workflows to drive efficiency, in"
     },
     {
+      "resume": "dev-mankad-resume-mern",
+      "resumeLabel": "MERN",
+      "resumeConfidence": "high",
+      "resumeWhy": "JD leans web — 0 mobile signals vs 3 web signals.",
       "company": "Supabase",
       "companyDomain": "supabase.com",
       "companyPriority": "high",
@@ -175,9 +195,13 @@
       "freshnessLabel": "7d ago",
       "isIndia": false,
       "isRemote": true,
-      "descriptionExcerpt": "About Supabase Supabase is the Postgres development platform, built by developers for developers. We provide a complete backend solution including Database, Auth, Storage, Edge Functions, Realtime, and Vector Search. All services are deeply integrated and designed for growth. About the Role We’re building a high-performance CI/CD execution platform similar to runners used by tools like Buildkite, GitHub Actions, and Blacksmith CI. Our platform executes developer pipelines reliably at scale, integrates deeply with source control, and automates build, test, and deployment workflows. In this role"
+      "descriptionExcerpt": "About Supabase . Supabase is the Postgres development platform, built by developers for developers. We provide a complete backend solution including Database, Auth, Storage, Edge Functions, Realtime, and Vector Search. All services are deeply integrated and designed for growth. . About the Role . We’re building a high-performance CI/CD execution platform similar to runners used by tools like Buildkite, GitHub Actions, and Blacksmith CI. Our platform executes developer pipelines reliably at scale, integrates deeply with source control, and automates build, test, and deployment workflows. In thi"
     },
     {
+      "resume": "dev-mankad-resume-mern",
+      "resumeLabel": "MERN",
+      "resumeConfidence": "high",
+      "resumeWhy": "Archetype \"node-backend\" is unambiguously web/full-stack.",
       "company": "Innovaccer",
       "companyDomain": "innovaccer.com",
       "companyPriority": "high",
@@ -208,9 +232,13 @@
       "freshnessLabel": "7d ago",
       "isIndia": true,
       "isRemote": false,
-      "descriptionExcerpt": "Engineering at Innovaccer With every line of code, we accelerate our customers' success, turning complex challenges into innovative solutions. Collaboratively, we transform each data point we gather into valuable insights for our customers. Join us and be part of a team that's turning dreams of better healthcare into reality, one line of code at a time. Together, we're shaping the future and making a meaningful impact on the world. About the Role We're looking for a Software Development Engineer - II to build the most amazing product experience at Innovaccer. You'll work closely with other eng"
+      "descriptionExcerpt": "Engineering at Innovaccer. With every line of code, we accelerate our customers' success, turning complex challenges into innovative solutions. Collaboratively, we transform each data point we gather into valuable insights for our customers. Join us and be part of a team that's turning dreams of better healthcare into reality, one line of code at a time. Together, we're shaping the future and making a meaningful impact on the world. . About the Role. We're looking for a Software Development Engineer - II to build the most amazing product experience at Innovaccer. You'll work closely with other"
     },
     {
+      "resume": "dev-mankad-resume-mern",
+      "resumeLabel": "MERN",
+      "resumeConfidence": "high",
+      "resumeWhy": "Archetype \"node-backend\" is unambiguously web/full-stack.",
       "company": "GitLab",
       "companyDomain": "gitlab.com",
       "companyPriority": "high",
@@ -240,9 +268,13 @@
       "freshnessLabel": "8d ago",
       "isIndia": false,
       "isRemote": false,
-      "descriptionExcerpt": "<div class=&quot;content-intro&quot;><p>GitLab is the intelligent orchestration platform for DevSecOps. GitLab enables organizations to increase developer productivity, improve operational efficiency, reduce security and compliance risk, and accelerate digital transformation. More than 50 million registered users and more than 50% of the Fortune 100* trust GitLab to ship better, more secure software faster.</p> <p>The same principles built into our products are reflected in how our team works: we embrace AI as a core productivity multiplier, with all team members expected to incorporate AI int"
+      "descriptionExcerpt": "GitLab is the intelligent orchestration platform for DevSecOps. GitLab enables organizations to increase developer productivity, improve operational efficiency, reduce security and compliance risk, and accelerate digital transformation. More than 50 million registered users and more than 50% of the Fortune 100* trust GitLab to ship better, more secure software faster. The same principles built into our products are reflected in how our team works: we embrace AI as a core productivity multiplier, with all team members expected to incorporate AI into their daily workflows to drive efficiency, in"
     },
     {
+      "resume": "dev-mankad-resume-mern",
+      "resumeLabel": "MERN",
+      "resumeConfidence": "high",
+      "resumeWhy": "JD leans web — 0 mobile signals vs 7 web signals.",
       "company": "AiPrise",
       "companyDomain": "aiprise.com",
       "companyPriority": "high",
@@ -271,9 +303,13 @@
       "freshnessLabel": "15d ago",
       "isIndia": true,
       "isRemote": false,
-      "descriptionExcerpt": "About AiPrise AiPrise is a global compliance orchestration platform helping fintechs, marketplaces, and payment companies verify and onboard customers worldwide. We integrate with 80+ identity and compliance vendors to deliver a holistic view of risk. We're now building AI-powered compliance agents to revolutionize KYB, AML, sanctions screening, and risk scoring — enabling our customers to onboard faster, reduce manual reviews, and prevent financial crime. Role Overview We’re hiring a Software Engineer II to help build and scale the core platform behind AiPrise’s compliance orchestration and A"
+      "descriptionExcerpt": "About AiPrise. AiPrise is a global compliance orchestration platform helping fintechs, marketplaces, and payment companies verify and onboard customers worldwide. We integrate with 80+ identity and compliance vendors to deliver a holistic view of risk. We're now building AI-powered compliance agents to revolutionize KYB, AML, sanctions screening, and risk scoring — enabling our customers to onboard faster, reduce manual reviews, and prevent financial crime. . Role Overview. We’re hiring a Software Engineer II to help build and scale the core platform behind AiPrise’s compliance orchestration a"
     },
     {
+      "resume": "dev-mankad-resume-mern",
+      "resumeLabel": "MERN",
+      "resumeConfidence": "high",
+      "resumeWhy": "JD leans web — 0 mobile signals vs 7 web signals.",
       "company": "AiPrise",
       "companyDomain": "aiprise.com",
       "companyPriority": "high",
@@ -302,9 +338,13 @@
       "freshnessLabel": "15d ago",
       "isIndia": true,
       "isRemote": false,
-      "descriptionExcerpt": "About AiPrise AiPrise is a global compliance orchestration platform helping fintechs, marketplaces, and payment companies verify and onboard customers worldwide. We integrate with 80+ identity and compliance vendors to deliver a holistic view of risk. We're now building AI-powered compliance agents to revolutionize KYB, AML, sanctions screening, and risk scoring — enabling our customers to onboard faster, reduce manual reviews, and prevent financial crime. Role Overview We’re hiring a Software Engineer I to help build and scale the core platform behind AiPrise’s compliance orchestration and AI"
+      "descriptionExcerpt": "About AiPrise . AiPrise is a global compliance orchestration platform helping fintechs, marketplaces, and payment companies verify and onboard customers worldwide. We integrate with 80+ identity and compliance vendors to deliver a holistic view of risk. We're now building AI-powered compliance agents to revolutionize KYB, AML, sanctions screening, and risk scoring — enabling our customers to onboard faster, reduce manual reviews, and prevent financial crime. . Role Overview . We’re hiring a Software Engineer I to help build and scale the core platform behind AiPrise’s compliance orchestration "
     },
     {
+      "resume": "dev-mankad-resume-mern",
+      "resumeLabel": "MERN",
+      "resumeConfidence": "high",
+      "resumeWhy": "JD leans web — 0 mobile signals vs 7 web signals.",
       "company": "AiPrise",
       "companyDomain": "aiprise.com",
       "companyPriority": "high",
@@ -333,9 +373,13 @@
       "freshnessLabel": "16d ago",
       "isIndia": true,
       "isRemote": false,
-      "descriptionExcerpt": "About AiPrise AiPrise is a global compliance orchestration platform helping fintechs, marketplaces, and payment companies verify and onboard customers worldwide. We integrate with 80+ identity and compliance vendors to deliver a holistic view of risk. We're now building AI-powered compliance agents to revolutionize KYB, AML, sanctions screening, and risk scoring — enabling our customers to onboard faster, reduce manual reviews, and prevent financial crime. Role Overview We’re hiring a Software Engineer II to help build and scale the core platform behind AiPrise’s compliance orchestration and A"
+      "descriptionExcerpt": "About AiPrise . AiPrise is a global compliance orchestration platform helping fintechs, marketplaces, and payment companies verify and onboard customers worldwide. We integrate with 80+ identity and compliance vendors to deliver a holistic view of risk. We're now building AI-powered compliance agents to revolutionize KYB, AML, sanctions screening, and risk scoring — enabling our customers to onboard faster, reduce manual reviews, and prevent financial crime. . Role Overview . We’re hiring a Software Engineer II to help build and scale the core platform behind AiPrise’s compliance orchestration"
     },
     {
+      "resume": "dev-mankad-resume-mern",
+      "resumeLabel": "MERN",
+      "resumeConfidence": "high",
+      "resumeWhy": "JD leans web — 0 mobile signals vs 4 web signals.",
       "company": "Dscout",
       "companyDomain": "dscout.com",
       "companyPriority": "high",
@@ -364,9 +408,13 @@
       "freshnessLabel": "18d ago",
       "isIndia": true,
       "isRemote": true,
-      "descriptionExcerpt": "<div class=&quot;content-intro&quot;><p><span style=&quot;font-size: 12pt;&quot;>At Dscout, we’re building the most flexible and powerful UX research platform on the market—trusted by the world’s top brands in finance (JP Morgan Chase, Intuit, Charles Schwab, PayPal), healthcare (Aya, Headspace), consumer goods (Keen, Verizon, Target, Northface), and tech (Google, Amazon, Facebook, Meta, Spotify, AirBnB). Our tools help teams deeply understand the humans behind their products, so they can build better ones.&nbsp;We are expanding our smart and driven team and would love for you to join us.</spa"
+      "descriptionExcerpt": "At Dscout, we’re building the most flexible and powerful UX research platform on the market—trusted by the world’s top brands in finance (JP Morgan Chase, Intuit, Charles Schwab, PayPal), healthcare (Aya, Headspace), consumer goods (Keen, Verizon, Target, Northface), and tech (Google, Amazon, Facebook, Meta, Spotify, AirBnB). Our tools help teams deeply understand the humans behind their products, so they can build better ones. We are expanding our smart and driven team and would love for you to join us. . Building AI-native products is a different problem than building deterministic software:"
     },
     {
+      "resume": "dev-mankad-resume-mern",
+      "resumeLabel": "MERN",
+      "resumeConfidence": "medium",
+      "resumeWhy": "JD leans web — 0 mobile signals vs 2 web signals. Close call, worth a glance at the posting.",
       "company": "Innovaccer",
       "companyDomain": "innovaccer.com",
       "companyPriority": "high",
@@ -399,9 +447,13 @@
       "freshnessLabel": "2d ago",
       "isIndia": true,
       "isRemote": false,
-      "descriptionExcerpt": "About the Role Every finance team runs on spreadsheets, tribal knowledge, and manual reconciliation between systems that were never meant to talk to each other. We think that's about to change — and we want the engineer who builds that change here first. This isn't a \"finance systems\" role. It's not reporting, it's not maintaining dashboards, and it's not writing SQL for someone else's requirements doc. This is a build role for someone who wants to take a real, high-stakes function — the one that runs the company's numbers, forecasts, and capital decisions — and rebuild it from the ground up a"
+      "descriptionExcerpt": "About the Role. Every finance team runs on spreadsheets, tribal knowledge, and manual reconciliation between systems that were never meant to talk to each other. We think that's about to change — and we want the engineer who builds that change here first. This isn't a \"finance systems\" role. It's not reporting, it's not maintaining dashboards, and it's not writing SQL for someone else's requirements doc. This is a build role for someone who wants to take a real, high-stakes function — the one that runs the company's numbers, forecasts, and capital decisions — and rebuild it from the ground up "
     },
     {
+      "resume": "dev-mankad-resume-mern",
+      "resumeLabel": "MERN",
+      "resumeConfidence": "low",
+      "resumeWhy": "The JD names no stack. For a customer-facing solutions role the full-stack resume reads better than a mobile-specialist one — but read the posting before sending.",
       "company": "Glean",
       "companyDomain": "glean.com",
       "companyPriority": "high",
@@ -433,41 +485,7 @@
       "freshnessLabel": "20d ago",
       "isIndia": false,
       "isRemote": true,
-      "descriptionExcerpt": "<div class=&quot;content-intro&quot;><div><span style=&quot;font-family: helvetica, arial, sans-serif; color: rgb(0, 0, 0); font-size: 12pt;&quot;><strong>About Glean:</strong></span></div> <div>&nbsp;</div> <div><span style=&quot;font-size: 12pt; font-family: helvetica, arial, sans-serif;&quot;>Glean is the Work AI platform that helps everyone work smarter with AI. What began as the industry’s most advanced enterprise search has evolved into a full-scale Work AI ecosystem, powering intelligent Search, an AI Assistant, and scalable AI agents on one secure, open platform. With over 100 enterpri"
-    },
-    {
-      "company": "Netomi",
-      "companyDomain": "netomi.com",
-      "companyPriority": "medium",
-      "companySegments": [
-        "ai-agentic",
-        "mern",
-        "startup-early"
-      ],
-      "title": "Software Development Engineer In Test - I",
-      "location": "Remote - India",
-      "url": "https://jobs.lever.co/netomi/0480114c-b702-4340-94a7-2d9ef366dc8a",
-      "postedAt": "2026-09-08T06:06:24.794Z",
-      "source": "lever",
-      "archetype": "forward-deployed-engineer",
-      "archetypeScore": 12,
-      "recommendation": "skip",
-      "blockers": [
-        "Negative keywords: sdet",
-        "Weak archetype match (best: forward-deployed-engineer @ 12)"
-      ],
-      "seniorityNote": "",
-      "seniorityScore": 1,
-      "seniorityAsked": null,
-      "channel": "india",
-      "eligibility": "qualifies",
-      "eligibilityShape": "india-named",
-      "eligibilityReason": "Remote and India is named explicitly.",
-      "ageDays": 1,
-      "freshnessLabel": "1d ago",
-      "isIndia": true,
-      "isRemote": true,
-      "descriptionExcerpt": "About the Company: Netomi is the leading agentic AI platform for enterprise customer experience. We work with the largest global brands like Delta Airlines, MetLife, MGM, United, and others to enable agentic automation at scale across the entire customer journey. Our no-code platform delivers the fastest time to market, lowest total cost of ownership, and simple, scalable management of AI agents for any CX use case. Backed by WndrCo, Y Combinator, and Index Ventures, we help enterprises drive efficiency, lower costs, and deliver higher quality customer experiences. Want to be part of the AI re"
+      "descriptionExcerpt": "About Glean:. Glean is the Work AI platform that helps everyone work smarter with AI. What began as the industry’s most advanced enterprise search has evolved into a full-scale Work AI ecosystem, powering intelligent Search, an AI Assistant, and scalable AI agents on one secure, open platform. With over 100 enterprise SaaS connectors, flexible LLM choice, and robust APIs, Glean gives organizations the infrastructure to govern, scale, and customize AI across their entire business - without vendor lock-in or costly implementation cycles. . At its core, Glean is redefining how enterprises find, u"
     }
   ]
 }

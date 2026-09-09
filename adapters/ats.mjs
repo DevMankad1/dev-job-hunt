@@ -20,15 +20,40 @@ async function getJson(url, { timeoutMs = 20000 } = {}) {
   }
 }
 
-const strip = (html) =>
-  String(html || '')
-    .replace(/<script[\s\S]*?<\/script>/gi, ' ')
-    .replace(/<style[\s\S]*?<\/style>/gi, ' ')
-    .replace(/<[^>]+>/g, ' ')
-    .replace(/&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>').replace(/&#\d+;/g, ' ')
-    .replace(/\s+/g, ' ')
-    .trim();
+const decodeEntities = (s) =>
+  String(s || '')
+    .replace(/&nbsp;/gi, ' ')
+    .replace(/&amp;/gi, '&')
+    .replace(/&lt;/gi, '<')
+    .replace(/&gt;/gi, '>')
+    .replace(/&quot;/gi, '"')
+    .replace(/&#0?39;|&apos;/gi, "'")
+    .replace(/&#x27;/gi, "'")
+    .replace(/&#(\d+);/g, (_, d) => String.fromCharCode(+d))
+    .replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCharCode(parseInt(h, 16)));
+
+/**
+ * Greenhouse (and some others) return HTML that is itself entity-encoded, so a
+ * naive "strip tags then decode" leaves literal <div class="..."> in the text.
+ * That silently polluted every JD with markup, which degraded keyword matching,
+ * archetype detection and ATS-coverage scoring alike. Decode and strip in a
+ * loop until the string stops changing.
+ */
+const strip = (html) => {
+  let s = String(html || '');
+  for (let i = 0; i < 4; i++) {
+    const before = s;
+    s = s
+      .replace(/<script[\s\S]*?<\/script>/gi, ' ')
+      .replace(/<style[\s\S]*?<\/style>/gi, ' ')
+      .replace(/<\/(p|div|li|tr|h[1-6])>/gi, '. ')
+      .replace(/<(br|li)[^>]*>/gi, ' ')
+      .replace(/<[^>]+>/g, ' ');
+    s = decodeEntities(s);
+    if (s === before) break;
+  }
+  return s.replace(/\s*\.\s*\./g, '.').replace(/\s+/g, ' ').trim();
+};
 
 const iso = (v) => {
   if (!v) return null;

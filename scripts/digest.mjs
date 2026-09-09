@@ -114,8 +114,9 @@ function rowHtml(m, color) {
     ${m.blockers?.length ? `<div style="font:12px/1.5 -apple-system,Segoe UI,Roboto,sans-serif;color:#b45309;margin-top:5px;">⚠ ${esc(m.blockers.join(' · '))}</div>` : ''}
     <div style="margin-top:8px;">
       <a href="${esc(m.url)}" style="display:inline-block;background:${color};color:#fff;text-decoration:none;font:600 12px/1 -apple-system,Segoe UI,Roboto,sans-serif;padding:8px 12px;border-radius:5px;">Open the JD &rarr;</a>
-      <span style="font:12px/1 -apple-system,Segoe UI,Roboto,sans-serif;color:#6b7280;margin-left:10px;">
-        tailor: <code style="background:#f3f4f6;padding:2px 5px;border-radius:3px;">--archetype ${esc(VARIANT_HINT[m.archetype] || m.archetype)}</code>
+      <span style="font:12px/1.5 -apple-system,Segoe UI,Roboto,sans-serif;color:#6b7280;margin-left:10px;">
+        send <strong style="color:${m.resume === 'dev-mankad-resume-mern' ? '#047857' : '#1d4ed8'};">${esc(m.resumeLabel || '?')}</strong> resume
+        <code style="background:#f3f4f6;padding:2px 5px;border-radius:3px;">${esc(m.resume || '')}.pdf</code>${m.resumeConfidence !== 'high' ? ` <span style="color:#b45309;">(${esc(m.resumeConfidence)} confidence - check the JD)</span>` : ''}
       </span>
     </div>
   </td></tr>`;
