@@ -28,7 +28,7 @@ Check each one honestly. If it is genuinely true and missing from `resume-conten
 ## What the tailoring engine changed
 
 - **Headline title:** Cross-Platform Mobile Engineer
-- **Summary assembled from:** opener `open-mobile` + clauses `cl-integrations`, `cl-cicd`, `cl-fullstack`
+- **Summary assembled from:** opener `open-mobile` + clauses `cl-cicd`, `cl-integrations`, `cl-fullstack`
 - **Skill category order:** Languages & Frameworks → Architecture → CI/CD & DevOps → Version Control → Tools & Integrations → Agentic Engineering & AI
 - **Agentic section:** below-experience (relevance 0)
 - **Project order:** Tymewear → Lifeness

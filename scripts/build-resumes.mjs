@@ -9,10 +9,12 @@
  * two sensible defaults current whenever resume-content.json changes.
  *
  *   resume/dev-mankad-resume.*        mobile-first: Flutter / KMP / SwiftUI lead
- *   resume/dev-mankad-resume-mern.*   JavaScript-first: React / Node / TypeScript lead
+ *   resume/dev-mankad-resume-mern.*   JavaScript-first, mobile OMITTED entirely
  *
- * Both are generated from the SAME resume-content.json. Nothing is invented for
- * either one — only the ordering and emphasis differ.
+ * Both come from the SAME resume-content.json. Nothing is invented for either.
+ * The MERN build additionally passes --drop-tags to leave the mobile work out —
+ * omission is a legitimate targeting choice, and every omitted item is listed in
+ * that variant's .report.md.
  */
 import { execFileSync } from 'node:child_process';
 import fs from 'node:fs';
@@ -37,6 +39,9 @@ Clean Architecture. Code review, Git branching strategy, technical documentation
     name: 'dev-mankad-resume-mern',
     archetype: 'mern-fullstack',
     title: 'Full Stack Developer',
+    // Mobile is OMITTED from this variant at Dev's direction. Omission is a
+    // targeting choice, not a rewrite — every omission is listed in the report.
+    dropTags: 'mobile,flutter,kmp,kotlin,ios,android,react-native,compose,ble,release',
     jd: `MERN Stack Developer / Full Stack Developer. Build responsive frontends in React.js with
 TypeScript and modern JavaScript. Develop backend services and REST APIs with Node.js. Integrate
 GraphQL APIs and third-party services. Own features end to end from API design through UI delivery.
@@ -53,6 +58,7 @@ for (const b of BUILDS) {
     '--company', 'Standing', '--title', b.title,
     '--archetype', b.archetype, '--name', b.name,
     '--out', 'resume', '--quiet',
+    ...(b.dropTags ? ['--drop-tags', b.dropTags] : []),
   ], { cwd: ROOT, stdio: 'inherit' });
   console.log(`  built resume/${b.name}.{tex,md,txt}  (${b.archetype})`);
 }

@@ -153,7 +153,8 @@
           "react",
           "node",
           "typescript",
-          "fullstack"
+          "fullstack",
+          "mobile"
         ],
         "text": "Full-Stack Engineer with 2.5+ years building and shipping product features across React and Node.js front-to-back, with REST and GraphQL API delivery and TypeScript throughout, alongside deep cross-platform mobile experience."
       },
@@ -174,6 +175,20 @@
           "healthtech"
         ],
         "text": "Software Engineer with 2.5+ years building certified digital-health software, including a DiGA- and PECAN-certified chronic-disease management platform delivered for European clients under rigorous health-compliance frameworks."
+      },
+      {
+        "id": "open-mern-pure",
+        "tags": [
+          "mern",
+          "react",
+          "node",
+          "typescript",
+          "fullstack",
+          "backend",
+          "frontend",
+          "api"
+        ],
+        "text": "Full-Stack Engineer with 2.5+ years building and shipping production features across React and Node.js, with REST and GraphQL API delivery and TypeScript throughout, for international healthcare and enterprise markets."
       }
     ],
     "clauses": [
@@ -235,7 +250,21 @@
           "fde"
         ],
         "weight": 3,
-        "text": "Adapts rapidly to any full-stack technology or language, pairing deep product-cycle ownership with cross-platform architecture, third-party integrations, and Agile delivery."
+        "text": "Adapts rapidly to any full-stack technology or language, pairing deep product-cycle ownership with cross-platform architecture, third-party integrations, and Agile delivery.",
+        "alts": [
+          {
+            "tags": [
+              "mern",
+              "fullstack",
+              "react",
+              "node",
+              "typescript",
+              "backend",
+              "frontend"
+            ],
+            "text": "Adapts rapidly to any full-stack technology or language, pairing deep product-cycle ownership with third-party integrations and Agile delivery."
+          }
+        ]
       },
       {
         "id": "cl-clients",
@@ -258,7 +287,20 @@
           "sdk"
         ],
         "weight": 4,
-        "text": "Integrates complex third-party SDKs, hardware communication layers, and real-time data pipelines."
+        "text": "Integrates complex third-party SDKs, hardware communication layers, and real-time data pipelines.",
+        "alts": [
+          {
+            "tags": [
+              "mern",
+              "integrations",
+              "api",
+              "backend",
+              "realtime",
+              "fullstack"
+            ],
+            "text": "Integrates complex third-party SDKs and real-time data pipelines."
+          }
+        ]
       },
       {
         "id": "cl-cicd",
@@ -267,7 +309,8 @@
           "fastlane",
           "github-actions",
           "release",
-          "devops"
+          "devops",
+          "mobile"
         ],
         "weight": 3,
         "text": "Automates release engineering with Fastlane, GitHub Actions, and Firebase App Distribution across App Store and Play Store."
@@ -614,8 +657,7 @@
               "mvvm"
             ],
             "tags": [
-              "architecture",
-              "mobile"
+              "architecture"
             ],
             "strength": 5
           },
@@ -998,7 +1040,8 @@
                 "fullstack",
                 "backend",
                 "frontend",
-                "api"
+                "api",
+                "architecture"
               ],
               "text": "Led architectural design and deployment of production-grade client applications and their supporting full-stack services for international healthcare and enterprise markets."
             }
@@ -1079,7 +1122,8 @@
                 "mern",
                 "fullstack",
                 "react",
-                "node"
+                "node",
+                "collab"
               ],
               "text": "Partnered with cross-functional teams (designers, product managers, backend developers, and QA) to deliver full-stack solutions on time."
             }
@@ -1131,7 +1175,10 @@
                 "api",
                 "fullstack",
                 "typescript",
-                "react"
+                "react",
+                "django",
+                "python",
+                "realtime"
               ],
               "text": "Led development of the Tymewear platform end to end — client application plus Django/Python backend services — designing REST APIs, real-time sensor data pipelines, and device connectivity."
             }
@@ -1218,7 +1265,7 @@
             "react",
             "typescript"
           ],
-          "text": "Full-Stack: cross-platform client · Django (Python) backend · REST APIs · real-time BLE/IoT data pipelines"
+          "text": "Full-Stack: Django (Python) backend · REST API design · real-time sensor data pipelines · third-party platform integrations"
         }
       ]
     },
@@ -1265,7 +1312,9 @@
                 "api",
                 "graphql",
                 "fullstack",
-                "react"
+                "react",
+                "rails",
+                "healthcare"
               ],
               "text": "Delivered full-stack functionality for a research-based, DiGA and PECAN-certified healthcare application for lifestyle and chronic-disease management, spanning the client and a Ruby on Rails backend consumed via GraphQL."
             }
@@ -1289,7 +1338,8 @@
                 "fullstack",
                 "react",
                 "frontend",
-                "i18n"
+                "i18n",
+                "healthcare"
               ],
               "text": "Built scalable product features supporting chronic-disease prevention and lifestyle tracking, with multilingual support and chatbot integration."
             }
@@ -1305,7 +1355,20 @@
             "firebase",
             "sdk"
           ],
-          "text": "Led third-party integration of VIMscore for patient analytics and managed Firebase builds and active release cycles on the App Store and Play Store."
+          "text": "Led third-party integration of VIMscore for patient analytics and managed Firebase builds and active release cycles on the App Store and Play Store.",
+          "alts": [
+            {
+              "tags": [
+                "mern",
+                "backend",
+                "api",
+                "integrations",
+                "healthcare",
+                "fullstack"
+              ],
+              "text": "Led third-party integration of VIMscore for patient analytics, and managed build and release cycles across the delivery pipeline."
+            }
+          ]
         },
         {
           "id": "lf-agentic",
@@ -1331,7 +1394,7 @@
             "fullstack",
             "react"
           ],
-          "text": "Full-Stack: cross-platform client · Ruby on Rails backend · GraphQL API · DiGA & PECAN certified healthcare platform"
+          "text": "Full-Stack: Ruby on Rails backend · GraphQL API · DiGA & PECAN certified healthcare platform"
         }
       ]
     }

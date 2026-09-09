@@ -4,12 +4,12 @@ Cross-Platform Mobile Engineer · Flutter · Kotlin Multiplatform · SwiftUI
 
 PROFESSIONAL SUMMARY
 ====================
-Cross-platform Mobile Engineer with 2.5+ years shipping production Flutter, Kotlin Multiplatform, and SwiftUI applications for international healthcare and enterprise markets, with full ownership from architecture through App Store and Play Store release. Integrates complex third-party SDKs, hardware communication layers, and real-time data pipelines. Automates release engineering with Fastlane, GitHub Actions, and Firebase App Distribution across App Store and Play Store. Full-stack delivery across React, Node.js, Django, and Ruby on Rails backends with REST and GraphQL APIs.
+Cross-platform Mobile Engineer with 2.5+ years shipping production Flutter, Kotlin Multiplatform, and SwiftUI applications for international healthcare and enterprise markets, with full ownership from architecture through App Store and Play Store release. Automates release engineering with Fastlane, GitHub Actions, and Firebase App Distribution across App Store and Play Store. Integrates complex third-party SDKs and real-time data pipelines. Full-stack delivery across React, Node.js, Django, and Ruby on Rails backends with REST and GraphQL APIs.
 
 TECHNICAL SKILLS
 ================
 Languages & Frameworks: SwiftUI, Kotlin, React Native, Dart, Flutter, Jetpack Compose, Kotlin Multiplatform (KMP), React, Splitties, Node.js, Django, Ruby on Rails, TypeScript / JavaScript
-Architecture: Cross-platform mobile architecture, MVVM, MVI, REST & GraphQL APIs, Clean Architecture
+Architecture: Cross-platform mobile architecture, MVI, REST & GraphQL APIs, MVVM, Clean Architecture
 CI/CD & DevOps: Fastlane, App Store / Play Store deployments, Firebase App Distribution, GitHub Actions, AWS, Azure
 Version Control: GitHub (PRs, tags, branching strategy, code review), Git
 Tools & Integrations: GraphQL, Jira, Firebase, Confluence, VIMscore, AppThera, Slack, Figma

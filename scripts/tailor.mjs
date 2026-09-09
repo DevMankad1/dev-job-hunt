@@ -10,6 +10,8 @@
  * Options
  *   --archetype <id>    force an archetype instead of detecting one
  *   --max-bullets <n>   cap bullets per role/project (logs exactly what it cut)
+ *   --drop-tags a,b,c   omit content carrying these tags (a targeting choice —
+ *                       logs every omission into the match report)
  *   --formats tex,md,txt   default: tex,md,txt
  *   --out <dir>         default: resume/tailored
  *   --name <base>       output basename; default: <company>-<title>
@@ -137,7 +139,10 @@ async function main() {
   }
 
   const maxBullets = args['max-bullets'] && args['max-bullets'] !== true ? parseInt(args['max-bullets'], 10) : null;
-  const plan = buildPlan({ content, analysis, profile, maxBullets });
+  const dropTags = (args['drop-tags'] && args['drop-tags'] !== true)
+    ? String(args['drop-tags']).split(',').map((s) => s.trim()).filter(Boolean)
+    : [];
+  const plan = buildPlan({ content, analysis, profile, maxBullets, dropTags });
 
   const honesty = verifyHonesty(plan, content);
   if (!honesty.ok) {
@@ -165,6 +170,18 @@ async function main() {
   const reportMd = renderReportMd(plan, meta);
   fs.writeFileSync(path.join(outDir, `${base}.report.md`), reportMd);
   fs.writeFileSync(path.join(outDir, `${base}.report.json`), JSON.stringify({ meta, report: plan.report, plan: stripPlan(plan) }, null, 2));
+  // Full plan, for scripts/render_pdf.py. Everything in here came from
+  // resume-content.json — it is a selection and ordering of that file, never
+  // anything new.
+  fs.writeFileSync(path.join(outDir, `${base}.plan.json`), JSON.stringify({
+    title: plan.title, header: plan.header, summary: plan.summary,
+    skillCategories: plan.skillCategories.map((c) => ({ label: c.label, items: c.items.map((i) => ({ name: i.name })) })),
+    agentic: { label: plan.agentic.label, intro: plan.agentic.intro, bullets: plan.agentic.bullets.map((b) => ({ text: b.text })) },
+    experience: plan.experience.map((r) => ({ role: r.role, company: r.company, location: r.location, start: r.start, end: r.end, durationLabel: r.durationLabel, bullets: r.bullets.map((b) => ({ text: b.text })) })),
+    projects: plan.projects.map((p) => ({ name: p.name, region: p.region, stackLine: p.stackLine, bullets: p.bullets.map((b) => ({ text: b.text })) })),
+    education: plan.education, certifications: plan.certifications,
+    publications: plan.publications, sectionOrder: plan.sectionOrder,
+  }, null, 2));
   written.push(path.join(outDir, `${base}.report.md`));
 
   // Keep the JD alongside the output so the pairing is auditable later.
@@ -182,6 +199,7 @@ async function main() {
     if (r.blockers.length) for (const b of r.blockers) console.log(`    ! ${b}`);
     if (r.honestGaps.length) console.log(`  Real gaps        ${r.honestGaps.length} — see the report, do not claim these`);
     console.log(`  Agentic section  ${plan.agentic.placement}`);
+    if (r.dropped?.length) console.log(`  Omitted          ${r.dropped.length} off-target items (listed in the report)`);
     console.log(`  Skills order     ${plan.skillCategories.map((c) => c.label).join(' > ')}`);
     console.log('');
     for (const w of written) console.log(`  wrote  ${path.relative(ROOT, w)}`);

@@ -12,3 +12,5 @@ resume/tailored/*
 
 # Standing-resume build artefacts (regenerate with `npm run resumes`)
 resume/*.jd.txt
+
+resume/*.plan.json

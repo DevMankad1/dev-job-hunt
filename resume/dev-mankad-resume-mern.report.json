@@ -71,17 +71,38 @@
       "React, Node.js and TypeScript are all on the resume as delivered full-stack work",
       "Backend delivery in Django and Ruby on Rails with REST and GraphQL APIs consumed at scale",
       "Full product-cycle ownership from architecture through release"
+    ],
+    "dropped": [
+      "summary/opener: open-mobile [mobile]",
+      "summary/opener: open-mern [mobile]",
+      "summary/clause: cl-mobile-stack [mobile]",
+      "summary/clause: cl-cicd [release]",
+      "skill/languages-frameworks: Dart [flutter]",
+      "skill/languages-frameworks: Flutter [flutter]",
+      "skill/languages-frameworks: Kotlin [kmp]",
+      "skill/languages-frameworks: Kotlin Multiplatform (KMP) [kmp]",
+      "skill/languages-frameworks: SwiftUI [ios]",
+      "skill/languages-frameworks: Jetpack Compose [android]",
+      "skill/languages-frameworks: React Native [react-native]",
+      "skill/languages-frameworks: Splitties [android]",
+      "skill/architecture: MVI [android]",
+      "skill/architecture: Cross-platform mobile architecture [mobile]",
+      "skill/cicd-devops: Fastlane [release]",
+      "skill/cicd-devops: Firebase App Distribution [release]",
+      "skill/cicd-devops: App Store / Play Store deployments [release]",
+      "agentic: ag-fastlane [release]",
+      "experience: gw-sdk [ble]"
     ]
   },
   "plan": {
     "archetypeId": "mern-fullstack",
     "title": "Full-Stack Engineer",
     "summaryParts": {
-      "opener": "open-mern",
+      "opener": "open-mern-pure",
       "clauses": [
         "cl-integrations",
         "cl-adapt",
-        "cl-cicd"
+        "cl-agentic"
       ]
     },
     "skillOrder": [
@@ -100,7 +121,6 @@
     "experienceBulletOrder": [
       [
         "gw-arch",
-        "gw-sdk",
         "gw-award",
         "gw-crossfn",
         "gw-review",

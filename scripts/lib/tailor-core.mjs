@@ -133,7 +133,29 @@ function tagsScore(tags = [], jdNorm) {
  * Build a tailoring PLAN from the master content + a JD analysis.
  * The plan is pure data — rendering is a separate step.
  */
-export function buildPlan({ content, analysis, profile, maxBullets = null }) {
+/**
+ * `dropTags` removes content whose tags intersect the set — a targeting choice,
+ * not a rewrite. Used to build a MERN resume with the mobile work omitted.
+ *
+ * This is OMISSION, which is legitimate on a targeted resume, and it is
+ * different in kind from the alts mechanism (which rephrases) and from
+ * fabrication (which is never allowed). Everything dropped is recorded in
+ * plan.report.dropped so the run can say exactly what it left out.
+ */
+function _buildPlanInner({ content, analysis, profile, maxBullets = null, dropTags = [] }) {
+  const DROP = new Set(dropTags.map((t) => String(t).toLowerCase()));
+  const dropped = [];
+  // Judged against the phrasing that will actually be emitted: a bullet tagged
+  // [flutter, django, api] whose chosen alt is purely backend should survive a
+  // mobile drop, because the alt is what appears on the page.
+  let effTags = (item) => item.tags || [];
+  const kill = (item, where) => {
+    if (!DROP.size) return false;
+    const hit = effTags(item).find((t) => DROP.has(String(t).toLowerCase()));
+    if (hit) { dropped.push(`${where}: ${item.id || item.name || String(item.text || '').slice(0, 40)} [${hit}]`); return true; }
+    return false;
+  };
+
   const jdNorm = analysis.bodyN;
   const arch = analysis.bestArchetype?.archetype || null;
   const archTags = deriveArchetypeTags(arch, analysis);
@@ -151,11 +173,22 @@ export function buildPlan({ content, analysis, profile, maxBullets = null }) {
   const titleVariant = sortBy(content.titleVariants || [], (v) => tagsScore(v.tags, jdNorm) * 2 + boost(v.tags))[0]
     || { text: content.header.title };
 
+  // Now that tagWeight/archTags exist, resolve effective tags through alts.
+  effTags = (item) => {
+    for (const a of (item.alts || [])) {
+      if (pickPhrasing(item, jdNorm, archTags) === a.text) return a.tags || [];
+    }
+    return item.tags || [];
+  };
+
   // ---- summary --------------------------------------------------------------
-  const openers = sortBy(content.summary.openers || [], (o) => tagsScore(o.tags, jdNorm) * 2 + boost(o.tags));
+  // Summary content respects dropTags too — otherwise a mobile-free resume still
+  // opens by advertising cross-platform mobile experience.
+  const openers = sortBy((content.summary.openers || []).filter((o) => !kill(o, 'summary/opener')),
+    (o) => tagsScore(o.tags, jdNorm) * 2 + boost(o.tags));
   const opener = openers[0];
 
-  const clausesRanked = sortBy(content.summary.clauses || [], scoreOf);
+  const clausesRanked = sortBy((content.summary.clauses || []).filter((c) => !kill(c, 'summary/clause')), scoreOf);
   // Take the top clauses, but never two that say the same thing. Two guards:
   // a tag signature (mern vs fullstack), and actual word overlap — the agentic
   // opener and the agentic clause are near-paraphrases, and printing both makes
@@ -175,7 +208,12 @@ export function buildPlan({ content, analysis, profile, maxBullets = null }) {
     if (chosenClauses.length >= 3) break;
   }
 
-  const summaryText = [opener?.text, ...chosenClauses.map((c) => c.text)].filter(Boolean).join(' ');
+  // Summary uses the chosen alt phrasing too — without this, a clause whose alt
+  // was selected for the DROP decision still printed its mobile-worded original.
+  const summaryText = [
+    opener ? pickPhrasing(opener, jdNorm, archTags) : null,
+    ...chosenClauses.map((c) => pickPhrasing(c, jdNorm, archTags)),
+  ].filter(Boolean).join(' ');
 
   // ---- skills: reorder categories AND items, drop nothing -------------------
   //
@@ -194,7 +232,8 @@ export function buildPlan({ content, analysis, profile, maxBullets = null }) {
     aliases.some((a) => hasTerm(titleN, a) || titlePatterns.some((p) => p === norm(a) || hasTerm(p, a)));
 
   const categories = (content.skills.categories || []).map((cat) => {
-    const scoredItems = (cat.items || []).map((it) => {
+    const liveItems = (cat.items || []).filter((it) => !kill(it, `skill/${cat.id}`));
+    const scoredItems = liveItems.map((it) => {
       const hits = matchTerms(jdNorm, it.aliases || []).length;
       const headline = isHeadlineSkill(it.aliases);
       return {
@@ -221,7 +260,7 @@ export function buildPlan({ content, analysis, profile, maxBullets = null }) {
       boost(cat.tags);
     return { ...cat, items, _score: catScore, _namedByJd: namedByJd, _headlineCount: headlineCount };
   });
-  const skillCategories = sortBy(categories, (c) => c._score);
+  const skillCategories = sortBy(categories, (c) => c._score).filter((c) => c.items.length);
 
   // ---- agentic section placement -------------------------------------------
   const agenticRelevance =
@@ -233,7 +272,7 @@ export function buildPlan({ content, analysis, profile, maxBullets = null }) {
     (archTags.has('agentic') ? 6 : 0) +
     (archTags.has('fde') ? 3 : 0);
 
-  const agenticBullets = sortBy(content.agenticSection.bullets || [], scoreOf);
+  const agenticBullets = sortBy((content.agenticSection.bullets || []).filter((b) => !kill(b, 'agentic')), scoreOf);
   // Above Experience when the JD actually cares; otherwise it still ships, lower down.
   const agenticPlacement = agenticRelevance >= 6 ? 'above-experience' : 'below-experience';
   const agenticShown = agenticPlacement === 'above-experience'
@@ -244,7 +283,8 @@ export function buildPlan({ content, analysis, profile, maxBullets = null }) {
   const phrase = (b) => ({ ...b, text: pickPhrasing(b, jdNorm, archTags) });
 
   const experience = (content.experience || []).map((role) => {
-    const ranked = sortBy(role.bullets || [], (b) => scoreOf(b) + (b.pinned ? 4 : 0));
+    const live = (role.bullets || []).filter((b) => !kill(b, 'experience'));
+    const ranked = sortBy(live, (b) => scoreOf(b) + (b.pinned ? 4 : 0));
     const { kept, dropped } = applyMax(ranked, maxBullets);
     return { ...role, bullets: kept.map(phrase), _dropped: dropped };
   });
@@ -252,7 +292,8 @@ export function buildPlan({ content, analysis, profile, maxBullets = null }) {
   // ---- projects: reorder, and order bullets inside each ---------------------
   const projects = sortBy(
     (content.projects || []).map((p) => {
-      const ranked = sortBy(p.bullets || [], (b) => scoreOf(b) + (b.pinned ? 4 : 0));
+      const liveB = (p.bullets || []).filter((b) => !kill(b, `project/${p.id}`));
+      const ranked = sortBy(liveB, (b) => scoreOf(b) + (b.pinned ? 4 : 0));
       const { kept, dropped } = applyMax(ranked, maxBullets);
       const stackLine = pickPhrasing({ text: p.stackLine, tags: p.tags, alts: p.stackLineAlts }, jdNorm, archTags);
       return { ...p, stackLine, bullets: kept.map(phrase), _dropped: dropped, _score: (p.weight || 0) + tagsScore(p.tags, jdNorm) * 1.6 + boost(p.tags) };
@@ -297,7 +338,17 @@ export function buildPlan({ content, analysis, profile, maxBullets = null }) {
   };
 
   plan.report = buildReport({ plan, content, analysis, profile, arch });
+  plan.report.dropped = dropped;
   return plan;
+}
+
+/**
+ * Public entry point. Kept as a thin wrapper so the honesty contract lives in
+ * one obvious place: whatever dropTags removes, the OUTPUT is still a strict
+ * subset of resume-content.json. Omitting is allowed; inventing never is.
+ */
+export function buildPlan(opts) {
+  return _buildPlanInner(opts);
 }
 
 function applyMax(bullets, maxBullets) {

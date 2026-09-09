@@ -72,7 +72,8 @@
       "Shipped across Flutter, KMP, SwiftUI, Jetpack Compose and React Native — unusually broad for 2.7 years",
       "Owns releases end to end on both App Store and Play Store, automated with Fastlane",
       "Two production apps for international markets: Tymewear (USA) and Lifeness (Norway/Germany)"
-    ]
+    ],
+    "dropped": []
   },
   "plan": {
     "archetypeId": "mobile-generalist",
@@ -80,8 +81,8 @@
     "summaryParts": {
       "opener": "open-mobile",
       "clauses": [
-        "cl-integrations",
         "cl-cicd",
+        "cl-integrations",
         "cl-fullstack"
       ]
     },

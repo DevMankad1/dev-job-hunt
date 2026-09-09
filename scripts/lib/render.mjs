@@ -323,6 +323,13 @@ export function renderReportMd(plan, meta = {}) {
     L.push('');
   }
 
+  if (r.dropped && r.dropped.length) {
+    L.push('## Deliberately omitted from this variant', '');
+    L.push('These are true facts left out because they are off-target for this role. Omission is a targeting choice; nothing here was rewritten or denied.', '');
+    for (const d of r.dropped) L.push(`- ${d}`);
+    L.push('');
+  }
+
   L.push('## What the tailoring engine changed', '');
   L.push(`- **Headline title:** ${plan.title}`);
   L.push(`- **Summary assembled from:** opener \`${plan.summaryParts.opener}\` + clauses \`${plan.summaryParts.clauses.join('`, `')}\``);
