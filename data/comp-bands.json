@@ -6,11 +6,10 @@
     "unit": "INR lakhs per annum (LPA), total fixed + typical variable, excluding equity",
     "warning": "Never treat a band here as a reason to reject a posting. Indian JDs almost never state comp, and the real number is set at the recruiter call.",
     "devActuals": {
-      "currentCtcLPA": 8.94,
-      "currentCtcExact": 894000,
+      "currentCtc": "See private.local.json — gitignored, because this repo is public so the cloud routines can curl it.",
       "expectedStated": "11-12+ LPA",
       "asOf": "2026-09-08",
-      "reading": "His stated expectation sits BELOW the mid band for every lane here except Ahmedabad-local mobile. That is not a reason to retarget downward - it is a reason to treat 12 as a floor. A 1.23-1.34x jump under-prices a move into the AI/agentic lane, where his production agent work is genuinely scarce."
+      "reading": "His stated expectation sits BELOW the mid band for every lane here except Ahmedabad-local mobile. That is not a reason to retarget downward - it is a reason to treat 12 as a floor. The jump he is asking for under-prices a move into a product company, where his mobile depth and production agent work are genuinely scarce at 2.7 years."
     }
   },
   "bands": [
@@ -106,10 +105,10 @@
     }
   ],
   "negotiationNotes": [
-    "Dev's actuals: current 8.94 LPA, expected 11-12+. Anchor at 12 as the FLOOR and let them counter. Do not volunteer 8.94 until the role's own band is on the table - in India the current-CTC question exists mainly to cap the offer.",
-    "Reality check on the ask: 8.94 -> 12 is +34%. For an Ahmedabad-to-Bengaluru product-company move the normal range is 1.6-2.2x, i.e. 14-20 LPA. If an AI/agentic role comes through at 12, he has likely left money on the table - check the band on Levels.fyi before accepting.",
+    "Dev's expected: 11-12+ LPA. Anchor at 12 as the FLOOR and let them counter. Current CTC is in private.local.json (gitignored, since this repo is public) - do not volunteer it until the role's own band is on the table; in India the current-CTC question exists mainly to cap the offer.",
+    "Reality check on the ask: the stated 12 is only about +34% on current pay. For an Ahmedabad-to-Bengaluru product-company move the normal range is 1.6-2.2x, i.e. 14-20 LPA. If a role comes through at 12, he has likely left money on the table - check the band on Levels.fyi before accepting.",
     "Anchor on the ROLE's band, not on a percentage of the current salary. Indian recruiters ask for current CTC specifically to cap the offer — answer with your expected range instead wherever the form allows it.",
-    "Fill in profile.json currentCtcLPA and expectedCtcLPA. Application forms demand both constantly, and Claude must never guess them on your behalf.",
+    "Application forms demand current and expected CTC constantly. Expected is in profile.json; current is in private.local.json. Claude must never guess either on your behalf.",
     "The agentic-engineering work is the strongest lever Dev has. Most 2-3 year engineers cannot say they designed and operate a multi-agent delivery pipeline in production. Lead with it in the first recruiter call, not the fourth.",
     "A jump from a Gujarat-market salary to a Bengaluru product-company band is often 1.6-2.2x. That is normal for this move, not greedy.",
     "Ask for the fixed/variable/equity split in writing before saying yes to any number.",

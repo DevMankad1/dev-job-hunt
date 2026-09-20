@@ -1,37 +1,58 @@
-# ROUTINE.md — spec for the scheduled cloud routine
+# ROUTINE.md — spec for the daily job-scan cloud routine
 
-The cloud routine's prompt is deliberately one line: *"Read ROUTINE.md in the
-repo root and follow it exactly."* This file is the real spec. Edit it here,
-push, and the next run picks it up — no `/schedule` prompt edit needed.
+> **`OPERATING-LOG.md` overrides this file, and overrides the routine prompt,
+> on any conflict.** Read it first. It records what running the system actually
+> taught us, and reality wins over spec.
+
+| | |
+|---|---|
+| Routine | **Dev — job scan (daily, 4:07am IST)** |
+| Trigger id | `trig_019eYEjX9ZhdcCgaPBcqv3ZS` |
+| Cron | `37 22 * * *` UTC = **04:07 IST**, daily |
+| Model | `claude-sonnet-5` |
+| Connectors | Gmail + Google Drive |
+| Console | <https://claude.ai/code/routines/trig_019eYEjX9ZhdcCgaPBcqv3ZS> |
+| Sibling | `OUTREACH-ROUTINE.md` — runs 75 min later at 05:22 IST |
+
+**How the routine gets this repo:** it does **not** use a git checkout. Every
+run it `curl`s the files it needs from `raw.githubusercontent.com`. That is why
+**the repo must stay public** — and why a local edit changes nothing live until
+it is pushed to `origin/main`.
+
+**Where the prompt lives:** in the routine config, not here. Unlike the earlier
+design, the prompt is *self-contained* — it has to be, because a cloud sandbox
+starts with zero context and no checkout. This file is the human-readable spec
+and the routine reads it too, but **changing behaviour now means editing the
+prompt** at the console link above. Keep this file in sync when you do.
 
 ---
-
-> **`OPERATING-LOG.md` overrides this file on any conflict.** Read it first. It
-> records what running the system actually taught us, and reality wins over spec.
 
 ## Guardrails — never violate
 
 - **Never apply to a job.** Never register, never create an account anywhere.
-- **The only email you may send is one digest to `devmankad12@gmail.com`.**
-  Never email a company, a recruiter, or any third party.
-- **Never fabricate** a job, URL, company, or email address. Report only what the
-  scan actually returned.
-- If something fails, **say so** in the digest and in your final message.
+- **The only email it may send is one digest to `devmankad12@gmail.com`.**
+  Never a company, a recruiter, or any third party.
+- **Never fabricate** a job, URL, company, or date. Report only what the scan
+  actually returned.
+- If something fails, **say so** in the digest and in the final message.
   A silent partial run is worse than a loud broken one.
 
 ## Who this is for
 
-Dev Mankad — Software Engineer, 2.7 years (since Jan 2024), based in Ahmedabad.
+Dev Mankad — Software Engineer, 2.7 years (since Jan 2024), Ahmedabad.
 
-Three target lanes, in priority order:
+Target lanes (source of truth is `profile.json` → `targetLanes`):
 
-1. **AI / Agentic Engineer + Forward Deployed Engineer** — his differentiator
-2. **Mobile** — Flutter / Kotlin Multiplatform / cross-platform
-3. **Full-stack MERN only**
+1. **Mobile** — Flutter / Dart / KMP / Android / iOS / React Native
+1. **Full-stack MERN / JavaScript** — React, Node, TypeScript
+2. **Software Developer / SDE generalist** on a JS or mobile stack
+2. **Forward Deployed / Solutions / Implementation Engineer**
 
-Explicitly **not** wanted: DevOps / SRE / platform / cloud, data / ML, QA.
-Locations: India metros (Bengaluru, Pune, Hyderabad, Mumbai, NCR, Chennai,
-Ahmedabad) or Remote.
+Explicitly **not** wanted: DevOps / SRE / platform / cloud, data / ML, QA — and
+since 2026-09-09, **AI/ML specialist titles too** (`profile.scanning._aiNote`:
+Dev uses agentic tooling to write code, he is not applying to be an AI engineer;
+it is a title filter, so a plain "Software Engineer" role at an AI company still
+matches). Locations: India metros or Remote.
 
 ---
 
@@ -39,27 +60,50 @@ Ahmedabad) or Remote.
 
 Two kinds, swept in the same run:
 
-- **45 verified company ATS boards** — Greenhouse, Lever, Ashby, Workable. One
-  employer each, high signal.
+- **~77 verified company ATS boards** — Greenhouse, Lever, Ashby, Workable,
+  SmartRecruiters, Recruitee, Workday. One employer each, high signal.
 - **4 aggregator boards with public APIs** — RemoteOK, Remotive, Himalayas, and
   the monthly Hacker News "Who is hiring" thread. Whole marketplaces, so the
   employer is read off the posting and **their eligibility tags are not
   trustworthy**. Rows from these carry `viaBoard` and must be verified against
   the actual posting before applying.
+- **~106 Tier-B companies** have no usable ATS API. They are covered by a
+  rotating WebFetch sweep — `slice = dayOfYear % 4`, ~26 per run, full registry
+  every 4 days, hard cap of 30 fetches. This is the only expensive part of the
+  run; the cap is deliberate.
 
 LinkedIn, Naukri, Instahyre, Cutshort and Wellfound are login-gated. They are
 manual-search channels in `data/platforms.json`; never point a scraper at them.
 
-## Step 1 — scan
+## Step 1 — state
 
-```bash
-node scripts/ledger.mjs urls > /tmp/sent.txt   # read the ledger IN FULL first
-npm run scan -- --exclude-urls /tmp/sent.txt
+The dedupe ledger is **`dev-job-hunt-seen-urls.json` in Google Drive**, not git.
+
+That is a change from the original design, and it is forced: with a public-repo
+`curl` and no GitHub app connection, the sandbox has **no write credentials**,
+so it cannot `git push` state back. Drive is the same pattern Kelvi's routines
+have run on daily since August.
+
+```
+{"generated":"<ISO>","urls":[ ... ]}
 ```
 
-Runs `scripts/scan.mjs`: sweeps every verified Tier-A ATS board, filters by role,
+Read it **in full** before the scan — a partial ledger is what lets already-sent
+jobs reappear as "new" — and write it back only **after** the email has gone.
+
+## Step 2 — scan
+
+```bash
+node scripts/scan.mjs --maxAgeHours 36 --exclude-urls /tmp/sent.txt
+```
+
+Sweeps every verified Tier-A ATS board and the four aggregators, filters by role,
 seniority, stack and the three eligibility shapes, applies the 21-day freshness
 cutoff, ranks newest-first, dedupes, and writes `data/jobs.raw.json`.
+
+`--maxAgeHours 36` is wider than the 24h gap between runs on purpose: a delayed
+or skipped run then cannot open a hole where a posting is missed entirely. The
+Drive ledger, not a narrow window, is what prevents re-reporting.
 
 Results carry a `channel` of `india` or `remote-global`. Both go in the digest,
 remote-global first — it is the higher-ceiling channel.
@@ -67,67 +111,54 @@ remote-global first — it is the higher-ceiling channel.
 If it reports 0 boards or throws, run `node scripts/verify_ats.mjs` to see which
 endpoints broke, email Dev a short plain-text note naming them, and stop.
 
-## Step 2 — build the digest
-
-```bash
-npm run digest
-```
-
-Writes `reports/latest.html` and a dated `reports/*.md`.
-
 ## Step 3 — sanity-check before sending
 
-Read `data/jobs.raw.json` and drop any row that:
+Drop any row that:
 
 - has no `url`, or whose url is a careers-page root rather than a specific posting;
 - has Senior / Staff / Principal / Lead / Architect / Manager in the title;
-- is clearly a DevOps, SRE, platform, cloud, data, ML or QA role that slipped
-  through the regex.
+- is clearly a DevOps, SRE, platform, cloud, data, ML, AI-specialist or QA role
+  that slipped through the regex;
+- names a marketplace (micro1, Andela, Toptal, Crossover, Turing, Deel Talent) as
+  the employer rather than a real end client.
 
-If you drop anything, mention it in one line at the end of the email so the
-filters can be tightened.
+If anything is dropped, say so in one line at the end of the email so the filters
+can be tightened.
 
-## Step 4 — email, only if there is something to say
+## Step 4 — build the digest
+
+```bash
+npm run digest                      # reports/latest.html + a dated reports/*.md
+node scripts/digest.mjs --subject   # the subject line
+```
+
+`reports/latest.html` is an **HTML fragment**, not a full document — no
+`<html>`/`<body>` wrapper — so the Tier-B section is appended by plain string
+concatenation. The fragment already carries the Job Hunt Console link.
+
+## Step 5 — email, only if there is something to say
 
 **If there are zero matches: send nothing and end the run.** Silence is the
 expected outcome on a quiet day — there is deliberately no heartbeat email.
 
-Otherwise send exactly one email:
-
 | Field | Value |
 |---|---|
 | to | `devmankad12@gmail.com` |
-| subject | exact stdout of `node scripts/digest.mjs --subject` |
-| htmlBody | full contents of `reports/latest.html` — this already carries the Job Hunt Console link in its header and footer |
+| subject | stdout of `node scripts/digest.mjs --subject` |
+| htmlBody | `reports/latest.html` + the Tier-B section, if any |
 | body | plain-text fallback: one `Company — Title — URL` per line |
 
-Add a line at the bottom naming any boards that errored, so Dev can fix the
-registry.
+Footer line names boards that errored, the Tier-B slice and skip count, and how
+many rows the sanity-check dropped.
 
-## Step 5 — persist state
+## Step 6 — persist state
 
-**Only after the email has actually gone out** — never before:
+**Only after the email has actually gone out** — never before. The ordering is
+the point: the ledger must record what was *delivered*, not what was
+*considered*.
 
-```bash
-node scripts/ledger.mjs commit
-python scripts/tracker.py --append
-git add state/ reports/ data/jobs.raw.json
-git commit -m "scan: <N> new matches <YYYY-MM-DD HH:MM> IST"
-git push
-```
-
-The ordering is the point. `state/sent-log.md` must record what was *delivered*,
-not what was *considered* — a run that dies before the email would otherwise
-bury those roles forever.
-
-**If the push fails** (no write credentials), say so explicitly in your final
-message. The run is still useful — Dev will just see some repeats until it is
-fixed. Do not fail the whole run over it.
-
-## Final message
-
-Two or three sentences: how many boards were scanned, how many matches were
-emailed, and anything that broke.
+Append the reported URLs to `dev-job-hunt-seen-urls.json` in Drive, bump
+`generated`, trim oldest-first past ~2000 entries.
 
 ---
 
@@ -135,15 +166,19 @@ emailed, and anything that broke.
 
 | Want to change | Do this |
 |---|---|
-| Cadence | Edit the routine's `cron_expression` via `/schedule` |
-| How far back it looks | `--maxAgeHours` in `package.json` → `scripts.scan` |
-| Which roles match | `profile.json` → `scanning.roleRegex` and `data/keywords.json` |
-| Which locations count | `profile.json` → `scanning.indiaRegex` / `foreignRejectRegex` |
-| What the email looks like | `scripts/digest.mjs` |
-| **What the routine does** | **This file.** Edit, push, done. |
+| Cadence | Edit `cron_expression` at the console link, or via `/schedule` |
+| How far back it looks | `--maxAgeHours` in the routine prompt |
+| Which roles match | `profile.json` → `scanning.roleRegex`, `data/keywords.json` → push |
+| Which locations count | `profile.json` → `scanning.indiaRegex` / `foreignRejectRegex` → push |
+| Tier-B sweep size | the `% 4` modulus and the 30-fetch cap, in the prompt |
+| What the email looks like | `scripts/digest.mjs` → push |
+| **What the routine does** | **The routine prompt.** Then sync this file. |
 
-## Schedule
+## Known divergence
 
-`40 3,8,14 * * *` UTC = **09:10, 14:10 and 20:10 IST**, daily.
-
-Deliberately off the :00/:30 marks to avoid the global cron thundering herd.
+The cloud routine dedupes against **Drive**; a local `npm run jobhunt` dedupes
+against **`state/seen-urls.json` in git**. They are two separate ledgers, so a
+job you saw locally can still appear in a cloud digest, and vice versa. Living
+with that is the price of having no write credentials in the sandbox. If it gets
+annoying, connect GitHub to the Claude account, attach the repo to the routine,
+and move state back to `git commit && git push`.

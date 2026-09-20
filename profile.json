@@ -170,16 +170,17 @@
     "_note": "Overseas / visa-sponsorship is NOT an active channel (Dev chose India metros + Remote on 2026-09-08). The relocation channel is scaffolded but disabled — see data/relocation.json and HANDOFF.md §10 to switch it on."
   },
   "compensation": {
-    "currentCtcLPA": 8.94,
-    "currentCtcExact": 894000,
+    "currentCtcLPA": null,
+    "currentCtcExact": null,
+    "_currentCtcNote": "Moved to private.local.json (gitignored) on 2026-09-20, before this repo was made public for the cloud routines. Nothing in scripts/ reads it. Never publish it: in India the current-CTC question exists mainly to cap the offer.",
     "expectedCtcLPA": 12,
     "expectedCtcRangeLPA": {
       "min": 11,
       "max": 12,
       "statedAs": "11-12+ LPA"
     },
-    "_note": "Confirmed by Dev 2026-09-08. Current 8,94,000 (8.94 LPA). Expected 11-12+ LPA.",
-    "_marketNote": "Dev's stated expectation is a 1.23-1.34x jump. That is modest for this move: Ahmedabad-to-Bengaluru product-company transitions commonly run 1.6-2.2x, and the AI/agentic lane pays materially above the generalist band (see data/comp-bands.json). Quote 12 as the FLOOR, not the ask, and never volunteer 8.94 before the role's band is on the table.",
+    "_note": "Expected 11-12+ LPA, confirmed by Dev 2026-09-08. Current CTC lives in private.local.json.",
+    "_marketNote": "Dev's stated expectation is a modest jump on his current pay: Ahmedabad-to-Bengaluru product-company transitions commonly run 1.6-2.2x (see data/comp-bands.json). Quote 12 as the FLOOR, not the ask, and never volunteer current CTC before the role's band is on the table.",
     "targetBandLPA": {
       "min": 11,
       "aim": 14,
@@ -250,7 +251,7 @@
         "aim": 30000,
         "stretch": 45000
       },
-      "compNote": "USD 30k is roughly 25 LPA — about 2.8x Dev's current 8.94 and well above his stated 11-12 expectation. This channel is where the ceiling actually is. Verify India eligibility on the posting itself before investing time.",
+      "compNote": "USD 30k is roughly 25 LPA — multiples of Dev's current pay and well above his stated 11-12 expectation. This channel is where the ceiling actually is. Verify India eligibility on the posting itself before investing time.",
       "eligibilityShapes": {
         "qualifies": [
           "Worldwide / anywhere / 'work from anywhere' with no country named",

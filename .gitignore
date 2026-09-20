@@ -17,3 +17,7 @@ resume/*.plan.json
 
 # Excel lock files
 ~$*
+
+# Salary and anything else that must never reach the public repo.
+# The cloud routines need this repo PUBLIC (they curl it, no checkout).
+private.local.json
