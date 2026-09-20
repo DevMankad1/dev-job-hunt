@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-20T13:44:02.716Z",
+  "generatedAt": "2026-09-20T14:10:30.420Z",
   "params": {
-    "maxAgeHours": 1,
+    "maxAgeHours": 2,
     "loc": null,
     "all": false
   },
@@ -9,10 +9,11 @@
     "boards": 75,
     "boardErrors": 1,
     "rawJobs": 8295,
-    "afterAge": 22,
-    "afterRole": 0,
-    "afterSeniority": 0,
-    "afterStack": 0,
+    "afterAge": 83,
+    "afterRole": 8,
+    "afterSeniority": 6,
+    "afterStack": 5,
+    "infraDropped": 0,
     "afterLocation": 0,
     "afterFreshness": 0,
     "staleDropped": 0,

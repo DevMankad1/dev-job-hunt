@@ -152,12 +152,15 @@ export function seniorityFit(text, devYears = 2.7) {
   }
   out.asked = min;
 
+  // 5+ rejects. Ankur's decay scored a 5-year ask 0.5 and kept it as a
+  // stretch, but profile.json's own seniorityNote says "SKIP: 5+", and a live
+  // run proved the looser rule costs more than it returns: Chainstack's
+  // "Product Engineer (Platform)" asked 5+ and reached the digest as a stretch
+  // before the sanity-check caught it. Spec and code now agree. (2026-09-20)
   if (min !== null) {
     if (min <= 4) out.score = 1;
-    else if (min >= 6) out.score = 0;
-    else out.score = (6 - min) / 2; // 5 yrs -> 0.5
-    if (out.score === 0) { out.verdict = 'reject'; out.reason = `Asks ${min}+ years against ${devYears} — past the decay window.`; }
-    else if (out.score < 1) { out.verdict = 'stretch'; out.reason = `Asks ${min}+ years against ${devYears} — a stretch, worth it if the stack fits.`; }
+    else out.score = 0;
+    if (out.score === 0) { out.verdict = 'reject'; out.reason = `Asks ${min}+ years against ${devYears} — profile rule is SKIP at 5+.`; }
   }
 
   // "Senior/Lead" in the title. Ankur's runbook only disqualifies at Director+,

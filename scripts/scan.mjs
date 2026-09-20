@@ -77,6 +77,21 @@ const foreignRe = new RegExp(sc.foreignRejectRegex, 'i');
 // real employer's. This was added to profile.json earlier but never actually
 // applied — which is how a Lemon.io listing reached the digest.
 const marketRe = sc.marketplaceRejectRegex ? new RegExp(sc.marketplaceRejectRegex, 'i') : null;
+// stackRejectRegex is only ever tested against the TITLE, so a role called
+// "Product Engineer (Platform)" over a Kubernetes/Terraform/Kafka body sailed
+// straight through. These two are counted across the BODY instead, as distinct
+// signals, and the row drops only when infra clearly wins — a single Docker
+// mention in an otherwise-MERN JD must not reject it.
+const infraRe = sc.infraStackRegex ? new RegExp(sc.infraStackRegex, 'gi') : null;
+const devStackRe = sc.devStackRegex ? new RegExp(sc.devStackRegex, 'gi') : null;
+
+function distinctHits(re, text) {
+  if (!re || !text) return 0;
+  re.lastIndex = 0;
+  const seen = new Set();
+  for (const m of text.matchAll(re)) seen.add(m[0].toLowerCase());
+  return seen.size;
+}
 
 const errors = [];
 const tierA = companies.filter((c) => c.tier === 'A' && c.atsVerified && c.atsSlug);
@@ -100,7 +115,7 @@ if (!args['no-boards']) {
   if (boardJobs.length) say('');
 }
 
-const stats = { boards: 0, boardErrors: 0, rawJobs: 0, afterAge: 0, afterRole: 0, afterSeniority: 0, afterStack: 0, afterLocation: 0, afterFreshness: 0, staleDropped: 0, reported: 0, fromAggregators: 0 };
+const stats = { boards: 0, boardErrors: 0, rawJobs: 0, afterAge: 0, afterRole: 0, afterSeniority: 0, afterStack: 0, infraDropped: 0, afterLocation: 0, afterFreshness: 0, staleDropped: 0, reported: 0, fromAggregators: 0 };
 const matches = [];
 
 // One list, two origins: {company} from the registry for ATS rows, or read off
@@ -148,6 +163,13 @@ for (const j of boardJobs) {
     if (stackRe.test(titleN)) continue;
     // Match the employer name too: on these rows the marketplace IS the company.
     if (marketRe && (marketRe.test(titleN) || marketRe.test(norm(comp.name)) || marketRe.test(norm(comp.domain || '')))) continue;
+
+    // Infra dominance, judged on the BODY. The title check above cannot see a
+    // platform-infra role wearing a product-engineer title.
+    const bodyN = norm(j.description || '').slice(0, 6000);
+    const infraHits = distinctHits(infraRe, bodyN);
+    const devHits = distinctHits(devStackRe, bodyN);
+    if (infraHits >= 3 && infraHits > devHits) { stats.infraDropped++; continue; }
     stats.afterStack++;
 
     // Location is judged on the LOCATION FIELD only. Testing the JD body lets
@@ -240,6 +262,15 @@ for (const m of matches) {
   const size = boardSize.get(m.company) || 0;
   m.sprayPosted = size >= SPRAY_BOARD;
   if (m.sprayPosted) m.blockers = [...(m.blockers || []), `Employer board carries ${size} postings — the same req is duplicated across many countries. Verify this is a real India role.`];
+  // Aggregators often hand back a one-line teaser instead of the JD. Every
+  // body-based filter — years asked, infra dominance, stack signals — is blind
+  // on those rows, so say so out loud rather than letting the row look as
+  // vetted as an ATS one. Chainstack's "Product Engineer (Platform)" reached a
+  // live digest this way: 115 characters of description hiding a 5+ year
+  // Kubernetes/Terraform/Kafka role. (2026-09-20)
+  if ((m.descriptionExcerpt || '').length < 400) {
+    m.blockers = [...(m.blockers || []), `Only ${(m.descriptionExcerpt || '').length} chars of description available${m.viaBoard ? ` from ${m.viaBoard}` : ''} — years-asked and stack filters could not run. Open the posting before trusting this row.`];
+  }
 }
 
 const capped = [];
