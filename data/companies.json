@@ -501,6 +501,30 @@
       "evidence": "Fetched avenuesai.com/career-opportunities: confirms GIFT Two Building, GIFT City Gandhinagar HQ and active 'we are hiring' fintech messaging; no listings or ATS on page. Search showed a Full Stack Developer (3-5 yrs) role at GIFT City."
     },
     {
+      "name": "Aviato Consulting",
+      "domain": "aviato.consulting",
+      "careersUrl": "https://careers.aviato.consulting/#open-roles",
+      "atsProvider": "other",
+      "atsSlug": "",
+      "tier": "B",
+      "atsVerified": false,
+      "lastVerified": null,
+      "segments": [
+        "fde",
+        "ai-agentic",
+        "enterprise",
+        "product-india"
+      ],
+      "locations": [
+        "Remote India",
+        "Australia"
+      ],
+      "priority": "high",
+      "note": "Added at Dev's request 2026-09-20. Ex-Googlers-founded Google Cloud partner, 100% remote from anywhere in India, ESOP after six months. READ THIS BEFORE THE TIER-B SWEEP SPENDS BUDGET HERE: 19 of its 20 open roles are outside Dev's lanes (Google Cloud Architect, DevOps Lead, SRE, Data Engineer, GCP AI Engineer, SecOps SIEM, Security Practice Lead, QA, .Net Technical Lead, Scrum Master, Program Manager, sales and finance). The one that fits is Forward Deployed Engineer, Remote India, on their Apps team.",
+      "evidence": "careers.aviato.consulting fetched 2026-09-20: 20 live roles, each with its own /jobs/<id> permalink, server-rendered so the Tier-B WebFetch sweep can read titles and exact apply links. No usable ATS API - the Workable board named \"Aviato\" carries 0 jobs and its ownership is unconfirmed, and every SmartRecruiters slug tried returned HTTP 200 with totalFound 0, which is that API answering for any slug rather than a real board. Page keyword density: google cloud 85, gcp 68, terraform 15, sre 13, devops 12 against flutter 3, typescript 2, node 1 - a cloud consultancy, not a product-engineering shop. The FDE posting (/jobs/cmq4ol08f04x0bcka8a1nenn0) asks for multi-agent systems, MCP servers, agentic workflows and eval pipelines, which is squarely Dev's differentiator, but its minimum qualifications state 5 years of Python plus architecting AI systems on GCP and RAG/vector-database pipelines - and GCP, RAG and vector DBs all sit in resume-content.json doNotClaim.",
+      "openRoleCount": 20
+    },
+    {
       "name": "Azilen Technologies",
       "domain": "azilen.com",
       "careersUrl": "https://www.azilen.com/career/",
